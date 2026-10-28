@@ -68,9 +68,9 @@ Unproved passage: the precise annular/von-Mangoldt normalization and fixed unifo
 For $B_Nf(x)=N^{-1}\sum_{n\le N}f(x-n^2)$, we assume a decomposition on finite indicators, $B_N\mathbf{1}F=L{N,J}\mathbf{1}F+H{N,J}\mathbf{1}_F$, with
 
 $$
-\lVert L_{N,J}f\rVert_\infty\le C N^{-2}J(\log J)^2\lVert f\rVert_1,
+||L_{N,J}f||_\infty\le C N^{-2}J(\log J)^2||f||1,
 \qquad
-\lVert H_{N,J}f\rVert_2\le C J^{-1/2}\log J \lVert f\rVert_2.
+||H{N,J}f||_2\le C J^{-1/2}\log J ||f||_2.
 $$
 
 A separate stronger stopping input gives the corresponding local low/high estimates under the exact support and admissibility conditions.
@@ -84,8 +84,8 @@ Unproved passage: the cited local arguments are the literature basis; this READM
 For the fixed smooth cutoff and separated rational centers $\Gamma$, the general input has the form
 
 $$
-\left\lVert\sup_{j\in J}|T_{m_j^\Gamma}f|\right\rVert_2
-\lesssim (1+\log(|\Gamma|+1))^2\lVert f\rVert_2.
+||\sup_{j\in J}|T_{m_j^\Gamma}f|||_2
+\lesssim (1+\log(|\Gamma|+1))^2||f||_2.
 $$
 
 A separate common-period input, with denominators dividing $P$, assumes loss
@@ -100,11 +100,11 @@ Citation qualification: the exact common-period inequality displayed above has n
 
 5. Quantitative Ionescu–Wainger construction, multipliers and sampling
 
-The construction supplies suitable coprime data, a period $P\le3^Q$, and a rational set containing all source denominators. For good data, narrow $m$, $\lVert\nu\rVert_{\mathrm{TV}}\le1$, and $p_r=2r/(2r-1)\le p\le2r$, the multiplier input has the form
+The construction supplies suitable coprime data, a period $P\le3^Q$, and a rational set containing all source denominators. For good data, narrow $m$, $||\nu||_{\mathrm{TV}}\le1$, and $p_r=2r/(2r-1)\le p\le2r$, the multiplier input has the form
 
 $$
-\left\lVert T_{\sum_{\alpha\in\Sigma}\widehat\nu(\alpha)m(\cdot-\alpha)}\right\rVert_{\ell^p\to\ell^p}
-\le (Cr\log(2+k))^{Ck}\lVert T_m\rVert_{L^p\to L^p}.
+||T_{\sum_{\alpha\in\Sigma}\widehat\nu(\alpha)m(\cdot-\alpha)}||{\ell^p\to\ell^p}
+\le (Cr\log(2+k))^{Ck}||T_m||{L^p\to L^p}.
 $$
 
 The sampling inputs include two-sided major-arc interpolation bounds and narrow-band diagonal sampling $G\mapsto(G(n,n\bmod P))_n$.
@@ -118,9 +118,9 @@ Unproved passage: the exact finite-quotient and Fourier realizations, full bandl
 The real-variable inputs comprise one-sided Hardy–Littlewood bounds, scalar Hörmander convolution bounds, Young's inequality and Riesz–Thorin interpolation in the domains used by the code. In particular,
 
 $$
-\lVert M^+f\rVert_p\lesssim(p-1)^{-1}\lVert f\rVert_p,
+||M^+f||_p\lesssim(p-1)^{-1}||f||_p,
 \qquad
-\lVert K*f\rVert_p\lesssim\frac{A+H}{p-1}\lVert f\rVert_p,
+||K*f||_p\lesssim\frac{A+H}{p-1}||f||_p,
 \quad 1<p\le2,
 $$
 
