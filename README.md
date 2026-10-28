@@ -29,12 +29,12 @@ $$
 compatible uniform progression estimates with a possible exceptional-character term,
 
 $$
-\sum_{\substack{n\le t\n\equiv a\pmod q}}\Lambda(n)
-=\frac{t-\mathbf1_{q_\chi\mid q}\chi_q(a)t^\beta/\beta}{\phi(q)}
-+O!\left(Ne^{-c\sqrt{\log N}}\right),
+\sum_{n\le t, n\equiv a\pmod q}\Lambda(n)
+=\frac{t-\mathbf{1}{q\chi\mid q}\chi_q(a)t^\beta/\beta}{\phi(q)}
++O\left(Ne^{-c\sqrt{\log N}}\right),
 $$
 
-in the specified exponential modulus range and for $N/2\le t\le N$; Landau–Page uniqueness; and fixed-modulus prime frequencies $#{k<K\equiv a\pmod q}/K\to1/\phi(q)$.
+in the specified exponential modulus range and for $N/2\le t\le N$; Landau–Page uniqueness; and fixed-modulus prime frequencies $\frac{1}{K}\sum_{k<K}\mathbf{1}_{p_k\equiv a\pmod q}\to1/\phi(q)$.
 
 References: IK04, §§5.6 and 5.9; Tao14, Corollary 39 and Exercises 40, 50, 54 and 55(iii). Exercise 54 is Page's theorem; Exercise 55(iii) contains the exceptional-term progression estimate. The reciprocal-square-root sum follows mathematically by partial summation.
 
@@ -65,12 +65,12 @@ Unproved passage: the precise annular/von-Mangoldt normalization and fixed unifo
 
 3. Independent ordinary-square decomposition and stopping estimates
 
-For $B_Nf(x)=N^{-1}\sum_{n\le N}f(x-n^2)$, we assume a decomposition on finite indicators, $B_N\mathbf1_F=L_{N,J}\mathbf1_F+H_{N,J}\mathbf1_F$, with
+For $B_Nf(x)=N^{-1}\sum_{n\le N}f(x-n^2)$, we assume a decomposition on finite indicators, $B_N\mathbf{1}F=L{N,J}\mathbf{1}F+H{N,J}\mathbf{1}_F$, with
 
 $$
-|L_{N,J}f|_\infty\le C N^{-2}J(\log J)^2|f|1,
+\lVert L_{N,J}f\rVert_\infty\le C N^{-2}J(\log J)^2\lVert f\rVert_1,
 \qquad
-|H{N,J}f|_2\le C J^{-1/2}\log J,|f|_2.
+\lVert H_{N,J}f\rVert_2\le C J^{-1/2}\log J \lVert f\rVert_2.
 $$
 
 A separate stronger stopping input gives the corresponding local low/high estimates under the exact support and admissibility conditions.
@@ -84,8 +84,8 @@ Unproved passage: the cited local arguments are the literature basis; this READM
 For the fixed smooth cutoff and separated rational centers $\Gamma$, the general input has the form
 
 $$
-\left|\sup_{j\in J}|T_{m_j^\Gamma}f|\right|_2
-\lesssim (1+\log(|\Gamma|+1))^2|f|_2.
+\left\lVert\sup_{j\in J}|T_{m_j^\Gamma}f|\right\rVert_2
+\lesssim (1+\log(|\Gamma|+1))^2\lVert f\rVert_2.
 $$
 
 A separate common-period input, with denominators dividing $P$, assumes loss
@@ -100,11 +100,11 @@ Citation qualification: the exact common-period inequality displayed above has n
 
 5. Quantitative Ionescu–Wainger construction, multipliers and sampling
 
-The construction supplies suitable coprime data, a period $P\le3^Q$, and a rational set containing all source denominators. For good data, narrow $m$, $|\nu|_{\mathrm{TV}}\le1$, and $p_r=2r/(2r-1)\le p\le2r$, the multiplier input has the form
+The construction supplies suitable coprime data, a period $P\le3^Q$, and a rational set containing all source denominators. For good data, narrow $m$, $\lVert\nu\rVert_{\mathrm{TV}}\le1$, and $p_r=2r/(2r-1)\le p\le2r$, the multiplier input has the form
 
 $$
-\left|T_{\sum_{\alpha\in\Sigma}\widehat\nu(\alpha)m(\cdot-\alpha)}\right|{\ell^p\to\ell^p}
-\le (Cr\log(2+k))^{Ck}|T_m|{L^p\to L^p}.
+\left\lVert T_{\sum_{\alpha\in\Sigma}\widehat\nu(\alpha)m(\cdot-\alpha)}\right\rVert_{\ell^p\to\ell^p}
+\le (Cr\log(2+k))^{Ck}\lVert T_m\rVert_{L^p\to L^p}.
 $$
 
 The sampling inputs include two-sided major-arc interpolation bounds and narrow-band diagonal sampling $G\mapsto(G(n,n\bmod P))_n$.
@@ -118,9 +118,9 @@ Unproved passage: the exact finite-quotient and Fourier realizations, full bandl
 The real-variable inputs comprise one-sided Hardy–Littlewood bounds, scalar Hörmander convolution bounds, Young's inequality and Riesz–Thorin interpolation in the domains used by the code. In particular,
 
 $$
-|M^+f|_p\lesssim(p-1)^{-1}|f|_p,
+\lVert M^+f\rVert_p\lesssim(p-1)^{-1}\lVert f\rVert_p,
 \qquad
-|K*f|_p\lesssim\frac{A+H}{p-1}|f|_p,
+\lVert K*f\rVert_p\lesssim\frac{A+H}{p-1}\lVert f\rVert_p,
 \quad 1<p\le2,
 $$
 
@@ -135,9 +135,9 @@ Unproved passage: the precise quantitative Fourier-realization/full-domain formu
 We assume strong transference with the same norm constant, and modular transference of the form
 
 $$
-|{A^*g>\lambda}|\le K\sum_m\Phi(|g(m)|/\lambda)
+\left|\left\lbrace x^*g(x)>\lambda\right\rbrace\right|\le K\sum_m\Phi(|g(m)|/\lambda)
 \quad\Longrightarrow\quad
-\mu{A_T^*f>\lambda}\le K\int\Phi(|f|/\lambda),d\mu.
+\mu\left(\left\lbrace x^*f(x)>\lambda\right\rbrace\right)\le K\int\Phi(|f|/\lambda) d\mu.
 $$
 
 We also assume almost-everywhere convergence for bounded functions for the three square-average families on the stated invertible probability systems.
@@ -171,7 +171,7 @@ Reference: IK04, Theorem 11.23; see the coauthor-hosted Chapter 11 PDF. The quad
 Under CRT compatibility, the stated uniform local-correlation estimates and subpower density conditions, the assumed general theorem yields joint Poisson limits for normalized cyclic gaps:
 
 $$
-\frac{#{a\in\Lambda_{q_j}(a)>\theta_i,\ 1\le i\le k}}
+\frac{\left|\left\lbrace a\in\Lambda_{q_j}(a)>\theta_i,\quad 1\le i\le k\right\rbrace\right|}
 {|\Lambda_{q_j}|}
 \longrightarrow e^{-\sum_i\theta_i}.
 $$
@@ -187,7 +187,7 @@ The ordinary prime-count inputs are Siegel–Walfisz in logarithmic moduli, unif
 $$
 \sum_{q\le X^{1/2}(\log X)^{-B}}
 \max_{(a,q)=1}\sup_{2\le y\le X}
-\left|\pi(y;q,a)-\frac{\operatorname{Li}(y)}{\phi(q)}\right|
+\left|\pi(y;q,a)-\frac{\mathrm{Li}(y)}{\phi(q)}\right|
 \ll_A X(\log X)^{-A}.
 $$
 
@@ -304,7 +304,7 @@ python3 scripts/verify_release.py
 
 The Lean version and Mathlib revision are pinned in lean-toolchain and lake-manifest.json. CheckHeadlines.lean exposes the actual types and axioms; this package does not claim an independent Comparator certification.
 
-The saved full build at proof checkpoint 1265 covered 1,382 project modules, 4,517 named theorem axiom audits and 973 evidence declaration signatures. Publication package 1266 preserves those proof bytes exactly. A new Lean build was not run for this documentation-only release: the temporary Lean runtime and compiled cache were unavailable. The new manuscript, blueprint source, PDF, web output, graph and source identities were checked separately. GitHub CI is supplied but has not run on GitHub.
+The archived full build at proof checkpoint 1265 covered 1,382 project modules, 4,517 named theorem axiom audits and 973 evidence declaration signatures. The publication package preserves the corresponding Lean sources byte-for-byte. Subsequent title, archive and reference updates checked source identities and documentation; they did not run a new Lean build. See verification/ for the recorded evidence. A GitHub Actions workflow is supplied; its current run status should be checked in the repository’s Actions tab.
 
 Build the blueprint
 
@@ -345,14 +345,8 @@ scripts/: source, axiom, declaration and release checks.
 
 verification/: saved proof evidence and current packaging checks.
 
-Author action before publication
+Manuscript and reference notes
 
-REFERENCE_AUDIT_NOTES.md records the incorrect Landau–Page locator and a replacement citation; the manuscript is preserved for the author to apply that bibliographic edit.
+The exact conditional inputs are documented above and in the input catalogue. REFERENCE_AUDIT_NOTES.md records citation corrections and source-matching qualifications. AUTHOR_ACTIONS.tex supplies acknowledgement wording that accurately describes the conditional formalization.
 
-AUTHOR_ACTIONS.tex replaces the new acknowledgement's phrase “complete formalization” with an accurate statement of the conditional scope. The supplied manuscript files are preserved exactly, so this wording change has not been silently applied. The previous duplicate-display and missing-citation issues are resolved.
-
-No repository has been published and no new license is assigned by this package. Choose the desired license as author before licensing the public repository. The repository layout is inspired by the Lacey et al. Hua formalization; its mathematical text and code are not copied.
-
-Title and full-archive update
-
-The title is On the Distribution of Prime Squares and Its Applications. Only the title is changed in the current manuscript source; all 58 numbered result/definition bodies and all Lean proof files are unchanged. The compact PDF is the analogue of the current-paper part of the supplied 866-page Hua blueprint. That reference also contains an earlier draft and about 771 pages of Lean listings. Here the full Lean implementation is supplied as source files, and all unedited blueprint notes are included alongside the compact exposition. See the comparison note.
+The unedited blueprint archive preserves earlier titles, intermediate errors and historical status reports. Use the current paper map, input catalogue and verification record for present claims.
