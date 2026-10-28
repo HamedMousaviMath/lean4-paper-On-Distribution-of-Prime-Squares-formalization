@@ -1,0 +1,20 @@
+name: Lean verification
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+      - uses: leanprover/lean-action@v1
+      - name: Check proof sources
+        run: python3 scripts/check_source.py
+      - name: Audit all theorem axioms
+        run: python3 scripts/check_axioms.py
+      - name: Check blueprint targets and headline types
+        run: |
+          lake env lean scripts/CheckBlueprint.lean
+          lake env lean scripts/CheckHeadlines.lean
+      - name: Check publication identities and graph
+        run: python3 scripts/verify_release.py

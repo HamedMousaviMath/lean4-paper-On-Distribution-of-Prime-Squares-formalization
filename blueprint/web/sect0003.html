@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Arithmetic: quadratic sums and conductors</title>
+<link rel="next" href="sect0004.html" title="Improving: optimization and the main estimate" />
+<link rel="prev" href="sect0002.html" title="Independent inputs and their exact scope" />
+<link rel="up" href="index.html" title="On the Distribution of Prime Squares and Its Applications: compact blueprint" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+<link rel="stylesheet" href="styles/blueprint.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">On the Distribution of Prime Squares and Its Applications: compact blueprint</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref"></span> <span class="toc_entry">Purpose and verification boundary</span></a>
+ </li>
+<li class="">
+  <a href="sect0002.html"><span class="toc_ref">1</span> <span class="toc_entry">Independent inputs and their exact scope</span></a>
+ </li>
+<li class=" active current">
+  <a href="sect0003.html"><span class="toc_ref">2</span> <span class="toc_entry">Arithmetic: quadratic sums and conductors</span></a>
+ </li>
+<li class="">
+  <a href="sect0004.html"><span class="toc_ref">3</span> <span class="toc_entry">Improving: optimization and the main estimate</span></a>
+ </li>
+<li class="">
+  <a href="sect0005.html"><span class="toc_ref">4</span> <span class="toc_entry">Prime operators: approximation, low and high terms</span></a>
+ </li>
+<li class="">
+  <a href="sect0006.html"><span class="toc_ref">5</span> <span class="toc_entry">Stopping: local estimates and sparse domination</span></a>
+ </li>
+<li class="">
+  <a href="sect0007.html"><span class="toc_ref">6</span> <span class="toc_entry">Orlicz: quantitative IW and the three-family maximum</span></a>
+ </li>
+<li class="">
+  <a href="sect0008.html"><span class="toc_ref">7</span> <span class="toc_entry">Badness: arithmetic blocks and the persistent criterion</span></a>
+ </li>
+<li class="">
+  <a href="sect0009.html"><span class="toc_ref">8</span> <span class="toc_entry">Ergodic: transference and the two endpoint conclusions</span></a>
+ </li>
+<li class="">
+  <a href="sect0010.html"><span class="toc_ref">9</span> <span class="toc_entry">Goldbach arithmetic: reductions and the exceptional set</span></a>
+ </li>
+<li class="">
+  <a href="sect0011.html"><span class="toc_ref">10</span> <span class="toc_entry">Goldbach circle method: minor arcs, major arcs and completion</span></a>
+ </li>
+<li class="">
+  <a href="sect0012.html"><span class="toc_ref">11</span> <span class="toc_entry">Goldbach sieve: local densities, presieving and comparison</span></a>
+ </li>
+<li ><a href="dep_graph_document.html">Dependency graph</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="a0000000004">2 Arithmetic: quadratic sums and conductors</h1>
+<div class="definition_thmwrapper theorem-style-definition" id="QuadraticSums">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">2.1</span>
+    <span class="definition_thmtitle">Quadratic sums and progression coefficients</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0003.html#QuadraticSums">#</a>
+    
+    <a class="icon proof" href="sect0003.html#a0000000028"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.twistedSquareSum" class="lean_decl">PrimeSquares.twistedSquareSum</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.principalSquareSum" class="lean_decl">PrimeSquares.principalSquareSum</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.upsilon" class="lean_decl">PrimeSquares.upsilon</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  
+<p><b class="bfseries">Paper Actual quadratic exponential sums.</b> <i class="itshape">definition formalized.</i></p>
+<p>For a Dirichlet character \(\chi \) modulo \(q\), put </p>
+<div class="displaymath" id="a0000000029">
+  \begin{align}  \mathfrak s_\chi (a,q) =\frac1{\phi (q)}\sum _{r\in \mathbb A_q} \chi (r)e\left(-\frac{ar^2}{q}\right). \end{align}
+</div>
+<p> For the principal character we write </p>
+<div class="displaymath" id="a0000000030">
+  \begin{align}  \mathfrak s(a,q) =\frac1{\phi (q)}\sum _{r\in \mathbb A_q} e\left(-\frac{ar^2}{q}\right). \end{align}
+</div>
+<p><b class="bfseries">Paper Actual normalized progression sum Upsilon.</b> <i class="itshape">definition formalized.</i></p>
+<p>Let \(g=(q,y)\) and \((b,g)=1\). Define </p>
+<div class="displaymath" id="a0000000031">
+  \begin{align}  \Upsilon (a,q,b,y)=\frac{\phi (y)}{\phi ([y,q])} \sum _{\substack {r\in \mathbb A_q\\ \begin{bgroup} r\equiv b\pmod g
+
+\end{bgroup}}} e\left(-\frac{ar}{q}\right). \end{align}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000028">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof architecture
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>  Use actual finite sums over units, with characters extended by zero. Preserve the normalization by \(\phi (q)\) and the Fourier sign. All later local calculations refer to these definitions, rather than an abstract family of coefficients. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="cohen_identities">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">2.2</span>
+    <span class="lemma_thmtitle">Cohen identities and progression restriction</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0003.html#cohen_identities">#</a>
+    
+    <a class="icon proof" href="sect0003.html#a0000000032"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0003.html#QuadraticSums">Definition 2.1</a></li>
+          
+          <li><a href="sect0003.html#QuadraticSums">Definition 2.1</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.quadratic_cohen_identity" class="lean_decl">PrimeSquares.quadratic_cohen_identity</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.progression_cohen_identity_int" class="lean_decl">PrimeSquares.progression_cohen_identity_int</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  
+<p><b class="bfseries">Paper Lemma 3.1.</b> <i class="itshape">proved under source hypotheses.</i></p>
+<p>Let \(2^a\parallel q\). Then </p>
+<div class="displaymath" id="a0000000033">
+  \begin{align}  \sum _{r\in \mathbb A_q}c_q(n-r^2) =|\mu (q/2^a)| T_a(n) \prod _{\substack {p\mid q\\ \begin{bgroup} p{\gt}2
+
+\end{bgroup}}} \begin{cases}  p+1,& \left(\frac np\right)=1,\\ 1-p,& \left(\frac np\right)\ne 1, \end{cases}\end{align}
+</div>
+<p> where </p>
+<div class="displaymath" id="a0000000034">
+  \begin{align}  T_a(n)= \begin{cases}  1,& a=0,\\ (-1)^{n+1},& a=1,\\ 0,& a=2,3\text{ and }n\not\equiv 1\pmod{2^{a-1}},\\ \phi (2^a)c_{2^a}(n-1)=\pm \phi (2^a)^2, & a=2,3\text{ and }n\equiv 1\pmod{2^{a-1}},\\ 0,& a\geq 4. \end{cases}\end{align}
+</div>
+<p> Consequently, </p>
+<div class="displaymath" id="a0000000035">
+  \begin{align}  \left|\sum _{r\in \mathbb A_q}c_q(n-r^2)\right| \ll |\mu (q/2^a)|\prod _{p\mid q}(p+1). \end{align}
+</div>
+<p> Here \((\frac np)\) is the Legendre symbol, with value zero when \(p\mid n\). </p>
+<p><b class="bfseries">Paper Lemma 3.11.</b> <i class="itshape">proved under source hypotheses.</i></p>
+<p>Let \(g\mid q\) and \((b,g)=1\). Then </p>
+<div class="displaymath" id="a0000000036">
+  \begin{align}  \sum _{\substack {r\in \mathbb A_q\\ \begin{bgroup} r\equiv b\pmod g
+
+\end{bgroup}}}c_q(n-r) = \begin{cases}  0,& (g,q/g){\gt}1,\\ \mu (q/g)c_{q/g}(n)c_g(n-b),& (g,q/g)=1. \end{cases}\end{align}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000032">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof architecture
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>   Expand the Ramanujan sum and group by residue classes. Reduce to prime powers using the Chinese remainder theorem, retaining the shared-prime vanishing case. The proof includes the positive-modulus boundary and the actual local root counts; routine finite-sum rearrangements stay within this node. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="progression_euler_products">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">2.3</span>
+    <span class="lemma_thmtitle">Local factors and progression Euler products</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0003.html#progression_euler_products">#</a>
+    
+    <a class="icon proof" href="sect0003.html#a0000000037"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0003.html#cohen_identities">Lemma 2.2</a></li>
+          
+          <li><a href="sect0003.html#cohen_identities">Lemma 2.2</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.sum_upsilon_square_prime_factorization" class="lean_decl">PrimeSquares.sum_upsilon_square_prime_factorization</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.progression_euler_product_real" class="lean_decl">PrimeSquares.progression_euler_product_real</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.general_progression_euler_product_real" class="lean_decl">PrimeSquares.general_progression_euler_product_real</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  
+<p><b class="bfseries">Paper Lemma 3.12.</b> <i class="itshape">proved under source hypotheses.</i></p>
+<p>Let \(g=(q,y)\) and \((b,g)=1\). Then </p>
+<div class="displaymath" id="a0000000038">
+  \begin{align} & \frac{\phi (q)\phi ([y,q])}{\phi (y)} \sum _{a\in \mathbb A_q}\Upsilon (a,q,b,y) \mathfrak s(a,q)e\left(\frac{ax}{q}\right)\notag \\ & \qquad =\mu (q/g)\mathbf1_{(g,q/g)=1} \sum _{u\in \mathbb A_q}c_{q/g}(x-u^2)c_g(x-b-u^2). \end{align}
+</div>
+<p> In particular, the right-hand side vanishes unless \(q/g\) is square-free; if \((g,q/g)=1\), it factors over the prime powers dividing \(q\). </p>
+<p><b class="bfseries">Paper Lemma 3.14.</b> <i class="itshape">proved under source hypotheses.</i></p>
+<p>Let \(Q{\gt}2\), let \(k\geq 1\) be an integer, and let \(x,b\in \mathbb Z\) satisfy \((b,k)=1\). Then </p>
+<div class="displaymath" id="a0000000039">
+  \begin{align} & \sum _{P^+(q){\lt}Q}\sum _{a\in \mathbb A_q} \Upsilon (a,q,b,k)\mathfrak s(a,q)e(ax/q)\notag \\ & =\mathcal T_2 \prod _{\substack {2{\lt}p{\lt}Q\\ \begin{bgroup} p\mid k
+
+\\ \end{bgroup}\begin{bgroup} (\frac{x-b}{p})=1
+
+\end{bgroup}}} \left(1+\frac{p+1}{p-1}\right) \prod _{\substack {2{\lt}p{\lt}Q\\ \begin{bgroup} p\mid k
+
+\\ \end{bgroup}\begin{bgroup} (\frac{x-b}{p})\ne 1
+
+\end{bgroup}}}0 \prod _{\substack {2{\lt}p{\lt}Q\\ \begin{bgroup} p\nmid k
+
+\\ \end{bgroup}\begin{bgroup} (\frac{x}{p})=1
+
+\end{bgroup}}} \left(1-\frac{p+1}{(p-1)^2}\right) \prod _{\substack {2{\lt}p{\lt}Q\\ \begin{bgroup} p\nmid k
+
+\\ \end{bgroup}\begin{bgroup} (\frac{x}{p})\ne 1
+
+\end{bgroup}}} \left(1+\frac1{p-1}\right), \end{align}
+</div>
+<p> where, writing \(h=v_2(k)\), </p>
+<div class="displaymath" id="a0000000040">
+  \begin{align}  \mathcal T_2= \begin{cases}  1+(-1)^x,& h=0,\\ 2^{\min \{ h,3\} } \mathbf1_{\{ x-b\equiv 1\; (\mathrm{mod}\; 2^{\min \{ h,3\} })\} }, & h\geq 1. \end{cases}\end{align}
+</div>
+<p> Thus the product is zero if some odd prime \(p{\lt}Q\) dividing \(k\) satisfies \(\bigl(\frac{x-b}{p}\bigr)\ne 1\). </p>
+<p><b class="bfseries">Paper Corollary 3.16.</b> <i class="itshape">proved under source hypotheses.</i></p>
+<p>Let \(Q{\gt}2\), let \(k\geq 1\) be an integer, and let \(\ell ,n,b\in \mathbb Z\) satisfy \((b,k)=1\). Then </p>
+<div class="displaymath" id="a0000000041">
+  \begin{align} & \sum _{P^+(q){\lt}Q}\sum _{a\in \mathbb A_q} \Upsilon (a\ell ,q,b,k)\mathfrak s(a,q)e(an/q)\notag \\ & \qquad = \mathcal T_2(\ell ,k,n;b) \prod _{2{\lt}p{\lt}Q} \frac{p\phi ((p,k))}{(p-1)^2} \left|\left\{ (u,v)\in \mathbb A_p^2: \begin{array}{l} u^2+\ell v\equiv n\pmod p,\\ v\equiv b\pmod{(p,k)} \end{array}\right\} \right|, \end{align}
+</div>
+<p> where </p>
+<div class="displaymath" id="a0000000042">
+  \begin{align}  \mathcal T_2(\ell ,k,n;b) := 1+\sum _{\nu =1}^{3} \frac{\phi (k)}{\phi (2^\nu )\phi ([k,2^\nu ])} \sum _{\substack {u,v\in \mathbb A_{2^\nu }\\ \begin{bgroup} v\equiv b\; (\mathrm{mod}\, (2^\nu ,k))
+
+\end{bgroup}}} c_{2^\nu }(n-u^2-\ell v). \end{align}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000037">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof architecture
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>   Factor the normalized correlation and sum the local series. Treat odd primes dividing the progression modulus separately from those not dividing it. At \(2\), retain the truncated valuation \(\min (v_2(k),3)\) and the corresponding congruence indicator. The obstruction is only at primes in the displayed cutoff range. The multiplier version uses the actual residue counts. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="cohen_log_bound">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">2.4</span>
+    <span class="lemma_thmtitle">Uniform logarithmic bound</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0003.html#cohen_log_bound">#</a>
+    
+    <a class="icon proof" href="sect0003.html#a0000000043"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0003.html#cohen_identities">Lemma 2.2</a></li>
+          
+          <li><a href="sect0003.html#cohen_identities">Lemma 2.2</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.low_ramanujan_uniform_bound" class="lean_decl">PrimeSquares.low_ramanujan_uniform_bound</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  
+<p><b class="bfseries">Paper Lemma 3.20.</b> <i class="itshape">proved under source hypotheses.</i></p>
+<p>For \(Q\geq 3\) and every integer \(n\), </p>
+<div class="displaymath" id="a0000000044">
+  \begin{align}  \sum _{P^+(q){\lt}Q}\frac1{q\phi (q)} \left|\sum _{r\in \mathbb A_q}c_q(n-r^2)\right| \ll \log Q. \end{align}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000043">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof architecture
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>   Apply the local vanishing and prime-factor bounds before estimating the Euler product. An elementary prime-product estimate supplies uniformity for real \(Q\geq 3\), including integers where the local factor vanishes. No prime number theorem input is used for this node. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="gauss_bounds">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">2.5</span>
+    <span class="lemma_thmtitle">Principal and twisted quadratic Gauss bounds</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0003.html#gauss_bounds">#</a>
+    
+    <a class="icon proof" href="sect0003.html#a0000000045"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0003.html#QuadraticSums">Definition 2.1</a></li>
+          
+          <li><a href="sect0002.html#input_prime_distribution">Lemma 1.1</a></li>
+          
+          <li><a href="sect0003.html#QuadraticSums">Definition 2.1</a></li>
+          
+          <li><a href="sect0002.html#input_prime_distribution">Lemma 1.1</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.principalSquareSum_two_add_o_one" class="lean_decl">PrimeSquares.principalSquareSum_two_add_o_one</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.twistedSquareSum_uniform_bound_int" class="lean_decl">PrimeSquares.twistedSquareSum_uniform_bound_int</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  
+<p><b class="bfseries">Paper Lemma 3.21.</b> <i class="itshape">complete conditional implication.</i></p>
+<p>If \((a,q)=1\), then </p>
+<div class="displaymath" id="a0000000046">
+  \begin{align}  |\mathfrak s(a,q)| \leq q^{-1/2} \exp \left((2+o(1))\frac{(\log q)^{1/2}}{\log \log q}\right). \end{align}
+</div>
+<p> In particular, the right-hand side may be replaced by \(q^{-1/2}\exp (3(\log q)^{1/2}/\log \log q)\) for all sufficiently large \(q\). </p>
+<p><b class="bfseries">Paper Lemma 3.24.</b> <i class="itshape">proved under source hypotheses.</i></p>
+<p>Let \(\chi \) be a real Dirichlet character modulo \(q\), and let \((a,q)=1\). Then, for every \(\varepsilon {\gt}0\), </p>
+<div class="displaymath" id="a0000000047">
+  \begin{align}  |\mathfrak s_\chi (a,q)|\ll _\varepsilon q^{-1/2+\varepsilon }. \end{align}
+</div>
+<p> Equivalently, \( |\mathfrak s_\chi (a,q)|\ll q^{-1/2+o(1)}\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000045">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof architecture
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>   Use prime-power evaluations and multiplicativity for the character-twisted estimate. For the sharp principal bound, optimize the product of local losses and use the two explicit prime asymptotic limits. Keep the quantified eventual epsilon bound: the coefficient \(2+o(1)\) is not a fixed uniform value of \(2\). Only the principal asymptotic clause uses the external PNT input. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="conductor_refinement">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">2.6</span>
+    <span class="lemma_thmtitle">Conductor-sensitive exceptional arithmetic</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0003.html#conductor_refinement">#</a>
+    
+    <a class="icon proof" href="sect0003.html#a0000000048"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0003.html#gauss_bounds">Lemma 2.5</a></li>
+          
+          <li><a href="sect0003.html#progression_euler_products">Lemma 2.3</a></li>
+          
+          <li><a href="sect0003.html#gauss_bounds">Lemma 2.5</a></li>
+          
+          <li><a href="sect0003.html#progression_euler_products">Lemma 2.3</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.conductor_sensitive_refinement" class="lean_decl">PrimeSquares.conductor_sensitive_refinement</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  
+<p><b class="bfseries">Paper Lemma 3.27.</b> <i class="itshape">proved under source hypotheses.</i></p>
+<p>Let \(x\in \mathbb Z\). Let \(\chi _0\) be a primitive real character of conductor \(q_0\), and for each multiple \(q\) of \(q_0\) let \(\chi _q\) denote the character modulo \(q\) induced by \(\chi _0\). For \(0\leq j\leq 5\), let \(\chi _{2^jq_0}\) have the same meaning, and set </p>
+<div class="displaymath" id="a0000000049">
+  \[  \sigma _0:= \max _{0\leq j\leq 5} \sup _{a\in \mathbb A_{2^jq_0}} |\mathfrak s_{\chi _{2^jq_0}}(a,2^jq_0)|, \qquad \rho (d):=\prod _{p\mid d}(1-p^{-1/2})^{-1}.  \]
+</div>
+<p> There exists \(\mathcal B_0\geq 1\), depending only on \(q_0\), such that, for every \(q=q_0d\), </p>
+<div class="displaymath" id="a0000000050">
+  \begin{align}  \left| \sum _{a\in \mathbb A_q} \mathfrak s_{\chi _q}(a,q)e(ax/q) \right| & \ll \mathcal B_0\prod _{p\mid d}\frac{p+1}{p-1},\notag \\ |\mathfrak s_{\chi _q}(a,q)| & \ll \sigma _0d^{-1/2}\rho (d), \qquad \textup{ for } a\in \mathbb {A}_q\\ \sigma _0\mathcal B_0^{1/2}& \ll q_0^{-1/25}. \end{align}
+</div>
+<p> In particular, </p>
+<div class="displaymath" id="a0000000051">
+  \[  (1+\log q_0)\sigma _0\mathcal B_0^{1/2}\ll 1.  \]
+</div>
+<p> Moreover, if \(a\mapsto \mathfrak s_{\chi _q}(a,q)\) is not identically zero, then </p>
+<div class="displaymath" id="a0000000052">
+  \begin{align}  d=2^\nu d_1,\qquad 0\leq \nu \leq 5,\qquad \mu ^2(d_1)=1,\qquad (d_1,2q_0)=1. \end{align}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000048">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof architecture
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>   Write each induced character through its primitive conductor. The support and coefficient bounds must retain this conductor before summing over the remaining factor of the denominator. Derive the three displayed estimates and logarithmic consequence together; the hypothesis is strengthened to real base characters, so it covers the exceptional character selected later. </p>
+
+  </div>
+</div>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <a href="sect0002.html" title="Independent inputs and their exact scope"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="index.html" title="On the Distribution of Prime Squares and Its Applications: compact blueprint"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="sect0004.html" title="Improving: optimization and the main estimate"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+</body>
+</html>

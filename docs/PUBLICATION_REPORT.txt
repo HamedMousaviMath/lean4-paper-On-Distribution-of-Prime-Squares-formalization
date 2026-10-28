@@ -1,0 +1,74 @@
+Publication package 1266 — 28 October 2026
+
+The compact blueprint is 26 pages including the contents and verification boundary.
+It has 52 nodes: 39 mathematical groups and 13 groups of independent inputs.
+All 54 numbered paper claims and 4 definitions map to these nodes. The web DAG has
+69 edges after transitive reduction and the same dependency reachability as the
+curated 131-edge graph. It links 102 selected existing Lean declarations.
+
+The older notes were not a single current PDF: 54 topic files contained 44,033
+whitespace-delimited words/tokens, and 1,224 checkpoint notes contained 421,870.
+The compact blueprint removes that development narrative and routine
+micro-steps. The full unedited notes are now included in blueprint/full_unedited/. The checked Lean implementation remains unchanged, including its
+1,382 modules; this release does not claim to have refactored those modules.
+
+Current upload review:
+- Both requested fixes are present: the duplicate display is removed and Ghosh1981 exists.
+- All 54 numbered statement bodies and all 4 definitions match the checked source,
+  ignoring whitespace. There are no duplicate labels or unresolved internal refs.
+- All 59 current citation keys resolve in the supplied bibliography.
+- New preliminary exposition, bibliography references and the acknowledgement are
+  distinguished from the unchanged numbered targets. The recent Siegel-zero
+  discussion is not a theorem integrated into this Lean project.
+- Replace the acknowledgement's unqualified 'complete formalization' wording
+  with docs/AUTHOR_ACTIONS.tex. The original submitted manuscript/PDF are preserved byte-for-byte in
+  paper/archive/. The current manuscript source has only the authorized title
+  change, and its PDF is retypeset under that title. The bibliography is unchanged.
+
+Verification:
+- Exact hashes of all 1,384 existing Lean proof/root/audit files match checkpoint 1265.
+- The saved 4,517 theorem axiom audit results were revalidated against the source
+  declarations and the standard-axiom whitelist.
+- All 102 blueprint targets resolve in the unchanged Lean sources; the package
+  includes CheckBlueprint.lean for a fresh kernel declaration check after rebuilding.
+- No fresh Lean execution occurred in release 1266, because the temporary runtime
+  and compiled cache were unavailable. The full fresh build and 973 evidence
+  signature checks belong to checkpoint 1265, whose evidence is included.
+- The new PDF and leanblueprint web sources compile. Every dependency resolves;
+  the graph is acyclic. The final PDF has no undefined references, overfull boxes
+  or off-page text. All pages were visually reviewed in a contact sheet and
+  selected pages at full resolution.
+- CI and standard local build instructions are supplied. CI has not run on GitHub;
+  the package does not claim independent Comparator certification.
+
+Proof scope is unchanged: 22 proved numbered results under source hypotheses,
+31 complete conditional implications, and one quoted external theorem. Independent
+inputs and exact formulation bridges remain unproved. Combining their descriptions
+into 13 public nodes does not discharge or reduce those assumptions.
+
+Deliverables:
+PrimeSquares_Publication_1266.zip — full repository-ready source package, supplied
+paper files, compact PDF/web blueprint, maps, assumptions, reproducible checks,
+prior proof evidence and current packaging report.
+PrimeSquares_Compact_Blueprint.pdf — the 26-page reading copy.
+PrimeSquares_Blueprint_Sources_1266.zip — compact LaTeX and web sources/configuration.
+
+Title/archive revision:
+- The current title is On the Distribution of Prime Squares and Its Applications.
+- All 1,303 original blueprint artifacts are copied byte-for-byte, including
+  54 topic notes, 1,224 checkpoint notes and 7 batch summaries, plus metadata and
+  legacy files. The new INDEX.md is a separate navigation aid.
+- A second reader independently checked every archived size/hash, all index
+  links and the title-only manuscript source change.
+- Historical errors, former titles and intermediate status claims remain
+  unedited. They do not override the current claims, input catalogue or audits.
+- The supplied Hua PDF has 866 pages: about 25 pages for the current paper,
+  an earlier draft and approximately 771 pages of Lean source listings.
+  Our 26-page compact PDF is the comparable current-paper exposition; all Lean
+  sources are present in the repository, and the historical exposition is now
+  included as source notes. No combined full-notes PDF page count is claimed.
+- Both current PDFs and the web blueprint are rebuilt. The compact PDF remains
+  26 pages and the manuscript PDF remains 98 pages. Equation label numbers match
+  the prior manuscript exactly; only the source title changed.
+
+No repository has been published and no new license is assigned.

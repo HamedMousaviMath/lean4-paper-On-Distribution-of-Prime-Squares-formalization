@@ -1,0 +1,75 @@
+{
+  "checkpoint": 1265,
+  "source_file": "sources/updates/PrimeSquares_User_2026_10_28.tex",
+  "source_sha256": "a2cddab85d352bbe622c13e7e23c3f6842cdb9dcead8b14f15684cbeb7d61dc4",
+  "all_declared_theorem_like_environment_types_checked": true,
+  "environment_counts": {
+    "corollary": 6,
+    "definition": 4,
+    "lemma": 32,
+    "proposition": 8,
+    "theorem": 8
+  },
+  "all_58_claims_and_definitions_mapped_exactly_once": true,
+  "numbered_claim_status_counts": {
+    "conditional": 31,
+    "proved": 22,
+    "external_candidate": 1
+  },
+  "section_status_counts": {
+    "1": {
+      "conditional": 4
+    },
+    "3": {
+      "proved": 8,
+      "conditional": 1
+    },
+    "4": {
+      "proved": 2,
+      "conditional": 1
+    },
+    "5": {
+      "proved": 2,
+      "conditional": 1
+    },
+    "6": {
+      "conditional": 6
+    },
+    "7": {
+      "conditional": 7
+    },
+    "8": {
+      "conditional": 2,
+      "external_candidate": 1
+    },
+    "9": {
+      "proved": 4,
+      "conditional": 5
+    },
+    "10": {
+      "conditional": 2,
+      "proved": 3
+    },
+    "11": {
+      "proved": 3,
+      "conditional": 2
+    }
+  },
+  "open_internal_numbered_endpoints": [],
+  "current_evidence_declaration_types_checked_by_Lean": 973,
+  "declaration_types_log_sha256": "42fc4c035b6eaa12b1271bdccfc02d243da5f6bc717aff9d2874b971fc8f14e1",
+  "finite_signed_maximal_input_discharged_in_four_public_exports": true,
+  "primitive_criterion_discharged_in_section9_exports": true,
+  "smoothing_seed_constructed_internally": true,
+  "manuscript_replacement_pending_verification": [],
+  "user_manuscript_edits_confirmed": true,
+  "pending_cosmetic_label_counts": {
+    "e:integratedW10": 2
+  },
+  "internal_reference_targets_resolve": true,
+  "cited_keys_resolve_in_reviewed_bibliography": true,
+  "user_local_bibliography_supplied": false,
+  "new_mathematical_proofs_awarded_by_this_audit": 0,
+  "scope": "Reviewed corrected numbered targets and definitions. Independent general inputs and their formulation bridges remain unproved; no claim is made for all stronger unnumbered alternative-route assertions.",
+  "checker_sha256": "ea013d67da7cbff9aeabdb775c7f92ad6f74af54af1b6dce5fb116779923ebbe"
+}

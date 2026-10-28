@@ -1,0 +1,1934 @@
+\section*{Purpose and verification boundary}
+This is the compact public blueprint for Hamed Mousavi's
+\emph{On the Distribution of Prime Squares and Its Applications}.
+It is a companion to the supplied manuscript, not a new statement of the
+independent analytic theorems. All 54 numbered claims and four definitions
+are accounted for in 52 graph nodes: 39 mathematical groups and 13 independent
+input groups. Closely related identities and immediate consequences share a
+node. No node is devoted only to simplification, linear arithmetic or routine
+algebra.
+
+The Lean implementation is unchanged from proof checkpoint 1265.
+Its recorded fresh build covered 1,382 project modules, 4,517 named theorem
+axiom audits and 973 evidence declaration signatures. Release 1266 is a
+source reconciliation and exposition release, not a new proof checkpoint.
+The numbered ledger has 22 proved results under their source hypotheses,
+31 complete conditional implications and one quoted external theorem;
+all four definitions are formalized.
+
+\textbf{Conditional means conditional.}
+The theorem statements below are read under the independent inputs linked
+in their dependency nodes. These inputs are explicit Lean hypotheses, not
+new mathematical axioms. Kernel axiom audits therefore do not establish
+their truth. The exact published-to-interface bridges, including some
+normalizations, globalization and full-domain formulations, remain external.
+The separate input catalogue gives the complete boundary; a group here is
+not a claim that it is one single published theorem.
+
+\textbf{Reading the graph.}
+Milestones depend on technical nodes, which depend on essential definitions
+and external inputs. An edge is a curated mathematical dependency, not an
+exhaustive traversal of a Lean proof term. The web graph is a DAG with shared
+lemmas, rather than a tree with duplicate copies. Every node has an explicit
+\texttt{\string\uses} list and a following explanation carrying
+\texttt{\string\proves}. External nodes deliberately have no proof-completion
+marker. For conditional nodes, completion refers to the implication under
+those hypotheses. Full statement-to-declaration evidence is in
+\texttt{docs/PAPER\_MAP.json}.
+
+\textbf{Notation and references.}
+Use the conventions and surrounding hypotheses of the supplied manuscript.
+In particular $e(t)=e^{2\pi it}$, $\mathbb A_q=(\mathbb Z/q\mathbb Z)^\times$,
+and $\Lambda$ is the von Mangoldt function. Formula and section references
+inside the reproduced statements refer to the paper's current numbering;
+blueprint node numbers have their own counter. Source statements are retained
+verbatim apart from labels, cross-reference rendering and enumeration style.
+Groups may contain several statements with different external requirements;
+the statement map retains their individual status. No source label or
+existing Lean declaration has been renamed.
+
+\textbf{Main routes.}
+Theorem 1.1 follows from the arithmetic estimates, fixed-scale prime
+approximation and abstract improving theorem, together with the ordinary-square
+input. Theorem 1.3 additionally needs the high maximum and stopping recursion.
+The quantitative IW route yields Theorem 7.2, its corollaries and Theorem 1.5(ii).
+The arithmetic badness route yields Theorem 1.5(i), without the optional full
+Granville--Kurlberg spacing theorem. The Goldbach route combines the circle
+method, two-range sieve and strict positivity comparison.
+
+\textbf{Implementation policy.}
+Retain the small Lean lemmas used by automation, but keep them out of the
+public graph. The existing namespace is \texttt{PrimeSquares}; section titles
+are subject areas, not claims that new Lean subnamespaces have been created.
+The module index lists the actual source modules for every displayed target.
+
+\section{Independent inputs and their exact scope}
+
+\begin{lemma}[PNT, compatible progressions and Page data]
+\label{input_prime_distribution}
+\uses{}
+\lean{PrimeSquares.PrimeAsymptoticInputs,PrimeSquares.PagePrimeSquareDistributionInputs,PrimeSquares.RawPageUniquenessInput,PrimeSquares.UniformPageProgressionInputs,PrimeSquares.RawFixedPrimeProgressionFrequencyInput}
+\textbf{External input; no proof claimed.} Assume the prime asymptotic limits and the explicitly quantified progression estimates, with compatible optional primitive-character zero data. Page uniqueness is a separate general input. Fixed-progression prime frequencies are used for badness. The existence, analytic continuation and normalization bridges of these exact predicates remain unproved.
+\end{lemma}
+\begin{proof}[Boundary and application]
+\proves{input_prime_distribution}
+\uses{}
+This node records an unproved interface, not a proof. See the exact predicates in the displayed Lean declarations and the full input catalogue. The downstream nodes verify the paper-specific applicability and deductions.
+\end{proof}
+
+\begin{lemma}[Raw quadratic exponential-sum estimates]
+\label{input_quadratic_sums}
+\uses{}
+\lean{PrimeSquares.RawQuadraticWeylApproximationInput}
+\textbf{External input; no proof claimed.} Assume the compatible Ren and Ghosh prime quadratic estimates, and separately the general initial Weyl approximation for ordinary squares. Rational selection, phase conventions and published-to-interface bridges are part of this external boundary. The paper-specific minor estimates and ordinary-square maximal application are proved downstream.
+\end{lemma}
+\begin{proof}[Boundary and application]
+\proves{input_quadratic_sums}
+\uses{}
+This node records an unproved interface, not a proof. See the exact predicates in the displayed Lean declarations and the full input catalogue. The downstream nodes verify the paper-specific applicability and deductions.
+\end{proof}
+
+\begin{lemma}[Ordinary-square decomposition and stopping estimates]
+\label{input_ordinary_squares}
+\uses{}
+\lean{PrimeSquares.FullSquareDecompositionInput,PrimeSquares.OrdinarySquareStoppingInput}
+\textbf{External input; no proof claimed.} Assume the global fixed-scale ordinary-square decomposition and, where used, the stronger local stopping estimates. Their analytic proofs, globalization and exact normalization/support bridges remain external. Spatial reflection between $x+n^2$ and $x-n^2$, with the same constants, is proved internally.
+\end{lemma}
+\begin{proof}[Boundary and application]
+\proves{input_ordinary_squares}
+\uses{}
+This node records an unproved interface, not a proof. See the exact predicates in the displayed Lean declarations and the full input catalogue. The downstream nodes verify the paper-specific applicability and deductions.
+\end{proof}
+
+\begin{lemma}[Smooth multifrequency estimates]
+\label{input_multifrequency}
+\uses{}
+\lean{PrimeSquares.SmoothCircleBourgainInput,PrimeSquares.RationalSmoothCircleInput}
+\textbf{External input; no proof claimed.} Assume the general smooth circle multifrequency bound and its distinct rational-period refinement. The fixed bump, transference and normalization are included in the exact predicates. Actual annular kernels, arithmetic coefficients, variable starting scales and denominator truncations are proved applications, not fields of these inputs.
+\end{lemma}
+\begin{proof}[Boundary and application]
+\proves{input_multifrequency}
+\uses{}
+This node records an unproved interface, not a proof. See the exact predicates in the displayed Lean declarations and the full input catalogue. The downstream nodes verify the paper-specific applicability and deductions.
+\end{proof}
+
+\begin{lemma}[IW construction, multipliers and sampling]
+\label{input_iw_sampling}
+\uses{}
+\lean{PrimeSquares.RawTaoArcConstructionInput,PrimeSquares.RawFullAdelicIWInput,PrimeSquares.RawFullMajorArcSamplingInput,PrimeSquares.RawFullShannonInput}
+\textbf{External input; no proof claimed.} Assume the stated quantitative construction, multiplier, major-arc sampling and Shannon interfaces, including the full-domain forms needed by the source. Their rough-symbol, finite-quotient and full-class realization bridges remain external. The concrete source parameters and operator identifications are checked internally.
+\end{lemma}
+\begin{proof}[Boundary and application]
+\proves{input_iw_sampling}
+\uses{}
+This node records an unproved interface, not a proof. See the exact predicates in the displayed Lean declarations and the full input catalogue. The downstream nodes verify the paper-specific applicability and deductions.
+\end{proof}
+
+\begin{lemma}[General real-variable and prime maximal inputs]
+\label{input_real_variable}
+\uses{}
+\lean{PrimeSquares.RawFullOneSidedHLInput,PrimeSquares.RawFullScalarHormanderInput,PrimeSquares.IndependentPrimeMaximalInput}
+\textbf{External input; no proof claimed.} Assume the general one-sided maximal, scalar Hormander, Young and interpolation statements in the exact domains used, and the complementary-exponent prime polynomial maximal input. The finite signed maximal inequality has been proved internally at constant $6$ and is not an assumption. All annular applicability checks remain internal.
+\end{lemma}
+\begin{proof}[Boundary and application]
+\proves{input_real_variable}
+\uses{}
+This node records an unproved interface, not a proof. See the exact predicates in the displayed Lean declarations and the full input catalogue. The downstream nodes verify the paper-specific applicability and deductions.
+\end{proof}
+
+\begin{lemma}[Transference and bounded-class convergence]
+\label{input_ergodic}
+\uses{}
+\lean{PrimeSquares.RawCalderonStrongInput,PrimeSquares.RawCalderonModularInput,PrimeSquares.RawBoundedSquarePointwiseInput}
+\textbf{External input; no proof claimed.} Assume general strong and modular transference for finite positive convolution families and bounded-class square/prime-square pointwise convergence. Their exact action, gauge and normalization bridges remain external. The unbounded Orlicz extension and enumerated-prime identifications are proved in the project.
+\end{lemma}
+\begin{proof}[Boundary and application]
+\proves{input_ergodic}
+\uses{}
+This node records an unproved interface, not a proof. See the exact predicates in the displayed Lean declarations and the full input catalogue. The downstream nodes verify the paper-specific applicability and deductions.
+\end{proof}
+
+\begin{lemma}[General badness and maximal principles]
+\label{input_badness}
+\uses{}
+\lean{PrimeSquares.RawOriginalLaVictoireInput,PrimeSquares.RawSawyerMaximalInput,PrimeSquares.RawConzeMaximalInput}
+\textbf{External input; no proof claimed.} Assume the original general LaVictoire criterion, Sawyer maximal principle and Conze transfer principle, with their recorded cutoff and probability conventions. Their own proofs and published-form bridges remain external. The persistent criterion for the present paper and its prime-square arithmetic are deductions.
+\end{lemma}
+\begin{proof}[Boundary and application]
+\proves{input_badness}
+\uses{}
+This node records an unproved interface, not a proof. See the exact predicates in the displayed Lean declarations and the full input catalogue. The downstream nodes verify the paper-specific applicability and deductions.
+\end{proof}
+
+\begin{lemma}[Split quadratic Weil bound]
+\label{input_weil}
+\uses{}
+\lean{PrimeSquares.RawSplitQuadraticWeilInput}
+\textbf{External input; no proof claimed.} Assume the weakened quadratic character-sum bound for arbitrary nonempty sets of distinct linear factors over odd prime fields. No local correlation, moment, spacing or badness conclusion is built into this input.
+\end{lemma}
+\begin{proof}[Boundary and application]
+\proves{input_weil}
+\uses{}
+This node records an unproved interface, not a proof. See the exact predicates in the displayed Lean declarations and the full input catalogue. The downstream nodes verify the paper-specific applicability and deductions.
+\end{proof}
+
+\begin{lemma}[Optional Granville--Kurlberg spacing theorem]
+\label{input_gk}
+\uses{quadratic_correlations}
+\lean{PrimeSquares.RawGranvilleKurlbergInput}
+\textbf{External input; no proof claimed.} Assume the general CRT-family theorem taking local correlation and subpower hypotheses to joint cyclic Poisson gap limits. Its proof and exact cyclic joint bridge remain external. This quoted theorem is accounted for separately and is not used by Theorem 1.5(i).
+\par\medskip\noindent\textbf{Paper Theorem 8.6.} \textit{quoted external theorem.}\par
+For each odd prime $p$, let $\Omega_p\subset\mathbb Z/p\mathbb Z$, put
+$r_p=|\Omega_p|/p$ and $s_p=r_p^{-1}$, and define $\Omega_q$ from the
+$\Omega_p$, for squarefree $q$, by the Chinese remainder theorem.  Suppose
+that, for every fixed $k\geq1$ and all distinct
+$0,h_1,\ldots,h_{k-1}\pmod p$,
+\begin{align}
+ N_k(\mathbf h,\Omega_p)
+ &:=\big|\{t\in \mathbb{Z}/p\mathbb{Z}:t,t+h_1,\ldots,t+h_{k-1}\in\Omega_p\}\big|=r_p^kp\big(1+O_k((1-r_p)p^{-c})\big)             
+\end{align}
+for some $c>0$, and suppose that $s_p=p^{o(1)}$.  Then the normalized spacings
+of $\Omega_q$ are Poisson distributed as $s_q=q/|\Omega_q|\to\infty$.
+In particular, if the elements of $\Omega_q$ are listed cyclically and
+$F_q(\theta)$ is the proportion of normalized gaps exceeding $\theta$, then
+$F_q(\theta)\to e^{-\theta}$ for every $\theta>0$.
+\end{lemma}
+\begin{proof}[Boundary and application]
+\proves{input_gk}
+\uses{quadratic_correlations}
+This node records an unproved interface, not a proof. See the exact predicates in the displayed Lean declarations and the full input catalogue. The unit-square application uses the correlation node, while the general spacing theorem remains external.
+\end{proof}
+
+\begin{lemma}[Ordinary prime-count Siegel--Walfisz and BV]
+\label{input_sw_bv}
+\uses{}
+\lean{PrimeSquares.RawPrimeSiegelWalfiszInput,PrimeSquares.RawPrimeBombieriVinogradovInput}
+\textbf{External input; no proof claimed.} Assume uniform ordinary prime counts with endpoint maxima: Siegel--Walfisz in logarithmic moduli and unweighted Bombieri--Vinogradov to its square-root level. Weighted oscillatory sums and the least-common-multiple reindexing are derived in the project. No own-paper circle-method conclusion is assumed.
+\end{lemma}
+\begin{proof}[Boundary and application]
+\proves{input_sw_bv}
+\uses{}
+This node records an unproved interface, not a proof. See the exact predicates in the displayed Lean declarations and the full input catalogue. The downstream nodes verify the paper-specific applicability and deductions.
+\end{proof}
+
+\begin{lemma}[General one-stage sieve and classical sieve functions]
+\label{input_sieve}
+\uses{}
+\lean{PrimeSquares.GoldbachClassicalFundamentalInput,PrimeSquares.GoldbachClassicalCoefficientInput}
+\textbf{External input; no proof claimed.} Assume the general fundamental and coefficient forms of the one-stage Rosser--Iwaniec sieve with the precise refined dimension condition. Retain the classical-function continuity and evaluation information required by the applications. Weights are chosen before the supported densities. The signed two-stage combination and its uniform error limit are proved internally.
+\end{lemma}
+\begin{proof}[Boundary and application]
+\proves{input_sieve}
+\uses{}
+This node records an unproved interface, not a proof. See the exact predicates in the displayed Lean declarations and the full input catalogue. The downstream nodes verify the paper-specific applicability and deductions.
+\end{proof}
+
+\begin{lemma}[Interval Mertens and effective half-dimensional means]
+\label{input_mertens_mean}
+\uses{}
+\lean{PrimeSquares.GoldbachClassicalIntervalMertens,PrimeSquares.ClassicalHalfMeanValueInput,PrimeSquares.ClassicalPrimeLogMertens,PrimeSquares.ClassicalPrimeMertensRatios,PrimeSquares.GoldbachClassicalFullIntervalMertens}
+\textbf{External input; no proof claimed.} Assume the explicitly quantified general interval Euler-product bounds, prime logarithmic and product Mertens estimates, and effective mean theorem. The source-dependent density checks, weighted sum, main-term comparison and uniform errors are proved deductions. The retired weighted-prime-count planning placeholder is not an active hypothesis.
+\end{lemma}
+\begin{proof}[Boundary and application]
+\proves{input_mertens_mean}
+\uses{}
+This node records an unproved interface, not a proof. See the exact predicates in the displayed Lean declarations and the full input catalogue. The downstream nodes verify the paper-specific applicability and deductions.
+\end{proof}
+
+\section{Arithmetic: quadratic sums and conductors}
+
+\begin{definition}[Quadratic sums and progression coefficients]
+\label{QuadraticSums}
+\uses{}
+\lean{PrimeSquares.twistedSquareSum,PrimeSquares.principalSquareSum,PrimeSquares.upsilon}
+\leanok
+\par\medskip\noindent\textbf{Paper Actual quadratic exponential sums.} \textit{definition formalized.}\par
+For a Dirichlet character $\chi$ modulo $q$, put
+\begin{align}
+ \mathfrak s_\chi(a,q)
+ =\frac1{\phi(q)}\sum_{r\in\mathbb A_q}
+ \chi(r)e\left(-\frac{ar^2}{q}\right).
+\end{align}
+For the principal character we write
+\begin{align}
+ \mathfrak s(a,q)
+ =\frac1{\phi(q)}\sum_{r\in\mathbb A_q}
+ e\left(-\frac{ar^2}{q}\right).
+\end{align}
+\par\medskip\noindent\textbf{Paper Actual normalized progression sum Upsilon.} \textit{definition formalized.}\par
+Let $g=(q,y)$ and $(b,g)=1$.  Define
+\begin{align}
+ \Upsilon(a,q,b,y)=\frac{\phi(y)}{\phi([y,q])}
+ \sum_{\substack{r\in\mathbb A_q\\r\equiv b\pmod g}}
+ e\left(-\frac{ar}{q}\right).
+\end{align}
+\end{definition}
+\begin{proof}[Proof architecture]
+\proves{QuadraticSums}
+\uses{}
+\leanok
+Use actual finite sums over units, with characters extended by zero. Preserve the normalization by $\phi(q)$ and the Fourier sign. All later local calculations refer to these definitions, rather than an abstract family of coefficients.
+\end{proof}
+
+\begin{lemma}[Cohen identities and progression restriction]
+\label{cohen_identities}
+\uses{QuadraticSums}
+\lean{PrimeSquares.quadratic_cohen_identity,PrimeSquares.progression_cohen_identity_int}
+\leanok
+\par\medskip\noindent\textbf{Paper Lemma 3.1.} \textit{proved under source hypotheses.}\par
+Let $2^a\parallel q$.  Then
+\begin{align}
+ \sum_{r\in\mathbb A_q}c_q(n-r^2)
+ =|\mu(q/2^a)| T_a(n)
+ \prod_{\substack{p\mid q\\p>2}}
+ \begin{cases}
+  p+1,&\left(\frac np\right)=1,\\
+  1-p,&\left(\frac np\right)\ne1,
+ \end{cases}
+\end{align}
+where
+\begin{align}
+ T_a(n)=
+ \begin{cases}
+  1,&a=0,\\
+  (-1)^{n+1},&a=1,\\
+  0,&a=2,3\text{ and }n\not\equiv1\pmod{2^{a-1}},\\
+  \phi(2^a)c_{2^a}(n-1)=\pm\phi(2^a)^2,
+    &a=2,3\text{ and }n\equiv1\pmod{2^{a-1}},\\
+  0,&a\geq4.
+ \end{cases}
+\end{align}
+Consequently,
+\begin{align}
+ \left|\sum_{r\in\mathbb A_q}c_q(n-r^2)\right|
+ \ll |\mu(q/2^a)|\prod_{p\mid q}(p+1).
+\end{align}
+Here $(\frac np)$ is the Legendre symbol, with value zero when $p\mid n$.
+\par\medskip\noindent\textbf{Paper Lemma 3.11.} \textit{proved under source hypotheses.}\par
+Let $g\mid q$ and $(b,g)=1$. Then
+\begin{align}
+ \sum_{\substack{r\in\mathbb A_q\\r\equiv b\pmod g}}c_q(n-r)
+ =
+ \begin{cases}
+  0,&(g,q/g)>1,\\
+  \mu(q/g)c_{q/g}(n)c_g(n-b),&(g,q/g)=1.
+ \end{cases}
+\end{align}
+\end{lemma}
+\begin{proof}[Proof architecture]
+\proves{cohen_identities}
+\uses{QuadraticSums}
+\leanok
+Expand the Ramanujan sum and group by residue classes. Reduce to prime powers using the Chinese remainder theorem, retaining the shared-prime vanishing case. The proof includes the positive-modulus boundary and the actual local root counts; routine finite-sum rearrangements stay within this node.
+\end{proof}
+
+\begin{lemma}[Local factors and progression Euler products]
+\label{progression_euler_products}
+\uses{cohen_identities}
+\lean{PrimeSquares.sum_upsilon_square_prime_factorization,PrimeSquares.progression_euler_product_real,PrimeSquares.general_progression_euler_product_real}
+\leanok
+\par\medskip\noindent\textbf{Paper Lemma 3.12.} \textit{proved under source hypotheses.}\par
+Let $g=(q,y)$ and $(b,g)=1$.  Then
+\begin{align}
+ &\frac{\phi(q)\phi([y,q])}{\phi(y)}
+ \sum_{a\in\mathbb A_q}\Upsilon(a,q,b,y)
+ \mathfrak s(a,q)e\left(\frac{ax}{q}\right)\notag\\
+ &\qquad=\mu(q/g)\mathbf1_{(g,q/g)=1}
+ \sum_{u\in\mathbb A_q}c_{q/g}(x-u^2)c_g(x-b-u^2).
+\end{align}
+In particular, the right-hand side vanishes unless $q/g$ is square-free;
+if $(g,q/g)=1$, it factors over the prime powers dividing $q$.
+\par\medskip\noindent\textbf{Paper Lemma 3.14.} \textit{proved under source hypotheses.}\par
+Let $Q>2$, let $k\geq1$ be an integer, and let
+$x,b\in\mathbb Z$ satisfy $(b,k)=1$.
+Then
+\begin{align}
+ &\sum_{P^+(q)<Q}\sum_{a\in\mathbb A_q}
+ \Upsilon(a,q,b,k)\mathfrak s(a,q)e(ax/q)\notag\\
+ &=\mathcal T_2
+ \prod_{\substack{2<p<Q\\p\mid k\\(\frac{x-b}{p})=1}}
+ \left(1+\frac{p+1}{p-1}\right)
+ \prod_{\substack{2<p<Q\\p\mid k\\(\frac{x-b}{p})\ne1}}0 
+ \prod_{\substack{2<p<Q\\p\nmid k\\(\frac{x}{p})=1}}
+ \left(1-\frac{p+1}{(p-1)^2}\right)
+ \prod_{\substack{2<p<Q\\p\nmid k\\(\frac{x}{p})\ne1}}
+ \left(1+\frac1{p-1}\right),
+\end{align}
+where, writing \(h=v_2(k)\),
+\begin{align}
+ \mathcal T_2=
+ \begin{cases}
+  1+(-1)^x,&h=0,\\
+  2^{\min\{h,3\}}
+  \mathbf1_{\{x-b\equiv1\;(\mathrm{mod}\;2^{\min\{h,3\}})\}},
+  &h\geq1.
+ \end{cases}
+\end{align}
+Thus the product is zero if some odd prime $p<Q$ dividing $k$
+satisfies $\bigl(\frac{x-b}{p}\bigr)\ne1$.
+\par\medskip\noindent\textbf{Paper Corollary 3.16.} \textit{proved under source hypotheses.}\par
+Let $Q>2$, let $k\geq1$ be an integer, and let $\ell,n,b\in\mathbb Z$ satisfy $(b,k)=1$. Then
+\begin{align}
+ &\sum_{P^+(q)<Q}\sum_{a\in\mathbb A_q}
+ \Upsilon(a\ell,q,b,k)\mathfrak s(a,q)e(an/q)\notag\\
+ &\qquad=
+ \mathcal T_2(\ell,k,n;b)
+ \prod_{2<p<Q}
+ \frac{p\phi((p,k))}{(p-1)^2}
+ \left|\left\{(u,v)\in\mathbb A_p^2:
+ \begin{array}{l}
+  u^2+\ell v\equiv n\pmod p,\\
+  v\equiv b\pmod{(p,k)}
+ \end{array}\right\}\right|,
+\end{align}
+where 
+\begin{align}
+ \mathcal T_2(\ell,k,n;b)
+ :=
+ 1+\sum_{\nu=1}^{3}
+ \frac{\phi(k)}
+ {\phi(2^\nu)\phi([k,2^\nu])}
+ \sum_{\substack{u,v\in\mathbb A_{2^\nu}\\
+ v\equiv b\;(\mathrm{mod}\,(2^\nu,k))}}
+ c_{2^\nu}(n-u^2-\ell v).
+\end{align}
+\end{lemma}
+\begin{proof}[Proof architecture]
+\proves{progression_euler_products}
+\uses{cohen_identities}
+\leanok
+Factor the normalized correlation and sum the local series. Treat odd primes dividing the progression modulus separately from those not dividing it. At $2$, retain the truncated valuation $\min(v_2(k),3)$ and the corresponding congruence indicator. The obstruction is only at primes in the displayed cutoff range. The multiplier version uses the actual residue counts.
+\end{proof}
+
+\begin{lemma}[Uniform logarithmic bound]
+\label{cohen_log_bound}
+\uses{cohen_identities}
+\lean{PrimeSquares.low_ramanujan_uniform_bound}
+\leanok
+\par\medskip\noindent\textbf{Paper Lemma 3.20.} \textit{proved under source hypotheses.}\par
+For $Q\geq3$ and every integer $n$,
+\begin{align}
+ \sum_{P^+(q)<Q}\frac1{q\phi(q)}
+ \left|\sum_{r\in\mathbb A_q}c_q(n-r^2)\right|
+ \ll\log Q.
+\end{align}
+\end{lemma}
+\begin{proof}[Proof architecture]
+\proves{cohen_log_bound}
+\uses{cohen_identities}
+\leanok
+Apply the local vanishing and prime-factor bounds before estimating the Euler product. An elementary prime-product estimate supplies uniformity for real $Q\geq3$, including integers where the local factor vanishes. No prime number theorem input is used for this node.
+\end{proof}
+
+\begin{lemma}[Principal and twisted quadratic Gauss bounds]
+\label{gauss_bounds}
+\uses{QuadraticSums,input_prime_distribution}
+\lean{PrimeSquares.principalSquareSum_two_add_o_one,PrimeSquares.twistedSquareSum_uniform_bound_int}
+\leanok
+\par\medskip\noindent\textbf{Paper Lemma 3.21.} \textit{complete conditional implication.}\par
+If $(a,q)=1$, then
+\begin{align}
+ |\mathfrak s(a,q)|
+ \leq q^{-1/2}
+ \exp\left((2+o(1))\frac{(\log q)^{1/2}}{\log\log q}\right).
+\end{align}
+In particular, the right-hand side may be replaced by
+$q^{-1/2}\exp(3(\log q)^{1/2}/\log\log q)$ for all sufficiently large
+$q$.
+\par\medskip\noindent\textbf{Paper Lemma 3.24.} \textit{proved under source hypotheses.}\par
+Let \(\chi\) be a real Dirichlet character modulo \(q\), and let
+\((a,q)=1\).  Then, for every \(\varepsilon>0\),
+\begin{align}
+ |\mathfrak s_\chi(a,q)|\ll_\varepsilon q^{-1/2+\varepsilon}.
+\end{align}
+Equivalently, \( |\mathfrak s_\chi(a,q)|\ll q^{-1/2+o(1)}\).
+\end{lemma}
+\begin{proof}[Proof architecture]
+\proves{gauss_bounds}
+\uses{QuadraticSums,input_prime_distribution}
+\leanok
+Use prime-power evaluations and multiplicativity for the character-twisted estimate. For the sharp principal bound, optimize the product of local losses and use the two explicit prime asymptotic limits. Keep the quantified eventual epsilon bound: the coefficient $2+o(1)$ is not a fixed uniform value of $2$. Only the principal asymptotic clause uses the external PNT input.
+\end{proof}
+
+\begin{lemma}[Conductor-sensitive exceptional arithmetic]
+\label{conductor_refinement}
+\uses{gauss_bounds,progression_euler_products}
+\lean{PrimeSquares.conductor_sensitive_refinement}
+\leanok
+\par\medskip\noindent\textbf{Paper Lemma 3.27.} \textit{proved under source hypotheses.}\par
+Let \(x\in\mathbb Z\). Let $\chi_0$ be a primitive real character of conductor $q_0$, and for
+each multiple $q$ of $q_0$ let $\chi_q$ denote the character modulo $q$
+induced by $\chi_0$.  For \(0\leq j\leq5\), let
+\(\chi_{2^jq_0}\) have the same meaning, and set
+\[
+ \sigma_0:=
+ \max_{0\leq j\leq5}
+ \sup_{a\in\mathbb A_{2^jq_0}}
+ |\mathfrak s_{\chi_{2^jq_0}}(a,2^jq_0)|,
+ \qquad
+ \rho(d):=\prod_{p\mid d}(1-p^{-1/2})^{-1}.
+\]
+There exists $\mathcal B_0\geq1$, depending only on $q_0$, such that,
+for every \(q=q_0d\),
+\begin{align}
+ \left|
+ \sum_{a\in\mathbb A_q}
+ \mathfrak s_{\chi_q}(a,q)e(ax/q)
+ \right|
+ &\ll
+ \mathcal B_0\prod_{p\mid d}\frac{p+1}{p-1},\notag\\
+ |\mathfrak s_{\chi_q}(a,q)|
+ &\ll \sigma_0d^{-1/2}\rho(d),
+ \qquad \textup{ for } a\in \mathbb{A}_q\\
+  \sigma_0\mathcal B_0^{1/2}&\ll q_0^{-1/25}.
+\end{align}
+In particular,
+\[
+ (1+\log q_0)\sigma_0\mathcal B_0^{1/2}\ll1.
+\]
+Moreover, if
+\(a\mapsto\mathfrak s_{\chi_q}(a,q)\) is not identically zero, then
+\begin{align}
+    d=2^\nu d_1,\qquad
+ 0\leq\nu\leq5,\qquad
+ \mu^2(d_1)=1,\qquad
+ (d_1,2q_0)=1.
+\end{align}
+\end{lemma}
+\begin{proof}[Proof architecture]
+\proves{conductor_refinement}
+\uses{gauss_bounds,progression_euler_products}
+\leanok
+Write each induced character through its primitive conductor. The support and coefficient bounds must retain this conductor before summing over the remaining factor of the denominator. Derive the three displayed estimates and logarithmic consequence together; the hypothesis is strengthened to real base characters, so it covers the exceptional character selected later.
+\end{proof}
+
+\section{Improving: optimization and the main estimate}
+
+\begin{theorem}[Abstract high-low optimization and strong improving]
+\label{abstract_improving}
+\uses{}
+\lean{PrimeSquares.highLow_AB_endpoint,PrimeSquares.highLow_AB_strong_improving}
+\leanok
+\par\medskip\noindent\textbf{Paper Theorem 4.1.} \textit{proved under source hypotheses.}\par
+Let $A_N$ and $B_N$ be positive convolution operators whose kernels are
+supported in an interval of length $O(N)$.  Suppose that
+\begin{align}
+ |A_Nf(x)|&\leq(\log N)^aB_N|f|(x),\\
+ |B_Nf(x)|&\ll N^{-v}\|f\mathbf1_{[x-CN,x+CN]}\|_1,
+ \qquad 0\leq v<1,
+\end{align}
+and that $s\geq1-v$, $r>0$, and, whenever
+$2\leq J\leq N^{(1-v)/s}/10$,
+\begin{align}
+ B_N=Lo_{J,N}+Hi_{J,N},\qquad
+ \|Lo_{J,N}f\|_\infty&\ll N^{-1}J^s(\log J)^\gamma\|f\|_1,
+ \\
+ \|Hi_{J,N}f\|_2&\ll J^{-r}(\log J)^\beta\|f\|_2,
+\end{align}
+where $\gamma\geq\beta\geq0$.  Suppose also that, for
+$2\leq Q$ and $\log Q\leq c_0(\log N)^c$,
+\begin{align}
+ A_N&=\operatorname{Low}_{Q,N}+\operatorname{High}_{Q,N}+E_{Q,N},
+ \\
+ \|\operatorname{Low}_{Q,N}f\|_\infty
+ &\ll N^{-1}Q^s(\log Q)^\alpha\|f\|_1,\\
+ \|\operatorname{High}_{Q,N}f\|_2
+ &\ll Q^{-r}\exp\left(c_1\frac{(\log Q)^\kappa}{\log\log Q}\right)\|f\|_2,
+ \\
+ \|E_{Q,N}f\|_2&\ll_A Q^{-r}(\log Q)^{C_A}
+ (1+\log N)^{-A}\|f\|_2
+ \qquad(A>0),
+\end{align}
+where \(0<\kappa<1\) and \(a,\alpha,c_0,c_1,c>0\).  In
+\textup{(4.8)}, the constant \(C_A\) may depend on \(A\).  Then, for
+$F,G$ contained in an interval of length $N$,
+\begin{align}
+ \frac{|\langle B_N\mathbf1_F,\mathbf1_G\rangle|}{N}
+ &\ll (|F||G|/N^2)^{1-\frac{s}{2(s+r)}}
+ (\Log (|F||G|/N^2))^{\gamma+\frac{s(\beta-\gamma)}{s+r}},\\
+ \frac{|\langle A_N\mathbf1_F,\mathbf1_G\rangle|}{N}
+ &\ll (|F||G|/N^2)^{1-\frac{s}{2(s+r)}}\Phi_{c^*,\kappa}(|F||G|/N^2),
+\end{align}
+where 
+\begin{align}
+ c^*=\frac{c_1s}{2^\kappa(s+r)^{\kappa+1}}+o(1).
+\end{align}
+Here and below the $o(1)$ in a subscript means that the estimate holds
+with $c^*$ replaced by any fixed larger constant.
+\par\medskip\noindent\textbf{Paper Corollary 4.15.} \textit{proved under source hypotheses.}\par
+Assume in addition that $A_N$ and $B_N$ are uniformly bounded on
+$\ell^2$.  If
+\begin{align*}
+ \frac{2(r+s)}{2r+s}<p\leq2,
+\end{align*}
+then, for $f\in \ell^p(\mathbb{Z})$,
+\begin{align}
+ \|B_Nf\|_{p'}+\|A_Nf\|_{p'}
+ \ll_p N^{1/p'-1/p}\|f\|_p.
+\end{align}
+\end{theorem}
+\begin{proof}[Proof architecture]
+\proves{abstract_improving}
+\uses{}
+\leanok
+Balance the low $\ell^1\!\to\!\ell^\infty$ cost against the high $\ell^2$ cost. Separate admissible large scales from the complementary range controlled by the ordinary operator. Choose a strictly larger loss coefficient before choosing cutoffs and error exponents. Pass from indicators to strong improving by dyadic level decomposition and summable geometric estimates, including $p=2$.
+\end{proof}
+
+\begin{theorem}[Prime-square improving theorem]
+\label{prime_improving}
+\uses{abstract_improving,prime_arc_approximation,prime_low,gauss_bounds,input_prime_distribution,input_quadratic_sums,input_ordinary_squares}
+\lean{PrimeSquares.theorem_1_1,PrimeSquares.theorem_1_1_strong_sum}
+\leanok
+\par\medskip\noindent\textbf{Paper Theorem 1.1.} \textit{complete conditional implication.}\par
+Let \(I=[-N^2,2N^2]\cap\mathbb Z\).  For all \(F,G\subseteq I\),
+\begin{align}
+ \frac1{|I|}
+ \bigl|\langle A_{N,\Lambda}\mathbf1_F,\mathbf1_G\rangle\bigr|
+ &\ll
+ \left(\frac{|F|}{|I|}\frac{|G|}{|I|}\right)^{2/3}
+ \Phi_{4\sqrt3/9+o(1)}
+ \left(\frac{|F|}{|I|}\frac{|G|}{|I|}\right).
+\end{align}
+Consequently, for every \(3/2<p\leq2\) and every
+\(f\in\ell^p(\mathbb Z)\) supported in $I$,
+\[
+ \left(\frac1{|I|}\sum_{x\in\mathbb Z}
+ |A_{N,\Lambda}f(x)|^{p'}\right)^{1/p'}
+ \lesssim_p
+ \left(\frac1{|I|}\sum_{x\in\mathbb Z}|f(x)|^p\right)^{1/p}.
+\]
+\end{theorem}
+\begin{proof}[Proof architecture]
+\proves{prime_improving}
+\uses{abstract_improving,prime_arc_approximation,prime_low,gauss_bounds,input_prime_distribution,input_quadratic_sums,input_ordinary_squares}
+\leanok
+Apply the fixed-scale abstract theorem to the genuine von Mangoldt square average and the independent ordinary-square decomposition. The plus/minus square reflection is proved with unchanged constants. Keep the exact cardinality of $[-N^2,2N^2]\cap\mathbb Z$ in the normalization and handle small scales. This route does not require the smooth multifrequency maximal input.
+\end{proof}
+
+\section{Prime operators: approximation, low and high terms}
+
+\begin{lemma}[Prime-square input and full approximation error]
+\label{prime_arc_approximation}
+\uses{gauss_bounds,conductor_refinement,input_prime_distribution,input_quadratic_sums}
+\lean{PrimeSquares.source_corrected_prime_square_input,PrimeSquares.source_approximation_all_exponents}
+\leanok
+\par\medskip\noindent\textbf{Paper Lemma 6.5.} \textit{complete conditional implication.}\par
+If \((a,q)=1\), \(q\leq R^{11/10}\), and
+\(|\theta|\leq R/(qN^2)\), then
+\begin{align}
+ \widehat{\widetilde A}_{N,\Lambda}(a/q+\theta)
+ &=\mathfrak s(a,q)\widehat{\widetilde M}_N(\theta)
+ -\mathbf1_{q_0\mid q}\mathfrak s_{\chi_q}(a,q)
+   \widehat{\widetilde M}_{N,\beta}(\theta)
+ +O(R^{-5}).
+\end{align}
+Here \(q_0=q_0(N)\), \(\beta=\beta(N)\), and
+\(\chi_0=\chi_0(N)\) are the exceptional conductor, zero, and primitive
+character supplied by the Landau--Page theorem at scale \(N\), and
+\(\chi_q\) is induced by \(\chi_0\).  These quantities may change when
+\(N\) changes. The second term is omitted if no exceptional character
+exists. If $\xi$ lies outside all major arcs
+\[
+ \left\|\xi-a/q\right\|\leq\frac{R}{qN^2},
+ \qquad q\leq R,\quad(a,q)=1,
+\]
+where distance is taken modulo one, then
+\begin{align}
+ |\widehat{\widetilde A}_{N,\Lambda}(\xi)|
+ \ll R^{-1/4}(\log N)^{C_0}.
+\end{align}
+Here $R\geq1$, $N$ is sufficiently large, and $R^4\leq N/2$,
+as is the case for the choice in \textup{(6.4)}.
+\par\medskip\noindent\textbf{Paper Lemma 6.10.} \textit{complete conditional implication.}\par
+For every \(A>0\),
+\begin{align}
+ \|E_{Q,N}f\|_2
+ \ll_A Q^{-1/2}(1+\log N)^{-A}\|f\|_2.
+\end{align}
+\end{lemma}
+\begin{proof}[Proof architecture]
+\proves{prime_arc_approximation}
+\uses{gauss_bounds,conductor_refinement,input_prime_distribution,input_quadratic_sums}
+\leanok
+Select compatible progression and quadratic exponential-sum data. On major arcs use the same exceptional datum as in the model; off the source arcs combine the rational approximation with the Ren and Ghosh bounds. Check periodized lifts and the bounded number of active translates. Absorb the intermediate power losses into arbitrary logarithmic decay. Both the major and minor cases are necessary.
+\end{proof}
+
+\begin{lemma}[Pointwise low contribution]
+\label{prime_low}
+\uses{progression_euler_products,cohen_log_bound,input_prime_distribution,input_quadratic_sums}
+\lean{PrimeSquares.source_low_local_and_norm,PrimeSquares.selectedPrimeLow_source_bounds}
+\leanok
+\par\medskip\noindent\textbf{Paper Proposition 6.16.} \textit{complete conditional implication.}\par
+For nonnegative \(f\),
+\begin{align}
+ |\operatorname{Low}_{Q,N}f(x)|
+ \ll Q\log(2Q)
+ \sup_{M\geq N}M^{-2}
+ \sum_{|y-x|\leq CM^2}f(y).
+\end{align}
+Consequently,
+\[
+ \|\operatorname{Low}_{Q,N}f\|_\infty
+ \ll N^{-2}Q\log(2Q)\|f\|_1.
+\]
+\end{lemma}
+\begin{proof}[Proof architecture]
+\proves{prime_low}
+\uses{progression_euler_products,cohen_log_bound,input_prime_distribution,input_quadratic_sums}
+\leanok
+Invert the localized multiplier into the arithmetic factor times the smooth spatial kernel. Apply the corrected Euler product and its logarithmic bound, then sum spatial annuli to obtain the local density estimate. Taking the supremum of the same pointwise envelope gives the stated norm bound without an extra maximal loss.
+\end{proof}
+
+\begin{lemma}[Annular and denominator-truncated maxima]
+\label{annular_multifrequency}
+\uses{gauss_bounds,input_multifrequency}
+\lean{PrimeSquares.source_rational_annular_maximum,PrimeSquares.source_fixed_annular_truncation_maximum}
+\leanok
+\par\medskip\noindent\textbf{Paper Lemma 6.18.} \textit{complete conditional implication.}\par
+Let \(0<\beta\leq1\), and let \(\mathcal R_s\) be any subset of the
+reduced fractions with denominators \(q\sim2^s\).  Then
+\begin{align}
+\left\|
+ \sup_{\substack{N\in2^{\mathbb N}\\N\gtrsim2^s}}
+ \left|
+ \left(
+ \sum_{a/q\in\mathcal R_s}
+ c_{a,q}\widehat{\widetilde M}_{N,\beta}(\xi-a/q)
+ \eta_s(\xi-a/q)\widehat f(\xi)
+ \right)^\vee
+ \right|
+ \right\|_2
+ \ll
+ (1+s)\sup_{a/q\in\mathcal R_s}|c_{a,q}|\,\|f\|_2.
+\end{align}
+\par\medskip\noindent\textbf{Paper Corollary 6.21.} \textit{complete conditional implication.}\par
+Let \(0<\beta\leq1\), \(s\geq0\), and
+\(|c_{a,q}|\leq b\).  Then
+\begin{align}
+ &\left\|
+ \sup_{\substack{N\in2^{\mathbb N}\\N\geq2^s}}
+ \sup_K
+ \left|
+ \left(
+ \sum_{\substack{q\sim2^s\\q\leq K}}
+ \sum_{a\in\mathbb A_q}
+ c_{a,q}
+ \widehat{\widetilde M}_{N,\beta}(\xi-a/q)
+ \eta_s(\xi-a/q)\widehat f(\xi)
+ \right)^\vee
+ \right|
+ \right\|_2
+ \ll (1+s)^2b\|f\|_2.
+\end{align}
+The same estimate holds if each summand is multiplied by a fixed
+multiplier of modulus at most one supported where
+\(\eta_s(\xi-a/q)\neq0\).
+\end{lemma}
+\begin{proof}[Proof architecture]
+\proves{annular_multifrequency}
+\uses{gauss_bounds,input_multifrequency}
+\leanok
+Transfer the independent smooth frequency estimate to the actual annular kernel. Separate the smooth main term from a square-summable remainder. For changing denominator cutoffs, use disjoint multiplier factorization and interval decompositions; retain the starting-scale restriction. The rational-period input and the general separated-frequency input have different logarithmic costs and are not interchangeable.
+\end{proof}
+
+\begin{lemma}[Sharp high maximal estimate]
+\label{prime_high}
+\uses{annular_multifrequency,conductor_refinement,input_prime_distribution,input_multifrequency}
+\lean{PrimeSquares.proposition621_source,PrimeSquares.proposition621}
+\leanok
+\par\medskip\noindent\textbf{Paper Proposition 6.23.} \textit{complete conditional implication.}\par
+Let $N_0\geq2$ and suppose that $\log Q\leq c_0(\log N_0)^{1/2}.$
+Then, for every dyadic $N\geq N_0$,
+\begin{align}
+ \|\operatorname{High}_{Q,N}f\|_2
+ &\ll Q^{-1/2}
+ \exp\left(
+ (2+o(1))\frac{\sqrt{\log Q}}{\log\log Q}
+ \right)\|f\|_2,
+ \\
+ \left\|
+ \sup_{\substack{M\geq N_0\\M\in2^{\mathbb N}}}
+ |\operatorname{High}_{Q,M}f|
+ \right\|_2
+ &\ll Q^{-1/2}
+ \exp\left(
+ (2+o(1))\frac{\sqrt{\log Q}}{\log\log Q}
+ \right)\|f\|_2.
+\end{align}
+\end{lemma}
+\begin{proof}[Proof architecture]
+\proves{prime_high}
+\uses{annular_multifrequency,conductor_refinement,input_prime_distribution,input_multifrequency}
+\leanok
+Group ordinary and exceptional coefficients by conductor and denominator scales. Page uniqueness gives at most one eligible character in each conductor class. Sum the resulting class estimates with the sharp arithmetic weights and pass from finite families to the countable supremum. The loss is uniform in the allowed starting scale, and bounded $Q$ is absorbed separately.
+\end{proof}
+
+\begin{lemma}[One selected prime high-low-error family]
+\label{prime_decomposition}
+\uses{prime_arc_approximation,prime_low,prime_high,input_prime_distribution,input_quadratic_sums,input_multifrequency}
+\lean{PrimeSquares.proposition419}
+\leanok
+\par\medskip\noindent\textbf{Paper Proposition 4.19.} \textit{complete conditional implication.}\par
+Let \(N\) be dyadic, let \(Q\geq2\), and suppose that
+\[
+ \log Q\leq c_0(\log N)^{1/2},
+\]
+where \(c_0>0\) is a sufficiently small absolute constant.  Then
+\begin{align}
+ \widetilde A_{N,\Lambda}
+ =
+ \operatorname{Low}_{Q,N}
+ +\operatorname{High}_{Q,N}+E_{Q,N},
+\end{align}
+where
+\begin{align}
+ \|\operatorname{Low}_{Q,N}f\|_\infty
+ &\ll N^{-2}Q\log(2Q)\,\|f\|_1,
+ \\
+ \|\operatorname{High}_{Q,N}f\|_2
+ &\ll Q^{-1/2}
+ \exp\left(
+ (2+o(1))\frac{(\log Q)^{1/2}}{\log\log Q}
+ \right)\|f\|_2,
+ \\
+ \|E_{Q,N}f\|_2
+ &\ll_A Q^{-1/2}(\log(2Q))^{O_A(1)}
+ (1+\log N)^{-A}\|f\|_2
+\end{align}
+for every \(A>0\).  More precisely, for some absolute \(C>0\),
+the low term satisfies
+\begin{align}
+ |\operatorname{Low}_{Q,N}f(x)|
+ \ll Q\log(2Q)\sup_{M\geq N}M^{-2}
+ \sum_{|y-x|\leq CM^2}|f(y)|.
+\end{align}
+The maximal estimate needed in Section~\textup{5} is
+\begin{align}
+ \left\|
+ \sup_{\substack{M\geq N_0\\M\in2^{\mathbb N}}}
+ |\operatorname{High}_{Q,M}f|
+ \right\|_2
+ &\ll Q^{-1/2}
+ \exp\left(
+ (2+o(1))\frac{(\log Q)^{1/2}}{\log\log Q}
+ \right)\|f\|_2,
+\end{align}
+provided
+\[
+ \log Q\leq c_0(\log N_0)^{1/2}.
+\]
+ Here \(o(1)\) is taken as \(Q\to\infty\), uniformly in the displayed
+ranges of \(N\) and \(N_0\); bounded values of \(Q\) are absorbed into
+the implicit constants. 
+The operators in
+\textup{(4.20)} are defined in
+Section~\textup{6}.
+\end{lemma}
+\begin{proof}[Proof architecture]
+\proves{prime_decomposition}
+\uses{prime_arc_approximation,prime_low,prime_high,input_prime_distribution,input_quadratic_sums,input_multifrequency}
+\leanok
+Choose the Page-compatible raw data once and define all three operators from that selection. Assemble the pointwise low estimate, high norm and high maximum, and arbitrary-decay error for this same family. Prove exact operator identities in the relevant normed spaces; separately chosen existence witnesses would not establish the proposition.
+\end{proof}
+
+\section{Stopping: local estimates and sparse domination}
+
+\begin{definition}[Sparse families and admissible stopping maps]
+\label{SparseData}
+\uses{}
+\lean{PrimeSquares.IntegerSparseCollection,PrimeSquares.SourceLinearAdmissible}
+\leanok
+\par\medskip\noindent\textbf{Paper Definition 2.8.} \textit{definition formalized.}\par
+A collection $\mathcal S$ of intervals is sparse if, for every
+$I\in\mathcal S$, there is $E_I\subset I$ such that
+$|E_I|\geq|I|/4$ and the sets $E_I$, $I\in\mathcal S$, are pairwise
+disjoint.
+\par\medskip\noindent\textbf{Paper Definition 2.9.} \textit{definition formalized.}\par
+Let $f=\mathbf1_F$ be supported in $3I_0$.  A map $\tau:I_0\longrightarrow\{2^j:1\leq2^j\leq|I_0|\}$
+is admissible if, for every $x\in I_0$,
+\begin{align}
+ \sup_{M\geq\tau(x)}\frac1M
+ \sum_{|y-x|\leq CM}f(y)
+ \leq C_{\rm adm}\frac{|F|}{|I_0|}.
+\end{align}
+where $C>1$ is a fixed radius constant and $C_{\rm adm}>1$ is a
+sufficiently large fixed constant depending on $C$.
+Changing the fixed radius changes only the required admissibility
+constant. One may also replace the symmetric local average by the
+maximum of the left and right one-sided local averages; these
+quantities are comparable with a factor of at most two.
+\end{definition}
+\begin{proof}[Proof architecture]
+\proves{SparseData}
+\uses{}
+\leanok
+Keep the sparsity parameter explicit: the preliminary convention is $1/4$, whereas the introductory sparse theorem uses $1/10$. Admissibility is a symmetric spatial density condition; a single one-sided bound does not suffice. The radius constant and the sufficiently large admissibility coefficient are distinct parameters.
+\end{proof}
+
+\begin{lemma}[Local stopping estimate and sparse recursion]
+\label{sparse_recursion}
+\uses{SparseData}
+\lean{PrimeSquares.source_abstract_local_stopping_estimate,PrimeSquares.accepted_general_dyadic_sparse_recursion}
+\leanok
+\par\medskip\noindent\textbf{Paper Lemma 5.1.} \textit{proved under source hypotheses.}\par
+Fix constants \(C\geq1\) and \(c>2C+1\).  Let \((B_M)\) be a family
+of positive convolution operators satisfying
+\begin{align}
+ |B_M f(x)|
+ \ll M^{-v}\|f\mathbf1_{[x-CM,x+CM]}\|_1,
+ \qquad 0\leq v<1.
+\end{align}
+Let \(s\geq1-v\), \(r>0\), and \(\gamma\geq\beta\geq0\), and suppose
+that, whenever \(M\) is dyadic and \(2\leq J\leq M^{(1-v)/s}/10\),
+\begin{align}
+ B_M=Lo_{J,M}+Hi_{J,M}+Er_{J,M}.
+\end{align}
+Let \(I_0\) be an interval, and let
+\(f=\mathbf1_F\) and \(g=\mathbf1_G\), where
+\(F\subset cI_0\) and \(G\subset I_0\).  Suppose that
+\[
+ \tau:I_0\longrightarrow
+ \{2^k:2^k\leq|I_0|\}
+\]
+satisfies
+\begin{align}
+ \sup_{M\geq\tau(x)}M^{-1}
+ \sum_{|y-x|\leq C_0M}f(y)
+ \ll \langle f\rangle_{cI_0,1},
+ \qquad x\in I_0.
+\end{align}
+Write \(B_\tau f(x)=B_{\tau(x)}f(x)\).
+Assume that, for every \(J\geq2\) and every \(x\in I_0\) such that
+\(\tau(x)\geq(10J)^{s/(1-v)}\),
+\begin{align}
+ |Lo_{J,\tau(x)}f(x)|
+ &\ll J^s(\log J)^\gamma
+ \sup_{M\geq\tau(x)}M^{-1}
+ \sum_{|y-x|\leq CM}f(y),
+\end{align}
+and that, for every \(h\in\ell^2(\mathbb Z)\),
+\begin{align}
+ \left\|
+ \sup_{\substack{M\geq(10J)^{s/(1-v)}\\M\ {\rm dyadic}}}
+ |Hi_{J,M}h|
+ \right\|_2
+ &\ll J^{-r}(\log J)^\beta\|h\|_2.
+\end{align}
+Finally, suppose that, for some fixed \(A>1/2\), uniformly in dyadic \(M\),
+\begin{align}
+ \|\widehat{Er}_{J,M}\|_{L^\infty(\mathbb T)}
+ \ll_A
+ J^{-r}(\log J)^\beta(1+\log M)^{-A}.
+\end{align}
+Then
+\begin{align}
+ |I_0|^{-1}|\langle B_\tau f,g\rangle|
+ \ll_c
+ \left(\frac{|F||G|}{|I_0|^2}\right)^{
+ 1-\frac{s}{2(s+r)}}
+ \left(\Log\frac{|F||G|}{|I_0|^2}\right)^{
+ \gamma+\frac{s(\beta-\gamma)}{s+r}}.
+\end{align}
+\par\medskip\noindent\textbf{Paper Lemma 5.10.} \textit{proved under source hypotheses.}\par
+Suppose that every admissible $\tau$ satisfies
+\begin{align}
+ |\langle T_\tau\mathbf1_F,\mathbf1_G\rangle|
+ \ll |I_0|\,\Psi\left(\frac{|F|}{|I_0|},
+                       \frac{|G|}{|I_0|}\right)
+\end{align}
+for $F\subset cI_0$ and $G\subset I_0$, where $(T_N)_{N\in2^{\mathbb N}}$ is a family of positive convolution operators whose kernel is supported in
+$[-CN,CN]$ for some fixed $C>0$.  Then there is a sparse family $\mathcal S$ such that
+\begin{align}
+ \langle\sup_{N\in2^{\mathbb N}}|T_N\mathbf1_F|,\mathbf1_G\rangle
+ \ll\sum_{I\in\mathcal S}|I|\,
+ \Psi\left(\frac{|F\cap cI|}{|I|},
+            \frac{|G\cap I|}{|I|}\right).
+\end{align}
+\end{lemma}
+\begin{proof}[Proof architecture]
+\proves{sparse_recursion}
+\uses{SparseData}
+\leanok
+First establish the local estimate from the displayed Fourier and admissibility hypotheses. Stop on intervals where local densities exceed the chosen threshold, and construct disjoint major subsets with the required sparsity. Iterate a finite dyadic tree and pass to the source supremum through finite tests. Keep the actual stopping-map admissibility and the sufficiently large threshold in the recursion.
+\end{proof}
+
+\begin{lemma}[Prime-square localized endpoint]
+\label{prime_local_endpoint}
+\uses{sparse_recursion,prime_decomposition,input_prime_distribution,input_quadratic_sums,input_multifrequency,input_ordinary_squares}
+\lean{PrimeSquares.source_prime_local_endpoint_from_independent_inputs}
+\leanok
+\par\medskip\noindent\textbf{Paper Lemma 5.17.} \textit{complete conditional implication.}\par
+Let $f=\mathbf1_F$ and $g=\mathbf1_G$, where
+$F\subset cI_0$ and $G\subset I_0$, and put $\delta_0=\frac{|F||G|}{|I_0|^2}.$
+ Let $\tau:I_0\to\{2^k:(2^k)^2\leq|I_0|\}$ be admissible at the
+spatial scale $\tau(x)^2$, in the sense that
+\begin{align}
+ \sup_{M\geq\tau(x)}M^{-2}
+ \sum_{|y-x|\leq CM^2}f(y)
+ \ll\langle f\rangle_{cI_0,1}.
+\end{align}
+Under the hypotheses of Proposition~\textup{4.19},
+\begin{align}
+ |I_0|^{-1}
+ \big|\langle\widetilde A_{\tau,\Lambda}\mathbf1_F,
+ \mathbf1_G\rangle\big|
+ \ll\delta_0^{2/3}
+ \Phi_{4\sqrt3/9+o(1)}(\delta_0).
+\end{align}
+\end{lemma}
+\begin{proof}[Proof architecture]
+\proves{prime_local_endpoint}
+\uses{sparse_recursion,prime_decomposition,input_prime_distribution,input_quadratic_sums,input_multifrequency,input_ordinary_squares}
+\leanok
+Insert the selected prime decomposition and the independent ordinary-square stopping estimates into the abstract local theorem. Convert square-scale spatial radii to the source stopping convention and retain dilation constants. The general fixed-scale ordinary-square decomposition alone does not supply this stronger stopping input.
+\end{proof}
+
+\begin{theorem}[Sparse domination]
+\label{prime_sparse}
+\uses{prime_local_endpoint,sparse_recursion,input_prime_distribution,input_quadratic_sums,input_multifrequency,input_ordinary_squares,input_real_variable}
+\lean{PrimeSquares.theorem_1_3,PrimeSquares.theorem_1_3_open_pq}
+\leanok
+\par\medskip\noindent\textbf{Paper Theorem 1.3.} \textit{complete conditional implication.}\par
+Let \(F,G\subset\mathbb Z\) be finite.  There is a sparse collection of
+intervals \(\mathcal S\) such that
+\begin{align}
+ \bigl|\langle A_\Lambda^*\mathbf1_F,\mathbf1_G\rangle\bigr|
+ &\ll \sum_{I\in\mathcal S}|I|
+ \left(\frac{|F\cap I||G\cap I|}{|I|^2}\right)^{2/3}
+ \Phi_{4\sqrt3/9+o(1)}
+ \left(\frac{|F\cap I||G\cap I|}{|I|^2}\right).
+\end{align}
+Moreover, if \((1/p,1/q)\) lies in the interior of the triangle with
+vertices $(2/3,2/3),$ $(1,0)$, and $(0,1)$, 
+then there is a sparse collection \(\mathcal S_{p,q}\) such that
+\begin{align}
+ \bigl|\langle A_\Lambda^*\mathbf1_F,\mathbf1_G\rangle\bigr|
+ &\ll_{p,q}
+ \sum_{I\in\mathcal S_{p,q}}|I|
+ \left(\frac{|F\cap I|}{|I|}\right)^{1/p}
+ \left(\frac{|G\cap I|}{|I|}\right)^{1/q}.
+\end{align}
+\end{theorem}
+\begin{proof}[Proof architecture]
+\proves{prime_sparse}
+\uses{prime_local_endpoint,sparse_recursion,input_prime_distribution,input_quadratic_sums,input_multifrequency,input_ordinary_squares,input_real_variable}
+\leanok
+Linearize finite maxima, apply the local endpoint recursively, and pass to the actual maximal pairing. Interpolate the endpoint form with complementary-exponent information from the independent prime maximal theorem to reach the open triangle. Use the stated $1/10$ sparsity convention in both conclusions.
+\end{proof}
+
+\section{Orlicz: quantitative IW and the three-family maximum}
+
+\begin{lemma}[Quantitative IW construction and sampling]
+\label{iw_application}
+\uses{input_iw_sampling}
+\lean{PrimeSquares.proposition_quantitative_IW_full}
+\leanok
+\par\medskip\noindent\textbf{Paper Proposition 7.8.} \textit{complete conditional implication.}\par
+Let \(r,k\in\mathbb N\), with \(r\geq2\) and \(k\geq4\),
+and let \(Q\geq2^k\). Put
+\begin{equation}
+ \begin{gathered}
+ p_r=\frac{2r}{2r-1},
+ \qquad B=C_*^{\,k^2Q^{1/(k-1/2)}},\\
+ \varepsilon=(2^{20}rB^{2r+8})^{-1},
+ \qquad C_{r,k}=(C_*r\log(2+k))^{C_*k},
+ \end{gathered}
+\end{equation}
+where \(C_*>1\) is a sufficiently large absolute constant.
+Then there exist an integer \(P\leq3^Q\) and a
+Ionescu--Wainger set
+\(\Sigma=\Sigma_{\leq k}\subset P^{-1}\mathbb Z/\mathbb Z\)
+with the following properties.
+\begin{enumerate}
+\item
+Every rational point of denominator at most \(Q\) belongs to
+\(\Sigma\):
+\begin{align}
+ \bigcup_{1\leq q\leq Q}
+ \left\{\frac aq\pmod1:a\in\mathbb Z\right\}
+ \subseteq\Sigma.
+\end{align}
+Every element of \(\Sigma\), when written in reduced form, has
+denominator at most \(B\). With the choice of \(\varepsilon\) in \textup{(7.9)}, the
+corresponding major-arc parameter set is
+\((r,\frac12)\)-good.
+\item
+Let \(\nu\) be a complex measure on \(\mathbb Z_P\) with
+\(\|\nu\|_{\mathrm{TV}}\leq1\), and let \(m\) be a multiplier on
+\(\mathbb R\) supported in \([-\varepsilon,\varepsilon]\).  Then, for
+\(p_r\leq p\leq2r\),
+\begin{align}
+ \left\|
+ T_{\displaystyle
+   \sum_{\alpha\in\Sigma}
+   \widehat\nu(\alpha)m(\,\cdot-\alpha)}
+ \right\|_{\ell^p(\mathbb Z)\to\ell^p(\mathbb Z)}
+ \leq
+  C_{r,k}
+ \|T_m\|_{L^p(\mathbb R)\to L^p(\mathbb R)},
+\end{align}
+where the translates of \(m\) are periodized on \(\mathbb T\).
+\item
+Put $\Omega=[-\varepsilon,\varepsilon]\times\Sigma
+ \subset\mathbb R\times\mathbb Q/\mathbb Z.$
+If \(f\in\ell^p(\mathbb Z)\) has Fourier support in
+\(\pi(\Omega)\), then
+\begin{align}
+  C_{r,k}^{-1}\|f\|_{\ell^p(\mathbb Z)}
+ \leq
+ \|\mathcal S_\Omega^{-1}f\|_{L^p(\mathbb A_{\mathbb Z})}
+ \leq
+  C_{r,k}\|f\|_{\ell^p(\mathbb Z)}
+\end{align}
+for \(p_r\leq p\leq2r\).
+\item
+Let \(V\) be a finite-dimensional normed space and
+\(0<\delta\leq(100P)^{-1}\).  If
+\(G:\mathbb R\times\mathbb Z_P\to V\) has real Fourier support in
+\([-\delta,\delta]\), then, for \(1\leq p\leq\infty\),
+\begin{align}
+ \left\|
+ \bigl(G(n,n\bmod P)\bigr)_{n\in\mathbb Z}
+ \right\|_{\ell^p(\mathbb Z;V)}
+ \asymp
+ \|G\|_{L^p(\mathbb R\times\mathbb Z_P;V)},
+\end{align}
+with absolute implied constants.
+\end{enumerate}
+\end{lemma}
+\begin{proof}[Proof architecture]
+\proves{iw_application}
+\uses{input_iw_sampling}
+\leanok
+Choose the common period, denominator envelope, and narrow width in the displayed order. Verify good coprime data and containment of all source rational points, then apply the independent multiplier and sampling interfaces. Establish the actual finite-quotient Fourier identification, both norm directions and unique interpolation. The full-domain versions are explicit external inputs, not consequences asserted from finite-input versions.
+\end{proof}
+
+\begin{lemma}[Continuous annular estimates]
+\label{continuous_annuli}
+\uses{input_real_variable}
+\lean{PrimeSquares.source_continuous_annular_estimates}
+\leanok
+\par\medskip\noindent\textbf{Paper Lemma 7.16.} \textit{complete conditional implication.}\par
+Uniformly in \(0<\beta\leq1\), \(J\geq1\), and
+\(|\sigma_j|\leq1\), one has, for \(1<p\leq2\),
+\begin{align}
+ \left\|
+ T_{\sum_{j=1}^J\sigma_j
+   (\widehat{\widetilde M}_{2^j,\beta}
+    -\widehat{\widetilde M}_{2^{j-1},\beta})}f
+ \right\|_{L^p(\mathbb R)}
+ &\ll
+ \frac1{p-1}\|f\|_{L^p(\mathbb R)},
+ \\
+ \left\|
+ \sup_{N\geq2}
+ |\widetilde M_{N,\beta}*f|
+ \right\|_{L^p(\mathbb R)}
+ &\ll
+ \frac1{p-1}\|f\|_{L^p(\mathbb R)}.
+\end{align}
+Here \(\widetilde M_{N,\beta}\) is the continuous annular measure
+defined in \textup{(6.2)}.  Since \textup{(7.18)} holds with
+the supremum over all \(N\geq2\), it also holds when the supremum is
+restricted to dyadic \(N\).
+\end{lemma}
+\begin{proof}[Proof architecture]
+\proves{continuous_annuli}
+\uses{input_real_variable}
+\leanok
+Prove the concrete annular Fourier formulas, signed $L^2$ multiplier estimate, kernel size and Hormander condition. Apply the general continuous theorems only after verifying their hypotheses. Establish continuity in the real scale, a measurable countable supremum, and the full $L^p$ estimate. Routine changes of variables and power integrals belong inside this node.
+\end{proof}
+
+\begin{lemma}[IW low bounds and joint high-low assembly]
+\label{iw_low_high}
+\uses{iw_application,continuous_annuli,prime_arc_approximation,input_iw_sampling,input_real_variable,input_prime_distribution,input_quadratic_sums,input_multifrequency}
+\lean{PrimeSquares.real_iw_source_construction_and_low,PrimeSquares.real_iw_source_high_low}
+\leanok
+\par\medskip\noindent\textbf{Paper Proposition 7.22.} \textit{complete conditional implication.}\par
+Let \(r,k,Q,P,\Sigma_{\leq k},B,\varepsilon,p_r\), and
+\(C_{r,k}\) be as in Proposition~\textup{7.8}.
+Let \(\nu\) be a complex measure on \(\mathbb Z_P\) with
+\(\|\nu\|_{\mathrm{TV}}\leq1\), and let \(0<\beta\leq1\).  Define
+\(L_N^{\nu,\beta}\) by
+\begin{align}
+ \widehat{L_N^{\nu,\beta}}(\xi)
+ =
+ \sum_{\alpha\in\Sigma_{\leq k}}
+ \widehat\nu(\alpha)
+ \widehat{\widetilde M}_{N,\beta}(\xi-\alpha)
+ \eta\left(\frac{\xi-\alpha}{\varepsilon}\right).
+\end{align}
+Then
+\begin{align}
+ \left\|
+ \sup_{\substack{N\geq1\\N\in2^{\mathbb N}}}
+ |L_N^{\nu,\beta}f|
+ \right\|_{\ell^{p_r}(\mathbb Z)}
+ \ll
+ rC_{r,k}^2
+ \log\bigl(e+Q+r\log B\bigr)
+ \|f\|_{\ell^{p_r}(\mathbb Z)}.
+\end{align}
+The implied constant is independent of \(\nu\) and \(\beta\).
+\par\medskip\noindent\textbf{Paper Proposition 7.30.} \textit{complete conditional implication.}\par
+Using the assumptions and notation of
+Propositions~\textup{7.8} and \textup{7.22}, put
+\begin{equation}
+ D(r,k,Q)=rC_{r,k}^2\log(e+Q+r\log B).
+\end{equation}
+For dyadic \(N\geq N_0\), there are decompositions
+\[
+ \widetilde A_{N,\Lambda}=L_N+H_N,
+ \qquad
+ \widetilde A_{N,\mathbb N^2}=L_N^\square+H_N^\square,
+\]
+such that
+\begin{align}
+ \left\|\sup_{N\geq N_0}|L_Nf|\right\|_{\ell^{p_r}(\mathbb Z)}
+ +
+ \left\|\sup_{N\geq N_0}|L_N^\square f|\right\|_{\ell^{p_r}(\mathbb Z)}
+ &\ll D(r,k,Q)\|f\|_{\ell^{p_r}(\mathbb Z)},
+ \\
+ \left\|\sup_{N\geq N_0}|H_Nf|\right\|_{\ell^2(\mathbb Z)}
+ +
+ \left\|\sup_{N\geq N_0}|H_N^\square f|\right\|_{\ell^2(\mathbb Z)}
+ &\ll Q^{-1/4}\|f\|_{\ell^2(\mathbb Z)}.
+\end{align}
+\end{lemma}
+\begin{proof}[Proof architecture]
+\proves{iw_low_high}
+\uses{iw_application,continuous_annuli,prime_arc_approximation,input_iw_sampling,input_real_variable,input_prime_distribution,input_quadratic_sums,input_multifrequency}
+\leanok
+Identify the actual low operators with sampled continuous annular multipliers, controlling the real-$Q$ construction and the two low maxima jointly. Bound prime and ordinary-square high parts using their different approximation inputs. Keep the quantitative parameters before optimizing them. The internally proved finite signed maximal inequality is used instead of leaving it as an assumption.
+\end{proof}
+
+\begin{theorem}[Three-family Orlicz maximal theorem]
+\label{orlicz_maximal}
+\uses{iw_low_high,input_iw_sampling,input_real_variable,input_prime_distribution,input_quadratic_sums,input_multifrequency}
+\lean{PrimeSquares.theorem_7_2_closed_signed_maximal,PrimeSquares.theorem_7_2_finitely_supported}
+\leanok
+\par\medskip\noindent\textbf{Paper Theorem 7.2.} \textit{complete conditional implication.}\par
+There are absolute constants \(C,C_0\geq1\) such that the
+following holds. Choose \(A_N\) from \(A_{N,\Lambda}\),
+\(A_{N,\mathbb N^2}\), and \(A_{N,\mathbb P^2}\), and put
+\(A^*f=\sup_{N\geq2}|A_Nf|\).
+Then, for every finitely supported \(f:\mathbb Z\to\mathbb C\) and
+every \(\lambda>0\),
+\begin{align}
+ \bigl|\{x\in\mathbb Z:A^*f(x)>\lambda\}\bigr|
+ \ll
+ \sum_{\substack{x\in\mathbb Z\\
+ |f(x)|>\lambda/C_0}}
+ \Psi_C\left(\frac{|f(x)|}{\lambda}\right).
+\end{align}
+Consequently,
+\begin{align}
+ \bigl|\{x\in\mathbb Z:A^*f(x)>\lambda\}\bigr|
+ \ll
+ \sum_{x\in\mathbb Z}
+ \Psi_C\left(\frac{|f(x)|}{\lambda}\right).
+\end{align}
+In particular, for every finite \(F\subset\mathbb Z\) and \(t\geq1\),
+\begin{align}
+ \bigl|\{x\in\mathbb Z:A^*\mathbf1_F(x)>t^{-1}\}\bigr|
+ \ll |F|\Psi_C(t).
+\end{align}
+\end{theorem}
+\begin{proof}[Proof architecture]
+\proves{orlicz_maximal}
+\uses{iw_low_high,input_iw_sampling,input_real_variable,input_prime_distribution,input_quadratic_sums,input_multifrequency}
+\leanok
+Optimize the quantitative low-high comparison to obtain the restricted distribution estimate. Assemble the von Mangoldt, ordinary-square and prime-square families using the proved full/annular and prime-power comparisons. Extend the restricted estimate to the convex gauge by level decomposition; remove the bounded part to obtain the truncated modular form.
+\end{proof}
+
+\begin{lemma}[Near-one strong maximal estimates]
+\label{near_one_lp}
+\uses{orlicz_maximal,input_iw_sampling,input_real_variable,input_prime_distribution,input_quadratic_sums,input_multifrequency}
+\lean{PrimeSquares.corollary_7_6_closed_signed_maximal}
+\leanok
+\par\medskip\noindent\textbf{Paper Corollary 7.6.} \textit{complete conditional implication.}\par
+For \(1<p\leq2\) and \(f\in\ell^p(\mathbb Z)\),
+\begin{align}
+ \|A^*f\|_{\ell^p}
+ \leq
+ \exp\left(
+ \frac{C}{p-1}\log\frac{e}{p-1}
+ \right)\|f\|_{\ell^p},
+\end{align}
+after enlarging the absolute constant \(C\).
+\end{lemma}
+\begin{proof}[Proof architecture]
+\proves{near_one_lp}
+\uses{orlicz_maximal,input_iw_sampling,input_real_variable,input_prime_distribution,input_quadratic_sums,input_multifrequency}
+\leanok
+Integrate the distribution estimate against the layer-cake weight and estimate the gauge moment with the displayed dependence on $p-1$. Extend from finite support using positive finite averages, norm convergence and monotone maxima. The resulting constant is retained for the ergodic theorem.
+\end{proof}
+
+\section{Badness: arithmetic blocks and the persistent criterion}
+
+\begin{lemma}[Quadratic residue correlations]
+\label{quadratic_correlations}
+\uses{QuadraticSums,input_weil}
+\lean{PrimeSquares.quadratic_GK_uniform_correlation,PrimeSquares.quadratic_GK_tuple}
+\leanok
+\par\medskip\noindent\textbf{Paper Lemma 8.8.} \textit{complete conditional implication.}\par
+Let $p$ be an odd prime and let
+\[
+ \Lambda_p=\{x^2\pmod p:x\not\equiv0\pmod p\}.
+\]
+For every fixed $k\geq1$ and distinct
+$0,h_1,\ldots,h_{k-1}\pmod p$,
+\[
+ N_k(\mathbf h,\Lambda_p)=\frac{p}{2^k}+O_k(p^{1/2})
+ =\left(\frac{p-1}{2p}\right)^kp\big(1+O_k(p^{-1/2})\big).
+\]
+Consequently \textup{(8.7)} holds, for example with $c=1/3$.
+\end{lemma}
+\begin{proof}[Proof architecture]
+\proves{quadratic_correlations}
+\uses{QuadraticSums,input_weil}
+\leanok
+Expand products of the quadratic-residue indicators. Separate zero factors and repeated shifts, then use the independent split quadratic Weil bound for the genuinely nonconstant terms. Control the resulting error uniformly in the allowed tuples and prove the needed subpower density bound.
+\end{proof}
+
+\begin{theorem}[Persistent badness criterion and its application]
+\label{persistent_criterion}
+\uses{quadratic_correlations,input_badness}
+\lean{PrimeSquares.source_lavictoire_persistent_criterion,PrimeSquares.primeSquare_lavictoire_arithmetic}
+\leanok
+\par\medskip\noindent\textbf{Paper Theorem 8.1.} \textit{complete conditional implication.}\par
+Let $(n_k)$ be an increasing sequence of natural numbers.  Suppose that, for
+every $q>1$, there is a set $\Lambda_q\subset\{n_k\bmod q:k\geq1\}$
+which is multiplicative under the Chinese remainder theorem: if $(q,r)=1$,
+then $\Lambda_{qr}$ corresponds to $\Lambda_q\times\Lambda_r$. Suppose also that there are two sequences \((u_j)\) and \((q_j)\) of
+odd integers whose combined collection is pairwise coprime and such that
+\begin{align}
+ &\mathbb P_{q_j}(\Lambda_{q_j})\longrightarrow0,
+ \qquad
+ \inf_j\mathbb P_{u_j}(\Lambda_{u_j})>0,
+ \\
+ &\gamma-\liminf_{j\to\infty}
+       \mathbb P_{q_j}(\Lambda_{q_j}^{\gamma})=o(\gamma)
+       \quad(\gamma\downarrow0),
+\end{align}
+and that there is an $\alpha>0$ such that, for every sufficiently small
+$\gamma>0$,
+\begin{align}
+ \liminf_{j\to\infty}\frac1{|\Lambda_{q_j}|^2}
+ \big|\{(u,v)\in\Lambda_{q_j}^2:
+   \operatorname{dist}_{q_j}(u-v,\Lambda_{q_j})>
+       \gamma s_{q_j}\}\big|>5\alpha.             
+\end{align}
+Finally, suppose that some $\beta>0$ has the following property. If \(Q\) is any product of distinct terms from the two sequences
+\((u_j)\) and \((q_j)\), then for every \(a\in\Lambda_Q\),
+\begin{align}
+ \liminf_{N\to\infty}\frac1N
+ \big|\{1\leq k\leq N:n_k\equiv a\pmod Q\}\big|
+       >\frac{\beta}{|\Lambda_Q|}.                 
+\end{align}
+Then $(n_k)$ is persistently universally $L^1$-bad.
+\end{theorem}
+\begin{proof}[Proof architecture]
+\proves{persistent_criterion}
+\uses{quadratic_correlations,input_badness}
+\leanok
+Construct finite cyclic blocks with the required arithmetic, local moments and growth conditions. Push the fixed-progression prime frequencies through the exact prime-square residue fibres. Apply the original general LaVictoire criterion and the Sawyer and Conze inputs to obtain divergence along every infinite cutoff set. The optional full Poisson-spacing theorem is not required for this route.
+\end{proof}
+
+\section{Ergodic: transference and the two endpoint conclusions}
+
+\begin{lemma}[Ergodic transfer and Orlicz convergence]
+\label{ergodic_orlicz}
+\uses{orlicz_maximal,near_one_lp,input_iw_sampling,input_real_variable,input_prime_distribution,input_quadratic_sums,input_multifrequency,input_ergodic}
+\lean{PrimeSquares.corollary_7_46_closed_signed_maximal}
+\leanok
+\par\medskip\noindent\textbf{Paper Corollary 7.46.} \textit{complete conditional implication.}\par
+For \(1<p\leq2\),
+\begin{align}
+ \|A_T^*f\|_{L^p(X)}
+ \leq
+ \exp\left(
+ \frac{C}{p-1}\log\frac{e}{p-1}
+ \right)\|f\|_{L^p(X)}.
+\end{align}
+Moreover,
+\begin{align}
+ \mu\{A_T^*f>\lambda\}
+ \ll
+ \int_X\Psi_C\left(\frac{|f|}{\lambda}\right)\,d\mu,
+ \qquad \lambda>0.
+\end{align}
+If $ \int_X\Psi_C(|f|/a)\,d\mu<\infty$
+for some \(a>0\), then the corresponding averages converge almost
+everywhere and in \(L^1(X)\).
+\end{lemma}
+\begin{proof}[Proof architecture]
+\proves{ergodic_orlicz}
+\uses{orlicz_maximal,near_one_lp,input_iw_sampling,input_real_variable,input_prime_distribution,input_quadratic_sums,input_multifrequency,input_ergodic}
+\leanok
+Apply the explicit strong and modular transference interfaces on invertible probability systems. Approximate by bounded truncations and combine the modular maximal control with the independent bounded-class convergence theorem. Prove the Cauchy and density-extension steps for the unbounded Orlicz class; those conclusions are not supplied as external inputs.
+\end{proof}
+
+\begin{theorem}[Prime-square divergence and near-one maximal bound]
+\label{prime_square_ergodic_theorem}
+\uses{persistent_criterion,ergodic_orlicz,near_one_lp,input_badness,input_weil,input_prime_distribution,input_ergodic,input_iw_sampling,input_real_variable,input_quadratic_sums,input_multifrequency}
+\lean{PrimeSquares.theorem_1_5_i_literal,PrimeSquares.theorem_1_5_ii_closed_signed_maximal}
+\leanok
+\par\medskip\noindent\textbf{Paper Theorem 1.5.} \textit{complete conditional implication.}\par
+Let \(p_k\) denote the \(k\)-th prime, and put \(n_k=p_k^2\).
+\begin{enumerate}
+\item
+The sequence \((n_k)\) is persistently universally \(L^1\)-bad.
+More precisely, for every nonatomic ergodic measure-preserving
+probability system \((X,\mu,T)\) and every infinite set
+\(\mathcal S\subset\mathbb N\), there is an \(f\in L^1(X)\)
+for which
+\[
+ \frac1N\sum_{k\leq N}f(T^{n_k}x),
+ \qquad N\in\mathcal S,
+\]
+diverges on a set of positive measure.
+\item
+There is an absolute constant \(C>0\) such that, for every
+invertible measure-preserving probability system \((X,\mu,T)\),
+every \(1<p\leq2\), and every \(f\in L^p(X)\),
+\[
+ \left\|
+ \sup_{N\geq1}
+ \left|\frac1N\sum_{k\leq N}f(T^{n_k}x)\right|
+ \right\|_{L^p(X)}
+ \leq
+ \exp\left(
+ \frac{C}{p-1}\log\frac{e}{p-1}
+ \right)
+ \|f\|_{L^p(X)}.
+\]
+\end{enumerate}
+\end{theorem}
+\begin{proof}[Proof architecture]
+\proves{prime_square_ergodic_theorem}
+\uses{persistent_criterion,ergodic_orlicz,near_one_lp,input_badness,input_weil,input_prime_distribution,input_ergodic,input_iw_sampling,input_real_variable,input_quadratic_sums,input_multifrequency}
+\leanok
+For part (i), use the persistent arithmetic criterion on arbitrary nonatomic ergodic probability systems. For part (ii), use strong transference on invertible systems and identify enumerated-prime averages exactly with the appropriate prime cutoffs. Preserve the different system hypotheses of the two parts; a numerical prime-cutoff approximation would not suffice.
+\end{proof}
+
+\section{Goldbach arithmetic: reductions and the exceptional set}
+
+\begin{lemma}[Arithmetic reductions and the master sieve inequality]
+\label{goldbach_reductions}
+\uses{}
+\lean{PrimeSquares.goldbach_primitive_two_squares_criterion,PrimeSquares.goldbach_from_sifted_to_primes_complete,PrimeSquares.goldbach_truncation_complete,PrimeSquares.goldbach_master_sieve_complete}
+\leanok
+\par\medskip\noindent\textbf{Paper Lemma 9.2.} \textit{proved under source hypotheses.}\par
+For every $\varepsilon>0$,
+\begin{align}
+ |\{r\in\mathcal P:n-r\in\mathbb P^2\}|
+ \geq S(\mathcal A_n,\mathbb P_{3,n},N^2)-O_\varepsilon(N^\varepsilon).
+\end{align}
+\par\medskip\noindent\textbf{Paper Lemma 9.3.} \textit{proved under source hypotheses.}\par
+For every \(\varepsilon>0\),
+\begin{align}
+ S(\mathcal A_n,\mathbb P_{3,n},z)
+ -
+ |\{r\in\mathcal P:n-r\in\mathbb P^2\}|
+ =
+ |T_n|+O_\varepsilon(N^\varepsilon),
+\end{align}
+where
+\begin{align}
+    T_n=
+ \left\{
+ r-1=2up_1p_2:
+ \begin{array}{l}
+ r\in\mathbb P,\quad n-r\in\mathbb P^2,\\
+ z\leq p_2\leq p_1,\quad p_i\in\mathbb P_{3,n},\\
+ p\mid u\Longrightarrow p\equiv1\pmod4
+ \end{array}
+ \right\}.
+\end{align}
+\par\medskip\noindent\textbf{Paper Lemma 9.7.} \textit{proved under source hypotheses.}\par
+For every $\varepsilon>0$,
+\begin{align}
+ |T_n|
+ \leq\sum_{\ell\in L_n}
+ S(M_n(\ell),W_{\ell,n},z_\ell)+O_\varepsilon(N^\varepsilon).
+\end{align}
+\par\medskip\noindent\textbf{Paper Corollary 9.9.} \textit{proved under source hypotheses.}\par
+For every $\varepsilon>0$,
+\begin{align}
+ |\{r\in\mathcal P:n-r\in\mathbb P^2\}|
+ &\geq S(\mathcal A_n,\mathbb P_{3,n},z)-\sum_{\ell\in L_n}
+ S(M_n(\ell),W_{\ell,n},z_\ell)
+ -O_\varepsilon(N^\varepsilon).
+\end{align}
+\end{lemma}
+\begin{proof}[Proof architecture]
+\proves{goldbach_reductions}
+\uses{}
+\leanok
+Prove the primitive two-square criterion using the pinned Mathlib sum-of-two-squares results, including parity and primitive multiplication. Separate shared-prime exceptions, identify the residual set exactly, and inject it into the upper sifted family. Combine these finite-set inequalities before any analytic approximation. The criterion and these reductions are internal theorems.
+\end{proof}
+
+\begin{theorem}[Quantitative Goldbach exceptional set]
+\label{goldbach_exceptional_set}
+\uses{goldbach_reductions,goldbach_circle_method,sieve_positivity,input_sw_bv,input_quadratic_sums,input_sieve,input_mertens_mean}
+\lean{PrimeSquares.goldbach_section9_headline_complete,PrimeSquares.goldbach_section9_exceptional_density_zero}
+\leanok
+\par\medskip\noindent\textbf{Paper Theorem 1.6.} \textit{complete conditional implication.}\par
+Almost all integers congruent to $12$ modulo $24$ can be written as
+\[
+ a^2+b^2+p^2+1,
+ \qquad a^2+b^2+1\in\mathcal P,\quad p\in\mathbb P.
+\]
+More precisely, if
+\[
+ E_2(X)=\{1\leq n<X:n\equiv12\pmod{24},\
+ n\notin\mathcal P+\mathbb P^2\},
+\]
+then, for every $A>0$,
+\[
+ |E_2(X)|\ll_A X(\log X)^{-A}.
+\]
+\end{theorem}
+\begin{proof}[Proof architecture]
+\proves{goldbach_exceptional_set}
+\uses{goldbach_reductions,goldbach_circle_method,sieve_positivity,input_sw_bv,input_quadratic_sums,input_sieve,input_mertens_mean}
+\leanok
+Insert the lower and upper sieve estimates into the exact master inequality and use the strict positive margin. Absorb all mean-square error sets with the requested logarithmic saving. Pass from square cutoffs to arbitrary real $X$ and identify the source exceptional set literally. The theorem uses $n\equiv12\pmod{24}$; subtracting one gives the explanatory version in the abstract.
+\end{proof}
+
+\section{Goldbach circle method: minor arcs, major arcs and completion}
+
+\begin{lemma}[Positive singular integral and smoothing]
+\label{goldbach_singular_integral}
+\uses{}
+\lean{PrimeSquares.goldbach_positive_singular_integral_complete,PrimeSquares.goldbach_smooth_seed_exists}
+\leanok
+\par\medskip\noindent\textbf{Paper Lemma 10.11.} \textit{proved under source hypotheses.}\par
+Uniformly in \(\ell,U,W\) and \(n<N^2\),
+\[
+ H_{\ell,R}(n;U,W)\geq0,
+ \qquad
+ H_{\ell,R}(n;U,W)
+ =
+ H_\ell(n;U,W)+O(NR^{-1/2}),
+\]
+where
+\[
+ H_\ell(n;U,W)
+ =
+ \int_{\substack{2\leq u\leq U\\
+ 2\leq(n-u^2)/\ell\leq W}}
+ \frac{du}{\log u\log((n-u^2)/\ell)}.
+\]
+\end{lemma}
+\begin{proof}[Proof architecture]
+\proves{goldbach_singular_integral}
+\uses{}
+\leanok
+Construct the compactly supported smooth seed internally. Express the smoothing factor by autocorrelation, prove positivity of its mass, and compare the source singular integral with the positive model on the stated range. Quantify the discarded tail uniformly in the parameters needed by both sieve applications.
+\end{proof}
+
+\begin{lemma}[Hybrid minor-arc mean square]
+\label{goldbach_minor}
+\uses{input_quadratic_sums}
+\lean{PrimeSquares.goldbach_hybrid_minor_complete}
+\leanok
+\par\medskip\noindent\textbf{Paper Lemma 10.2.} \textit{complete conditional implication.}\par
+Under the hypotheses of Lemma~\textup{9.10}, uniformly for
+\(2\leq U\leq N\) and \(2\leq W\leq N^2\),
+\begin{align}
+ \sum_{n<N^2}\left|
+ \int_{\mathfrak m}P_U(\theta)
+ \sum_{\ell<L_0}\sum_{k<V_\ell}
+ d_{k,\ell}F_{k,\ell,W}(\theta)e(-n\theta)\,d\theta
+ \right|^2
+ \ll_{A,\delta}N^4(\log N)^{-A}.
+\end{align}
+\end{lemma}
+\begin{proof}[Proof architecture]
+\proves{goldbach_minor}
+\uses{input_quadratic_sums}
+\leanok
+Use Fourier inversion and Bessel to turn the weighted representation error into an integral. Prove congruence counting and progression energy with the required logarithmic losses. Insert the raw prime quadratic estimates on minor arcs and sum the coefficient families before choosing the final logarithmic cutoff.
+\end{proof}
+
+\begin{lemma}[SW/BV major-arc replacement]
+\label{goldbach_major}
+\uses{input_sw_bv}
+\lean{PrimeSquares.goldbach_major_approximation_complete}
+\leanok
+\par\medskip\noindent\textbf{Paper Lemma 10.14.} \textit{complete conditional implication.}\par
+Uniformly for \(2\leq U\leq N\) and \(2\leq W\leq N^2\),
+\begin{align}
+ \sum_{n<N^2}\left|
+ \sum_{\ell<L_0}\sum_{k<V_\ell}d_{k,\ell}
+ \int_{\mathfrak M}
+ \bigl(P_UF_{k,\ell,W}
+ -P_U^{(0)}F_{k,\ell,W}^{(0)}\bigr)(\theta)
+ e(-n\theta)\,d\theta
+ \right|^2
+ \ll_{A,\delta}N^4(\log N)^{-A}.
+\end{align}
+\end{lemma}
+\begin{proof}[Proof architecture]
+\proves{goldbach_major}
+\uses{input_sw_bv}
+\leanok
+Apply partial summation to ordinary prime counts, including strict endpoints and primes dividing the modulus. For each fixed rational denominator, control the multiplicity of the least-common-multiple reindexing; this reduces to the ordinary unweighted Bombieri--Vinogradov input. Combine it with Siegel--Walfisz for the square sum and preserve the explicit endpoint errors before the mean-square sum.
+\end{proof}
+
+\begin{lemma}[Absolute Euler series and arithmetic coefficients]
+\label{goldbach_euler}
+\uses{progression_euler_products}
+\lean{PrimeSquares.goldbach_arithmetic_euler_complete}
+\leanok
+\par\medskip\noindent\textbf{Paper Lemma 10.19.} \textit{proved under source hypotheses.}\par
+The series
+\[
+ \sum_{\substack{q\geq1\\P^+(q)\leq R}}
+ \mathfrak G_q(\ell,k,n)
+\]
+converges absolutely and satisfies
+\begin{align}
+ \sum_{\substack{q\geq1\\P^+(q)\leq R}}
+ \mathfrak G_q(\ell,k,n)
+ &=
+ \prod_{p\leq R}
+ \left(1+\sum_{\nu\geq1}
+ \mathfrak G_{p^\nu}(\ell,k,n)\right)
+ =G_R(\ell,k,n),
+\end{align}
+where \(G_R\) is defined in \textup{(9.11)}.
+Moreover, for some absolute \(C_1>0\),
+\begin{align}
+ |\mathfrak s(a,q)|
+ &\ll q^{-1/2}\tau(q)^{C_1},\notag\\
+ |\Upsilon(a\ell,q,a_{k,\ell},k)|
+ &\ll q^{-1}(q,k\ell)\tau(q)^{C_1},\\
+ |\mathfrak G_q(\ell,k,n)|
+ &\ll q^{-1}(q,k\ell)\tau(q)^{C_1},\notag
+\end{align}
+and
+\begin{align}
+ \sum_{\ell<L_0}\sum_{k<V_\ell}
+ \frac{(q,k\ell)}{\ell\phi(k)}
+ \ll \tau(q)^{C_1}(\log N)^2.
+\end{align}
+\end{lemma}
+\begin{proof}[Proof architecture]
+\proves{goldbach_euler}
+\uses{progression_euler_products}
+\leanok
+Group by reduced rational points and prove the prime-power evaluations, treating the dyadic factor separately. Establish absolute convergence before exchanging the smooth-denominator sum with the product. Bound the remaining gcd and divisor sums uniformly in the two coefficient indices; the local product is the one used by the actual representation problem.
+\end{proof}
+
+\begin{lemma}[Completion of the major contribution]
+\label{goldbach_major_completion}
+\uses{goldbach_euler,goldbach_singular_integral}
+\lean{PrimeSquares.goldbach_major_completion_complete}
+\leanok
+\par\medskip\noindent\textbf{Paper Lemma 10.23.} \textit{proved under source hypotheses.}\par
+Under the hypotheses of Lemma~\textup{9.10}, uniformly for
+\(2\leq U\leq N\) and \(2\leq W\leq N^2\),
+\begin{align}
+& \sum_{n<N^2}\left|
+ \sum_{\ell<L_0}\sum_{k<V_\ell}d_{k,\ell}
+ \left(
+ \int_{\mathfrak M}
+ P_U^{(0)}(\theta)F_{k,\ell,W}^{(0)}(\theta)e(-n\theta)\,d\theta
+ -
+ \frac{G_R(\ell,k,n)}{\ell\phi(k)}
+ H_{\ell,R}(n;U,W)
+ \right)\right|^2\\
+&\hspace{7cm} \ll_{A,\delta}N^4(\log N)^{-A}.
+\end{align}
+\end{lemma}
+\begin{proof}[Proof architecture]
+\proves{goldbach_major_completion}
+\uses{goldbach_euler,goldbach_singular_integral}
+\leanok
+Extend the finite arithmetic and analytic ranges in the model, using absolute summability and the smoothing-tail bounds. Identify the completed expression exactly with the local product times the source singular integral. Track the coefficient weights before summing the completion error.
+\end{proof}
+
+\begin{lemma}[Full weighted circle-method lemma]
+\label{goldbach_circle_method}
+\uses{goldbach_minor,goldbach_major,goldbach_major_completion,input_quadratic_sums,input_sw_bv}
+\lean{PrimeSquares.goldbach_circle_method_source_complete}
+\leanok
+\par\medskip\noindent\textbf{Paper Lemma 9.10.} \textit{complete conditional implication.}\par
+Let \(A,\delta>0\) and \(L_0<N^{2-\delta}\).  There are sufficiently
+large constants \(B=B(A,\delta)\) and \(C=C(A,\delta)\) such that the
+following holds.  Put
+\[
+ R=(\log N)^C,\qquad
+ \eta_N(\theta)=\eta\left(\frac{N^2\theta}{R}\right),
+\]
+and suppose that $V_\ell\leq (N^2/\ell)^{1/2}(\log N)^{-B}$ for $\ell<L_0.$
+Let \(|d_{k,\ell}|\leq1\) and
+\((a_{k,\ell},k)=1\).
+Define 
+\begin{align}\quad \quad
+ G_R(\ell,k,n)
+ &:=
+ \mathcal T_2(\ell,k,n;a_{k,\ell})
+ \prod_{2<p\leq R}
+ \frac{p\phi((p,k))}{(p-1)^2}
+ \left|\left\{(u,v)\in\mathbb A_p^2:
+ \begin{array}{l}
+  u^2+\ell v\equiv n\pmod p,\\
+  v\equiv a_{k,\ell}\pmod{(p,k)}
+ \end{array}\right\}\right|,
+\end{align}
+where $ \mathcal T_2(\ell,k,n;a_{k,\ell}) $ is defined in \textup{(3.18)} and the second congruence is understood to be trivial when \(p\nmid k\).
+Also define
+\begin{align}
+ H_{\ell,R}(n)
+ :=
+ \ell\int_{\mathbb R}\eta_N(\theta)^2
+ \left(\int_2^N\frac{e(\theta u^2)}{\log u}\,du\right)
+ \left(\int_{\substack{2\leq v\leq N^2\\\ell v<N^2}}
+ \frac{e(\ell\theta v)}{\log v}\,dv\right)
+ e(-n\theta)\,d\theta.
+\end{align}
+Then
+\begin{align}
+ \sum_{n<N^2}\left|
+ \sum_{\ell<L_0}\sum_{k<V_\ell}
+ d_{k,\ell}r_{k,\ell}(n)\right|^2
+ \ll_{A,\delta}N^4(\log N)^{-A},
+\end{align}
+where
+\begin{align}
+ r_{k,\ell}(n)
+ &=
+ \sum_{\substack{m^2+\ell t=n\\
+ t\equiv a_{k,\ell}\pmod k}}
+ \one_{\mathbb P}(m)\one_{\mathbb P}(t)
+ -
+ \frac{G_R(\ell,k,n)}{\ell\phi(k)}H_{\ell,R}(n).
+\end{align}
+\end{lemma}
+\begin{proof}[Proof architecture]
+\proves{goldbach_circle_method}
+\uses{goldbach_minor,goldbach_major,goldbach_major_completion,input_quadratic_sums,input_sw_bv}
+\leanok
+Combine the hybrid minor bound, actual major replacement, arithmetic completion and analytic smoothing. Choose the logarithmic exponents in an order compatible with the requested saving and the uniform range of the outer index. The final theorem concerns the full original representation sums, with the actual source remainder and singular integral.
+\end{proof}
+
+\section{Goldbach sieve: local densities, presieving and comparison}
+
+\begin{lemma}[Fixed prime sets and both local density formulas]
+\label{sieve_local_data}
+\uses{goldbach_euler}
+\lean{PrimeSquares.goldbach_fixed_sieve_sets,PrimeSquares.goldbach_lower_local_density_formula,PrimeSquares.goldbach_upper_local_density}
+\leanok
+\par\medskip\noindent\textbf{Paper Lemma 11.2.} \textit{proved under source hypotheses.}\par
+For every \(\varepsilon>0\),
+\begin{align}
+ S(\mathcal A_n,\mathbb P_{3,n},z)
+ &\geq S(\mathcal A_n,\mathbb P_3,z),
+ \\
+ \sum_{\ell\in L_n}S(M_n(\ell),W_{\ell,n},z_\ell)
+ &\leq
+ \sum_{\ell\in L}S(M_n(\ell),W_\ell,z_\ell)
+ +O_\varepsilon(N^\varepsilon).
+\end{align}
+\par\medskip\noindent\textbf{Paper Lemma 11.6.} \textit{proved under source hypotheses.}\par
+For \(p>3\), \(p\equiv3\pmod4\),
+\begin{align}
+ \frac{\omega_n(p)}p
+ =
+ \begin{cases}
+ \displaystyle
+ \frac{\rho_p(n-1)}{p-1-\rho_p(n)},&p\leq R,\\[7pt]
+ \displaystyle\frac1{p-1},&p>R.
+ \end{cases}
+\end{align}
+In particular, for \(p\geq7\),
+\(0\leq\omega_n(p)/p\leq2/(p-3)<1\).
+\par\medskip\noindent\textbf{Paper Lemma 11.8.} \textit{proved under source hypotheses.}\par
+There is a multiplicative function
+\(\omega_n(\ell,\cdot)\), defined on square-free integers supported on
+\(W_\ell\), such that
+\begin{align}
+ \frac{G_R(\ell,12d,n-1)}{\phi(12d)}
+ =
+ \frac{G_R(\ell,12,n-1)}{\phi(12)}
+ \frac{\omega_n(\ell,d)}d .
+\end{align}
+For \(p\nmid12\ell\), its  factors are
+\begin{align}
+ \frac{\omega_n(\ell,p)}p
+ =
+ \begin{cases}
+ \displaystyle
+ \frac{\rho_p(n)}{p-1-\rho_p(n-1)},&p\leq R,\\[7pt]
+ \displaystyle\frac1{p-1},&p>R.
+ \end{cases}
+\end{align}
+In particular, \(0\leq\omega_n(\ell,p)/p<1\).
+\end{lemma}
+\begin{proof}[Proof architecture]
+\proves{sieve_local_data}
+\uses{goldbach_euler}
+\leanok
+Compare the variable sieve sets with fixed supported prime sets, keeping the exceptional divisor contribution. Count the lower and upper residue classes explicitly and prove multiplicativity, nonzero base factors and all congruence restrictions. This supplies concrete supported densities to the general sieve interfaces rather than postulating their local formulas.
+\end{proof}
+
+\begin{lemma}[Signed two-range presieving]
+\label{two_range_presieve}
+\uses{sieve_local_data,input_sieve}
+\lean{PrimeSquares.goldbach_presieving_from_classical_coefficients,PrimeSquares.goldbach_presieve_uniform_assembly}
+\leanok
+\par\medskip\noindent\textbf{Paper Lemma 11.13.} \textit{complete conditional implication.}\par
+Suppose that
+\begin{align}
+ |\mathcal F_d|=Xg(d)+r_d,
+\end{align}
+where \(X\geq0\), and \(g\) is multiplicative on the square-free
+integers supported on a fixed set of primes \(\mathfrak P\),
+with \(g(1)=1\) and \(0\leq g(p)<1\).
+Fix \(C,A>0\), set \(R=(\log N)^C\),
+\(D_0=\exp((\log\log N)^3)\), and \(D_1=D/D_0\), and assume
+\(R+1\leq z\leq D_1\leq N^A\) for sufficiently large \(N\).
+Suppose that fixed constants \(\kappa_0,\kappa>0\) and
+\(K_0\geq2\) satisfy, for every \(2\leq w<y\leq z\),
+\begin{align}
+ \prod_{\substack{w\leq p<y\\p\in\mathfrak P,\ p\leq R}}
+ (1-g(p))^{-1}
+ &\leq
+ \left(1+\frac{K_0}{\log w}\right)
+ \left(\frac{\log y}{\log w}\right)^{\kappa_0},\notag\\
+ \prod_{\substack{w\leq p<y\\p\in\mathfrak P,\ p>R}}
+ (1-g(p))^{-1}
+ &\leq
+ \left(1+\frac{K_0}{\log w}\right)
+ \left(\frac{\log y}{\log w}\right)^\kappa.
+\end{align}
+All \(o(1)\) terms below are uniform for fixed
+\(C,A,\kappa_0,\kappa,K_0\).
+Then
+\begin{align}
+ S(\mathcal F,\mathfrak P,z)
+ &\geq XV(z)\bigl(f_\kappa(s)+o(1)\bigr)
+ +\sum_{m<D}c_m^-r_m,\notag\\
+ S(\mathcal F,\mathfrak P,z)
+ &\leq XV(z)\bigl(F_\kappa(s)+o(1)\bigr)
+ +\sum_{m<D}c_m^+r_m,
+\end{align}
+where
+\[
+ V(z)=\prod_{\substack{p<z\\p\in\mathfrak P}}(1-g(p)),
+ \qquad
+ s=\frac{\log D_1}{\log z},
+ \qquad
+ |c_m^\pm|\leq1.
+\]
+The coefficients \(c_m^\pm\) depend only on the fixed prime sets and
+the sieve levels, and not on the values of \(g\).  
+The dimension
+\(\kappa_0\) is used only in the preliminary sieve over \(p\leq R\);
+the sieve functions in \textup{(11.15)} are determined by
+the outer dimension \(\kappa\).
+\end{lemma}
+\begin{proof}[Proof architecture]
+\proves{two_range_presieve}
+\uses{sieve_local_data,input_sieve}
+\leanok
+Choose the independent one-stage weights before the supported density. Combine lower and upper weights with the signed sandwich identity, using unique factorization across the disjoint prime ranges. Verify support below the full level and coefficient bound one. Prove the preliminary error tends to zero uniformly; the outer sieve functions retain dimension $\kappa$. The revised source level condition implies the omitted strict inequality.
+\end{proof}
+
+\begin{lemma}[Lower application and uniform main-term size]
+\label{lower_sieve}
+\uses{two_range_presieve,goldbach_circle_method,goldbach_singular_integral,input_sieve,input_mertens_mean,input_sw_bv,input_quadratic_sums}
+\lean{PrimeSquares.goldbach_lower_bounds_complete}
+\leanok
+\par\medskip\noindent\textbf{Paper Proposition 9.17.} \textit{complete conditional implication.}\par
+For $N^2(\log N)^{-A_0}\leq n<N^2$, $n\equiv12\pmod{24}$,
+\begin{align}
+ S(\mathcal A_n,\mathbb P_{3,n},z)
+ \geq X_n\Theta_n(z)\bigl(f_{1/2}(9/8)+o(1)\bigr)
+ +\mathcal E_1(n),
+\end{align}
+where
+\begin{align}
+\sum_{n<N^2}|\mathcal E_1(n)|^2
+\ll_{A_0,K} N^4(\log N)^{-K}.
+\end{align}
+\par\medskip\noindent\textbf{Paper Lemma 9.22.} \textit{complete conditional implication.}\par
+Let \(A_0>0\).  There is \(C_{A_0}>0\) such that, for every fixed
+sufficiently large \(C\), with \(R=(\log N)^C\), one has
+\begin{align}
+ X_n\Theta_n(z)\gg_{A_0,C}
+ N(\log N)^{-C_{A_0}}
+\end{align}
+whenever $n\equiv12\pmod{24}$ and $N^2(\log N)^{-A_0}\leq n<N^2$.
+\end{lemma}
+\begin{proof}[Proof architecture]
+\proves{lower_sieve}
+\uses{two_range_presieve,goldbach_circle_method,goldbach_singular_integral,input_sieve,input_mertens_mean,input_sw_bv,input_quadratic_sums}
+\leanok
+Check the refined interval dimension condition for the actual lower density. Apply presieving and use the circle-method mean square to bound the exceptional set. Prove the positive archimedean lower bound and uniform Euler-product size. Choose a common cutoff with all lower and upper requirements; the explicit exponent $C_{A_0}=A_0/2+6$ is independent of $C$.
+\end{proof}
+
+\begin{lemma}[Weighted upper application and main-term comparison]
+\label{upper_sieve}
+\uses{two_range_presieve,goldbach_circle_method,input_sw_bv,input_prime_distribution,input_quadratic_sums,input_sieve,input_mertens_mean}
+\lean{PrimeSquares.goldbach_upper_sieve_complete,PrimeSquares.goldbach_weighted_upper_main_term_complete}
+\leanok
+\par\medskip\noindent\textbf{Paper Proposition 9.20.} \textit{complete conditional implication.}\par
+For $N^2(\log N)^{-A_0}\leq n<N^2$, $n\equiv12\pmod{24}$,
+\begin{align}
+ \sum_{\ell\in L_n}S(M_n(\ell),W_{\ell,n},z_\ell)
+ &\leq
+ \bigl(c_{9/8}F_1(2)\mathcal W(9/8)+o(1)\bigr)
+ X_n\Theta_n(z)+\mathcal E_2(n),
+\end{align}
+where
+\begin{align}
+ c_\alpha=\frac{16e^{-\gamma/2}}{\sqrt{\pi\alpha}}
+\end{align}
+and
+\begin{align}
+\sum_{n<N^2}|\mathcal E_2(n)|^2
+\ll_{A_0,K} N^4(\log N)^{-K}.
+\end{align}
+\par\medskip\noindent\textbf{Paper Lemma 11.18.} \textit{complete conditional implication.}\par
+Let \(\alpha=9/8\).  Uniformly in the range \textup{(11.1)},
+\begin{align}
+ \sum_{\ell\in L}X_n(\ell)\Theta_{n,\ell}(z_\ell)
+ \leq
+ \bigl(c_\alpha\mathcal W(\alpha)+o(1)\bigr)
+ X_n\Theta_n(z),
+ \qquad
+ c_\alpha=\frac{16e^{-\gamma/2}}{\sqrt{\pi\alpha}}.
+\end{align}
+Here \(\mathcal W(\alpha)\) is the integral defined in
+\textup{(9.19)}.
+\end{lemma}
+\begin{proof}[Proof architecture]
+\proves{upper_sieve}
+\uses{two_range_presieve,goldbach_circle_method,input_sw_bv,input_prime_distribution,input_quadratic_sums,input_sieve,input_mertens_mean}
+\leanok
+Apply the upper sieve uniformly in the auxiliary index and sum only after controlling its level range. Cancel the small-prime factors, apply the independent effective mean and Mertens interfaces, and pass to the weighted integral. Retain the correct integration domain and the exact normalization cancellation. Bound the removed ranges and smoothing error relative to the lower main term.
+\end{proof}
+
+\begin{lemma}[Strict numerical comparison]
+\label{sieve_positivity}
+\uses{upper_sieve,lower_sieve,input_sieve}
+\lean{PrimeSquares.goldbach_sieve_numerical_comparison}
+\leanok
+\par\medskip\noindent\textbf{Paper Lemma 9.24.} \textit{complete conditional implication.}\par
+With the normalization of \textnormal{[paper bibliography: I80; (1.8)--(1.10)]},
+\begin{align}
+ \Delta>0.
+\end{align}
+\end{lemma}
+\begin{proof}[Proof architecture]
+\proves{sieve_positivity}
+\uses{upper_sieve,lower_sieve,input_sieve}
+\leanok
+Bound the weighted integral using exact rational inequalities and prove integrability in the needed range. Compare the resulting certified upper constant with the classical lower sieve value. Floating-point experiments are auxiliary only; the positivity used by the final proof is a Lean inequality under the recorded classical-function inputs.
+\end{proof}
+

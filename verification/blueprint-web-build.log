@@ -1,0 +1,40 @@
+ (loading package /root/.local/lib/python3.12/site-
+   packages/plasTeX/Packages/article.py
+ )
+ (loading package /root/.local/lib/python3.12/site-
+   packages/plasTeX/Packages/amssymb.py
+ )
+ (loading package /root/.local/lib/python3.12/site-
+   packages/plasTeX/Packages/amsthm.py
+ )
+ (loading package /root/.local/lib/python3.12/site-
+   packages/plasTeX/Packages/amsmath.py
+ )
+ (loading package /root/.local/lib/python3.12/site-
+   packages/plasTeX/Packages/hyperref.py
+ )
+ (loading package /root/.local/lib/python3.12/site-
+   packages/leanblueprint/Packages/blueprint.py
+ (loading package /root/.local/lib/python3.12/site-
+   packages/plastexdepgraph/Packages/depgraph.py
+ ) ) ( ./macros/common.tex ) ( ./macros/web.tex ) ( ./content_web.tex )....
+...........................................................................
+...........................................................................
+...........................................................................
+...........................
+INFO: Directing output files to directory: ../web/.
+INFO: Importing templates from /root/.local/lib/python3.12/site-
+   packages/plasTeX/Renderers/PageTemplate
+INFO: Importing templates from /root/.local/lib/python3.12/site-
+   packages/plasTeX/Renderers/HTML5
+INFO: Using theme /root/.local/lib/python3.12/site-
+   packages/plasTeX/Renderers/HTML5/Themes/default
+INFO: Using the imager "gspdfpng".
+/bin/sh: 1: dvisvgm: not found
+WARNING: Could not find a valid vector imager in the list: pdf2svg,
+   dvisvgm.  The default vector imager will be used.
+ [ index.html [ sect0001.html ] [ sect0002.html ] [ sect0003.html ]
+ [ sect0004.html ] [ sect0005.html ] [ sect0006.html ] [ sect0007.html ]
+ [ sect0008.html ] [ sect0009.html ] [ sect0010.html ] [ sect0011.html ]
+ [ sect0012.html ] ]plasTeX version 3.1
+

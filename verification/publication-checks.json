@@ -1,0 +1,16 @@
+{
+  "publication_release": 1266,
+  "proof_checkpoint": 1265,
+  "checked_Lean_files_unchanged": 1384,
+  "blueprint_nodes": 52,
+  "mathematical_groups": 39,
+  "independent_input_groups": 13,
+  "paper_claims_and_definitions": 58,
+  "DAG_acyclic": true,
+  "displayed_Lean_targets_resolve_in_unchanged_sources": 102,
+  "archived_theorem_axiom_results_revalidated": 4517,
+  "fresh_Lean_build_this_release": false,
+  "full_unedited_original_files_preserved": 1303,
+  "manuscript_source_edit_is_title_only": true,
+  "scope": "Source identities, exact statement correspondence, graph, source declarations and archived audits; no new kernel execution."
+}

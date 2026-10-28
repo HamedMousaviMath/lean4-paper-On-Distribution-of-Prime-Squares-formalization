@@ -1,0 +1,1137 @@
+[
+  {
+    "id": "input_prime_distribution",
+    "title": "PNT, compatible progressions and Page data",
+    "external_ids": [
+      "PNT_LIMITS",
+      "PROGRESSION_ESTIMATE",
+      "PAGE_CLASSES",
+      "UNIFORM_PAGE_PREFIX",
+      "FIXED_PROGRESSION_PNT"
+    ],
+    "anchors": [
+      "PrimeAsymptoticInputs",
+      "PagePrimeSquareDistributionInputs",
+      "RawPageUniquenessInput",
+      "UniformPageProgressionInputs",
+      "RawFixedPrimeProgressionFrequencyInput"
+    ],
+    "text": "Assume the prime asymptotic limits and the explicitly quantified progression estimates, with compatible optional primitive-character zero data. Page uniqueness is a separate general input. Fixed-progression prime frequencies are used for badness. The existence, analytic continuation and normalization bridges of these exact predicates remain unproved.",
+    "labels": [],
+    "deps": [],
+    "section": "IndependentInputs",
+    "modules": [
+      "PrimeSquares/GaussAsymptotic.lean",
+      "PrimeSquares/PageDistributionInputs.lean",
+      "PrimeSquares/PrimeSquareFrequency.lean",
+      "PrimeSquares/RawPageUniqueness.lean",
+      "PrimeSquares/UniformPageProgressionRange.lean"
+    ]
+  },
+  {
+    "id": "input_quadratic_sums",
+    "title": "Raw quadratic exponential-sum estimates",
+    "external_ids": [
+      "REN_GHOSH",
+      "QUADRATIC_WEYL_FJK"
+    ],
+    "anchors": [
+      "RawQuadraticWeylApproximationInput"
+    ],
+    "text": "Assume the compatible Ren and Ghosh prime quadratic estimates, and separately the general initial Weyl approximation for ordinary squares. Rational selection, phase conventions and published-to-interface bridges are part of this external boundary. The paper-specific minor estimates and ordinary-square maximal application are proved downstream.",
+    "labels": [],
+    "deps": [],
+    "section": "IndependentInputs",
+    "modules": [
+      "PrimeSquares/QuadraticWeylInput.lean"
+    ]
+  },
+  {
+    "id": "input_ordinary_squares",
+    "title": "Ordinary-square decomposition and stopping estimates",
+    "external_ids": [
+      "FULL_SQUARE_DECOMPOSITION",
+      "ORDINARY_SQUARE_STOPPING"
+    ],
+    "anchors": [
+      "FullSquareDecompositionInput",
+      "OrdinarySquareStoppingInput"
+    ],
+    "text": "Assume the global fixed-scale ordinary-square decomposition and, where used, the stronger local stopping estimates. Their analytic proofs, globalization and exact normalization/support bridges remain external. Spatial reflection between $x+n^2$ and $x-n^2$, with the same constants, is proved internally.",
+    "labels": [],
+    "deps": [],
+    "section": "IndependentInputs",
+    "modules": [
+      "PrimeSquares/IndependentSquareDecomposition.lean",
+      "PrimeSquares/IndependentStoppingInputs.lean"
+    ]
+  },
+  {
+    "id": "input_multifrequency",
+    "title": "Smooth multifrequency estimates",
+    "external_ids": [
+      "SMOOTH_MULTIFREQUENCY",
+      "RATIONAL_SMOOTH_MULTIFREQUENCY"
+    ],
+    "anchors": [
+      "SmoothCircleBourgainInput",
+      "RationalSmoothCircleInput"
+    ],
+    "text": "Assume the general smooth circle multifrequency bound and its distinct rational-period refinement. The fixed bump, transference and normalization are included in the exact predicates. Actual annular kernels, arithmetic coefficients, variable starting scales and denominator truncations are proved applications, not fields of these inputs.",
+    "labels": [],
+    "deps": [],
+    "section": "IndependentInputs",
+    "modules": [
+      "PrimeSquares/RationalSmoothWeighted.lean",
+      "PrimeSquares/SmoothCircleBourgainInput.lean"
+    ]
+  },
+  {
+    "id": "input_iw_sampling",
+    "title": "IW construction, multipliers and sampling",
+    "external_ids": [
+      "QUANTITATIVE_IW",
+      "FULL_DOMAIN_ADELIC_IW",
+      "FULL_DOMAIN_TAO_SAMPLING"
+    ],
+    "anchors": [
+      "RawTaoArcConstructionInput",
+      "RawFullAdelicIWInput",
+      "RawFullMajorArcSamplingInput",
+      "RawFullShannonInput"
+    ],
+    "text": "Assume the stated quantitative construction, multiplier, major-arc sampling and Shannon interfaces, including the full-domain forms needed by the source. Their rough-symbol, finite-quotient and full-class realization bridges remain external. The concrete source parameters and operator identifications are checked internally.",
+    "labels": [],
+    "deps": [],
+    "section": "IndependentInputs",
+    "modules": [
+      "PrimeSquares/FullAdelicIWApplication.lean",
+      "PrimeSquares/FullTaoSamplingApplications.lean",
+      "PrimeSquares/IWFiniteFrequencyGeometry.lean"
+    ]
+  },
+  {
+    "id": "input_real_variable",
+    "title": "General real-variable and prime maximal inputs",
+    "external_ids": [
+      "GENERAL_VARIATION_SAMPLING",
+      "FULL_DOMAIN_CONTINUOUS_STANDARDS",
+      "PRIME_MAXIMAL_LP"
+    ],
+    "anchors": [
+      "RawFullOneSidedHLInput",
+      "RawFullScalarHormanderInput",
+      "IndependentPrimeMaximalInput"
+    ],
+    "text": "Assume the general one-sided maximal, scalar Hormander, Young and interpolation statements in the exact domains used, and the complementary-exponent prime polynomial maximal input. The finite signed maximal inequality has been proved internally at constant $6$ and is not an assumption. All annular applicability checks remain internal.",
+    "labels": [],
+    "deps": [],
+    "section": "IndependentInputs",
+    "modules": [
+      "PrimeSquares/FullContinuousSource.lean",
+      "PrimeSquares/IndependentStoppingInputs.lean",
+      "PrimeSquares/RealAnnularMaximal.lean"
+    ]
+  },
+  {
+    "id": "input_ergodic",
+    "title": "Transference and bounded-class convergence",
+    "external_ids": [
+      "ERGODIC_TRANSFER",
+      "BOUNDED_SQUARE_POINTWISE"
+    ],
+    "anchors": [
+      "RawCalderonStrongInput",
+      "RawCalderonModularInput",
+      "RawBoundedSquarePointwiseInput"
+    ],
+    "text": "Assume general strong and modular transference for finite positive convolution families and bounded-class square/prime-square pointwise convergence. Their exact action, gauge and normalization bridges remain external. The unbounded Orlicz extension and enumerated-prime identifications are proved in the project.",
+    "labels": [],
+    "deps": [],
+    "section": "IndependentInputs",
+    "modules": [
+      "PrimeSquares/ErgodicIndependentInputs.lean"
+    ]
+  },
+  {
+    "id": "input_badness",
+    "title": "General badness and maximal principles",
+    "external_ids": [
+      "LAVICTOIRE",
+      "SAWYER",
+      "CONZE"
+    ],
+    "anchors": [
+      "RawOriginalLaVictoireInput",
+      "RawSawyerMaximalInput",
+      "RawConzeMaximalInput"
+    ],
+    "text": "Assume the original general LaVictoire criterion, Sawyer maximal principle and Conze transfer principle, with their recorded cutoff and probability conventions. Their own proofs and published-form bridges remain external. The persistent criterion for the present paper and its prime-square arithmetic are deductions.",
+    "labels": [],
+    "deps": [],
+    "section": "IndependentInputs",
+    "modules": [
+      "PrimeSquares/PersistentBadnessCriterion.lean"
+    ]
+  },
+  {
+    "id": "input_weil",
+    "title": "Split quadratic Weil bound",
+    "external_ids": [
+      "WEIL"
+    ],
+    "anchors": [
+      "RawSplitQuadraticWeilInput"
+    ],
+    "text": "Assume the weakened quadratic character-sum bound for arbitrary nonempty sets of distinct linear factors over odd prime fields. No local correlation, moment, spacing or badness conclusion is built into this input.",
+    "labels": [],
+    "deps": [],
+    "section": "IndependentInputs",
+    "modules": [
+      "PrimeSquares/QuadraticCharacterExpansion.lean"
+    ]
+  },
+  {
+    "id": "input_gk",
+    "title": "Optional Granville--Kurlberg spacing theorem",
+    "external_ids": [
+      "GRANVILLE_KURLBERG"
+    ],
+    "anchors": [
+      "RawGranvilleKurlbergInput"
+    ],
+    "text": "Assume the general CRT-family theorem taking local correlation and subpower hypotheses to joint cyclic Poisson gap limits. Its proof and exact cyclic joint bridge remain external. This quoted theorem is accounted for separately and is not used by Theorem 1.5(i).",
+    "labels": [
+      "t:grankul"
+    ],
+    "deps": [
+      "quadratic_correlations"
+    ],
+    "section": "IndependentInputs",
+    "modules": [
+      "PrimeSquares/GranvilleKurlbergInterface.lean"
+    ]
+  },
+  {
+    "id": "input_sw_bv",
+    "title": "Ordinary prime-count Siegel--Walfisz and BV",
+    "external_ids": [
+      "SIEGEL_WALFISZ_PRIME_COUNTS",
+      "BOMBIERI_VINOGRADOV"
+    ],
+    "anchors": [
+      "RawPrimeSiegelWalfiszInput",
+      "RawPrimeBombieriVinogradovInput"
+    ],
+    "text": "Assume uniform ordinary prime counts with endpoint maxima: Siegel--Walfisz in logarithmic moduli and unweighted Bombieri--Vinogradov to its square-root level. Weighted oscillatory sums and the least-common-multiple reindexing are derived in the project. No own-paper circle-method conclusion is assumed.",
+    "labels": [],
+    "deps": [],
+    "section": "IndependentInputs",
+    "modules": [
+      "PrimeSquares/GoldbachRawPrimeDistribution.lean"
+    ]
+  },
+  {
+    "id": "input_sieve",
+    "title": "General one-stage sieve and classical sieve functions",
+    "external_ids": [
+      "GENERAL_SIEVE",
+      "ROSSER_IWANIEC_SINGLE_STAGE"
+    ],
+    "anchors": [
+      "GoldbachClassicalFundamentalInput",
+      "GoldbachClassicalCoefficientInput"
+    ],
+    "text": "Assume the general fundamental and coefficient forms of the one-stage Rosser--Iwaniec sieve with the precise refined dimension condition. Retain the classical-function continuity and evaluation information required by the applications. Weights are chosen before the supported densities. The signed two-stage combination and its uniform error limit are proved internally.",
+    "labels": [],
+    "deps": [],
+    "section": "IndependentInputs",
+    "modules": [
+      "PrimeSquares/GoldbachPresieveClassicalInputs.lean"
+    ]
+  },
+  {
+    "id": "input_mertens_mean",
+    "title": "Interval Mertens and effective half-dimensional means",
+    "external_ids": [
+      "CLASSICAL_INTERVAL_MERTENS",
+      "EFFECTIVE_HALF_DIMENSIONAL_MEAN",
+      "CLASSICAL_PRIME_LOG_MERTENS",
+      "CLASSICAL_PRIME_MERTENS_RATIOS",
+      "CLASSICAL_FULL_INTERVAL_MERTENS"
+    ],
+    "anchors": [
+      "GoldbachClassicalIntervalMertens",
+      "ClassicalHalfMeanValueInput",
+      "ClassicalPrimeLogMertens",
+      "ClassicalPrimeMertensRatios",
+      "GoldbachClassicalFullIntervalMertens"
+    ],
+    "text": "Assume the explicitly quantified general interval Euler-product bounds, prime logarithmic and product Mertens estimates, and effective mean theorem. The source-dependent density checks, weighted sum, main-term comparison and uniform errors are proved deductions. The retired weighted-prime-count planning placeholder is not an active hypothesis.",
+    "labels": [],
+    "deps": [],
+    "section": "IndependentInputs",
+    "modules": [
+      "PrimeSquares/GoldbachLowerSieveDensity.lean",
+      "PrimeSquares/GoldbachUpperSieveDensity.lean",
+      "PrimeSquares/GoldbachWeightedMeanInputs.lean",
+      "PrimeSquares/GoldbachWeightedMeanValue.lean"
+    ]
+  },
+  {
+    "id": "QuadraticSums",
+    "title": "Quadratic sums and progression coefficients",
+    "labels": [
+      "anonymous-s3-line1634",
+      "anonymous-s3-line1649"
+    ],
+    "deps": [],
+    "anchors": [
+      "twistedSquareSum",
+      "principalSquareSum",
+      "upsilon"
+    ],
+    "proof": "Use actual finite sums over units, with characters extended by zero. Preserve the normalization by $\\phi(q)$ and the Fourier sign. All later local calculations refer to these definitions, rather than an abstract family of coefficients.",
+    "section": "Arithmetic",
+    "modules": [
+      "PrimeSquares/ProgressionCorrelation.lean",
+      "PrimeSquares/TwistedQuadratic.lean"
+    ]
+  },
+  {
+    "id": "SparseData",
+    "title": "Sparse families and admissible stopping maps",
+    "labels": [
+      "d:sparse",
+      "d:admiss"
+    ],
+    "deps": [],
+    "anchors": [
+      "IntegerSparseCollection",
+      "SourceLinearAdmissible"
+    ],
+    "proof": "Keep the sparsity parameter explicit: the preliminary convention is $1/4$, whereas the introductory sparse theorem uses $1/10$. Admissibility is a symmetric spatial density condition; a single one-sided bound does not suffice. The radius constant and the sufficiently large admissibility coefficient are distinct parameters.",
+    "section": "Stopping",
+    "modules": [
+      "PrimeSquares/LinearLocalMass.lean",
+      "PrimeSquares/TheoremOneThree.lean"
+    ]
+  },
+  {
+    "id": "cohen_identities",
+    "title": "Cohen identities and progression restriction",
+    "labels": [
+      "l:cohenquadratic",
+      "l:progressioncohen"
+    ],
+    "deps": [
+      "QuadraticSums"
+    ],
+    "anchors": [
+      "quadratic_cohen_identity",
+      "progression_cohen_identity_int"
+    ],
+    "proof": "Expand the Ramanujan sum and group by residue classes. Reduce to prime powers using the Chinese remainder theorem, retaining the shared-prime vanishing case. The proof includes the positive-modulus boundary and the actual local root counts; routine finite-sum rearrangements stay within this node.",
+    "section": "Arithmetic",
+    "modules": [
+      "PrimeSquares/CohenProduct.lean",
+      "PrimeSquares/ProgressionCohen.lean"
+    ]
+  },
+  {
+    "id": "progression_euler_products",
+    "title": "Local factors and progression Euler products",
+    "labels": [
+      "l:sumoverramanujan",
+      "l:motamakemajorprimesquareprog",
+      "c:generalmajorprimesquareprog"
+    ],
+    "deps": [
+      "cohen_identities"
+    ],
+    "anchors": [
+      "sum_upsilon_square_prime_factorization",
+      "progression_euler_product_real",
+      "general_progression_euler_product_real"
+    ],
+    "proof": "Factor the normalized correlation and sum the local series. Treat odd primes dividing the progression modulus separately from those not dividing it. At $2$, retain the truncated valuation $\\min(v_2(k),3)$ and the corresponding congruence indicator. The obstruction is only at primes in the displayed cutoff range. The multiplier version uses the actual residue counts.",
+    "section": "Arithmetic",
+    "modules": [
+      "PrimeSquares/GeneralLocalEuler.lean",
+      "PrimeSquares/LocalEuler.lean",
+      "PrimeSquares/ProgressionCorrelation.lean"
+    ]
+  },
+  {
+    "id": "cohen_log_bound",
+    "title": "Uniform logarithmic bound",
+    "labels": [
+      "l:lowramanujan"
+    ],
+    "deps": [
+      "cohen_identities"
+    ],
+    "anchors": [
+      "low_ramanujan_uniform_bound"
+    ],
+    "proof": "Apply the local vanishing and prime-factor bounds before estimating the Euler product. An elementary prime-product estimate supplies uniformity for real $Q\\geq3$, including integers where the local factor vanishes. No prime number theorem input is used for this node.",
+    "section": "Arithmetic",
+    "modules": [
+      "PrimeSquares/CohenLogBound.lean"
+    ]
+  },
+  {
+    "id": "gauss_bounds",
+    "title": "Principal and twisted quadratic Gauss bounds",
+    "labels": [
+      "l:inftyboundsaq",
+      "l:Gcharbound"
+    ],
+    "deps": [
+      "QuadraticSums",
+      "input_prime_distribution"
+    ],
+    "anchors": [
+      "principalSquareSum_two_add_o_one",
+      "twistedSquareSum_uniform_bound_int"
+    ],
+    "proof": "Use prime-power evaluations and multiplicativity for the character-twisted estimate. For the sharp principal bound, optimize the product of local losses and use the two explicit prime asymptotic limits. Keep the quantified eventual epsilon bound: the coefficient $2+o(1)$ is not a fixed uniform value of $2$. Only the principal asymptotic clause uses the external PNT input.",
+    "section": "Arithmetic",
+    "modules": [
+      "PrimeSquares/GaussAsymptotic.lean",
+      "PrimeSquares/TwistedGaussBound.lean"
+    ]
+  },
+  {
+    "id": "conductor_refinement",
+    "title": "Conductor-sensitive exceptional arithmetic",
+    "labels": [
+      "l:exceptionalarithmetic"
+    ],
+    "deps": [
+      "gauss_bounds",
+      "progression_euler_products"
+    ],
+    "anchors": [
+      "conductor_sensitive_refinement"
+    ],
+    "proof": "Write each induced character through its primitive conductor. The support and coefficient bounds must retain this conductor before summing over the remaining factor of the denominator. Derive the three displayed estimates and logarithmic consequence together; the hypothesis is strengthened to real base characters, so it covers the exceptional character selected later.",
+    "section": "Arithmetic",
+    "modules": [
+      "PrimeSquares/ConductorRefinement.lean"
+    ]
+  },
+  {
+    "id": "abstract_improving",
+    "title": "Abstract high-low optimization and strong improving",
+    "labels": [
+      "t:improvinggeneral",
+      "c:improvinggeneral"
+    ],
+    "deps": [],
+    "anchors": [
+      "highLow_AB_endpoint",
+      "highLow_AB_strong_improving"
+    ],
+    "proof": "Balance the low $\\ell^1\\!\\to\\!\\ell^\\infty$ cost against the high $\\ell^2$ cost. Separate admissible large scales from the complementary range controlled by the ordinary operator. Choose a strictly larger loss coefficient before choosing cutoffs and error exponents. Pass from indicators to strong improving by dyadic level decomposition and summable geometric estimates, including $p=2$.",
+    "section": "Improving",
+    "modules": [
+      "PrimeSquares/HighLowTheorem.lean",
+      "PrimeSquares/StrongImprovingTheorem.lean"
+    ]
+  },
+  {
+    "id": "prime_arc_approximation",
+    "title": "Prime-square input and full approximation error",
+    "labels": [
+      "l:prime-square-input",
+      "l:aaplemma"
+    ],
+    "deps": [
+      "gauss_bounds",
+      "conductor_refinement",
+      "input_prime_distribution",
+      "input_quadratic_sums"
+    ],
+    "anchors": [
+      "source_corrected_prime_square_input",
+      "source_approximation_all_exponents"
+    ],
+    "proof": "Select compatible progression and quadratic exponential-sum data. On major arcs use the same exceptional datum as in the model; off the source arcs combine the rational approximation with the Ren and Ghosh bounds. Check periodized lifts and the bounded number of active translates. Absorb the intermediate power losses into arbitrary logarithmic decay. Both the major and minor cases are necessary.",
+    "section": "PrimeOperators",
+    "modules": [
+      "PrimeSquares/CorrectedPrimeSquareInput.lean",
+      "PrimeSquares/SectionSixSourceExports.lean"
+    ]
+  },
+  {
+    "id": "prime_low",
+    "title": "Pointwise low contribution",
+    "labels": [
+      "p:lowcontribution"
+    ],
+    "deps": [
+      "progression_euler_products",
+      "cohen_log_bound",
+      "input_prime_distribution",
+      "input_quadratic_sums"
+    ],
+    "anchors": [
+      "source_low_local_and_norm",
+      "selectedPrimeLow_source_bounds"
+    ],
+    "proof": "Invert the localized multiplier into the arithmetic factor times the smooth spatial kernel. Apply the corrected Euler product and its logarithmic bound, then sum spatial annuli to obtain the local density estimate. Taking the supremum of the same pointwise envelope gives the stated norm bound without an extra maximal loss.",
+    "section": "PrimeOperators",
+    "modules": [
+      "PrimeSquares/SectionSixSourceExports.lean",
+      "PrimeSquares/SelectedPrimeLowBounds.lean"
+    ]
+  },
+  {
+    "id": "annular_multifrequency",
+    "title": "Annular and denominator-truncated maxima",
+    "labels": [
+      "l:notBourgain",
+      "c:orlicz-prefix"
+    ],
+    "deps": [
+      "gauss_bounds",
+      "input_multifrequency"
+    ],
+    "anchors": [
+      "source_rational_annular_maximum",
+      "source_fixed_annular_truncation_maximum"
+    ],
+    "proof": "Transfer the independent smooth frequency estimate to the actual annular kernel. Separate the smooth main term from a square-summable remainder. For changing denominator cutoffs, use disjoint multiplier factorization and interval decompositions; retain the starting-scale restriction. The rational-period input and the general separated-frequency input have different logarithmic costs and are not interchangeable.",
+    "section": "PrimeOperators",
+    "modules": [
+      "PrimeSquares/FixedAnnularTruncationMaximum.lean",
+      "PrimeSquares/RationalAnnularSourceMaximum.lean"
+    ]
+  },
+  {
+    "id": "prime_high",
+    "title": "Sharp high maximal estimate",
+    "labels": [
+      "p:highupperbound"
+    ],
+    "deps": [
+      "annular_multifrequency",
+      "conductor_refinement",
+      "input_prime_distribution",
+      "input_multifrequency"
+    ],
+    "anchors": [
+      "proposition621_source",
+      "proposition621"
+    ],
+    "proof": "Group ordinary and exceptional coefficients by conductor and denominator scales. Page uniqueness gives at most one eligible character in each conductor class. Sum the resulting class estimates with the sharp arithmetic weights and pass from finite families to the countable supremum. The loss is uniform in the allowed starting scale, and bounded $Q$ is absorbed separately.",
+    "section": "PrimeOperators",
+    "modules": [
+      "PrimeSquares/Proposition621.lean",
+      "PrimeSquares/Proposition621Source.lean"
+    ]
+  },
+  {
+    "id": "prime_decomposition",
+    "title": "One selected prime high-low-error family",
+    "labels": [
+      "p:decompositionofan"
+    ],
+    "deps": [
+      "prime_arc_approximation",
+      "prime_low",
+      "prime_high",
+      "input_prime_distribution",
+      "input_quadratic_sums",
+      "input_multifrequency"
+    ],
+    "anchors": [
+      "proposition419"
+    ],
+    "proof": "Choose the Page-compatible raw data once and define all three operators from that selection. Assemble the pointwise low estimate, high norm and high maximum, and arbitrary-decay error for this same family. Prove exact operator identities in the relevant normed spaces; separately chosen existence witnesses would not establish the proposition.",
+    "section": "PrimeOperators",
+    "modules": [
+      "PrimeSquares/Proposition419.lean"
+    ]
+  },
+  {
+    "id": "prime_improving",
+    "title": "Prime-square improving theorem",
+    "labels": [
+      "t:improvingfixed"
+    ],
+    "deps": [
+      "abstract_improving",
+      "prime_arc_approximation",
+      "prime_low",
+      "gauss_bounds",
+      "input_prime_distribution",
+      "input_quadratic_sums",
+      "input_ordinary_squares"
+    ],
+    "anchors": [
+      "theorem_1_1",
+      "theorem_1_1_strong_sum"
+    ],
+    "proof": "Apply the fixed-scale abstract theorem to the genuine von Mangoldt square average and the independent ordinary-square decomposition. The plus/minus square reflection is proved with unchanged constants. Keep the exact cardinality of $[-N^2,2N^2]\\cap\\mathbb Z$ in the normalization and handle small scales. This route does not require the smooth multifrequency maximal input.",
+    "section": "Improving",
+    "modules": [
+      "PrimeSquares/TheoremOneOne.lean"
+    ]
+  },
+  {
+    "id": "sparse_recursion",
+    "title": "Local stopping estimate and sparse recursion",
+    "labels": [
+      "l:localsparse",
+      "l:sparserecursion"
+    ],
+    "deps": [
+      "SparseData"
+    ],
+    "anchors": [
+      "source_abstract_local_stopping_estimate",
+      "accepted_general_dyadic_sparse_recursion"
+    ],
+    "proof": "First establish the local estimate from the displayed Fourier and admissibility hypotheses. Stop on intervals where local densities exceed the chosen threshold, and construct disjoint major subsets with the required sparsity. Iterate a finite dyadic tree and pass to the source supremum through finite tests. Keep the actual stopping-map admissibility and the sufficiently large threshold in the recursion.",
+    "section": "Stopping",
+    "modules": [
+      "PrimeSquares/AcceptedSparseRecursion.lean",
+      "PrimeSquares/SourceAbstractLocalStopping.lean"
+    ]
+  },
+  {
+    "id": "prime_local_endpoint",
+    "title": "Prime-square localized endpoint",
+    "labels": [
+      "l:primeendpointlocal"
+    ],
+    "deps": [
+      "sparse_recursion",
+      "prime_decomposition",
+      "input_prime_distribution",
+      "input_quadratic_sums",
+      "input_multifrequency",
+      "input_ordinary_squares"
+    ],
+    "anchors": [
+      "source_prime_local_endpoint_from_independent_inputs"
+    ],
+    "proof": "Insert the selected prime decomposition and the independent ordinary-square stopping estimates into the abstract local theorem. Convert square-scale spatial radii to the source stopping convention and retain dilation constants. The general fixed-scale ordinary-square decomposition alone does not supply this stronger stopping input.",
+    "section": "Stopping",
+    "modules": [
+      "PrimeSquares/SourcePrimeLocalEndpoint.lean"
+    ]
+  },
+  {
+    "id": "prime_sparse",
+    "title": "Sparse domination",
+    "labels": [
+      "t:sparsebound"
+    ],
+    "deps": [
+      "prime_local_endpoint",
+      "sparse_recursion",
+      "input_prime_distribution",
+      "input_quadratic_sums",
+      "input_multifrequency",
+      "input_ordinary_squares",
+      "input_real_variable"
+    ],
+    "anchors": [
+      "theorem_1_3",
+      "theorem_1_3_open_pq"
+    ],
+    "proof": "Linearize finite maxima, apply the local endpoint recursively, and pass to the actual maximal pairing. Interpolate the endpoint form with complementary-exponent information from the independent prime maximal theorem to reach the open triangle. Use the stated $1/10$ sparsity convention in both conclusions.",
+    "section": "Stopping",
+    "modules": [
+      "PrimeSquares/TheoremOneThree.lean"
+    ]
+  },
+  {
+    "id": "iw_application",
+    "title": "Quantitative IW construction and sampling",
+    "labels": [
+      "p:IWinput7"
+    ],
+    "deps": [
+      "input_iw_sampling"
+    ],
+    "anchors": [
+      "proposition_quantitative_IW_full"
+    ],
+    "proof": "Choose the common period, denominator envelope, and narrow width in the displayed order. Verify good coprime data and containment of all source rational points, then apply the independent multiplier and sampling interfaces. Establish the actual finite-quotient Fourier identification, both norm directions and unique interpolation. The full-domain versions are explicit external inputs, not consequences asserted from finite-input versions.",
+    "section": "Orlicz",
+    "modules": [
+      "PrimeSquares/QuantitativeIWSourceAssembly.lean"
+    ]
+  },
+  {
+    "id": "continuous_annuli",
+    "title": "Continuous annular estimates",
+    "labels": [
+      "l:continuousestimates7"
+    ],
+    "deps": [
+      "input_real_variable"
+    ],
+    "anchors": [
+      "source_continuous_annular_estimates"
+    ],
+    "proof": "Prove the concrete annular Fourier formulas, signed $L^2$ multiplier estimate, kernel size and Hormander condition. Apply the general continuous theorems only after verifying their hypotheses. Establish continuity in the real scale, a measurable countable supremum, and the full $L^p$ estimate. Routine changes of variables and power integrals belong inside this node.",
+    "section": "Orlicz",
+    "modules": [
+      "PrimeSquares/FullContinuousSource.lean"
+    ]
+  },
+  {
+    "id": "iw_low_high",
+    "title": "IW low bounds and joint high-low assembly",
+    "labels": [
+      "p:orlicz-low",
+      "p:orlicz-hilo"
+    ],
+    "deps": [
+      "iw_application",
+      "continuous_annuli",
+      "prime_arc_approximation",
+      "input_iw_sampling",
+      "input_real_variable",
+      "input_prime_distribution",
+      "input_quadratic_sums",
+      "input_multifrequency"
+    ],
+    "anchors": [
+      "real_iw_source_construction_and_low",
+      "real_iw_source_high_low"
+    ],
+    "proof": "Identify the actual low operators with sampled continuous annular multipliers, controlling the real-$Q$ construction and the two low maxima jointly. Bound prime and ordinary-square high parts using their different approximation inputs. Keep the quantitative parameters before optimizing them. The internally proved finite signed maximal inequality is used instead of leaving it as an assumption.",
+    "section": "Orlicz",
+    "modules": [
+      "PrimeSquares/RealIWSourceHighLow.lean",
+      "PrimeSquares/RealIWSourceLow.lean"
+    ]
+  },
+  {
+    "id": "orlicz_maximal",
+    "title": "Three-family Orlicz maximal theorem",
+    "labels": [
+      "t:orlicz-maximal"
+    ],
+    "deps": [
+      "iw_low_high",
+      "input_iw_sampling",
+      "input_real_variable",
+      "input_prime_distribution",
+      "input_quadratic_sums",
+      "input_multifrequency"
+    ],
+    "anchors": [
+      "theorem_7_2_closed_signed_maximal",
+      "theorem_7_2_finitely_supported"
+    ],
+    "proof": "Optimize the quantitative low-high comparison to obtain the restricted distribution estimate. Assemble the von Mangoldt, ordinary-square and prime-square families using the proved full/annular and prime-power comparisons. Extend the restricted estimate to the convex gauge by level decomposition; remove the bounded part to obtain the truncated modular form.",
+    "section": "Orlicz",
+    "modules": [
+      "PrimeSquares/PaperClosedSignedMaximal.lean",
+      "PrimeSquares/TheoremSevenTwoFinitelySupported.lean"
+    ]
+  },
+  {
+    "id": "near_one_lp",
+    "title": "Near-one strong maximal estimates",
+    "labels": [
+      "c:orlicz-p"
+    ],
+    "deps": [
+      "orlicz_maximal",
+      "input_iw_sampling",
+      "input_real_variable",
+      "input_prime_distribution",
+      "input_quadratic_sums",
+      "input_multifrequency"
+    ],
+    "anchors": [
+      "corollary_7_6_closed_signed_maximal"
+    ],
+    "proof": "Integrate the distribution estimate against the layer-cake weight and estimate the gauge moment with the displayed dependence on $p-1$. Extend from finite support using positive finite averages, norm convergence and monotone maxima. The resulting constant is retained for the ergodic theorem.",
+    "section": "Orlicz",
+    "modules": [
+      "PrimeSquares/PaperClosedSignedMaximal.lean"
+    ]
+  },
+  {
+    "id": "ergodic_orlicz",
+    "title": "Ergodic transfer and Orlicz convergence",
+    "labels": [
+      "c:orlicz-ergodic"
+    ],
+    "deps": [
+      "orlicz_maximal",
+      "near_one_lp",
+      "input_iw_sampling",
+      "input_real_variable",
+      "input_prime_distribution",
+      "input_quadratic_sums",
+      "input_multifrequency",
+      "input_ergodic"
+    ],
+    "anchors": [
+      "corollary_7_46_closed_signed_maximal"
+    ],
+    "proof": "Apply the explicit strong and modular transference interfaces on invertible probability systems. Approximate by bounded truncations and combine the modular maximal control with the independent bounded-class convergence theorem. Prove the Cauchy and density-extension steps for the unbounded Orlicz class; those conclusions are not supplied as external inputs.",
+    "section": "Ergodic",
+    "modules": [
+      "PrimeSquares/PaperClosedSignedMaximal.lean"
+    ]
+  },
+  {
+    "id": "quadratic_correlations",
+    "title": "Quadratic residue correlations",
+    "labels": [
+      "l:quadratic-GK"
+    ],
+    "deps": [
+      "QuadraticSums",
+      "input_weil"
+    ],
+    "anchors": [
+      "quadratic_GK_uniform_correlation",
+      "quadratic_GK_tuple"
+    ],
+    "proof": "Expand products of the quadratic-residue indicators. Separate zero factors and repeated shifts, then use the independent split quadratic Weil bound for the genuinely nonconstant terms. Control the resulting error uniformly in the allowed tuples and prove the needed subpower density bound.",
+    "section": "Badness",
+    "modules": [
+      "PrimeSquares/QuadraticGKCorrelation.lean"
+    ]
+  },
+  {
+    "id": "persistent_criterion",
+    "title": "Persistent badness criterion and its application",
+    "labels": [
+      "t:l1badblackbox"
+    ],
+    "deps": [
+      "quadratic_correlations",
+      "input_badness"
+    ],
+    "anchors": [
+      "source_lavictoire_persistent_criterion",
+      "primeSquare_lavictoire_arithmetic"
+    ],
+    "proof": "Construct finite cyclic blocks with the required arithmetic, local moments and growth conditions. Push the fixed-progression prime frequencies through the exact prime-square residue fibres. Apply the original general LaVictoire criterion and the Sawyer and Conze inputs to obtain divergence along every infinite cutoff set. The optional full Poisson-spacing theorem is not required for this route.",
+    "section": "Badness",
+    "modules": [
+      "PrimeSquares/LaVictoireArithmetic.lean",
+      "PrimeSquares/SectionEightMilestone.lean"
+    ]
+  },
+  {
+    "id": "prime_square_ergodic_theorem",
+    "title": "Prime-square divergence and near-one maximal bound",
+    "labels": [
+      "t:pet"
+    ],
+    "deps": [
+      "persistent_criterion",
+      "ergodic_orlicz",
+      "near_one_lp",
+      "input_badness",
+      "input_weil",
+      "input_prime_distribution",
+      "input_ergodic",
+      "input_iw_sampling",
+      "input_real_variable",
+      "input_quadratic_sums",
+      "input_multifrequency"
+    ],
+    "anchors": [
+      "theorem_1_5_i_literal",
+      "theorem_1_5_ii_closed_signed_maximal"
+    ],
+    "proof": "For part (i), use the persistent arithmetic criterion on arbitrary nonatomic ergodic probability systems. For part (ii), use strong transference on invertible systems and identify enumerated-prime averages exactly with the appropriate prime cutoffs. Preserve the different system hypotheses of the two parts; a numerical prime-cutoff approximation would not suffice.",
+    "section": "Ergodic",
+    "modules": [
+      "PrimeSquares/PaperClosedSignedMaximal.lean",
+      "PrimeSquares/SectionEightMilestone.lean"
+    ]
+  },
+  {
+    "id": "goldbach_reductions",
+    "title": "Arithmetic reductions and the master sieve inequality",
+    "labels": [
+      "l:fromsiftedtop",
+      "l:truncationT",
+      "l:upperreduction",
+      "c:mastersievereduction"
+    ],
+    "deps": [],
+    "anchors": [
+      "goldbach_primitive_two_squares_criterion",
+      "goldbach_from_sifted_to_primes_complete",
+      "goldbach_truncation_complete",
+      "goldbach_master_sieve_complete"
+    ],
+    "proof": "Prove the primitive two-square criterion using the pinned Mathlib sum-of-two-squares results, including parity and primitive multiplication. Separate shared-prime exceptions, identify the residual set exactly, and inject it into the upper sifted family. Combine these finite-set inequalities before any analytic approximation. The criterion and these reductions are internal theorems.",
+    "section": "GoldbachArithmetic",
+    "modules": [
+      "PrimeSquares/GoldbachPrimitiveCriterion.lean",
+      "PrimeSquares/GoldbachSectionNineComplete.lean"
+    ]
+  },
+  {
+    "id": "goldbach_singular_integral",
+    "title": "Positive singular integral and smoothing",
+    "labels": [
+      "l:positiveH9"
+    ],
+    "deps": [],
+    "anchors": [
+      "goldbach_positive_singular_integral_complete",
+      "goldbach_smooth_seed_exists"
+    ],
+    "proof": "Construct the compactly supported smooth seed internally. Express the smoothing factor by autocorrelation, prove positivity of its mass, and compare the source singular integral with the positive model on the stated range. Quantify the discarded tail uniformly in the parameters needed by both sieve applications.",
+    "section": "GoldbachCircle",
+    "modules": [
+      "PrimeSquares/GoldbachFixedSmoothSeed.lean",
+      "PrimeSquares/GoldbachPositiveSingularComplete.lean"
+    ]
+  },
+  {
+    "id": "goldbach_minor",
+    "title": "Hybrid minor-arc mean square",
+    "labels": [
+      "l:hybridminorarc"
+    ],
+    "deps": [
+      "input_quadratic_sums"
+    ],
+    "anchors": [
+      "goldbach_hybrid_minor_complete"
+    ],
+    "proof": "Use Fourier inversion and Bessel to turn the weighted representation error into an integral. Prove congruence counting and progression energy with the required logarithmic losses. Insert the raw prime quadratic estimates on minor arcs and sum the coefficient families before choosing the final logarithmic cutoff.",
+    "section": "GoldbachCircle",
+    "modules": [
+      "PrimeSquares/GoldbachHybridMinorComplete.lean"
+    ]
+  },
+  {
+    "id": "goldbach_major",
+    "title": "SW/BV major-arc replacement",
+    "labels": [
+      "l:majorapproximation9"
+    ],
+    "deps": [
+      "input_sw_bv"
+    ],
+    "anchors": [
+      "goldbach_major_approximation_complete"
+    ],
+    "proof": "Apply partial summation to ordinary prime counts, including strict endpoints and primes dividing the modulus. For each fixed rational denominator, control the multiplicity of the least-common-multiple reindexing; this reduces to the ordinary unweighted Bombieri--Vinogradov input. Combine it with Siegel--Walfisz for the square sum and preserve the explicit endpoint errors before the mean-square sum.",
+    "section": "GoldbachCircle",
+    "modules": [
+      "PrimeSquares/GoldbachMajorApproximationComplete.lean"
+    ]
+  },
+  {
+    "id": "goldbach_euler",
+    "title": "Absolute Euler series and arithmetic coefficients",
+    "labels": [
+      "l:arithmeticcoefficients9"
+    ],
+    "deps": [
+      "progression_euler_products"
+    ],
+    "anchors": [
+      "goldbach_arithmetic_euler_complete"
+    ],
+    "proof": "Group by reduced rational points and prove the prime-power evaluations, treating the dyadic factor separately. Establish absolute convergence before exchanging the smooth-denominator sum with the product. Bound the remaining gcd and divisor sums uniformly in the two coefficient indices; the local product is the one used by the actual representation problem.",
+    "section": "GoldbachCircle",
+    "modules": [
+      "PrimeSquares/GoldbachArithmeticComplete.lean"
+    ]
+  },
+  {
+    "id": "goldbach_major_completion",
+    "title": "Completion of the major contribution",
+    "labels": [
+      "l:majorcompletion9"
+    ],
+    "deps": [
+      "goldbach_euler",
+      "goldbach_singular_integral"
+    ],
+    "anchors": [
+      "goldbach_major_completion_complete"
+    ],
+    "proof": "Extend the finite arithmetic and analytic ranges in the model, using absolute summability and the smoothing-tail bounds. Identify the completed expression exactly with the local product times the source singular integral. Track the coefficient weights before summing the completion error.",
+    "section": "GoldbachCircle",
+    "modules": [
+      "PrimeSquares/GoldbachMajorCompletionComplete.lean"
+    ]
+  },
+  {
+    "id": "goldbach_circle_method",
+    "title": "Full weighted circle-method lemma",
+    "labels": [
+      "l:circmethod"
+    ],
+    "deps": [
+      "goldbach_minor",
+      "goldbach_major",
+      "goldbach_major_completion",
+      "input_quadratic_sums",
+      "input_sw_bv"
+    ],
+    "anchors": [
+      "goldbach_circle_method_source_complete"
+    ],
+    "proof": "Combine the hybrid minor bound, actual major replacement, arithmetic completion and analytic smoothing. Choose the logarithmic exponents in an order compatible with the requested saving and the uniform range of the outer index. The final theorem concerns the full original representation sums, with the actual source remainder and singular integral.",
+    "section": "GoldbachCircle",
+    "modules": [
+      "PrimeSquares/GoldbachCircleSourceSeed.lean"
+    ]
+  },
+  {
+    "id": "sieve_local_data",
+    "title": "Fixed prime sets and both local density formulas",
+    "labels": [
+      "l:fixedsievesets10",
+      "l:lowerlocaldensity",
+      "l:upperlocaldensity"
+    ],
+    "deps": [
+      "goldbach_euler"
+    ],
+    "anchors": [
+      "goldbach_fixed_sieve_sets",
+      "goldbach_lower_local_density_formula",
+      "goldbach_upper_local_density"
+    ],
+    "proof": "Compare the variable sieve sets with fixed supported prime sets, keeping the exceptional divisor contribution. Count the lower and upper residue classes explicitly and prove multiplicativity, nonzero base factors and all congruence restrictions. This supplies concrete supported densities to the general sieve interfaces rather than postulating their local formulas.",
+    "section": "GoldbachSieve",
+    "modules": [
+      "PrimeSquares/GoldbachFixedSieveSets.lean",
+      "PrimeSquares/GoldbachSieveLocalDensities.lean"
+    ]
+  },
+  {
+    "id": "two_range_presieve",
+    "title": "Signed two-range presieving",
+    "labels": [
+      "l:presieving"
+    ],
+    "deps": [
+      "sieve_local_data",
+      "input_sieve"
+    ],
+    "anchors": [
+      "goldbach_presieving_from_classical_coefficients",
+      "goldbach_presieve_uniform_assembly"
+    ],
+    "proof": "Choose the independent one-stage weights before the supported density. Combine lower and upper weights with the signed sandwich identity, using unique factorization across the disjoint prime ranges. Verify support below the full level and coefficient bound one. Prove the preliminary error tends to zero uniformly; the outer sieve functions retain dimension $\\kappa$. The revised source level condition implies the omitted strict inequality.",
+    "section": "GoldbachSieve",
+    "modules": [
+      "PrimeSquares/GoldbachPresieveClassicalInputs.lean",
+      "PrimeSquares/GoldbachPresieveUniformAssembly.lean"
+    ]
+  },
+  {
+    "id": "lower_sieve",
+    "title": "Lower application and uniform main-term size",
+    "labels": [
+      "p:sieveneedlower8",
+      "l:maintermsize8"
+    ],
+    "deps": [
+      "two_range_presieve",
+      "goldbach_circle_method",
+      "goldbach_singular_integral",
+      "input_sieve",
+      "input_mertens_mean",
+      "input_sw_bv",
+      "input_quadratic_sums"
+    ],
+    "anchors": [
+      "goldbach_lower_bounds_complete"
+    ],
+    "proof": "Check the refined interval dimension condition for the actual lower density. Apply presieving and use the circle-method mean square to bound the exceptional set. Prove the positive archimedean lower bound and uniform Euler-product size. Choose a common cutoff with all lower and upper requirements; the explicit exponent $C_{A_0}=A_0/2+6$ is independent of $C$.",
+    "section": "GoldbachSieve",
+    "modules": [
+      "PrimeSquares/GoldbachLowerBoundsComplete.lean"
+    ]
+  },
+  {
+    "id": "upper_sieve",
+    "title": "Weighted upper application and main-term comparison",
+    "labels": [
+      "p:sieveneedupper8",
+      "l:wumatomakisum"
+    ],
+    "deps": [
+      "two_range_presieve",
+      "goldbach_circle_method",
+      "input_sw_bv",
+      "input_prime_distribution",
+      "input_quadratic_sums",
+      "input_sieve",
+      "input_mertens_mean"
+    ],
+    "anchors": [
+      "goldbach_upper_sieve_complete",
+      "goldbach_weighted_upper_main_term_complete"
+    ],
+    "proof": "Apply the upper sieve uniformly in the auxiliary index and sum only after controlling its level range. Cancel the small-prime factors, apply the independent effective mean and Mertens interfaces, and pass to the weighted integral. Retain the correct integration domain and the exact normalization cancellation. Bound the removed ranges and smoothing error relative to the lower main term.",
+    "section": "GoldbachSieve",
+    "modules": [
+      "PrimeSquares/GoldbachUpperSieveComplete.lean",
+      "PrimeSquares/GoldbachWeightedUpperMainTerm.lean"
+    ]
+  },
+  {
+    "id": "sieve_positivity",
+    "title": "Strict numerical comparison",
+    "labels": [
+      "l:numericalcomparison"
+    ],
+    "deps": [
+      "upper_sieve",
+      "lower_sieve",
+      "input_sieve"
+    ],
+    "anchors": [
+      "goldbach_sieve_numerical_comparison"
+    ],
+    "proof": "Bound the weighted integral using exact rational inequalities and prove integrability in the needed range. Compare the resulting certified upper constant with the classical lower sieve value. Floating-point experiments are auxiliary only; the positivity used by the final proof is a Lean inequality under the recorded classical-function inputs.",
+    "section": "GoldbachSieve",
+    "modules": [
+      "PrimeSquares/GoldbachSieveNumericalComparison.lean"
+    ]
+  },
+  {
+    "id": "goldbach_exceptional_set",
+    "title": "Quantitative Goldbach exceptional set",
+    "labels": [
+      "t:repmotthm"
+    ],
+    "deps": [
+      "goldbach_reductions",
+      "goldbach_circle_method",
+      "sieve_positivity",
+      "input_sw_bv",
+      "input_quadratic_sums",
+      "input_sieve",
+      "input_mertens_mean"
+    ],
+    "anchors": [
+      "goldbach_section9_headline_complete",
+      "goldbach_section9_exceptional_density_zero"
+    ],
+    "proof": "Insert the lower and upper sieve estimates into the exact master inequality and use the strict positive margin. Absorb all mean-square error sets with the requested logarithmic saving. Pass from square cutoffs to arbitrary real $X$ and identify the source exceptional set literally. The theorem uses $n\\equiv12\\pmod{24}$; subtracting one gives the explanatory version in the abstract.",
+    "section": "GoldbachArithmetic",
+    "modules": [
+      "PrimeSquares/GoldbachSectionNineComplete.lean"
+    ]
+  }
+]

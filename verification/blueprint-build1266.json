@@ -1,0 +1,15 @@
+{
+  "pages": 26,
+  "nodes": 52,
+  "web_graph_edges_after_transitive_reduction": 69,
+  "web_graph_reachability_matches_curated_DAG": true,
+  "latex_undefined_references": 0,
+  "latex_overfull_boxes": 0,
+  "rendered_text_outside_page_margins": 0,
+  "visual_review": "Updated 26-page compact PDF: all pages in contact sheet plus first page full size; rebuilt 98-page manuscript: title and selected arithmetic, Orlicz, sieve and bibliography pages reviewed.",
+  "build": "pdfLaTeX and plasTeX leanblueprint plugin succeeded",
+  "lean_verification": "Prior proof build preserved; current source identities and declaration names checked, no new Lean execution",
+  "local_environment_note": "Compiler finalization uses the existing proc_self_compat readlink shim for this hosted runtime; LaTeX sources require no shim on an ordinary system.",
+  "title_archive_revision": true,
+  "current_title": "On the Distribution of Prime Squares and Its Applications"
+}

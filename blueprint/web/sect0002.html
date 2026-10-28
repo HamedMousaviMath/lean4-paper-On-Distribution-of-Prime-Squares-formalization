@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Independent inputs and their exact scope</title>
+<link rel="next" href="sect0003.html" title="Arithmetic: quadratic sums and conductors" />
+<link rel="prev" href="sect0001.html" title="Purpose and verification boundary" />
+<link rel="up" href="index.html" title="On the Distribution of Prime Squares and Its Applications: compact blueprint" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+<link rel="stylesheet" href="styles/blueprint.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">On the Distribution of Prime Squares and Its Applications: compact blueprint</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref"></span> <span class="toc_entry">Purpose and verification boundary</span></a>
+ </li>
+<li class=" active current">
+  <a href="sect0002.html"><span class="toc_ref">1</span> <span class="toc_entry">Independent inputs and their exact scope</span></a>
+ </li>
+<li class="">
+  <a href="sect0003.html"><span class="toc_ref">2</span> <span class="toc_entry">Arithmetic: quadratic sums and conductors</span></a>
+ </li>
+<li class="">
+  <a href="sect0004.html"><span class="toc_ref">3</span> <span class="toc_entry">Improving: optimization and the main estimate</span></a>
+ </li>
+<li class="">
+  <a href="sect0005.html"><span class="toc_ref">4</span> <span class="toc_entry">Prime operators: approximation, low and high terms</span></a>
+ </li>
+<li class="">
+  <a href="sect0006.html"><span class="toc_ref">5</span> <span class="toc_entry">Stopping: local estimates and sparse domination</span></a>
+ </li>
+<li class="">
+  <a href="sect0007.html"><span class="toc_ref">6</span> <span class="toc_entry">Orlicz: quantitative IW and the three-family maximum</span></a>
+ </li>
+<li class="">
+  <a href="sect0008.html"><span class="toc_ref">7</span> <span class="toc_entry">Badness: arithmetic blocks and the persistent criterion</span></a>
+ </li>
+<li class="">
+  <a href="sect0009.html"><span class="toc_ref">8</span> <span class="toc_entry">Ergodic: transference and the two endpoint conclusions</span></a>
+ </li>
+<li class="">
+  <a href="sect0010.html"><span class="toc_ref">9</span> <span class="toc_entry">Goldbach arithmetic: reductions and the exceptional set</span></a>
+ </li>
+<li class="">
+  <a href="sect0011.html"><span class="toc_ref">10</span> <span class="toc_entry">Goldbach circle method: minor arcs, major arcs and completion</span></a>
+ </li>
+<li class="">
+  <a href="sect0012.html"><span class="toc_ref">11</span> <span class="toc_entry">Goldbach sieve: local densities, presieving and comparison</span></a>
+ </li>
+<li ><a href="dep_graph_document.html">Dependency graph</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="a0000000003">1 Independent inputs and their exact scope</h1>
+<div class="lemma_thmwrapper theorem-style-plain" id="input_prime_distribution">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">1.1</span>
+    <span class="lemma_thmtitle">PNT, compatible progressions and Page data</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0002.html#input_prime_distribution">#</a>
+    
+    <a class="icon proof" href="sect0002.html#a0000000014"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.PrimeAsymptoticInputs" class="lean_decl">PrimeSquares.PrimeAsymptoticInputs</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.PagePrimeSquareDistributionInputs" class="lean_decl">PrimeSquares.PagePrimeSquareDistributionInputs</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.RawPageUniquenessInput" class="lean_decl">PrimeSquares.RawPageUniquenessInput</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.UniformPageProgressionInputs" class="lean_decl">PrimeSquares.UniformPageProgressionInputs</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.RawFixedPrimeProgressionFrequencyInput" class="lean_decl">PrimeSquares.RawFixedPrimeProgressionFrequencyInput</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   <b class="bfseries">External input; no proof claimed.</b> Assume the prime asymptotic limits and the explicitly quantified progression estimates, with compatible optional primitive-character zero data. Page uniqueness is a separate general input. Fixed-progression prime frequencies are used for badness. The existence, analytic continuation and normalization bridges of these exact predicates remain unproved. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000014">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Boundary and application
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>  This node records an unproved interface, not a proof. See the exact predicates in the displayed Lean declarations and the full input catalogue. The downstream nodes verify the paper-specific applicability and deductions. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="input_quadratic_sums">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">1.2</span>
+    <span class="lemma_thmtitle">Raw quadratic exponential-sum estimates</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0002.html#input_quadratic_sums">#</a>
+    
+    <a class="icon proof" href="sect0002.html#a0000000015"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.RawQuadraticWeylApproximationInput" class="lean_decl">PrimeSquares.RawQuadraticWeylApproximationInput</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   <b class="bfseries">External input; no proof claimed.</b> Assume the compatible Ren and Ghosh prime quadratic estimates, and separately the general initial Weyl approximation for ordinary squares. Rational selection, phase conventions and published-to-interface bridges are part of this external boundary. The paper-specific minor estimates and ordinary-square maximal application are proved downstream. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000015">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Boundary and application
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>  This node records an unproved interface, not a proof. See the exact predicates in the displayed Lean declarations and the full input catalogue. The downstream nodes verify the paper-specific applicability and deductions. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="input_ordinary_squares">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">1.3</span>
+    <span class="lemma_thmtitle">Ordinary-square decomposition and stopping estimates</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0002.html#input_ordinary_squares">#</a>
+    
+    <a class="icon proof" href="sect0002.html#a0000000016"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.FullSquareDecompositionInput" class="lean_decl">PrimeSquares.FullSquareDecompositionInput</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.OrdinarySquareStoppingInput" class="lean_decl">PrimeSquares.OrdinarySquareStoppingInput</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   <b class="bfseries">External input; no proof claimed.</b> Assume the global fixed-scale ordinary-square decomposition and, where used, the stronger local stopping estimates. Their analytic proofs, globalization and exact normalization/support bridges remain external. Spatial reflection between \(x+n^2\) and \(x-n^2\), with the same constants, is proved internally. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000016">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Boundary and application
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>  This node records an unproved interface, not a proof. See the exact predicates in the displayed Lean declarations and the full input catalogue. The downstream nodes verify the paper-specific applicability and deductions. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="input_multifrequency">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">1.4</span>
+    <span class="lemma_thmtitle">Smooth multifrequency estimates</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0002.html#input_multifrequency">#</a>
+    
+    <a class="icon proof" href="sect0002.html#a0000000017"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.SmoothCircleBourgainInput" class="lean_decl">PrimeSquares.SmoothCircleBourgainInput</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.RationalSmoothCircleInput" class="lean_decl">PrimeSquares.RationalSmoothCircleInput</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   <b class="bfseries">External input; no proof claimed.</b> Assume the general smooth circle multifrequency bound and its distinct rational-period refinement. The fixed bump, transference and normalization are included in the exact predicates. Actual annular kernels, arithmetic coefficients, variable starting scales and denominator truncations are proved applications, not fields of these inputs. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000017">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Boundary and application
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>  This node records an unproved interface, not a proof. See the exact predicates in the displayed Lean declarations and the full input catalogue. The downstream nodes verify the paper-specific applicability and deductions. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="input_iw_sampling">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">1.5</span>
+    <span class="lemma_thmtitle">IW construction, multipliers and sampling</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0002.html#input_iw_sampling">#</a>
+    
+    <a class="icon proof" href="sect0002.html#a0000000018"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.RawTaoArcConstructionInput" class="lean_decl">PrimeSquares.RawTaoArcConstructionInput</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.RawFullAdelicIWInput" class="lean_decl">PrimeSquares.RawFullAdelicIWInput</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.RawFullMajorArcSamplingInput" class="lean_decl">PrimeSquares.RawFullMajorArcSamplingInput</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.RawFullShannonInput" class="lean_decl">PrimeSquares.RawFullShannonInput</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   <b class="bfseries">External input; no proof claimed.</b> Assume the stated quantitative construction, multiplier, major-arc sampling and Shannon interfaces, including the full-domain forms needed by the source. Their rough-symbol, finite-quotient and full-class realization bridges remain external. The concrete source parameters and operator identifications are checked internally. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000018">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Boundary and application
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>  This node records an unproved interface, not a proof. See the exact predicates in the displayed Lean declarations and the full input catalogue. The downstream nodes verify the paper-specific applicability and deductions. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="input_real_variable">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">1.6</span>
+    <span class="lemma_thmtitle">General real-variable and prime maximal inputs</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0002.html#input_real_variable">#</a>
+    
+    <a class="icon proof" href="sect0002.html#a0000000019"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.RawFullOneSidedHLInput" class="lean_decl">PrimeSquares.RawFullOneSidedHLInput</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.RawFullScalarHormanderInput" class="lean_decl">PrimeSquares.RawFullScalarHormanderInput</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.IndependentPrimeMaximalInput" class="lean_decl">PrimeSquares.IndependentPrimeMaximalInput</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   <b class="bfseries">External input; no proof claimed.</b> Assume the general one-sided maximal, scalar Hormander, Young and interpolation statements in the exact domains used, and the complementary-exponent prime polynomial maximal input. The finite signed maximal inequality has been proved internally at constant \(6\) and is not an assumption. All annular applicability checks remain internal. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000019">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Boundary and application
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>  This node records an unproved interface, not a proof. See the exact predicates in the displayed Lean declarations and the full input catalogue. The downstream nodes verify the paper-specific applicability and deductions. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="input_ergodic">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">1.7</span>
+    <span class="lemma_thmtitle">Transference and bounded-class convergence</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0002.html#input_ergodic">#</a>
+    
+    <a class="icon proof" href="sect0002.html#a0000000020"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.RawCalderonStrongInput" class="lean_decl">PrimeSquares.RawCalderonStrongInput</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.RawCalderonModularInput" class="lean_decl">PrimeSquares.RawCalderonModularInput</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.RawBoundedSquarePointwiseInput" class="lean_decl">PrimeSquares.RawBoundedSquarePointwiseInput</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   <b class="bfseries">External input; no proof claimed.</b> Assume general strong and modular transference for finite positive convolution families and bounded-class square/prime-square pointwise convergence. Their exact action, gauge and normalization bridges remain external. The unbounded Orlicz extension and enumerated-prime identifications are proved in the project. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000020">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Boundary and application
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>  This node records an unproved interface, not a proof. See the exact predicates in the displayed Lean declarations and the full input catalogue. The downstream nodes verify the paper-specific applicability and deductions. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="input_badness">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">1.8</span>
+    <span class="lemma_thmtitle">General badness and maximal principles</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0002.html#input_badness">#</a>
+    
+    <a class="icon proof" href="sect0002.html#a0000000021"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.RawOriginalLaVictoireInput" class="lean_decl">PrimeSquares.RawOriginalLaVictoireInput</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.RawSawyerMaximalInput" class="lean_decl">PrimeSquares.RawSawyerMaximalInput</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.RawConzeMaximalInput" class="lean_decl">PrimeSquares.RawConzeMaximalInput</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   <b class="bfseries">External input; no proof claimed.</b> Assume the original general LaVictoire criterion, Sawyer maximal principle and Conze transfer principle, with their recorded cutoff and probability conventions. Their own proofs and published-form bridges remain external. The persistent criterion for the present paper and its prime-square arithmetic are deductions. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000021">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Boundary and application
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>  This node records an unproved interface, not a proof. See the exact predicates in the displayed Lean declarations and the full input catalogue. The downstream nodes verify the paper-specific applicability and deductions. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="input_weil">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">1.9</span>
+    <span class="lemma_thmtitle">Split quadratic Weil bound</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0002.html#input_weil">#</a>
+    
+    <a class="icon proof" href="sect0002.html#a0000000022"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.RawSplitQuadraticWeilInput" class="lean_decl">PrimeSquares.RawSplitQuadraticWeilInput</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   <b class="bfseries">External input; no proof claimed.</b> Assume the weakened quadratic character-sum bound for arbitrary nonempty sets of distinct linear factors over odd prime fields. No local correlation, moment, spacing or badness conclusion is built into this input. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000022">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Boundary and application
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>  This node records an unproved interface, not a proof. See the exact predicates in the displayed Lean declarations and the full input catalogue. The downstream nodes verify the paper-specific applicability and deductions. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="input_gk">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">1.10</span>
+    <span class="lemma_thmtitle">Optional Granville–Kurlberg spacing theorem</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0002.html#input_gk">#</a>
+    
+    <a class="icon proof" href="sect0002.html#a0000000023"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0008.html#quadratic_correlations">Lemma 7.1</a></li>
+          
+          <li><a href="sect0008.html#quadratic_correlations">Lemma 7.1</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.RawGranvilleKurlbergInput" class="lean_decl">PrimeSquares.RawGranvilleKurlbergInput</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>    <b class="bfseries">External input; no proof claimed.</b> Assume the general CRT-family theorem taking local correlation and subpower hypotheses to joint cyclic Poisson gap limits. Its proof and exact cyclic joint bridge remain external. This quoted theorem is accounted for separately and is not used by Theorem 1.5(i). </p>
+<p><b class="bfseries">Paper Theorem 8.6.</b> <i class="itshape">quoted external theorem.</i></p>
+<p>For each odd prime \(p\), let \(\Omega _p\subset \mathbb Z/p\mathbb Z\), put \(r_p=|\Omega _p|/p\) and \(s_p=r_p^{-1}\), and define \(\Omega _q\) from the \(\Omega _p\), for squarefree \(q\), by the Chinese remainder theorem. Suppose that, for every fixed \(k\geq 1\) and all distinct \(0,h_1,\ldots ,h_{k-1}\pmod p\), </p>
+<div class="displaymath" id="a0000000024">
+  \begin{align}  N_k(\mathbf h,\Omega _p) & :=\big|\{ t\in \mathbb {Z}/p\mathbb {Z}:t,t+h_1,\ldots ,t+h_{k-1}\in \Omega _p\} \big|=r_p^kp\big(1+O_k((1-r_p)p^{-c})\big) \end{align}
+</div>
+<p> for some \(c{\gt}0\), and suppose that \(s_p=p^{o(1)}\). Then the normalized spacings of \(\Omega _q\) are Poisson distributed as \(s_q=q/|\Omega _q|\to \infty \). In particular, if the elements of \(\Omega _q\) are listed cyclically and \(F_q(\theta )\) is the proportion of normalized gaps exceeding \(\theta \), then \(F_q(\theta )\to e^{-\theta }\) for every \(\theta {\gt}0\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000023">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Boundary and application
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>   This node records an unproved interface, not a proof. See the exact predicates in the displayed Lean declarations and the full input catalogue. The unit-square application uses the correlation node, while the general spacing theorem remains external. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="input_sw_bv">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">1.11</span>
+    <span class="lemma_thmtitle">Ordinary prime-count Siegel–Walfisz and BV</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0002.html#input_sw_bv">#</a>
+    
+    <a class="icon proof" href="sect0002.html#a0000000025"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.RawPrimeSiegelWalfiszInput" class="lean_decl">PrimeSquares.RawPrimeSiegelWalfiszInput</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.RawPrimeBombieriVinogradovInput" class="lean_decl">PrimeSquares.RawPrimeBombieriVinogradovInput</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   <b class="bfseries">External input; no proof claimed.</b> Assume uniform ordinary prime counts with endpoint maxima: Siegel–Walfisz in logarithmic moduli and unweighted Bombieri–Vinogradov to its square-root level. Weighted oscillatory sums and the least-common-multiple reindexing are derived in the project. No own-paper circle-method conclusion is assumed. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000025">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Boundary and application
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>  This node records an unproved interface, not a proof. See the exact predicates in the displayed Lean declarations and the full input catalogue. The downstream nodes verify the paper-specific applicability and deductions. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="input_sieve">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">1.12</span>
+    <span class="lemma_thmtitle">General one-stage sieve and classical sieve functions</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0002.html#input_sieve">#</a>
+    
+    <a class="icon proof" href="sect0002.html#a0000000026"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.GoldbachClassicalFundamentalInput" class="lean_decl">PrimeSquares.GoldbachClassicalFundamentalInput</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.GoldbachClassicalCoefficientInput" class="lean_decl">PrimeSquares.GoldbachClassicalCoefficientInput</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   <b class="bfseries">External input; no proof claimed.</b> Assume the general fundamental and coefficient forms of the one-stage Rosser–Iwaniec sieve with the precise refined dimension condition. Retain the classical-function continuity and evaluation information required by the applications. Weights are chosen before the supported densities. The signed two-stage combination and its uniform error limit are proved internally. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000026">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Boundary and application
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>  This node records an unproved interface, not a proof. See the exact predicates in the displayed Lean declarations and the full input catalogue. The downstream nodes verify the paper-specific applicability and deductions. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="input_mertens_mean">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">1.13</span>
+    <span class="lemma_thmtitle">Interval Mertens and effective half-dimensional means</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0002.html#input_mertens_mean">#</a>
+    
+    <a class="icon proof" href="sect0002.html#a0000000027"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.GoldbachClassicalIntervalMertens" class="lean_decl">PrimeSquares.GoldbachClassicalIntervalMertens</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.ClassicalHalfMeanValueInput" class="lean_decl">PrimeSquares.ClassicalHalfMeanValueInput</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.ClassicalPrimeLogMertens" class="lean_decl">PrimeSquares.ClassicalPrimeLogMertens</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.ClassicalPrimeMertensRatios" class="lean_decl">PrimeSquares.ClassicalPrimeMertensRatios</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.GoldbachClassicalFullIntervalMertens" class="lean_decl">PrimeSquares.GoldbachClassicalFullIntervalMertens</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   <b class="bfseries">External input; no proof claimed.</b> Assume the explicitly quantified general interval Euler-product bounds, prime logarithmic and product Mertens estimates, and effective mean theorem. The source-dependent density checks, weighted sum, main-term comparison and uniform errors are proved deductions. The retired weighted-prime-count planning placeholder is not an active hypothesis. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000027">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Boundary and application
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>  This node records an unproved interface, not a proof. See the exact predicates in the displayed Lean declarations and the full input catalogue. The downstream nodes verify the paper-specific applicability and deductions. </p>
+
+  </div>
+</div>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <a href="sect0001.html" title="Purpose and verification boundary"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="index.html" title="On the Distribution of Prime Squares and Its Applications: compact blueprint"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="sect0003.html" title="Arithmetic: quadratic sums and conductors"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+</body>
+</html>

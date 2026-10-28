@@ -1,0 +1,59 @@
+paper_statement,pdf_page,planned_lean_name,status,heading_start
+Theorem 1.1,3,PrimeSquares.Main.theorem_1_1,target - not implemented,"Let I = [−N 2 , 2N 2 ] ∩ Z. For all F, G ⊆ I,"
+Theorem 1.3,3,PrimeSquares.Main.theorem_1_3,target - not implemented,"Let F, G ⊂ Z be finite. There is a sparse collection of intervals S such that"
+Theorem 1.5,4,PrimeSquares.Main.theorem_1_5,target - not implemented,Let pk denote the k-th prime. The sequence (p2k ) is persistently universally
+Theorem 1.6,5,PrimeSquares.Main.theorem_1_6,target - not implemented,Quantitative exceptional set: Almost all integers congruent to 12 modulo 24
+Definition 2.10,12,PrimeSquares.Foundations.definition_2_10,target - not implemented,"A collection S of intervals is sparse if, for every I ∈ S, there is EI ⊂ I such"
+Definition 2.11,13,PrimeSquares.Foundations.definition_2_11,target - not implemented,Let f = 1F be supported in 3I0 . A map τ : I0 −→ {2j : 1 ≤ 2j ≤ |I0 |} is
+Lemma 3.1,15,PrimeSquares.Arithmetic.lemma_3_1,target - not implemented,Cohen’s identity with square shifts: Let 2a ∥ q. Then
+Definition 3.7,16,PrimeSquares.Arithmetic.definition_3_7,target - not implemented,"Exponential sums along squares: For a Dirichlet character χ modulo q, put"
+Definition 3.9,17,PrimeSquares.Arithmetic.definition_3_9,target - not implemented,"Let g = (q, y) and (b, g) = 1. Define"
+Lemma 3.11,17,PrimeSquares.Arithmetic.lemma_3_11,target - not implemented,"Let g | q and (b, g) = 1. Then"
+Lemma 3.12,17,PrimeSquares.Arithmetic.lemma_3_12,target - not implemented,"Let g = (q, y) and (b, g) = 1. Then"
+Lemma 3.14,17,PrimeSquares.Arithmetic.lemma_3_14,target - not implemented,"Let k, x, b ∈ Z, (b, k) = 1. Then"
+Corollary 3.16,18,PrimeSquares.Arithmetic.corollary_3_16,target - not implemented,"Let ℓ, k, n, b ∈ Z, with (b, k) = 1. Then"
+Lemma 3.20,19,PrimeSquares.Arithmetic.lemma_3_20,target - not implemented,"For Q ≥ 3 and every integer n,"
+Lemma 3.21,19,PrimeSquares.Arithmetic.lemma_3_21,target - not implemented,"If (a, q) = 1, then"
+Lemma 3.24,20,PrimeSquares.Arithmetic.lemma_3_24,target - not implemented,"Let χ be a real Dirichlet character modulo q, and let (a, q) = 1. Then, for every"
+Lemma 3.27,21,PrimeSquares.Arithmetic.lemma_3_27,target - not implemented,"Let x ∈ Z. Let χ0 be a primitive real character of conductor q0 , and for each"
+Theorem 4.1,24,PrimeSquares.Improving.theorem_4_1,target - not implemented,Let AN and BN be positive convolution operators whose kernels are supported in
+Corollary 4.15,25,PrimeSquares.Improving.corollary_4_15,target - not implemented,Assume in addition that AN and BN are uniformly bounded on ℓ2 . If
+Proposition 4.19,26,PrimeSquares.Improving.proposition_4_19,target - not implemented,"Let N be dyadic, let Q ≥ 2, and suppose that"
+Lemma 5.1,28,PrimeSquares.Sparse.lemma_5_1,target - not implemented,Fix constants C ≥ 1 and c > 2C + 1. Let (BM ) be a family of positive convolution
+Lemma 5.10,30,PrimeSquares.Sparse.lemma_5_10,target - not implemented,Suppose that every admissible τ satisfies
+Lemma 5.17,31,PrimeSquares.Sparse.lemma_5_17,target - not implemented,"Let f = 1F and g = 1G , where F ⊂ cI0 and G ⊂ I0 , and put δ0 = |F|I||G|     0|"
+Lemma 6.5,34,PrimeSquares.HighLow.lemma_6_5,target - not implemented,"If (a, q) = 1, q ≤ R11/10 , and |θ| ≤ R/(qN 2 ), then"
+Lemma 6.9,35,PrimeSquares.HighLow.lemma_6_9,target - not implemented,"Approximation: For every A > 0,"
+Proposition 6.14,37,PrimeSquares.HighLow.proposition_6_14,target - not implemented,"For nonnegative f ,"
+Lemma 6.16,39,PrimeSquares.HighLow.lemma_6_16,target - not implemented,"Multifrequency estimate: Let 0 < β ≤ 1, and let Rs be any subset of the reduced"
+Corollary 6.19,40,PrimeSquares.HighLow.corollary_6_19,target - not implemented,"Denominator-prefix maximal estimate: Let 0 < β ≤ 1, s ≥ 0, and |ca,q | ≤ b."
+Proposition 6.21,41,PrimeSquares.HighLow.proposition_6_21,target - not implemented,"Let N0 ≥ 2 and suppose that log Q ≤ c0 (log N0 )1/2 . Then, for every dyadic"
+Theorem 7.2,44,PrimeSquares.Maximal.theorem_7_2,target - not implemented,"Orlicz maximal estimate: There are absolute constants C, C0 ≥ 1 such that the"
+Corollary 7.6,44,PrimeSquares.Maximal.corollary_7_6,target - not implemented,"For 1 < p ≤ 2,"
+Proposition 7.8,45,PrimeSquares.Maximal.proposition_7_8,target - not implemented,"Let r ≥ 2, k ≥ 4, and Q ≥ 2k , and put"
+Lemma 7.15,47,PrimeSquares.Maximal.lemma_7_15,target - not implemented,"Uniformly in 0 < β ≤ 1, J ≥ 1, and |σj | ≤ 1, one has, for 1 < p ≤ 2,"
+Proposition 7.21,48,PrimeSquares.Maximal.proposition_7_21,target - not implemented,"Let r, k, Q, P, Σ≤k , B, ε, and Cr,k be as in Proposition 7.8, and put pr = 2r−1 ."
+Proposition 7.28,51,PrimeSquares.Maximal.proposition_7_28,target - not implemented,"Using the assumptions and notation of Propositions 7.8 and 7.21, put"
+Corollary 7.42,56,PrimeSquares.Maximal.corollary_7_42,target - not implemented,"For 1 < p ≤ 2,"
+Theorem 8.1,57,PrimeSquares.Divergence.theorem_8_1,target - not implemented,"Let (nk ) be an increasing sequence of natural numbers. Suppose that, for every"
+Theorem 8.6,58,PrimeSquares.Divergence.theorem_8_6,target - not implemented,"Granville–Kurlberg [14]: For each odd prime p, let Ωp ⊂ Z/pZ, put rp = |Ωp |/p"
+Lemma 8.8,58,PrimeSquares.Divergence.lemma_8_8,target - not implemented,Let p be an odd prime and let
+Lemma 9.2,61,PrimeSquares.Goldbach.lemma_9_2,target - not implemented,"For every ε > 0,"
+Lemma 9.3,61,PrimeSquares.Goldbach.lemma_9_3,target - not implemented,"For every ε > 0,"
+Lemma 9.7,62,PrimeSquares.Goldbach.lemma_9_7,target - not implemented,"For every ε > 0,"
+Corollary 9.9,63,PrimeSquares.Goldbach.corollary_9_9,target - not implemented,"For every ε > 0,"
+Lemma 9.10,63,PrimeSquares.Goldbach.lemma_9_10,target - not implemented,"Bombieri–Vinogradov approximation: Let A, δ > 0 and L0 < N 2−δ . There are"
+Proposition 9.17,64,PrimeSquares.Goldbach.proposition_9_17,target - not implemented,"Lower sieve: For N 2 (log N )−A0 ≤ n < N 2 , n ≡ 12 (mod 24),"
+Proposition 9.20,64,PrimeSquares.Goldbach.proposition_9_20,target - not implemented,"Upper sieve: For N 2 (log N )−A0 ≤ n < N 2 , n ≡ 12 (mod 24),"
+Lemma 9.22,65,PrimeSquares.Goldbach.lemma_9_22,target - not implemented,"Let A0 > 0. There is CA0 > 0 such that, for every fixed sufficiently large C, with"
+Lemma 9.24,65,PrimeSquares.Goldbach.lemma_9_24,target - not implemented,"With the normalization of [21, (1.8)–(1.10)],"
+Lemma 10.2,66,PrimeSquares.GoldbachCircle.lemma_10_2,target - not implemented,"Under the hypotheses of Lemma 9.10, uniformly for 2 ≤ U ≤ N and 2 ≤ W ≤ N 2 ,"
+Lemma 10.12,68,PrimeSquares.GoldbachCircle.lemma_10_12,target - not implemented,"Uniformly in ℓ, U, W and n < N 2 ,"
+Lemma 10.15,68,PrimeSquares.GoldbachCircle.lemma_10_15,target - not implemented,"Uniformly for 2 ≤ U ≤ N and 2 ≤ W ≤ N 2 ,"
+Lemma 10.20,72,PrimeSquares.GoldbachCircle.lemma_10_20,target - not implemented,The series                         X
+Lemma 10.24,73,PrimeSquares.GoldbachCircle.lemma_10_24,target - not implemented,"Under the hypotheses of Lemma 9.10, uniformly for 2 ≤ U ≤ N and 2 ≤ W ≤"
+Lemma 11.2,76,PrimeSquares.GoldbachSieve.lemma_11_2,target - not implemented,"For every ε > 0,"
+Lemma 11.6,76,PrimeSquares.GoldbachSieve.lemma_11_6,target - not implemented,"For p > 3, p ≡ 3 (mod 4),"
+Lemma 11.8,77,PrimeSquares.GoldbachSieve.lemma_11_8,target - not implemented,"There is a multiplicative function ωn (ℓ, ·), defined on square-free integers supported"
+Lemma 11.13,78,PrimeSquares.GoldbachSieve.lemma_11_13,target - not implemented,Suppose that
+Lemma 11.19,82,PrimeSquares.GoldbachSieve.lemma_11_19,target - not implemented,"Let α = 9/8. Uniformly in the range (11.1),"

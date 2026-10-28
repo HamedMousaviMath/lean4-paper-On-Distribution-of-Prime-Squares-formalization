@@ -1,0 +1,9 @@
+\newcommand{\lean}[1]{\par\smallskip\noindent{\normalfont\footnotesize\ttfamily Lean: \nolinkurl{#1}}\par\smallskip}
+\newcommand{\leanok}{}
+\newcommand{\mathlibok}{}
+\newcommand{\notready}{}
+\newcommand{\discussion}[1]{}
+\ExplSyntaxOn
+\NewDocumentCommand{\uses}{m}{\clist_map_inline:nn{#1}{\vphantom{\ref{##1}}}\ignorespaces}
+\NewDocumentCommand{\proves}{m}{\clist_map_inline:nn{#1}{\vphantom{\ref{##1}}}\ignorespaces}
+\ExplSyntaxOff

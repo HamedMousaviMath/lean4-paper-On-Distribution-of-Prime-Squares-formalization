@@ -1,0 +1,92 @@
+% Proposed replacements for l:presieving. The selected manuscript is unchanged.
+% 1. Replace the passage beginning "Let \(2\leq R<z\)" and ending
+% with the displayed condition \log D_0/\log R\longrightarrow\infty by:
+
+Assume \(X\geq0\) and \(g(1)=1\).
+Fix constants \(C,A>0\), put
+\[
+ R=(\log N)^C,\qquad
+ D_0=\exp((\log\log N)^3),\qquad D_1=D/D_0,
+\]
+and work with sufficiently large \(N\). Assume
+\[
+ R+1\leq z\leq D_1\leq N^A,\qquad D_0<D.
+\]
+Write
+\[
+ \mathfrak P_0=\{p\in\mathfrak P:p\leq R\},\qquad
+ \mathfrak P_1=\{p\in\mathfrak P:R<p<z\}.
+\]
+Suppose that there are fixed constants
+\(\kappa_0,\kappa>0\) and \(K_0\geq2\), uniform in the sequence and
+its density function, such that for every \(2\leq w<y\leq z\),
+\begin{align}\label{e:tworangesievedimension}
+ \prod_{\substack{w\leq p<y\\p\in\mathfrak P_0}}
+ (1-g(p))^{-1}
+ &\leq
+ \left(1+\frac{K_0}{\log w}\right)
+ \left(\frac{\log y}{\log w}\right)^{\kappa_0},\notag\\
+ \prod_{\substack{w\leq p<y\\p\in\mathfrak P_1}}
+ (1-g(p))^{-1}
+ &\leq
+ \left(1+\frac{K_0}{\log w}\right)
+ \left(\frac{\log y}{\log w}\right)^\kappa.
+\end{align}
+All asymptotic assertions below are uniform when these constants are fixed.
+
+% 2. In the first display of the proof, replace the definition of s_0 by:
+
+\[
+ s_0=\frac{\log D_0}{\log(R+1)}.
+\]
+
+% In the accompanying application of the preliminary coefficient theorem,
+% use sifting limit R+1 on the prime set P_0. It includes exactly all primes
+% p<=R, also when R itself is prime. The outer sifting limit remains z.
+% Replace the subsequent large-s_0 justification by the following passage.
+
+Apply the general Rosser--Iwaniec coefficient theorem to
+\(\mathfrak P_0\), level \(D_0\), and sifting limit \(R+1\).
+Its coefficient estimates and the decay of the sieve functions and error
+majorant give constants \(c,C'>0\), depending only on the fixed sieve
+parameters, such that
+\[
+ \left|\sum_e\lambda_{0,e}^{\pm}g(e)-V_0(R)\right|
+ \leq C'V_0(R)e^{-c s_0}
+\]
+for sufficiently large \(N\). Since
+\[
+ s_0=\frac{(\log\log N)^3}{\log((\log N)^C+1)}
+ \gg_C(\log\log N)^2,
+\]
+the relative preliminary error is smaller than every fixed negative
+power of \(\log N\). The condition \(z\leq D_1\) places the outer
+sieve in its stated range \(s\geq1\), and \(z\leq N^A\) permits this
+preliminary error to absorb the logarithmic losses from the outer
+coefficient sum. The signed coefficient construction in the remainder
+of the proof is unchanged.
+
+% 3. Strengthen the Mertens justification preceding l:presieving by adding
+% the following passage. A coarse implied-constant estimate by itself
+% does not supply the refined dimension hypothesis above.
+
+We use the uniform interval forms of Mertens' theorem: for a suitable
+constant \(K\) and every \(2\leq w<y\),
+\begin{align*}
+ \prod_{\substack{w\leq p<y\\p\equiv3\; (\mathrm{mod}\;4)}}
+ \left(1-\frac1{p-1}\right)^{-1}
+ &\leq
+ \left(1+\frac K{\log w}\right)
+ \left(\frac{\log y}{\log w}\right)^{1/2},\\
+ \prod_{\substack{w\leq p<y\\p>2}}
+ \left(1-\frac1{p-1}\right)^{-1}
+ &\leq
+ \left(1+\frac K{\log w}\right)
+ \frac{\log y}{\log w}.
+\end{align*}
+Restricting these products to the relevant outer prime sets only
+decreases them. For the preliminary prime sets, the local bounds
+\(g(p)\leq2/(p-3)\) for \(p\geq7\), together with the bound
+\(g(5)\leq1/2\) when that prime occurs, give the refined dimension
+bound with \(\kappa_0=2\) and a uniform constant. Thus only the outer
+dimensions \(1/2\) and \(1\) determine the final sieve functions.

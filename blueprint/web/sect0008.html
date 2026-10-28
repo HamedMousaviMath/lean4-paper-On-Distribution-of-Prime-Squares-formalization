@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Badness: arithmetic blocks and the persistent criterion</title>
+<link rel="next" href="sect0009.html" title="Ergodic: transference and the two endpoint conclusions" />
+<link rel="prev" href="sect0007.html" title="Orlicz: quantitative IW and the three-family maximum" />
+<link rel="up" href="index.html" title="On the Distribution of Prime Squares and Its Applications: compact blueprint" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+<link rel="stylesheet" href="styles/blueprint.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">On the Distribution of Prime Squares and Its Applications: compact blueprint</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref"></span> <span class="toc_entry">Purpose and verification boundary</span></a>
+ </li>
+<li class="">
+  <a href="sect0002.html"><span class="toc_ref">1</span> <span class="toc_entry">Independent inputs and their exact scope</span></a>
+ </li>
+<li class="">
+  <a href="sect0003.html"><span class="toc_ref">2</span> <span class="toc_entry">Arithmetic: quadratic sums and conductors</span></a>
+ </li>
+<li class="">
+  <a href="sect0004.html"><span class="toc_ref">3</span> <span class="toc_entry">Improving: optimization and the main estimate</span></a>
+ </li>
+<li class="">
+  <a href="sect0005.html"><span class="toc_ref">4</span> <span class="toc_entry">Prime operators: approximation, low and high terms</span></a>
+ </li>
+<li class="">
+  <a href="sect0006.html"><span class="toc_ref">5</span> <span class="toc_entry">Stopping: local estimates and sparse domination</span></a>
+ </li>
+<li class="">
+  <a href="sect0007.html"><span class="toc_ref">6</span> <span class="toc_entry">Orlicz: quantitative IW and the three-family maximum</span></a>
+ </li>
+<li class=" active current">
+  <a href="sect0008.html"><span class="toc_ref">7</span> <span class="toc_entry">Badness: arithmetic blocks and the persistent criterion</span></a>
+ </li>
+<li class="">
+  <a href="sect0009.html"><span class="toc_ref">8</span> <span class="toc_entry">Ergodic: transference and the two endpoint conclusions</span></a>
+ </li>
+<li class="">
+  <a href="sect0010.html"><span class="toc_ref">9</span> <span class="toc_entry">Goldbach arithmetic: reductions and the exceptional set</span></a>
+ </li>
+<li class="">
+  <a href="sect0011.html"><span class="toc_ref">10</span> <span class="toc_entry">Goldbach circle method: minor arcs, major arcs and completion</span></a>
+ </li>
+<li class="">
+  <a href="sect0012.html"><span class="toc_ref">11</span> <span class="toc_entry">Goldbach sieve: local densities, presieving and comparison</span></a>
+ </li>
+<li ><a href="dep_graph_document.html">Dependency graph</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="a0000000009">7 Badness: arithmetic blocks and the persistent criterion</h1>
+<div class="lemma_thmwrapper theorem-style-plain" id="quadratic_correlations">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">7.1</span>
+    <span class="lemma_thmtitle">Quadratic residue correlations</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0008.html#quadratic_correlations">#</a>
+    
+    <a class="icon proof" href="sect0008.html#a0000000123"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0003.html#QuadraticSums">Definition 2.1</a></li>
+          
+          <li><a href="sect0002.html#input_weil">Lemma 1.9</a></li>
+          
+          <li><a href="sect0003.html#QuadraticSums">Definition 2.1</a></li>
+          
+          <li><a href="sect0002.html#input_weil">Lemma 1.9</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.quadratic_GK_uniform_correlation" class="lean_decl">PrimeSquares.quadratic_GK_uniform_correlation</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.quadratic_GK_tuple" class="lean_decl">PrimeSquares.quadratic_GK_tuple</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  
+<p><b class="bfseries">Paper Lemma 8.8.</b> <i class="itshape">complete conditional implication.</i></p>
+<p>Let \(p\) be an odd prime and let </p>
+<div class="displaymath" id="a0000000124">
+  \[  \Lambda _p=\{ x^2\pmod p:x\not\equiv 0\pmod p\} .  \]
+</div>
+<p> For every fixed \(k\geq 1\) and distinct \(0,h_1,\ldots ,h_{k-1}\pmod p\), </p>
+<div class="displaymath" id="a0000000125">
+  \[  N_k(\mathbf h,\Lambda _p)=\frac{p}{2^k}+O_k(p^{1/2}) =\left(\frac{p-1}{2p}\right)^kp\big(1+O_k(p^{-1/2})\big).  \]
+</div>
+<p> Consequently <span class="upshape">(8.7)</span> holds, for example with \(c=1/3\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000123">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof architecture
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>   Expand products of the quadratic-residue indicators. Separate zero factors and repeated shifts, then use the independent split quadratic Weil bound for the genuinely nonconstant terms. Control the resulting error uniformly in the allowed tuples and prove the needed subpower density bound. </p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="persistent_criterion">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">7.2</span>
+    <span class="theorem_thmtitle">Persistent badness criterion and its application</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0008.html#persistent_criterion">#</a>
+    
+    <a class="icon proof" href="sect0008.html#a0000000126"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0008.html#quadratic_correlations">Lemma 7.1</a></li>
+          
+          <li><a href="sect0002.html#input_badness">Lemma 1.8</a></li>
+          
+          <li><a href="sect0008.html#quadratic_correlations">Lemma 7.1</a></li>
+          
+          <li><a href="sect0002.html#input_badness">Lemma 1.8</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.source_lavictoire_persistent_criterion" class="lean_decl">PrimeSquares.source_lavictoire_persistent_criterion</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.primeSquare_lavictoire_arithmetic" class="lean_decl">PrimeSquares.primeSquare_lavictoire_arithmetic</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  
+<p><b class="bfseries">Paper Theorem 8.1.</b> <i class="itshape">complete conditional implication.</i></p>
+<p>Let \((n_k)\) be an increasing sequence of natural numbers. Suppose that, for every \(q{\gt}1\), there is a set \(\Lambda _q\subset \{ n_k\bmod q:k\geq 1\} \) which is multiplicative under the Chinese remainder theorem: if \((q,r)=1\), then \(\Lambda _{qr}\) corresponds to \(\Lambda _q\times \Lambda _r\). Suppose also that there are two sequences \((u_j)\) and \((q_j)\) of odd integers whose combined collection is pairwise coprime and such that </p>
+<div class="displaymath" id="a0000000127">
+  \begin{align} & \mathbb P_{q_j}(\Lambda _{q_j})\longrightarrow 0, \qquad \inf _j\mathbb P_{u_j}(\Lambda _{u_j}){\gt}0, \\ & \gamma -\liminf _{j\to \infty } \mathbb P_{q_j}(\Lambda _{q_j}^{\gamma })=o(\gamma ) \quad (\gamma \downarrow 0), \end{align}
+</div>
+<p> and that there is an \(\alpha {\gt}0\) such that, for every sufficiently small \(\gamma {\gt}0\), </p>
+<div class="displaymath" id="a0000000128">
+  \begin{align}  \liminf _{j\to \infty }\frac1{|\Lambda _{q_j}|^2} \big|\{ (u,v)\in \Lambda _{q_j}^2: \operatorname {dist}_{q_j}(u-v,\Lambda _{q_j}){\gt} \gamma s_{q_j}\} \big|{\gt}5\alpha . \end{align}
+</div>
+<p> Finally, suppose that some \(\beta {\gt}0\) has the following property. If \(Q\) is any product of distinct terms from the two sequences \((u_j)\) and \((q_j)\), then for every \(a\in \Lambda _Q\), </p>
+<div class="displaymath" id="a0000000129">
+  \begin{align}  \liminf _{N\to \infty }\frac1N \big|\{ 1\leq k\leq N:n_k\equiv a\pmod Q\} \big| {\gt}\frac{\beta }{|\Lambda _Q|}. \end{align}
+</div>
+<p> Then \((n_k)\) is persistently universally \(L^1\)-bad. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000126">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof architecture
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>   Construct finite cyclic blocks with the required arithmetic, local moments and growth conditions. Push the fixed-progression prime frequencies through the exact prime-square residue fibres. Apply the original general LaVictoire criterion and the Sawyer and Conze inputs to obtain divergence along every infinite cutoff set. The optional full Poisson-spacing theorem is not required for this route. </p>
+
+  </div>
+</div>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <a href="sect0007.html" title="Orlicz: quantitative IW and the three-family maximum"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="index.html" title="On the Distribution of Prime Squares and Its Applications: compact blueprint"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="sect0009.html" title="Ergodic: transference and the two endpoint conclusions"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+</body>
+</html>

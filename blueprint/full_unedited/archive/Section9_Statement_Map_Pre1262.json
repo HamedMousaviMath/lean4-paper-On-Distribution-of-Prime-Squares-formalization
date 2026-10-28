@@ -1,0 +1,348 @@
+{
+  "checkpoint": 1085,
+  "current_source": "sources/updates/PrimeSquares_Selected_2026_10_26_Approximation_Proof_Revision1.tex",
+  "source_sha256": "4b15f09a44e6a970ba02bc8e9960e2b7497cc25e2873cc3dfaa0feeb300853ed",
+  "section": 9,
+  "numbered_claims": [
+    {
+      "label": "l:fromsiftedtop",
+      "kind": "lemma",
+      "title": "Reduction from a sifted set to prime-square representations",
+      "source_file": "sources/updates/PrimeSquares_Selected_2026_10_26_Approximation_Proof_Revision1.tex",
+      "statement_line": 6423,
+      "statement_sha256": "80b38572490f78eff5de2025b191aa7c569a91cc545911c5e463681866aaf2a3",
+      "statement_latex": "\\label{l:fromsiftedtop}\nFor every $\\varepsilon>0$,\n\\begin{align}\\label{e:fromsiftedtop}\n |\\{r\\in\\mathcal P:n-r\\in\\mathbb P^2\\}|\n \\geq S(\\mathcal A_n,\\mathbb P_{3,n},N^2)-O_\\varepsilon(N^\\varepsilon).\n\\end{align}",
+      "statement_references": [],
+      "proof_references": [],
+      "proof_locations": [
+        {
+          "section": 9,
+          "line": 6449,
+          "kind": "following proof",
+          "source_file": "sources/updates/PrimeSquares_Selected_2026_10_26_Checkpoint1084.tex"
+        }
+      ],
+      "formalization_mode": "arithmetic reduction",
+      "next_obligation": "No own lower-sifted counting deduction remains. The independent classical primitive two-square criterion is explicitly quantified and its proof remains unformalized; the theorem is conditional on this standard arithmetic input.",
+      "current_ledger_status": "conditional",
+      "lean_anchors": [
+        "goldbach_shared_prime_eq",
+        "goldbach_shared_divisor_exception",
+        "goldbachDivisorExceptions_card",
+        "goldbach_prime_divisor_power_error",
+        "goldbach_representation_admissible",
+        "goldbach_factor_coprime_of_not_exception",
+        "goldbachSiftedValues_card",
+        "goldbach_full_sifted_inclusion",
+        "goldbach_full_sifted_count",
+        "goldbach_from_full_sifted"
+      ]
+    },
+    {
+      "label": "l:truncationT",
+      "kind": "lemma",
+      "title": "Truncation identity and the residual set T",
+      "source_file": "sources/updates/PrimeSquares_Selected_2026_10_26_Approximation_Proof_Revision1.tex",
+      "statement_line": 6451,
+      "statement_sha256": "f87d8421b6f7544d3297232dd34e4500a62e187b1b958021e5b8ff9130a916d3",
+      "statement_latex": "\\label{l:truncationT}\nFor every \\(\\varepsilon>0\\),\n\\begin{align}\\label{e:truncationT}\n S(\\mathcal A_n,\\mathbb P_{3,n},z)\n -\n |\\{r\\in\\mathcal P:n-r\\in\\mathbb P^2\\}|\n =\n |T_n|+O_\\varepsilon(N^\\varepsilon),\n\\end{align}\nwhere\n\\begin{align}\\label{e:Tfactorization}\n    T_n=\n \\left\\{\n r-1=2up_1p_2:\n \\begin{array}{l}\n r\\in\\mathbb P,\\quad n-r\\in\\mathbb P^2,\\\\\n z\\leq p_2\\leq p_1,\\quad p_i\\in\\mathbb P_{3,n},\\\\\n p\\mid u\\Longrightarrow p\\equiv1\\pmod4\n \\end{array}\n \\right\\}.\n\\end{align}",
+      "statement_references": [],
+      "proof_references": [
+        "e:truncationT"
+      ],
+      "proof_locations": [
+        {
+          "section": 9,
+          "line": 6492,
+          "kind": "following proof",
+          "source_file": "sources/updates/PrimeSquares_Selected_2026_10_26_Checkpoint1084.tex"
+        }
+      ],
+      "formalization_mode": "arithmetic reduction",
+      "next_obligation": "No own truncation deduction remains. The independent primitive two-square criterion is explicitly quantified and remains unproved. The source asymptotic context excludes the finitely many small n; the checked theorem states n>12 explicitly.",
+      "current_ledger_status": "conditional",
+      "lean_anchors": [
+        "goldbach_shared_prime_eq",
+        "goldbach_shared_divisor_exception",
+        "goldbachDivisorExceptions_card",
+        "goldbach_prime_divisor_power_error",
+        "goldbach_representation_admissible",
+        "goldbach_factor_coprime_of_not_exception",
+        "primitive_obstruction_two_large_primes",
+        "goldbach_sifted_bad_factorization",
+        "goldbachTruncatedBad_subset_sifted",
+        "goldbachTruncatedBad_not_good",
+        "goldbach_good_subset_sifted",
+        "goldbachTruncatedBadValues_card",
+        "goldbach_truncation_exact_error",
+        "goldbach_truncation_scale",
+        "goldbach_truncationT"
+      ]
+    },
+    {
+      "label": "l:upperreduction",
+      "kind": "lemma",
+      "title": "Upper reduction of T to the family of sifted sets",
+      "source_file": "sources/updates/PrimeSquares_Selected_2026_10_26_Approximation_Proof_Revision1.tex",
+      "statement_line": 6552,
+      "statement_sha256": "4ffc06f1022ed58eb24be09ce63cb187ce9e013f42f81bd04b0b256551e6a945",
+      "statement_latex": "\\label{l:upperreduction}\nFor every $\\varepsilon>0$,\n\\begin{align}\\label{e:upperreduction}\n |T_n|\n \\leq\\sum_{\\ell\\in L_n}\n S(M_n(\\ell),W_{\\ell,n},z_\\ell)+O_\\varepsilon(N^\\varepsilon).\n\\end{align}",
+      "statement_references": [],
+      "proof_references": [
+        "e:Tfactorization",
+        "e:upperreduction"
+      ],
+      "proof_locations": [
+        {
+          "section": 9,
+          "line": 6579,
+          "kind": "following proof",
+          "source_file": "sources/updates/PrimeSquares_Selected_2026_10_26_Checkpoint1084.tex"
+        }
+      ],
+      "formalization_mode": "arithmetic reduction",
+      "next_obligation": "Complete under the source hypotheses.",
+      "current_ledger_status": "proved",
+      "lean_anchors": [
+        "goldbach_shared_prime_eq",
+        "goldbach_shared_divisor_exception",
+        "goldbachDivisorExceptions_card",
+        "goldbach_prime_divisor_power_error",
+        "goldbach_representation_admissible",
+        "goldbach_factor_coprime_of_not_exception",
+        "goldbachClosedL_bound",
+        "goldbach_upper_sifted_inclusion",
+        "goldbach_upper_reduction_exact",
+        "goldbach_upper_reduction",
+        "goldbachClosedL_source_form"
+      ],
+      "corrected_source_deduction_complete": true
+    },
+    {
+      "label": "c:mastersievereduction",
+      "kind": "corollary",
+      "title": "Combined lower and upper sieve reduction",
+      "source_file": "sources/updates/PrimeSquares_Selected_2026_10_26_Approximation_Proof_Revision1.tex",
+      "statement_line": 6604,
+      "statement_sha256": "6602557c3014d261f87af428332e38894bd5c2acbf86b21022dea54e12fb01f4",
+      "statement_latex": "\\label{c:mastersievereduction}\nFor every $\\varepsilon>0$,\n\\begin{align}\\label{e:mastersievereduction}\n |\\{r\\in\\mathcal P:n-r\\in\\mathbb P^2\\}|\n &\\geq S(\\mathcal A_n,\\mathbb P_{3,n},z)-\\sum_{\\ell\\in L_n}\n S(M_n(\\ell),W_{\\ell,n},z_\\ell)\n -O_\\varepsilon(N^\\varepsilon).\n\\end{align}",
+      "statement_references": [],
+      "proof_references": [],
+      "proof_locations": [],
+      "formalization_mode": "finite deduction",
+      "next_obligation": "Complete under explicit independent inputs.",
+      "current_ledger_status": "conditional",
+      "lean_anchors": [
+        "goldbach_master_sieve_exact",
+        "goldbach_master_sieve_reduction"
+      ],
+      "corrected_source_deduction_complete": true
+    },
+    {
+      "label": "l:circmethod",
+      "kind": "lemma",
+      "title": "Weighted Bombieri-Vinogradov circle-method approximation",
+      "source_file": "sources/updates/PrimeSquares_Selected_2026_10_26_Approximation_Proof_Revision1.tex",
+      "statement_line": 6629,
+      "statement_sha256": "3f5dd83379b996836000219a93279463c1628676e32d55d664fbfeaba63a25b8",
+      "statement_latex": "[Bombieri--Vinogradov approximation]\n\\label{l:circmethod}\nLet \\(A,\\delta>0\\) and \\(L_0<N^{2-\\delta}\\).  There are sufficiently\nlarge constants \\(B=B(A,\\delta)\\) and \\(C=C(A,\\delta)\\) such that the\nfollowing holds.  Put\n\\[\n R=(\\log N)^C,\\qquad\n \\eta_N(\\theta)=\\eta\\left(\\frac{N^2\\theta}{R}\\right),\n\\]\nand suppose that $V_\\ell\\leq (N^2/\\ell)^{1/2}(\\log N)^{-B}$ for $\\ell<L_0.$\nLet \\(|d_{k,\\ell}|\\leq1\\) and\n\\((a_{k,\\ell},k)=1\\).\nDefine \n\\begin{align}\\quad \\quad\\label{e:defGR9}\n G_R(\\ell,k,n)\n &:=\n \\mathcal T_2(\\ell,k,n;a_{k,\\ell})\n \\prod_{2<p\\leq R}\n \\frac{p\\phi((p,k))}{(p-1)^2}\n \\left|\\left\\{(u,v)\\in\\mathbb A_p^2:\n \\begin{array}{l}\n  u^2+\\ell v\\equiv n\\pmod p,\\\\\n  v\\equiv a_{k,\\ell}\\pmod{(p,k)}\n \\end{array}\\right\\}\\right|,\n\\end{align}\nwhere $ \\mathcal T_2(\\ell,k,n;a_{k,\\ell}) $ is defined in \\eqref{e:generalT2} and the second congruence is understood to be trivial when \\(p\\nmid k\\).\nAlso define\n\\begin{align}\\label{e:defHR9}\n H_{\\ell,R}(n)\n :=\n \\ell\\int_{\\mathbb R}\\eta_N(\\theta)^2\n \\left(\\int_2^N\\frac{e(\\theta u^2)}{\\log u}\\,du\\right)\n \\left(\\int_{\\substack{2\\leq v\\leq N^2\\\\\\ell v<N^2}}\n \\frac{e(\\ell\\theta v)}{\\log v}\\,dv\\right)\n e(-n\\theta)\\,d\\theta.\n\\end{align}\nThen\n\\begin{align}\\label{e:circmethod}\n \\sum_{n<N^2}\\left|\n \\sum_{\\ell<L_0}\\sum_{k<V_\\ell}\n d_{k,\\ell}r_{k,\\ell}(n)\\right|^2\n \\ll_{A,\\delta}N^4(\\log N)^{-A},\n\\end{align}\nwhere\n\\begin{align}\\label{e:unweightedremainder}\n r_{k,\\ell}(n)\n &=\n \\sum_{\\substack{m^2+\\ell t=n\\\\\n t\\equiv a_{k,\\ell}\\pmod k}}\n \\one_{\\mathbb P}(m)\\one_{\\mathbb P}(t)\n -\n \\frac{G_R(\\ell,k,n)}{\\ell\\phi(k)}H_{\\ell,R}(n).\n\\end{align}",
+      "statement_references": [
+        "e:generalT2"
+      ],
+      "proof_references": [
+        "e:circmethod",
+        "e:e123def",
+        "l:circmethod",
+        "l:hybridminorarc",
+        "l:majorapproximation9",
+        "l:majorcompletion9"
+      ],
+      "proof_locations": [
+        {
+          "section": 10,
+          "line": 7845,
+          "kind": "named proof",
+          "source_file": "sources/updates/PrimeSquares_Selected_2026_10_26_Checkpoint1084.tex"
+        }
+      ],
+      "formalization_mode": "forward internal dependency",
+      "next_obligation": "Prove this paper-specific weighted approximation from general external distribution and exponential-sum inputs. The title alone does not make the entire lemma an external theorem.",
+      "current_ledger_status": "open",
+      "lean_anchors": []
+    },
+    {
+      "label": "p:sieveneedlower8",
+      "kind": "proposition",
+      "title": "Lower sieve application",
+      "source_file": "sources/updates/PrimeSquares_Selected_2026_10_26_Approximation_Proof_Revision1.tex",
+      "statement_line": 6744,
+      "statement_sha256": "a275396d64d20d1ebf9cc847f544d24dc59b6d4139b78144d8369b10e26895ff",
+      "statement_latex": "[Lower sieve]\\label{p:sieveneedlower8}\nFor $N^2(\\log N)^{-A_0}\\leq n<N^2$, $n\\equiv12\\pmod{24}$,\n\\begin{align}\\label{e:sieveneedlower8}\n S(\\mathcal A_n,\\mathbb P_{3,n},z)\n \\geq X_n\\Theta_n(z)\\bigl(f_{1/2}(9/8)+o(1)\\bigr)\n +\\mathcal E_1(n),\n\\end{align}\nwhere\n\\begin{align}\\label{e:E1section8}\n\\sum_{n<N^2}|\\mathcal E_1(n)|^2\n\\ll_{A_0,K} N^4(\\log N)^{-K}.\n\\end{align}",
+      "statement_references": [],
+      "proof_references": [
+        "e:fixedlower10",
+        "e:lowersequence10",
+        "e:outerdimensions10",
+        "l:circmethod",
+        "l:presieving",
+        "p:sieveneedlower8"
+      ],
+      "proof_locations": [
+        {
+          "section": 11,
+          "line": 8525,
+          "kind": "named proof",
+          "source_file": "sources/updates/PrimeSquares_Selected_2026_10_26_Checkpoint1084.tex"
+        }
+      ],
+      "formalization_mode": "forward internal dependency",
+      "next_obligation": "Verify the actual local densities, presieve levels, outer dimension and remainder bounds, then apply the general sieve with the stated constants.",
+      "current_ledger_status": "open",
+      "lean_anchors": []
+    },
+    {
+      "label": "p:sieveneedupper8",
+      "kind": "proposition",
+      "title": "Upper sieve application and summed weights",
+      "source_file": "sources/updates/PrimeSquares_Selected_2026_10_26_Approximation_Proof_Revision1.tex",
+      "statement_line": 6768,
+      "statement_sha256": "247bf33a5924247fe7c22732d456b5b4d74dc276ec5d5a2c45706ca0f3c7c5ca",
+      "statement_latex": "[Upper sieve]\\label{p:sieveneedupper8}\nFor $N^2(\\log N)^{-A_0}\\leq n<N^2$, $n\\equiv12\\pmod{24}$,\n\\begin{align}\\label{e:sieveneedupper8}\n \\sum_{\\ell\\in L_n}S(M_n(\\ell),W_{\\ell,n},z_\\ell)\n &\\leq\n \\bigl(c_{9/8}F_1(2)\\mathcal W(9/8)+o(1)\\bigr)\n X_n\\Theta_n(z)+\\mathcal E_2(n),\n\\end{align}\nwhere\n\\begin{align}\\label{e:calphadef8}\n c_\\alpha=\\frac{16e^{-\\gamma/2}}{\\sqrt{\\pi\\alpha}}\n\\end{align}\nand\n\\begin{align}\\label{e:E2section8}\n\\sum_{n<N^2}|\\mathcal E_2(n)|^2\n\\ll_{A_0,K} N^4(\\log N)^{-K}.\n\\end{align}",
+      "statement_references": [],
+      "proof_references": [
+        "e:alphachoice8",
+        "e:fixedupper10",
+        "e:outerdimensions10",
+        "e:uppersequence10",
+        "l:circmethod",
+        "l:fixedsievesets10",
+        "l:presieving",
+        "l:wumatomakisum",
+        "p:sieveneedupper8"
+      ],
+      "proof_locations": [
+        {
+          "section": 11,
+          "line": 9644,
+          "kind": "named proof",
+          "source_file": "sources/updates/PrimeSquares_Selected_2026_10_26_Checkpoint1084.tex"
+        }
+      ],
+      "formalization_mode": "forward internal dependency",
+      "next_obligation": "Prove the source upper sieve application and the sum over ell, retaining the dimension, uniformity and explicit coefficient.",
+      "current_ledger_status": "open",
+      "lean_anchors": []
+    },
+    {
+      "label": "l:maintermsize8",
+      "kind": "lemma",
+      "title": "Uniform lower bound for the sieve main term",
+      "source_file": "sources/updates/PrimeSquares_Selected_2026_10_26_Approximation_Proof_Revision1.tex",
+      "statement_line": 6797,
+      "statement_sha256": "51bd2bb6d6448ded5e4c3ccd31a0fb3fb215c10682f374d1fb2c4802c4275158",
+      "statement_latex": "\\label{l:maintermsize8}\nLet \\(A_0>0\\).  There is \\(C_{A_0}>0\\) such that, for every fixed\nsufficiently large \\(C\\), with \\(R=(\\log N)^C\\), one has\n\\begin{align}\\label{e:maintermlower8}\n X_n\\Theta_n(z)\\gg_{A_0,C}\n N(\\log N)^{-C_{A_0}}\n\\end{align}\nwhenever $n\\equiv12\\pmod{24}$ and $N^2(\\log N)^{-A_0}\\leq n<N^2$.",
+      "statement_references": [],
+      "proof_references": [
+        "e:CRlower10",
+        "e:H1elementary10",
+        "e:lowernormalization10",
+        "e:nrange10",
+        "l:maintermsize8",
+        "l:positiveH9"
+      ],
+      "proof_locations": [
+        {
+          "section": 11,
+          "line": 9695,
+          "kind": "named proof",
+          "source_file": "sources/updates/PrimeSquares_Selected_2026_10_26_Checkpoint1084.tex"
+        }
+      ],
+      "formalization_mode": "forward internal dependency",
+      "next_obligation": "Identify the actual singular factors and prove positivity and a uniform lower bound in the retained n range.",
+      "current_ledger_status": "open",
+      "lean_anchors": []
+    },
+    {
+      "label": "l:numericalcomparison",
+      "kind": "lemma",
+      "title": "Strict positivity of the sieve comparison",
+      "source_file": "sources/updates/PrimeSquares_Selected_2026_10_26_Approximation_Proof_Revision1.tex",
+      "statement_line": 6809,
+      "statement_sha256": "f00144cc10f16f6c3e1fb11f0dea31de17044c8759302b963fe4ca9c308eaeb7",
+      "statement_latex": "\\label{l:numericalcomparison}\nWith the normalization of \\cite[(1.8)--(1.10)]{I80},\n\\begin{align}\\label{e:Deltanumerical}\n \\Delta>0.\n\\end{align}",
+      "statement_references": [],
+      "proof_references": [
+        "l:numericalcomparison"
+      ],
+      "proof_locations": [
+        {
+          "section": 11,
+          "line": 9718,
+          "kind": "named proof",
+          "source_file": "sources/updates/PrimeSquares_Selected_2026_10_26_Checkpoint1084.tex"
+        }
+      ],
+      "formalization_mode": "explicit integral inequality",
+      "next_obligation": "Define the normalized sieve functions and comparison constant and prove a certified interval bound. An informal decimal calculation will not count as a Lean proof.",
+      "current_ledger_status": "open",
+      "lean_anchors": []
+    }
+  ],
+  "headline_reduction_label": "t:repmotthm",
+  "headline_reduction_dependencies": [
+    "c:mastersievereduction",
+    "p:sieveneedlower8",
+    "p:sieveneedupper8",
+    "l:maintermsize8",
+    "l:numericalcomparison"
+  ],
+  "unnumbered_reductions": [
+    "lower CRT residue class modulo24d",
+    "upper CRT residue class modulo12d and its common product class",
+    "small-n exceptional set",
+    "finite Chebyshev bound from the two mean-square errors",
+    "eventual logarithmic absorption of the prime-divisor error"
+  ],
+  "mapping_is_not_a_proof": true,
+  "own_section10_11_conclusions_are_not_external_inputs": true,
+  "source_matching_checks_to_resolve": [],
+  "cutoff_review": "docs/SECTION_9_CUTOFF_CHECK_1093.md",
+  "last_review_checkpoint": 1136,
+  "terminal_reduction": {
+    "declaration": "goldbach_section9_eventual_count_reduction",
+    "file": "PrimeSquares/GoldbachDivisorErrorAbsorption.lean",
+    "arithmetic_bookkeeping_complete": true,
+    "uses_proposed_closed_L": false,
+    "unformalized_standard_arithmetic_input": "PrimitiveTwoSquaresCriterion",
+    "internal_remaining_claims": [
+      "l:circmethod",
+      "p:sieveneedlower8",
+      "p:sieveneedupper8",
+      "l:maintermsize8",
+      "l:numericalcomparison"
+    ],
+    "headline_proved": false,
+    "uses_user_corrected_closed_L": true
+  },
+  "unnumbered_reductions_status": {
+    "prime_divisor_exceptions": "proved",
+    "two_large_prime_factors_with_multiplicity": "proved",
+    "corrected_upper_and_master": "proved for proposed closed L",
+    "finite_chebyshev": "proved",
+    "logarithmic_exponent_choice": "proved",
+    "small_n_contribution": "proved",
+    "eventual_divisor_error_absorption": "proved",
+    "lower_upper_CRT_progressions": "to be integrated when the Section10/11 analytic and sieve claims are formalized"
+  },
+  "closed_L_source_adopted_at_checkpoint": 1107,
+  "section10_followup": {
+    "hybrid_minor_status": "complete_conditional",
+    "hybrid_minor_terminal_theorem": "PrimeSquares.goldbach_hybrid_minor_complete",
+    "hybrid_minor_independent_input": "UniformRenGhoshInputs",
+    "progression_energy_status": "proved_from_printed_ranges",
+    "major_arcs_status": "open; finite lcm error reindexing proved",
+    "full_circle_method_status": "open",
+    "new_own_endpoint_external_input": false
+  }
+}

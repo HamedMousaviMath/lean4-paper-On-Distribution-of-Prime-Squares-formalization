@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "Please cite the paper and identify this conditional formalization and its independent inputs."
+title: "On the Distribution of Prime Squares and Its Applications: conditional Lean formalization"
+authors:
+  - family-names: Mousavi
+    given-names: Hamed
+version: "0.1.0-publication1266"
+date-released: 2026-10-28
+type: software

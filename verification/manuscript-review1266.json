@@ -1,0 +1,20 @@
+{
+  "release": 1266,
+  "all_58_numbered_statement_and_definition_bodies_unchanged_modulo_whitespace": true,
+  "duplicate_labels": [],
+  "unresolved_internal_references": [],
+  "missing_bibliography_keys": [],
+  "cited_keys": 59,
+  "Ghosh1981_present": true,
+  "unchanged_lean_proof_checkpoint": 1265,
+  "new_proof_claims": 0,
+  "PrimeSquares.tex_sha256": "ca61f28d6ee89c1f4fedd5b09c2bab83dcdbb49d84fedbb9f48c7b180cbfd403",
+  "BibPrimeSquares.bib_sha256": "3b8f718b37694505bcbaa24550f7afcef17f6e090e3363f8114e89742423b1e1",
+  "PrimeSquares.pdf_sha256": "7941cae51ec237c2d3557ef026bd31f951278f875e5403d474fac0a919b6efd0",
+  "original_submitted_source_sha256": "0961c2b6bfe2b172b3372008eacc44a56f4b42aab55bd2023261e823fda231a2",
+  "original_submitted_pdf_sha256": "be165d81b5d7b52c47cb13f116bb095750e35670224b666b0333e9cfe8379bf1",
+  "current_title": "On the Distribution of Prime Squares and Its Applications",
+  "source_edit_is_title_only": true,
+  "current_pdf_retypeset_for_title_update": true,
+  "title_update_pdf_pages": 98
+}

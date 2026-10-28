@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Prime operators: approximation, low and high terms</title>
+<link rel="next" href="sect0006.html" title="Stopping: local estimates and sparse domination" />
+<link rel="prev" href="sect0004.html" title="Improving: optimization and the main estimate" />
+<link rel="up" href="index.html" title="On the Distribution of Prime Squares and Its Applications: compact blueprint" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+<link rel="stylesheet" href="styles/blueprint.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">On the Distribution of Prime Squares and Its Applications: compact blueprint</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref"></span> <span class="toc_entry">Purpose and verification boundary</span></a>
+ </li>
+<li class="">
+  <a href="sect0002.html"><span class="toc_ref">1</span> <span class="toc_entry">Independent inputs and their exact scope</span></a>
+ </li>
+<li class="">
+  <a href="sect0003.html"><span class="toc_ref">2</span> <span class="toc_entry">Arithmetic: quadratic sums and conductors</span></a>
+ </li>
+<li class="">
+  <a href="sect0004.html"><span class="toc_ref">3</span> <span class="toc_entry">Improving: optimization and the main estimate</span></a>
+ </li>
+<li class=" active current">
+  <a href="sect0005.html"><span class="toc_ref">4</span> <span class="toc_entry">Prime operators: approximation, low and high terms</span></a>
+ </li>
+<li class="">
+  <a href="sect0006.html"><span class="toc_ref">5</span> <span class="toc_entry">Stopping: local estimates and sparse domination</span></a>
+ </li>
+<li class="">
+  <a href="sect0007.html"><span class="toc_ref">6</span> <span class="toc_entry">Orlicz: quantitative IW and the three-family maximum</span></a>
+ </li>
+<li class="">
+  <a href="sect0008.html"><span class="toc_ref">7</span> <span class="toc_entry">Badness: arithmetic blocks and the persistent criterion</span></a>
+ </li>
+<li class="">
+  <a href="sect0009.html"><span class="toc_ref">8</span> <span class="toc_entry">Ergodic: transference and the two endpoint conclusions</span></a>
+ </li>
+<li class="">
+  <a href="sect0010.html"><span class="toc_ref">9</span> <span class="toc_entry">Goldbach arithmetic: reductions and the exceptional set</span></a>
+ </li>
+<li class="">
+  <a href="sect0011.html"><span class="toc_ref">10</span> <span class="toc_entry">Goldbach circle method: minor arcs, major arcs and completion</span></a>
+ </li>
+<li class="">
+  <a href="sect0012.html"><span class="toc_ref">11</span> <span class="toc_entry">Goldbach sieve: local densities, presieving and comparison</span></a>
+ </li>
+<li ><a href="dep_graph_document.html">Dependency graph</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="a0000000006">4 Prime operators: approximation, low and high terms</h1>
+<div class="lemma_thmwrapper theorem-style-plain" id="prime_arc_approximation">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">4.1</span>
+    <span class="lemma_thmtitle">Prime-square input and full approximation error</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0005.html#prime_arc_approximation">#</a>
+    
+    <a class="icon proof" href="sect0005.html#a0000000064"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0003.html#gauss_bounds">Lemma 2.5</a></li>
+          
+          <li><a href="sect0003.html#conductor_refinement">Lemma 2.6</a></li>
+          
+          <li><a href="sect0002.html#input_prime_distribution">Lemma 1.1</a></li>
+          
+          <li><a href="sect0002.html#input_quadratic_sums">Lemma 1.2</a></li>
+          
+          <li><a href="sect0003.html#gauss_bounds">Lemma 2.5</a></li>
+          
+          <li><a href="sect0003.html#conductor_refinement">Lemma 2.6</a></li>
+          
+          <li><a href="sect0002.html#input_prime_distribution">Lemma 1.1</a></li>
+          
+          <li><a href="sect0002.html#input_quadratic_sums">Lemma 1.2</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.source_corrected_prime_square_input" class="lean_decl">PrimeSquares.source_corrected_prime_square_input</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.source_approximation_all_exponents" class="lean_decl">PrimeSquares.source_approximation_all_exponents</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  
+<p><b class="bfseries">Paper Lemma 6.5.</b> <i class="itshape">complete conditional implication.</i></p>
+<p>If \((a,q)=1\), \(q\leq R^{11/10}\), and \(|\theta |\leq R/(qN^2)\), then </p>
+<div class="displaymath" id="a0000000065">
+  \begin{align}  \widehat{\widetilde A}_{N,\Lambda }(a/q+\theta ) & =\mathfrak s(a,q)\widehat{\widetilde M}_N(\theta ) -\mathbf1_{q_0\mid q}\mathfrak s_{\chi _q}(a,q) \widehat{\widetilde M}_{N,\beta }(\theta ) +O(R^{-5}). \end{align}
+</div>
+<p> Here \(q_0=q_0(N)\), \(\beta =\beta (N)\), and \(\chi _0=\chi _0(N)\) are the exceptional conductor, zero, and primitive character supplied by the Landau–Page theorem at scale \(N\), and \(\chi _q\) is induced by \(\chi _0\). These quantities may change when \(N\) changes. The second term is omitted if no exceptional character exists. If \(\xi \) lies outside all major arcs </p>
+<div class="displaymath" id="a0000000066">
+  \[  \left\| \xi -a/q\right\| \leq \frac{R}{qN^2}, \qquad q\leq R,\quad (a,q)=1,  \]
+</div>
+<p> where distance is taken modulo one, then </p>
+<div class="displaymath" id="a0000000067">
+  \begin{align}  |\widehat{\widetilde A}_{N,\Lambda }(\xi )| \ll R^{-1/4}(\log N)^{C_0}. \end{align}
+</div>
+<p> Here \(R\geq 1\), \(N\) is sufficiently large, and \(R^4\leq N/2\), as is the case for the choice in <span class="upshape">(6.4)</span>. </p>
+<p><b class="bfseries">Paper Lemma 6.10.</b> <i class="itshape">complete conditional implication.</i></p>
+<p>For every \(A{\gt}0\), </p>
+<div class="displaymath" id="a0000000068">
+  \begin{align}  \| E_{Q,N}f\| _2 \ll _A Q^{-1/2}(1+\log N)^{-A}\| f\| _2. \end{align}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000064">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof architecture
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>   Select compatible progression and quadratic exponential-sum data. On major arcs use the same exceptional datum as in the model; off the source arcs combine the rational approximation with the Ren and Ghosh bounds. Check periodized lifts and the bounded number of active translates. Absorb the intermediate power losses into arbitrary logarithmic decay. Both the major and minor cases are necessary. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="prime_low">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">4.2</span>
+    <span class="lemma_thmtitle">Pointwise low contribution</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0005.html#prime_low">#</a>
+    
+    <a class="icon proof" href="sect0005.html#a0000000069"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0003.html#progression_euler_products">Lemma 2.3</a></li>
+          
+          <li><a href="sect0003.html#cohen_log_bound">Lemma 2.4</a></li>
+          
+          <li><a href="sect0002.html#input_prime_distribution">Lemma 1.1</a></li>
+          
+          <li><a href="sect0002.html#input_quadratic_sums">Lemma 1.2</a></li>
+          
+          <li><a href="sect0003.html#progression_euler_products">Lemma 2.3</a></li>
+          
+          <li><a href="sect0003.html#cohen_log_bound">Lemma 2.4</a></li>
+          
+          <li><a href="sect0002.html#input_prime_distribution">Lemma 1.1</a></li>
+          
+          <li><a href="sect0002.html#input_quadratic_sums">Lemma 1.2</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.source_low_local_and_norm" class="lean_decl">PrimeSquares.source_low_local_and_norm</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.selectedPrimeLow_source_bounds" class="lean_decl">PrimeSquares.selectedPrimeLow_source_bounds</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  
+<p><b class="bfseries">Paper Proposition 6.16.</b> <i class="itshape">complete conditional implication.</i></p>
+<p>For nonnegative \(f\), </p>
+<div class="displaymath" id="a0000000070">
+  \begin{align}  |\operatorname {Low}_{Q,N}f(x)| \ll Q\log (2Q) \sup _{M\geq N}M^{-2} \sum _{|y-x|\leq CM^2}f(y). \end{align}
+</div>
+<p> Consequently, </p>
+<div class="displaymath" id="a0000000071">
+  \[  \| \operatorname {Low}_{Q,N}f\| _\infty \ll N^{-2}Q\log (2Q)\| f\| _1.  \]
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000069">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof architecture
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>   Invert the localized multiplier into the arithmetic factor times the smooth spatial kernel. Apply the corrected Euler product and its logarithmic bound, then sum spatial annuli to obtain the local density estimate. Taking the supremum of the same pointwise envelope gives the stated norm bound without an extra maximal loss. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="annular_multifrequency">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">4.3</span>
+    <span class="lemma_thmtitle">Annular and denominator-truncated maxima</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0005.html#annular_multifrequency">#</a>
+    
+    <a class="icon proof" href="sect0005.html#a0000000072"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0003.html#gauss_bounds">Lemma 2.5</a></li>
+          
+          <li><a href="sect0002.html#input_multifrequency">Lemma 1.4</a></li>
+          
+          <li><a href="sect0003.html#gauss_bounds">Lemma 2.5</a></li>
+          
+          <li><a href="sect0002.html#input_multifrequency">Lemma 1.4</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.source_rational_annular_maximum" class="lean_decl">PrimeSquares.source_rational_annular_maximum</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.source_fixed_annular_truncation_maximum" class="lean_decl">PrimeSquares.source_fixed_annular_truncation_maximum</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  
+<p><b class="bfseries">Paper Lemma 6.18.</b> <i class="itshape">complete conditional implication.</i></p>
+<p>Let \(0{\lt}\beta \leq 1\), and let \(\mathcal R_s\) be any subset of the reduced fractions with denominators \(q\sim 2^s\). Then </p>
+<div class="displaymath" id="a0000000073">
+  \begin{align}  \left\|  \sup _{\substack {N\in 2^{\mathbb N}\\ \begin{bgroup} N\gtrsim 2^s
+
+\end{bgroup}}} \left| \left( \sum _{a/q\in \mathcal R_s} c_{a,q}\widehat{\widetilde M}_{N,\beta }(\xi -a/q) \eta _s(\xi -a/q)\widehat f(\xi ) \right)^\vee \right| \right\| _2 \ll (1+s)\sup _{a/q\in \mathcal R_s}|c_{a,q}|\, \| f\| _2. \end{align}
+</div>
+<p><b class="bfseries">Paper Corollary 6.21.</b> <i class="itshape">complete conditional implication.</i></p>
+<p>Let \(0{\lt}\beta \leq 1\), \(s\geq 0\), and \(|c_{a,q}|\leq b\). Then </p>
+<div class="displaymath" id="a0000000074">
+  \begin{align} & \left\|  \sup _{\substack {N\in 2^{\mathbb N}\\ \begin{bgroup} N\geq 2^s
+
+\end{bgroup}}} \sup _K \left| \left( \sum _{\substack {q\sim 2^s\\ \begin{bgroup} q\leq K
+
+\end{bgroup}}} \sum _{a\in \mathbb A_q} c_{a,q} \widehat{\widetilde M}_{N,\beta }(\xi -a/q) \eta _s(\xi -a/q)\widehat f(\xi ) \right)^\vee \right| \right\| _2 \ll (1+s)^2b\| f\| _2. \end{align}
+</div>
+<p> The same estimate holds if each summand is multiplied by a fixed multiplier of modulus at most one supported where \(\eta _s(\xi -a/q)\neq 0\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000072">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof architecture
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>   Transfer the independent smooth frequency estimate to the actual annular kernel. Separate the smooth main term from a square-summable remainder. For changing denominator cutoffs, use disjoint multiplier factorization and interval decompositions; retain the starting-scale restriction. The rational-period input and the general separated-frequency input have different logarithmic costs and are not interchangeable. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="prime_high">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">4.4</span>
+    <span class="lemma_thmtitle">Sharp high maximal estimate</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0005.html#prime_high">#</a>
+    
+    <a class="icon proof" href="sect0005.html#a0000000075"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0005.html#annular_multifrequency">Lemma 4.3</a></li>
+          
+          <li><a href="sect0003.html#conductor_refinement">Lemma 2.6</a></li>
+          
+          <li><a href="sect0002.html#input_prime_distribution">Lemma 1.1</a></li>
+          
+          <li><a href="sect0002.html#input_multifrequency">Lemma 1.4</a></li>
+          
+          <li><a href="sect0005.html#annular_multifrequency">Lemma 4.3</a></li>
+          
+          <li><a href="sect0003.html#conductor_refinement">Lemma 2.6</a></li>
+          
+          <li><a href="sect0002.html#input_prime_distribution">Lemma 1.1</a></li>
+          
+          <li><a href="sect0002.html#input_multifrequency">Lemma 1.4</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.proposition621_source" class="lean_decl">PrimeSquares.proposition621_source</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.proposition621" class="lean_decl">PrimeSquares.proposition621</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  
+<p><b class="bfseries">Paper Proposition 6.23.</b> <i class="itshape">complete conditional implication.</i></p>
+<p>Let \(N_0\geq 2\) and suppose that \(\log Q\leq c_0(\log N_0)^{1/2}.\) Then, for every dyadic \(N\geq N_0\), </p>
+<div class="displaymath" id="a0000000076">
+  \begin{align}  \| \operatorname {High}_{Q,N}f\| _2 & \ll Q^{-1/2} \exp \left( (2+o(1))\frac{\sqrt{\log Q}}{\log \log Q} \right)\| f\| _2, \\ \left\|  \sup _{\substack {M\geq N_0\\ \begin{bgroup} M\in 2^{\mathbb N}
+
+\end{bgroup}}} |\operatorname {High}_{Q,M}f| \right\| _2 & \ll Q^{-1/2} \exp \left( (2+o(1))\frac{\sqrt{\log Q}}{\log \log Q} \right)\| f\| _2. \end{align}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000075">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof architecture
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>   Group ordinary and exceptional coefficients by conductor and denominator scales. Page uniqueness gives at most one eligible character in each conductor class. Sum the resulting class estimates with the sharp arithmetic weights and pass from finite families to the countable supremum. The loss is uniform in the allowed starting scale, and bounded \(Q\) is absorbed separately. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="prime_decomposition">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">4.5</span>
+    <span class="lemma_thmtitle">One selected prime high-low-error family</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0005.html#prime_decomposition">#</a>
+    
+    <a class="icon proof" href="sect0005.html#a0000000077"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0005.html#prime_arc_approximation">Lemma 4.1</a></li>
+          
+          <li><a href="sect0005.html#prime_low">Lemma 4.2</a></li>
+          
+          <li><a href="sect0005.html#prime_high">Lemma 4.4</a></li>
+          
+          <li><a href="sect0002.html#input_prime_distribution">Lemma 1.1</a></li>
+          
+          <li><a href="sect0002.html#input_quadratic_sums">Lemma 1.2</a></li>
+          
+          <li><a href="sect0002.html#input_multifrequency">Lemma 1.4</a></li>
+          
+          <li><a href="sect0005.html#prime_arc_approximation">Lemma 4.1</a></li>
+          
+          <li><a href="sect0005.html#prime_low">Lemma 4.2</a></li>
+          
+          <li><a href="sect0005.html#prime_high">Lemma 4.4</a></li>
+          
+          <li><a href="sect0002.html#input_prime_distribution">Lemma 1.1</a></li>
+          
+          <li><a href="sect0002.html#input_quadratic_sums">Lemma 1.2</a></li>
+          
+          <li><a href="sect0002.html#input_multifrequency">Lemma 1.4</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.proposition419" class="lean_decl">PrimeSquares.proposition419</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  
+<p><b class="bfseries">Paper Proposition 4.19.</b> <i class="itshape">complete conditional implication.</i></p>
+<p>Let \(N\) be dyadic, let \(Q\geq 2\), and suppose that </p>
+<div class="displaymath" id="a0000000078">
+  \[  \log Q\leq c_0(\log N)^{1/2},  \]
+</div>
+<p> where \(c_0{\gt}0\) is a sufficiently small absolute constant. Then </p>
+<div class="displaymath" id="a0000000079">
+  \begin{align}  \widetilde A_{N,\Lambda } = \operatorname {Low}_{Q,N} +\operatorname {High}_{Q,N}+E_{Q,N}, \end{align}
+</div>
+<p> where </p>
+<div class="displaymath" id="a0000000080">
+  \begin{align}  \| \operatorname {Low}_{Q,N}f\| _\infty & \ll N^{-2}Q\log (2Q)\, \| f\| _1, \\ \| \operatorname {High}_{Q,N}f\| _2 & \ll Q^{-1/2} \exp \left( (2+o(1))\frac{(\log Q)^{1/2}}{\log \log Q} \right)\| f\| _2, \\ \| E_{Q,N}f\| _2 & \ll _A Q^{-1/2}(\log (2Q))^{O_A(1)} (1+\log N)^{-A}\| f\| _2 \end{align}
+</div>
+<p> for every \(A{\gt}0\). More precisely, for some absolute \(C{\gt}0\), the low term satisfies </p>
+<div class="displaymath" id="a0000000081">
+  \begin{align}  |\operatorname {Low}_{Q,N}f(x)| \ll Q\log (2Q)\sup _{M\geq N}M^{-2} \sum _{|y-x|\leq CM^2}|f(y)|. \end{align}
+</div>
+<p> The maximal estimate needed in Section&#160;<span class="upshape">5</span> is </p>
+<div class="displaymath" id="a0000000082">
+  \begin{align}  \left\|  \sup _{\substack {M\geq N_0\\ \begin{bgroup} M\in 2^{\mathbb N}
+
+\end{bgroup}}} |\operatorname {High}_{Q,M}f| \right\| _2 & \ll Q^{-1/2} \exp \left( (2+o(1))\frac{(\log Q)^{1/2}}{\log \log Q} \right)\| f\| _2, \end{align}
+</div>
+<p> provided </p>
+<div class="displaymath" id="a0000000083">
+  \[  \log Q\leq c_0(\log N_0)^{1/2}.  \]
+</div>
+<p> Here \(o(1)\) is taken as \(Q\to \infty \), uniformly in the displayed ranges of \(N\) and \(N_0\); bounded values of \(Q\) are absorbed into the implicit constants. The operators in <span class="upshape">(4.20)</span> are defined in Section&#160;<span class="upshape">6</span>. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000077">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof architecture
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>   Choose the Page-compatible raw data once and define all three operators from that selection. Assemble the pointwise low estimate, high norm and high maximum, and arbitrary-decay error for this same family. Prove exact operator identities in the relevant normed spaces; separately chosen existence witnesses would not establish the proposition. </p>
+
+  </div>
+</div>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <a href="sect0004.html" title="Improving: optimization and the main estimate"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="index.html" title="On the Distribution of Prime Squares and Its Applications: compact blueprint"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="sect0006.html" title="Stopping: local estimates and sparse domination"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+</body>
+</html>

@@ -1,0 +1,763 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools}
+\usepackage[margin=0.86in]{geometry}
+\usepackage{booktabs,longtable,array,enumitem,xcolor,fancyhdr,hyperref,xurl}
+\hypersetup{colorlinks=true,linkcolor=blue!45!black,urlcolor=blue!45!black,
+pdftitle={Prime Squares: Initial Formalization Blueprint and Checked Finite Core},
+pdfauthor={Prepared for Hamed Mousavi}}
+\definecolor{ink}{HTML}{16324F}
+\definecolor{muted}{HTML}{526477}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small\color{muted}Prime squares: initial formalization blueprint}
+\fancyhead[R]{\small 20 October 2026}
+\fancyfoot[C]{\small\thepage}
+\setlength{\headheight}{14pt}
+\setlength{\tabcolsep}{5pt}
+\setlength{\parindent}{0pt}\setlength{\parskip}{6pt}
+\setlist{nosep,leftmargin=1.5em}
+\newcommand{\R}{\mathbb R}\newcommand{\Z}{\mathbb Z}\newcommand{\N}{\mathbb N}
+\newcommand{\T}{\mathbb T}\newcommand{\PP}{\mathbb P}
+\newcommand{\one}{\mathbf 1}\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\lean}[1]{\nolinkurl{#1}}
+\newcommand{\status}[1]{\textbf{Status:} #1.}
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{proposition}[lemma]{Proposition}
+\newtheorem{definition}[lemma]{Definition}
+\newcommand{\page}{\newpage}
+\begin{document}
+\begin{center}
+{\LARGE\bfseries\color{ink}Prime Squares}\\[6pt]
+{\Large Initial Formalization Blueprint}\\[4pt]
+{\large and a checked finite core}\\[18pt]
+For Hamed Mousavi\\
+\emph{On Equidistribution of Prime Squares and Its Applications}\\[10pt]
+20 October 2026
+\end{center}
+\vspace{12pt}
+\textbf{What has been done.} This package contains a first dependency blueprint for the
+attached 96-page manuscript and a small Lean project. The project formalizes finite
+exceptional-set inequalities, elementary arithmetic used in the paper, and positivity
+of the elementary bracket in the last sieve comparison. These are useful components
+of a larger development; none is a formalization of a headline theorem of the paper.
+
+\textbf{What this document does not claim.} It is not an expanded proof of every lemma,
+and it is not a certificate for the whole paper. In particular, the circle-method
+approximation, high--low estimates, stopping-time proof, Ionescu--Wainger argument,
+ergodic divergence argument and sieve estimates remain to be encoded and checked.
+The word \emph{target} below always denotes unfinished work.
+
+\textbf{Source lock.} Numbering and page references refer only to the uploaded file
+\lean{Prime_Squares (32)(1).pdf}. Its SHA-256 is recorded in
+\lean{PROVENANCE.json}. A revised manuscript must be compared with this snapshot
+before the paper-to-Lean map is reused.
+
+\textbf{Reproducibility.} Lean is pinned to 4.34.1. Mathlib is pinned to commit
+\lean{d13f23b723b8a846827a245b89c10fc7d3f11612}. The source archive includes a lockfile,
+the Lean modules, build instructions and scripts for checking proof dependencies.
+The verification logs, rather than this prose, record what was actually run.
+
+\textbf{Reading route.} Sections 1--3 define the scope and targets. Sections 4--5 give
+complete mathematical explanations of the checked components. Sections 6--11 map
+the unfinished arguments. Sections 12--14 record imports, audit points and the next
+inputs needed. The appendix inventories numbered statements in the attached PDF.
+
+\page
+\tableofcontents
+
+\page
+\section{The trust boundary}
+There are three different objects in a formalization project.
+\begin{enumerate}
+\item A \textbf{blueprint} specifies mathematical objects, statements, dependencies and
+proof steps. It is written for humans and can itself contain mistakes.
+\item A \textbf{Lean proof} is an actual term accepted by Lean's kernel. Elaborating
+a statement containing a placeholder is not the same as proving it.
+\item A \textbf{conditional formalization} proves a result from explicitly declared
+external statements. Its mathematical scope depends on the accuracy and consistency
+of those statements as well as on the translation of the final theorem.
+\end{enumerate}
+
+For the present starter, no extra analytic-number-theory axioms are declared.
+Theorems in the starter have explicit hypotheses for the errors and main terms they
+use. Those hypotheses are not assertions that the required analytic estimates have
+already been established for prime squares.
+
+For the completed project it is reasonable to import deep published results.
+Each import should have one stable declaration, a precise source, the full range of
+parameters, and a statement of constant dependence. The project should continue
+to prove the new arguments of this paper. Assuming its own high--low estimate or
+its final sieve comparison would leave that part of the paper unverified.
+
+An axiom audit must examine the \emph{transitive} dependencies of each headline
+theorem, not just count explicit occurrences of \lean{axiom}. Standard Lean/Mathlib
+dependencies can include \lean{propext}, \lean{Classical.choice} and
+\lean{Quot.sound}. An unfinished proof introduces \lean{sorryAx}. The starter's
+scripts reject unapproved dependencies and scan the project sources for proof
+placeholders and new axioms.
+
+\subsection*{What the Hua example establishes}
+The supplied Hua blueprint contains both a current-paper development and substantial
+material from an earlier, broader draft. Its total length is therefore not a useful
+measure of how long the prime-squares blueprint should be.
+
+At the repository snapshot inspected for this request, the trusted external
+declarations are \lean{Hua.siegel_walfisz} and \lean{Hua.hua_theorem10}. The second
+is an exponential-sum estimate, rather than the statement that sufficiently large
+admissible integers are sums of five prime squares. A static scan of its default
+library closure passed. That scan does not replace an independent rebuild or an
+audit of the meanings of its axioms and headline statements. This starter does not
+import that repository.
+
+\page
+\section{Objects and final statements to encode}
+\status{Specifications only; the headline statements are not yet Lean declarations}
+
+Use natural numbers for prime parameters and integer indices for discrete
+functions. Define, for \(N\ge2\),
+\[
+ A_{N,\Lambda}f(x)=\frac1N\sum_{1\le n\le N}\Lambda(n)f(x-n^2),\quad
+ A_{N,\square}f(x)=\frac1N\sum_{1\le n\le N}f(x-n^2),
+\]
+\[
+ A_{N,\PP^2}f(x)=\frac1{\pi(N)}\sum_{p\le N}f(x-p^2).
+\]
+The first and third operators differ in both weights and normalization. In the
+divergence theorem the parameter counts the first \(N\) primes instead of bounding
+their size. These conventions must not be silently identified.
+
+Put \(L(t)=2+|\log t|\), \(L_2(t)=2+\log(2+|\log t|)\), and
+\[
+ \Phi_c(t)=\exp\!\left(c\frac{L(t)^{1/2}}{L_2(t)}\right)\quad(t>0).
+\]
+In bilinear forms define \(t^{2/3}\Phi_c(t)\) to be zero at \(t=0\).
+For \(t\ge0\), define
+\[
+ \Psi_C(t)=\int_0^t
+ \exp\!\left(C\sqrt{\log(e+u)\log(e+\log(e+u))}\right)\,du.
+\]
+The square root in this last expression covers the \emph{product} of the logarithms.
+
+\textbf{Theorem 1.1.} For every \(\varepsilon>0\), there is \(C_\varepsilon\) such
+that the displayed restricted improving inequality holds for every allowed \(N,F,G\)
+with coefficient \(4\sqrt3/9+\varepsilon\). The \(o(1)\) in the paper is thus a
+quantifier over \(\varepsilon\), not an unspecified function added to the theorem.
+Strong improving bounds for \(3/2<p\le2\) are separate corollaries.
+
+\textbf{Theorem 1.3.} Encode the endpoint sparse form and then the stated interior
+triangle of exponents. Sparsity uses subsets \(E_I\subset I\) of cardinality at
+least \(|I|/10\), pairwise disjoint over the family. Cardinalities, dilations and
+normalizations must be explicit.
+
+\textbf{Theorem 1.5.} Quantify over every nonatomic ergodic measure-preserving
+system and every infinite set of indices \(S\). The conclusion is existence of an
+integrable function whose averages along \(N\in S\) fail to converge on a set of
+positive measure. Do not weaken this to one system or to the full sequence only.
+
+\textbf{Theorem 1.6.} Define \(\mathcal P\) as the primes represented by
+\(a^2+b^2+1\) with \((a,b)=1\). For every \(A>0\), specify constants \(C_A,X_A\)
+so that the nonrepresentable \(1\le n<X\), \(n\equiv12\pmod{24}\), have cardinality
+at most \(C_AX(\log X)^{-A}\) for \(X\ge X_A\).
+
+\textbf{Section 7.} Theorem 7.2 and Corollaries 7.6 and 7.42 are additional targets:
+the modular estimate, quantitative \(L^p\) growth, and almost-everywhere and \(L^1\)
+convergence on the stated Orlicz class. They are not substitutes for Theorem 1.5.
+
+\page
+\section{The dependency architecture}
+\status{Initial map, not a claim that the indicated modules exist already}
+
+\begin{longtable}{p{.15\linewidth}p{.36\linewidth}p{.40\linewidth}}
+\toprule
+Branch & Principal nodes in the paper & Output and main dependencies\\\midrule
+Arithmetic & Section 3, especially 3.1, 3.12, 3.14, 3.20, 3.21, 3.24, 3.27 &
+Cohen correlations, kernel bounds, Gauss sums and exceptional-conductor bounds.\\
+Improving & 4.1, 4.15, 4.19 &
+Theorem 1.1; uses Section 3 and the decomposition in Section 6.\\
+Sparse & 5.1, 5.10, 5.17 &
+Theorem 1.3; needs the local low estimate and maximal, rather than fixed-scale,
+high estimate.\\
+High--low & 6.5, 6.9, 6.14, 6.16, 6.19, 6.21 &
+Proposition 4.19; uses primes in progressions with an exceptional term, minor-arc
+cancellation and multifrequency estimates.\\
+Near \(L^1\) & 7.8, 7.15, 7.21, 7.28, 7.2 &
+Corollaries 7.6 and 7.42; uses quantitative Ionescu--Wainger/sampling inputs and
+the Section 6 model.\\
+Divergence & 8.1, 8.6, 8.8 and the final assembly &
+Theorem 1.5; uses a character-sum bound, Poisson spacings, fixed-modulus prime
+equidistribution and the divergence criterion.\\
+Goldbach & 9.2--9.10, Section 10, 11.13, 11.19, 9.17, 9.20, 9.22, 9.24 &
+Theorem 1.6; circle-method mean-square approximation, two-stage sieving,
+positive main term and exceptional-set assembly.\\\bottomrule
+\end{longtable}
+
+The high--low branch is shared by the improving, sparse and near-\(L^1\) results.
+The divergence branch shares arithmetic foundations but is logically separate from
+the maximal inequality. The Goldbach branch shares exponential sums and local
+correlations, but introduces its own mean-square approximation and sieve machinery.
+
+\subsection*{Proposed eventual organization}
+Keep declarations under \lean{PrimeSquares}. Suggested future directories are
+\lean{Arithmetic}, \lean{HighLow}, \lean{Improving}, \lean{Sparse},
+\lean{Maximal}, \lean{Ergodic}, \lean{Goldbach} and \lean{External}.
+Maintain one table linking a manuscript label to each Lean declaration. Use stable
+LaTeX labels once the sources are available; printed theorem numbers alone will
+change during proofreading.
+
+For each node record: the exact statement; normalization and parameter ranges;
+dependencies; an expanded proof; Lean name; external assumptions; build status.
+The appendix currently gives an inventory, not this complete node-by-node expansion.
+
+\page
+\section{A checked finite exceptional-set argument}
+\status{Implemented in \lean{PrimeSquares/FiniteAssembly.lean}}
+
+Let \(S\) be a finite set, let \(e_1,e_2:S\to\R\), and let \(t>0\). Define
+\[
+ B_t=\{n\in S:|e_1(n)|+|e_2(n)|>t\}.
+\]
+No number-theoretic interpretation is part of these definitions.
+
+\begin{lemma}[Finite energy estimate]
+If \(\sum_{n\in S}e_i(n)^2\le B_i\) for \(i=1,2\), then
+\[
+ |B_t|\le\frac{2(B_1+B_2)}{t^2}.
+\]
+\end{lemma}
+\begin{proof}
+For real \(a,b\), the nonnegativity of \((|a|-|b|)^2\) implies
+\((|a|+|b|)^2\le2(a^2+b^2)\). On \(B_t\), therefore,
+\(t^2\le2(e_1(n)^2+e_2(n)^2)\). Sum this inequality on \(B_t\), enlarge
+the nonnegative square sum to \(S\), and divide by \(t^2>0\).
+\end{proof}
+
+\begin{lemma}[Positivity outside the exceptional set]
+Let \(R(n)\) be a nonnegative integer and suppose that
+\[
+ R(n)\ge M(n)+e_1(n)-e_2(n)-u(n),\quad
+ M(n)\ge4t,\quad u(n)\le t.
+\]
+If \(n\notin B_t\), then \(R(n)\ge2t>0\).
+\end{lemma}
+\begin{proof}
+Use \(e_1-e_2\ge-|e_1|-|e_2|\) and \(|e_1|+|e_2|\le t\). The lower
+bound becomes \(4t-t-t=2t\).
+\end{proof}
+
+Combining the two lemmas gives the actual Lean result
+\lean{PrimeSquares.zero_count_card_bound}:
+\[
+ \abs{\{n\in S:R(n)=0\}}\le\frac{2(B_1+B_2)}{t^2}.
+\]
+The hypotheses about \(M,R,u,e_i\) are part of its statement. In the paper's final
+assembly take \(M=\Delta X_n\Theta_n(z)/2\),
+\(t=cN(\log N)^{-C_{A_0}}\), and \(e_i=E_i\).
+If each mean square is at most \(C_iN^4(\log N)^{-K}\), the bound becomes
+\[
+ \abs{\{R=0\}}\le
+ \frac{2(C_1+C_2)}{c^2}N^2(\log N)^{-K+2C_{A_0}}.
+\]
+Choosing \(K\) large enough yields the desired logarithmic saving for this finite
+range. The analytic estimates, eventual parameter choices, identification of \(R\)
+with actual representations, and treatment of the initial short range remain
+formalization work. Thus this is the finite last step of the Goldbach proof, not
+Theorem 1.6 itself.
+
+\page
+\section{Other checked components}
+\status{Implemented in \lean{LocalArithmetic.lean} and \lean{SieveConstant.lean}}
+
+\subsection*{Congruences and the shared-prime observation}
+For every natural number \(n\) with \(n\equiv1\pmod2\) and \(n\not\equiv0\pmod3\),
+the module proves \(n^2\equiv1\pmod{24}\). The proof reduces to the 24 possible
+residues; Lean checks the finite case split. For a prime \(p>3\), primality excludes
+divisibility by 2 and 3, so the same conclusion follows.
+
+Consequently, if \(r\equiv11\pmod{24}\) and \(p>3\) is prime, then
+\(r+p^2\equiv12\pmod{24}\). The restriction \(p>3\) is included explicitly.
+The starter also proves the shift equivalences
+\[
+ m=a^2+b^2+p^2\iff m+1=a^2+b^2+p^2+1,
+ \qquad m\equiv11\pmod{24}\iff m+1\equiv12\pmod{24}.
+\]
+These clarify the relation between the abstract's formulation and Theorem 1.6;
+they do not establish an exceptional-set estimate.
+
+Suppose \(p,m\) are prime, \(n=m^2+r\), and \(p\mid n,r\). Then \(p\mid m^2\),
+so \(p\mid m\); primality of \(m\) forces \(p=m\). This is the finite divisibility
+observation used in Lemma 11.2. The divisor-counting estimate and the full sieve
+comparison in that lemma are not yet formalized.
+
+\subsection*{The elementary bracket in Lemma 9.24}
+The manuscript reduces its final sieve comparison to
+\[
+ \Delta\ge\frac{e^{\gamma/2}}{\sqrt\pi}
+ \left(\frac{2\sqrt2}{3}\log2-\frac{27}{64}\right).
+\]
+Lean proves positivity of the parenthesized expression. There is a particularly
+short rigorous proof which does not need decimal approximations:
+\[
+ \sqrt2\ge\frac43,\qquad \log2\ge1-\frac12=\frac12,
+\]
+where the second inequality is the standard \(1-x^{-1}\le\log x\) for \(x>0\).
+Both lower bounds are positive, and therefore
+\[
+ \frac{2\sqrt2}{3}\log2-\frac{27}{64}
+ \ge\frac49-\frac{27}{64}=\frac{13}{576}>0.
+\]
+The declaration \lean{sieve_bracket_positive} proves this conclusion. The separate
+declaration \lean{scaled_sieve_bracket_positive} allows multiplication by any
+strictly positive real factor.
+
+This does \emph{not} verify the integral evaluation for \(f_{1/2}(9/8)\), the upper
+bound on \(\mathcal W(9/8)\), the factor \(e^{\gamma/2}/\sqrt\pi\), or the stronger
+numerical inequality \(\Delta>0.17\). Those must be added before claiming Lemma 9.24.
+
+\page
+\section{Improving estimates: the scalar optimization and its inputs}
+\status{Unfinished target; the following is the blueprint for Section 4}
+
+Separate the prime parameter from the spatial scale. For prime squares, a sum up
+to \(N\) has support at scale \(N^2\); the abstract theorem uses a spatial-scale
+variable. A typed name such as \lean{primeScale} versus \lean{spaceScale} prevents
+an incorrect substitution of \(N\) for \(N^2\).
+
+Theorem 4.1 first supplies a comparison operator \(B_N\). Applied to indicators,
+its decomposition gives, with \(\delta=|F||G|/N^2\),
+\[
+ N^{-1}|\langle B_N\one_F,\one_G\rangle|
+ \lesssim\delta J^s(\log J)^\gamma+
+ \delta^{1/2}J^{-r}(\log J)^\beta.
+\]
+The optimal \(J\), up to bounded factors, is
+\[
+ J=\delta^{-1/(2(s+r))}(\operatorname{Log}\delta)^{(\beta-\gamma)/(s+r)}.
+\]
+Prove first the estimate when this \(J\) is in the permitted range. If it is too
+large, use the elementary local kernel estimate. This second branch is essential:
+choosing an inadmissible \(J\) is not an application of the decomposition.
+
+For the prime operator the corresponding bound is
+\[
+ \delta Q^s(\log Q)^\alpha+
+ \delta^{1/2}Q^{-r}
+ \exp\!\left(c_1\frac{(\log Q)^\kappa}{\log\log Q}\right)
+ +\text{error}.
+\]
+When \(\operatorname{Log}\delta\) is small enough relative to \((\log N)^c\),
+take the dyadic \(Q\) specified by (4.14). Prove separately that it is admissible,
+that rounding changes the estimate by a bounded factor, and that the error is
+absorbed. In the complementary range, transfer the comparison estimate using the
+pointwise domination by \(B_N\). This yields
+\[
+ \delta^{1-s/(2(s+r))}\Phi_{c_*,\kappa}(\delta),\qquad
+ c_* = \frac{c_1s}{2^\kappa(s+r)^{\kappa+1}}+o(1).
+\]
+For \(s=1,r=1/2,\kappa=1/2,c_1=2+\varepsilon\), the critical power is \(2/3\)
+and the limiting coefficient is \(4\sqrt3/9\).
+
+\textbf{Separate Lean tasks.} Establish the finite bilinear norm inequalities;
+formalize the elementary optimization including the two parameter ranges; prove
+the dyadic-to-full annular summation; and then prove restricted-to-strong
+interpolation for \(p>3/2\). None follows just from writing the numerical value
+of the coefficient into a declaration.
+
+\page
+\section{Sparse bounds: local control and recursion}
+\status{Unfinished target; Sections 5 and the stopping-time conventions in Section 2}
+
+The sparse proof needs more than Theorem 1.1. A stopping time \(\tau(x)\) depends
+on the spatial point. Its high term must be controlled by a maximal \(\ell^2\)
+estimate over all permitted scales. The low estimate must be local enough that
+admissibility replaces its local density by the parent density.
+
+The key tasks are these.
+\begin{enumerate}
+\item Define integer intervals, their dilations, a dyadic grid, and the admissible
+stopping times. Record the exact support radius of each kernel.
+\item Prove Lemma 5.1 from the local kernel estimate, the local low estimate, the
+maximal high estimate and the square-summable errors. Include the small-scale
+branch, where the abstract high--low split is not available.
+\item Prove Lemma 5.10. Select maximal bad dyadic intervals by the two density
+tests. Bound the sum of child lengths by \(|I_0|/4\). Construct disjoint major
+subsets and iterate the local inequality.
+\item In Lemma 5.17 split according to \(\log\tau\le C_0L^2\) and its complement,
+where \(L=\operatorname{Log}(\delta_0^{-1})\). The first range uses the square
+averages; the second uses the prime-square decomposition with an admissible
+denominator cutoff.
+\item Convert the local sparse form with \(cI\) on the input side into the stated
+form. Prove the required grid/dilation reduction rather than identifying the
+two families by notation.
+\end{enumerate}
+
+For finite input sets, begin with a finite set of scales and a finite recursion.
+If using an infinite family later, specify its sum and prove the limiting step.
+This keeps the initial recursive construction elementary and exposes precisely
+which part needs an infinite argument.
+
+There is a useful formalization trap here. An arbitrary real-valued supremum in
+Lean uses conditional completeness. Without a boundedness hypothesis, it must
+not be treated as a maximum with all the usual inequalities. One can first work
+with finite truncated maxima, or use extended nonnegative reals for a maximal
+function and prove finiteness afterward.
+
+Finally, the strong sparse estimates for exponents in the interior of the triangle
+need their own interpolation/convexity argument. They should be separate
+declarations depending on the endpoint local bound and the trivial bounds, not
+an additional assumed theorem.
+
+\page
+\section{The high--low model and exceptional conductors}
+\status{Unfinished target; the main shared arithmetic and analytic branch}
+
+At prime scale \(N\), the annular multiplier is approximated by the model \(V_N\)
+in (6.8). Its ordinary coefficients are normalized unit quadratic Gauss sums.
+If an exceptional character is present, its contribution has the minus sign
+displayed in that formula, an induced character modulo each multiple of its
+conductor, and a continuous model with parameter \(\beta\).
+
+Use explicit scale-indexed data. For example, define an optional datum at \(N\)
+containing \((q_\chi,\chi,\beta)\), and define
+\(\mathcal M(\chi)\) to be the scales where that character is selected. Do not
+pick one character and use it at all scales. Page uniqueness must be strong
+enough to justify the later regrouping by conductor.
+
+\textbf{Arithmetic layer.} Prove the Cohen correlation by CRT, the odd prime-power
+evaluation and the explicit 2-adic cases. Build the restricted correlations and
+Euler products of Section 3 from these identities. Prove the ordinary Gauss bound
+with its subexponential factor, the real-character bound, and the stronger
+\(\sigma_\chi B_\chi^{1/2}\ll q_\chi^{-1/25}\) estimate. The last estimate is used
+to sum over changing exceptional characters.
+
+\textbf{Approximation layer.} Encode Lemma 6.5 and then Lemma 6.9. The primes-in-
+progressions input must supply a single exceptional datum valid over the interval
+of partial summation \([N/2,N]\), with uniform errors. A fixed-modulus PNT alone
+does not provide this growing-modulus input.
+
+\textbf{Exact decomposition.} The ordinary split is by \(q\le Q\). The exceptional
+split is by \(d=q/q_\chi\le Q/B_\chi\), with its own cutoff. Prove the multiplier
+identity (6.13) before norm estimates. Empty exceptional sums, including
+\(Q/B_\chi<1\), must be covered by the definitions.
+
+\textbf{Low and high bounds.} Proposition 6.14 uses inverse transforms and the
+arithmetic kernel identities. Proposition 6.21 needs Lemma 6.16, the denominator-
+prefix extension 6.19, the cutoff-difference square functions, and a final sum
+over \(\chi\). At each scale there is at most one exceptional datum; the square
+sum over characters and Page uniqueness per dyadic conductor range are separate
+steps. Only after both bounds and the error estimate are checked does one obtain
+Proposition 4.19.
+
+\page
+\section{The Orlicz maximal estimate and convergence}
+\status{Unfinished target; Section 7}
+
+The quantitative Ionescu--Wainger input must retain its constants. Proposition
+7.8 specifies a rational-frequency set containing every denominator at most \(Q\),
+a period \(P\), a denominator bound \(B\), a sufficiently small width, and norm
+comparisons for a range of exponents. It invokes Tao's Lemma 5.1, Theorems 1.6
+and 1.7, and Proposition 1.5. These should have explicit external interfaces if
+they are not formalized here.
+
+Next prove the continuous multiplier bounds uniformly in \(0<\beta\le1\)
+(Lemma 7.15), followed by the finite-group measure and sampling argument
+(Proposition 7.21). The measure is allowed to be complex but has total variation
+at most one. Dependence of constants on the period or on \(\beta\) would break
+the later optimization.
+
+Proposition 7.28 combines this low model with an \(\ell^2\) high estimate. The
+exceptional characters of conductor above \(Q\) vary with scale and are retained
+in the high term. The low exceptional character, when it exists, is controlled
+using Page uniqueness. This assembly must use the same model and normalization
+as Section 6.
+
+For the modular extension, do not stop at the restricted estimate on \(\one_F\).
+Let \(C_\infty\) bound the masses of the positive kernels. Remove
+\(|f|\le\lambda/(2C_\infty)\). Decompose the remaining function into level sets
+\[
+ E_j=\{2^j\lambda/(2C_\infty)<|f|\le2^{j+1}\lambda/(2C_\infty)\}.
+\]
+Allocate thresholds using a positive summable sequence such as
+\(a_j=6/(\pi^2(j+1)^2)\). Prove the union inclusion, apply the restricted
+estimate to each \(E_j\), and prove that the polynomial factor in \(j\) inside
+the threshold can be absorbed by enlarging the coefficient of \(\Psi_C\).
+This is a quantitative estimate for this particular Young function, not just
+sublinearity. It gives the truncated modular estimate (7.3), then (7.4).
+
+Corollary 7.6 follows by layer cake and a one-variable integral estimate, with
+\(\varepsilon=p-1\). Corollary 7.42 first transfers finite truncated discrete
+estimates to an invertible probability-preserving system. Prove bounded-function
+convergence using the cited polynomial-prime result and control the higher prime
+powers there. Abel summation handles the unweighted prime averages. Finally use
+Orlicz truncation, doubling and the modular maximal estimate to pass to unbounded
+functions; use uniform \(L^1\) bounds for \(L^1\) convergence.
+
+\page
+\section{Persistent universal divergence}
+\status{Unfinished target; Section 8}
+
+For each modulus \(q\), define
+\(\Lambda_q=\{b^2\bmod q:(b,q)=1\}\). The initial finite tasks are CRT
+compatibility, inclusion in the prime-square residue set, and, for odd squarefree
+\(q\),
+\[
+ |\Lambda_q|=\frac{\varphi(q)}{2^{\omega(q)}},\qquad
+ s_q=\frac q{|\Lambda_q|}=\prod_{p\mid q}\frac{2p}{p-1}.
+\]
+The inclusion uses Dirichlet's theorem for a unit square root; it must not claim
+that every prime residue, including nonunits, is part of \(\Lambda_q\).
+
+Lemma 8.8 expands each quadratic-residue indicator as
+\(\tfrac12(1+\chi_p-\one_{\{0\}})\). Terms containing a zero indicator are bounded
+by a constant depending on the number of shifts. For the others, apply the Weil
+bound to the squarefree product of the distinct shifted linear factors. This
+proves the correlation hypothesis for the imported Poisson-spacings theorem.
+
+Choose pairwise disjoint blocks of odd primes with block sizes tending to
+infinity, and a disjoint prime sequence \(u_j\). The block products \(q_j\)
+satisfy \(\PP_{q_j}(\Lambda_{q_j})\le2^{-j}\), whereas
+\(\PP_{u_j}(\Lambda_{u_j})\ge1/3\). The construction must ensure the combined
+collection is pairwise coprime.
+
+Theorem 8.6 supplies Poisson spacings. The thickening identity in the proof
+expresses the covered proportion as
+\[
+ \PP_{q_j}(\Lambda_{q_j}^{\gamma})
+ =\int_0^\gamma F_j(\theta)\,d\theta+O(s_{q_j}^{-1}).
+\]
+Dominated convergence gives \(1-e^{-\gamma}\), so the deficit is \(o(\gamma)\).
+The pair-separation condition uses LaVictoire's Lemma 3.2 in addition to this
+one-gap distribution; it is not an automatic restatement of Poisson convergence.
+
+Finally, fixed-modulus prime equidistribution gives limiting mass
+\(1/|\Lambda_Q|\) at every \(a\in\Lambda_Q\). The strict lower bound required
+by (8.5) then holds with, for example, \(\beta=1/2\). Apply the full imported
+divergence criterion, including its transference/Banach-principle conclusions,
+to obtain exactly the persistence and system quantifiers of Theorem 1.5.
+
+If the chosen formal ergodic infrastructure assumes invertibility, a separate
+extension/transfer argument is needed to match the unqualified system statement
+in Theorem 1.5. Simply adding invertibility would narrow the theorem.
+
+\page
+\section{The Goldbach branch}
+\status{Only the finite final assembly and small supporting pieces are checked}
+
+The reductions in Section 9 produce a lower sieve count minus an upper correction
+count. Their errors must have mean-square bounds with an arbitrarily large
+logarithmic saving. The common main term is
+\(X_n\Theta_n(z)\); its positivity and uniform lower bound are separate lemmas.
+
+\textbf{Circle method.} Lemma 9.10 is the principal target. Its coefficients are
+independent of \(n\), and its conclusion is a mean square of a sum over auxiliary
+moduli and \(\ell\). Section 10 supplies the minor-arc bound, the major-arc local
+factor \(G_R\), the truncated continuous factor \(H_{\ell,R}\), the tail estimate
+and the major-arc error. The same small-prime parameter \(R\) must be retained
+in both main-term factors until its tails have been shown to be summable.
+
+\textbf{Sieve.} Lemma 11.2 replaces variable sets of sieve primes by fixed sets,
+which is needed before applying Lemma 9.10 to coefficients independent of \(n\).
+The exact local densities are computed in Lemmas 11.6 and 11.8. For primes at
+most \(R\), the uniform product dimensions are \(2/3\) and \(3/2\); one cannot
+apply the desired half-dimensional and linear sieves over the whole range.
+
+Lemma 11.13 removes \(p\le R\) first at level
+\(D_0=\exp((\log\log N)^3)\). The remaining level is \(D/D_0\).
+Because outer weights have both signs, the choice of preliminary upper or lower
+weights must depend on that sign. Prove this finite algebra before estimating
+the two stages. The coefficient bounds and independence of \(n\) must survive
+the combination. The outer dimensions are then \(1/2\) and \(1\).
+
+Lemma 11.19 performs the weighted sum over \(\ell\). It needs the cited mean-value
+theorem for multiplicative functions and the relevant short-interval uniformity.
+Track the cancellation of the factors at \(p\le R\) and the replacement of
+\(H_{\ell,R}\) by \(H_\ell\); neither can be dropped at the definition stage.
+
+The outputs are Propositions 9.17 and 9.20. Lemma 9.22 bounds the common main
+term below. Lemma 9.24 compares the sieve constants. Their combination gives
+(9.25), and the checked finite result in Section 4 then applies. The remaining
+asymptotic task is to choose the constants in the correct order, show the
+\(O(N^{\varepsilon})\) nuisance is smaller than the positive main term, discard
+the initial range, and pass from scale \(N^2\) to general \(X\).
+
+\page
+\section{Proposed external-input register}
+\status{Candidate interfaces; not declarations already installed in the starter}
+
+The user's permission to leave deep theorems unformalized makes a conditional
+development appropriate. The exact declarations should be approved mathematically
+by comparison with their sources. The list below is an initial register, not a
+claim that each result is absent from current Mathlib.
+
+\small
+\begin{longtable}{p{.11\linewidth}p{.39\linewidth}p{.41\linewidth}}
+\toprule
+ID & Published input & Required interface and use\\\midrule
+NT01 & PNT in progressions with exceptional term and Landau--Page; paper (2.5)--(2.6), reference [22] &
+Uniform growing-modulus error, one datum on an annulus, induced characters, and
+uniqueness strong enough across scales. Used in Section 6.\\
+NT02 & Siegel--Walfisz and fixed-modulus equidistribution &
+Full quantifier order for modulus, residue, exponent and threshold. Used where
+polylogarithmic moduli or fixed progressions suffice; not a replacement for NT01.\\
+NT03 & Ren [40, Theorem 1] &
+Quadratic prime exponential-sum cancellation with exactly the denominator and
+arc-width ranges needed in (6.7) and (10.1).\\
+NT04 & Bombieri--Vinogradov, Brun--Titchmarsh, Mertens-type estimates; Section 2.6 &
+Maxima over residues and endpoints, divisor weights, and constants uniform in
+the auxiliary moduli. Used in Section 10 and the sieve.\\
+NT05 & Classical quadratic Gauss evaluations and Weil character-sum bounds &
+Primitive and induced character conventions; primes and prime powers, including
+2; squarefree-polynomial hypothesis for Lemma 8.8.\\
+HA01 & Separated-frequency maximal inequality [25, Theorem 1.1] &
+Precise separation and cardinality dependence. Prove its adaptation, transference
+and uniformity in \(\beta\) in Lemma 6.16.\\
+HA02 & Tao [45], Lemma 5.1, Theorems 1.6--1.7 and Proposition 1.5 &
+Quantitative major-arc construction, multiplier theorem and sampling comparisons.
+Keep \(r,k,B,P,\varepsilon,p\) and vector-valued constants explicit.\\
+HA03 & Hardy--Littlewood, Calder\'on--Zygmund, Khintchine and Rademacher--Menshov &
+Only use an external declaration where the pinned library does not already
+provide the needed statement. Preserve the \(p\downarrow1\) dependence.\\
+\bottomrule
+\end{longtable}
+\normalsize
+
+Do not collapse these into a single assumption saying that all estimates needed
+in the paper hold. An import should be independently recognizable as a published
+theorem and should not assume the novel conclusion to be checked.
+
+\page
+\subsection*{External inputs continued}
+\small
+\begin{longtable}{p{.11\linewidth}p{.39\linewidth}p{.41\linewidth}}
+\toprule
+ID & Published input & Required interface and use\\\midrule
+ER01 & LaVictoire [27, Theorem 3.1 and Lemma 3.2], with the principles used in the paper's Theorem 8.1 &
+CRT families, two coprime sequences, thickening deficit, pair separation and
+residue-frequency hypotheses; full persistent universal divergence conclusion.\\
+ER02 & Granville--Kurlberg [14, Theorem 1], in the specialization 8.6 &
+Uniform correlations for distinct shifts and the hypotheses on local densities;
+convergence of normalized cyclic gaps.\\
+ER03 & Polynomial-prime pointwise convergence [35, Corollary 2(ii)] &
+The bounded-function dense class used in Corollary 7.42, with the correct weights
+and systems. Prime powers and Abel summation remain internal tasks.\\
+SV01 & Rosser--Iwaniec coefficient-form sieve and fundamental lemma [21] &
+Weights, support, signs, coefficient bounds, product hypotheses, sieve functions
+and quantitative remainder; prove the two-stage composition in Lemma 11.13.\\
+SV02 & Granville--Koukoulopoulos [13] and Shiu [41] &
+Mean values of the particular multiplicative weight and uniform estimates in the
+retained ranges used by Lemma 11.19.\\\bottomrule
+\end{longtable}
+\normalsize
+
+\subsection*{Represent imports as hypotheses first}
+For a new branch it is often helpful to package the external inputs as a named
+structure and prove a theorem with that structure as an explicit argument.
+This makes the logical boundary visible without immediately adding global
+axioms. Once the interfaces have been audited, a separate file can instantiate
+the structure from selected quoted theorems.
+
+In either design, dependency output for a headline theorem must agree with the
+published import register. A proof conditional on an estimate proved nowhere in
+the project or cited literature should be labeled incomplete, even if Lean
+accepts it with that estimate as a hypothesis.
+
+\subsection*{Possible reuse from the Hua project}
+The Hua repository contains finite cyclic Fourier infrastructure, quadratic local
+arithmetic and analytic assembly. Some may be reusable after comparing
+definitions. Its prime-square weights are those of its own \(W\)-trick argument,
+not automatically the operators \(A_{N,\Lambda}\) in this paper. Reuse requires
+checking signs, normalizations, finite versus infinite groups, and transitive
+axiom dependencies. No reuse has been counted as completed work here.
+
+\page
+\section{Points to settle during manuscript proofreading}
+These are formalization requirements or visible editorial issues, not a verdict
+that the main mathematical arguments are wrong.
+
+\begin{enumerate}
+\item \textbf{Freeze the version.} The attached paper has 96 pages and Section 7.
+Its current numbering is the one used in this document. Match the final LaTeX
+labels rather than importing numbering from older discussions.
+\item \textbf{Repair the Section 7 references.} The opening of Section 7 and the
+last sentence before the proof of Corollary 7.6 refer to Theorem 1.5. In this
+snapshot Theorem 1.5 is the divergence theorem, so these references cannot name
+the maximal-inequality consequence intended there.
+\item \textbf{Preserve the two endpoint functions.} The improving loss is
+\(\exp(c\sqrt{L}/L_2)\); the modular function uses
+\(\exp(C\sqrt{\log(e+t)\log(e+\log(e+t))})\). These are different scales.
+\item \textbf{Separate bounded and unbounded input.} A negligible prime-power
+contribution for bounded functions is sufficient for the dense-class convergence
+step; it is not itself a uniform error bound for every \(L^1\) function.
+\item \textbf{Make exceptional data consistent.} Record the annular data used in
+partial summation and prove the regrouping over \(\mathcal M(\chi)\). Do not
+replace this by a single exceptional character fixed for all \(N\).
+\item \textbf{Expose uniformity in the Goldbach range.} All \(o(1)\), tail errors
+and positivity bounds must be uniform in admissible \(n,\ell\) and auxiliary
+moduli. Write the order of choosing \(A_0,K,C\) and all thresholds explicitly.
+\item \textbf{Retain fixed sieve-prime sets.} The independence from \(n\) after
+Lemma 11.2 is required by the mean-square estimate. The coefficient combination
+in the pre-sieve must preserve this independence.
+\item \textbf{Check strictness and small cases.} Empty sets, \(q=1\), powers of 2,
+\(N\ge2\), \(p=2,3\), and equality at density/threshold boundaries should be
+covered by exact definitions, not silently discarded.
+\end{enumerate}
+
+The present work has not audited every cited theorem or every proof in the PDF.
+In particular, successful checks of the starter do not validate any unfinished
+node elsewhere in the map.
+
+\page
+\section{What is needed to continue}
+The PDFs were enough to start. The next useful input is the final LaTeX project:
+all source files, bibliography, custom macros and any code used for numerical
+estimates, together with the PDF generated from those files. This makes the
+statements and labels unambiguous and lets the map track proofreading changes.
+
+GitHub is useful for versioning and automated builds, but an account is not
+required to write or check Lean locally. This archive is a normal Lean project;
+it can be uploaded later. The toolchain and lockfile are already selected.
+There is no need for the author to learn Lean before mathematical work can begin.
+
+The next mathematical milestone should be one coherent branch. A practical
+sequence is:
+\begin{enumerate}
+\item Encode the final target statements and audit their quantifiers against the
+LaTeX. Build a stable statement map.
+\item Complete a substantial finite arithmetic module, such as the quadratic
+Cohen identity with all prime-power cases, or complete the scalar optimization
+in Theorem 4.1.
+\item Specify and audit the deep-input interfaces. Prove one full branch from
+those interfaces, without assuming its novel intermediate estimates.
+\item Add the remaining branches and report the exact dependencies of each
+headline theorem separately.
+\end{enumerate}
+
+For the Goldbach branch, the existing checked finite assembly supplies an endpoint
+to which the circle-method and sieve components can connect. For the harmonic-
+analysis branch, the shared high--low decomposition is the principal reusable
+milestone. The divergence branch can be developed separately once its external
+criterion and Poisson-spacings interfaces are audited.
+
+\textbf{Completion criterion.} A full conditional formalization requires a fresh
+build of every target theorem, a transitive axiom audit with no unfinished proof
+axiom, and a human comparison of the final statements and imported inputs with
+the manuscript and sources. A long blueprint, a clean source scan, or a passing
+build of the present starter alone does not meet that criterion.
+
+\textbf{Current deliverable.} This is an initial, reproducible starting point with
+small checked components and an explicit account of the much larger unfinished
+work. It should not yet be described in an arXiv or journal submission as a
+formalization of the paper.
+
+\page
+\appendix
+\section{Inventory of numbered statements}
+The following inventory was extracted from headings in the attached PDF. Planned
+names are suggestions only. A status of ``target'' means no proof of that numbered
+statement is present in the starter. Checked supporting subclaims are described
+separately in Sections 4--5; they do not change the status of the enclosing paper
+theorem or lemma.
+\small
+\input{Statement_Inventory.tex}
+\normalsize
+\end{document}

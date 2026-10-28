@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Orlicz: quantitative IW and the three-family maximum</title>
+<link rel="next" href="sect0008.html" title="Badness: arithmetic blocks and the persistent criterion" />
+<link rel="prev" href="sect0006.html" title="Stopping: local estimates and sparse domination" />
+<link rel="up" href="index.html" title="On the Distribution of Prime Squares and Its Applications: compact blueprint" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+<link rel="stylesheet" href="styles/blueprint.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">On the Distribution of Prime Squares and Its Applications: compact blueprint</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref"></span> <span class="toc_entry">Purpose and verification boundary</span></a>
+ </li>
+<li class="">
+  <a href="sect0002.html"><span class="toc_ref">1</span> <span class="toc_entry">Independent inputs and their exact scope</span></a>
+ </li>
+<li class="">
+  <a href="sect0003.html"><span class="toc_ref">2</span> <span class="toc_entry">Arithmetic: quadratic sums and conductors</span></a>
+ </li>
+<li class="">
+  <a href="sect0004.html"><span class="toc_ref">3</span> <span class="toc_entry">Improving: optimization and the main estimate</span></a>
+ </li>
+<li class="">
+  <a href="sect0005.html"><span class="toc_ref">4</span> <span class="toc_entry">Prime operators: approximation, low and high terms</span></a>
+ </li>
+<li class="">
+  <a href="sect0006.html"><span class="toc_ref">5</span> <span class="toc_entry">Stopping: local estimates and sparse domination</span></a>
+ </li>
+<li class=" active current">
+  <a href="sect0007.html"><span class="toc_ref">6</span> <span class="toc_entry">Orlicz: quantitative IW and the three-family maximum</span></a>
+ </li>
+<li class="">
+  <a href="sect0008.html"><span class="toc_ref">7</span> <span class="toc_entry">Badness: arithmetic blocks and the persistent criterion</span></a>
+ </li>
+<li class="">
+  <a href="sect0009.html"><span class="toc_ref">8</span> <span class="toc_entry">Ergodic: transference and the two endpoint conclusions</span></a>
+ </li>
+<li class="">
+  <a href="sect0010.html"><span class="toc_ref">9</span> <span class="toc_entry">Goldbach arithmetic: reductions and the exceptional set</span></a>
+ </li>
+<li class="">
+  <a href="sect0011.html"><span class="toc_ref">10</span> <span class="toc_entry">Goldbach circle method: minor arcs, major arcs and completion</span></a>
+ </li>
+<li class="">
+  <a href="sect0012.html"><span class="toc_ref">11</span> <span class="toc_entry">Goldbach sieve: local densities, presieving and comparison</span></a>
+ </li>
+<li ><a href="dep_graph_document.html">Dependency graph</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="a0000000008">6 Orlicz: quantitative IW and the three-family maximum</h1>
+<div class="lemma_thmwrapper theorem-style-plain" id="iw_application">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">6.1</span>
+    <span class="lemma_thmtitle">Quantitative IW construction and sampling</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0007.html#iw_application">#</a>
+    
+    <a class="icon proof" href="sect0007.html#a0000000103"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0002.html#input_iw_sampling">Lemma 1.5</a></li>
+          
+          <li><a href="sect0002.html#input_iw_sampling">Lemma 1.5</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.proposition_quantitative_IW_full" class="lean_decl">PrimeSquares.proposition_quantitative_IW_full</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  
+<p><b class="bfseries">Paper Proposition 7.8.</b> <i class="itshape">complete conditional implication.</i></p>
+<p>Let \(r,k\in \mathbb N\), with \(r\geq 2\) and \(k\geq 4\), and let \(Q\geq 2^k\). Put </p>
+<div class="equation" id="a0000000104">
+<p>
+  <div class="equation_content">
+    \begin{equation}  \begin{gathered} p_r=\frac{2r}{2r-1}, \qquad B=C_*^{\, k^2Q^{1/(k-1/2)}},\\ \varepsilon =(2^{20}rB^{2r+8})^{-1}, \qquad C_{r,k}=(C_*r\log (2+k))^{C_*k}, \end{gathered} \end{equation}
+  </div>
+  <span class="equation_label">90</span>
+</p>
+</div>
+<p> where \(C_*{\gt}1\) is a sufficiently large absolute constant. Then there exist an integer \(P\leq 3^Q\) and a Ionescu–Wainger set \(\Sigma =\Sigma _{\leq k}\subset P^{-1}\mathbb Z/\mathbb Z\) with the following properties. </p>
+<ol class="enumerate">
+  <li><p>Every rational point of denominator at most \(Q\) belongs to \(\Sigma \): </p>
+<div class="displaymath" id="a0000000105">
+  \begin{align}  \bigcup _{1\leq q\leq Q} \left\{ \frac aq\pmod1:a\in \mathbb Z\right\}  \subseteq \Sigma . \end{align}
+</div>
+<p> Every element of \(\Sigma \), when written in reduced form, has denominator at most \(B\). With the choice of \(\varepsilon \) in <span class="upshape">(7.9)</span>, the corresponding major-arc parameter set is \((r,\frac12)\)-good. </p>
+</li>
+  <li><p>Let \(\nu \) be a complex measure on \(\mathbb Z_P\) with \(\| \nu \| _{\mathrm{TV}}\leq 1\), and let \(m\) be a multiplier on \(\mathbb R\) supported in \([-\varepsilon ,\varepsilon ]\). Then, for \(p_r\leq p\leq 2r\), </p>
+<div class="displaymath" id="a0000000106">
+  \begin{align}  \left\|  T_{\displaystyle \sum _{\alpha \in \Sigma } \widehat\nu (\alpha )m(\, \cdot -\alpha )} \right\| _{\ell ^p(\mathbb Z)\to \ell ^p(\mathbb Z)} \leq C_{r,k} \| T_m\| _{L^p(\mathbb R)\to L^p(\mathbb R)}, \end{align}
+</div>
+<p> where the translates of \(m\) are periodized on \(\mathbb T\). </p>
+</li>
+  <li><p>Put \(\Omega =[-\varepsilon ,\varepsilon ]\times \Sigma \subset \mathbb R\times \mathbb Q/\mathbb Z.\) If \(f\in \ell ^p(\mathbb Z)\) has Fourier support in \(\pi (\Omega )\), then </p>
+<div class="displaymath" id="a0000000107">
+  \begin{align}  C_{r,k}^{-1}\| f\| _{\ell ^p(\mathbb Z)} \leq \| \mathcal S_\Omega ^{-1}f\| _{L^p(\mathbb A_{\mathbb Z})} \leq C_{r,k}\| f\| _{\ell ^p(\mathbb Z)} \end{align}
+</div>
+<p> for \(p_r\leq p\leq 2r\). </p>
+</li>
+  <li><p>Let \(V\) be a finite-dimensional normed space and \(0{\lt}\delta \leq (100P)^{-1}\). If \(G:\mathbb R\times \mathbb Z_P\to V\) has real Fourier support in \([-\delta ,\delta ]\), then, for \(1\leq p\leq \infty \), </p>
+<div class="displaymath" id="a0000000108">
+  \begin{align}  \left\|  \bigl(G(n,n\bmod P)\bigr)_{n\in \mathbb Z} \right\| _{\ell ^p(\mathbb Z;V)} \asymp \| G\| _{L^p(\mathbb R\times \mathbb Z_P;V)}, \end{align}
+</div>
+<p> with absolute implied constants. </p>
+</li>
+</ol>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000103">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof architecture
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>   Choose the common period, denominator envelope, and narrow width in the displayed order. Verify good coprime data and containment of all source rational points, then apply the independent multiplier and sampling interfaces. Establish the actual finite-quotient Fourier identification, both norm directions and unique interpolation. The full-domain versions are explicit external inputs, not consequences asserted from finite-input versions. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="continuous_annuli">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">6.2</span>
+    <span class="lemma_thmtitle">Continuous annular estimates</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0007.html#continuous_annuli">#</a>
+    
+    <a class="icon proof" href="sect0007.html#a0000000109"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0002.html#input_real_variable">Lemma 1.6</a></li>
+          
+          <li><a href="sect0002.html#input_real_variable">Lemma 1.6</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.source_continuous_annular_estimates" class="lean_decl">PrimeSquares.source_continuous_annular_estimates</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  
+<p><b class="bfseries">Paper Lemma 7.16.</b> <i class="itshape">complete conditional implication.</i></p>
+<p>Uniformly in \(0{\lt}\beta \leq 1\), \(J\geq 1\), and \(|\sigma _j|\leq 1\), one has, for \(1{\lt}p\leq 2\), </p>
+<div class="displaymath" id="a0000000110">
+  \begin{align}  \left\|  T_{\sum _{j=1}^J\sigma _j (\widehat{\widetilde M}_{2^j,\beta } -\widehat{\widetilde M}_{2^{j-1},\beta })}f \right\| _{L^p(\mathbb R)} & \ll \frac1{p-1}\| f\| _{L^p(\mathbb R)}, \\ \left\|  \sup _{N\geq 2} |\widetilde M_{N,\beta }*f| \right\| _{L^p(\mathbb R)} & \ll \frac1{p-1}\| f\| _{L^p(\mathbb R)}. \end{align}
+</div>
+<p> Here \(\widetilde M_{N,\beta }\) is the continuous annular measure defined in <span class="upshape">(6.2)</span>. Since <span class="upshape">(7.18)</span> holds with the supremum over all \(N\geq 2\), it also holds when the supremum is restricted to dyadic \(N\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000109">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof architecture
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>   Prove the concrete annular Fourier formulas, signed \(L^2\) multiplier estimate, kernel size and Hormander condition. Apply the general continuous theorems only after verifying their hypotheses. Establish continuity in the real scale, a measurable countable supremum, and the full \(L^p\) estimate. Routine changes of variables and power integrals belong inside this node. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="iw_low_high">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">6.3</span>
+    <span class="lemma_thmtitle">IW low bounds and joint high-low assembly</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0007.html#iw_low_high">#</a>
+    
+    <a class="icon proof" href="sect0007.html#a0000000111"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0007.html#iw_application">Lemma 6.1</a></li>
+          
+          <li><a href="sect0007.html#continuous_annuli">Lemma 6.2</a></li>
+          
+          <li><a href="sect0005.html#prime_arc_approximation">Lemma 4.1</a></li>
+          
+          <li><a href="sect0002.html#input_iw_sampling">Lemma 1.5</a></li>
+          
+          <li><a href="sect0002.html#input_real_variable">Lemma 1.6</a></li>
+          
+          <li><a href="sect0002.html#input_prime_distribution">Lemma 1.1</a></li>
+          
+          <li><a href="sect0002.html#input_quadratic_sums">Lemma 1.2</a></li>
+          
+          <li><a href="sect0002.html#input_multifrequency">Lemma 1.4</a></li>
+          
+          <li><a href="sect0007.html#iw_application">Lemma 6.1</a></li>
+          
+          <li><a href="sect0007.html#continuous_annuli">Lemma 6.2</a></li>
+          
+          <li><a href="sect0005.html#prime_arc_approximation">Lemma 4.1</a></li>
+          
+          <li><a href="sect0002.html#input_iw_sampling">Lemma 1.5</a></li>
+          
+          <li><a href="sect0002.html#input_real_variable">Lemma 1.6</a></li>
+          
+          <li><a href="sect0002.html#input_prime_distribution">Lemma 1.1</a></li>
+          
+          <li><a href="sect0002.html#input_quadratic_sums">Lemma 1.2</a></li>
+          
+          <li><a href="sect0002.html#input_multifrequency">Lemma 1.4</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.real_iw_source_construction_and_low" class="lean_decl">PrimeSquares.real_iw_source_construction_and_low</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.real_iw_source_high_low" class="lean_decl">PrimeSquares.real_iw_source_high_low</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  
+<p><b class="bfseries">Paper Proposition 7.22.</b> <i class="itshape">complete conditional implication.</i></p>
+<p>Let \(r,k,Q,P,\Sigma _{\leq k},B,\varepsilon ,p_r\), and \(C_{r,k}\) be as in Proposition&#160;<span class="upshape">7.8</span>. Let \(\nu \) be a complex measure on \(\mathbb Z_P\) with \(\| \nu \| _{\mathrm{TV}}\leq 1\), and let \(0{\lt}\beta \leq 1\). Define \(L_N^{\nu ,\beta }\) by </p>
+<div class="displaymath" id="a0000000112">
+  \begin{align}  \widehat{L_N^{\nu ,\beta }}(\xi ) = \sum _{\alpha \in \Sigma _{\leq k}} \widehat\nu (\alpha ) \widehat{\widetilde M}_{N,\beta }(\xi -\alpha ) \eta \left(\frac{\xi -\alpha }{\varepsilon }\right). \end{align}
+</div>
+<p> Then </p>
+<div class="displaymath" id="a0000000113">
+  \begin{align}  \left\|  \sup _{\substack {N\geq 1\\ \begin{bgroup} N\in 2^{\mathbb N}
+
+\end{bgroup}}} |L_N^{\nu ,\beta }f| \right\| _{\ell ^{p_r}(\mathbb Z)} \ll rC_{r,k}^2 \log \bigl(e+Q+r\log B\bigr) \| f\| _{\ell ^{p_r}(\mathbb Z)}. \end{align}
+</div>
+<p> The implied constant is independent of \(\nu \) and \(\beta \). </p>
+<p><b class="bfseries">Paper Proposition 7.30.</b> <i class="itshape">complete conditional implication.</i></p>
+<p>Using the assumptions and notation of Propositions&#160;<span class="upshape">7.8</span> and <span class="upshape">7.22</span>, put </p>
+<div class="equation" id="a0000000114">
+<p>
+  <div class="equation_content">
+    \begin{equation}  D(r,k,Q)=rC_{r,k}^2\log (e+Q+r\log B). \end{equation}
+  </div>
+  <span class="equation_label">100</span>
+</p>
+</div>
+<p> For dyadic \(N\geq N_0\), there are decompositions </p>
+<div class="displaymath" id="a0000000115">
+  \[  \widetilde A_{N,\Lambda }=L_N+H_N, \qquad \widetilde A_{N,\mathbb N^2}=L_N^\square +H_N^\square ,  \]
+</div>
+<p> such that </p>
+<div class="displaymath" id="a0000000116">
+  \begin{align}  \left\| \sup _{N\geq N_0}|L_Nf|\right\| _{\ell ^{p_r}(\mathbb Z)} + \left\| \sup _{N\geq N_0}|L_N^\square f|\right\| _{\ell ^{p_r}(\mathbb Z)} & \ll D(r,k,Q)\| f\| _{\ell ^{p_r}(\mathbb Z)}, \\ \left\| \sup _{N\geq N_0}|H_Nf|\right\| _{\ell ^2(\mathbb Z)} + \left\| \sup _{N\geq N_0}|H_N^\square f|\right\| _{\ell ^2(\mathbb Z)} & \ll Q^{-1/4}\| f\| _{\ell ^2(\mathbb Z)}. \end{align}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000111">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof architecture
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>   Identify the actual low operators with sampled continuous annular multipliers, controlling the real-\(Q\) construction and the two low maxima jointly. Bound prime and ordinary-square high parts using their different approximation inputs. Keep the quantitative parameters before optimizing them. The internally proved finite signed maximal inequality is used instead of leaving it as an assumption. </p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="orlicz_maximal">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">6.4</span>
+    <span class="theorem_thmtitle">Three-family Orlicz maximal theorem</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0007.html#orlicz_maximal">#</a>
+    
+    <a class="icon proof" href="sect0007.html#a0000000117"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0007.html#iw_low_high">Lemma 6.3</a></li>
+          
+          <li><a href="sect0002.html#input_iw_sampling">Lemma 1.5</a></li>
+          
+          <li><a href="sect0002.html#input_real_variable">Lemma 1.6</a></li>
+          
+          <li><a href="sect0002.html#input_prime_distribution">Lemma 1.1</a></li>
+          
+          <li><a href="sect0002.html#input_quadratic_sums">Lemma 1.2</a></li>
+          
+          <li><a href="sect0002.html#input_multifrequency">Lemma 1.4</a></li>
+          
+          <li><a href="sect0007.html#iw_low_high">Lemma 6.3</a></li>
+          
+          <li><a href="sect0002.html#input_iw_sampling">Lemma 1.5</a></li>
+          
+          <li><a href="sect0002.html#input_real_variable">Lemma 1.6</a></li>
+          
+          <li><a href="sect0002.html#input_prime_distribution">Lemma 1.1</a></li>
+          
+          <li><a href="sect0002.html#input_quadratic_sums">Lemma 1.2</a></li>
+          
+          <li><a href="sect0002.html#input_multifrequency">Lemma 1.4</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.theorem_7_2_closed_signed_maximal" class="lean_decl">PrimeSquares.theorem_7_2_closed_signed_maximal</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.theorem_7_2_finitely_supported" class="lean_decl">PrimeSquares.theorem_7_2_finitely_supported</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  
+<p><b class="bfseries">Paper Theorem 7.2.</b> <i class="itshape">complete conditional implication.</i></p>
+<p>There are absolute constants \(C,C_0\geq 1\) such that the following holds. Choose \(A_N\) from \(A_{N,\Lambda }\), \(A_{N,\mathbb N^2}\), and \(A_{N,\mathbb P^2}\), and put \(A^*f=\sup _{N\geq 2}|A_Nf|\). Then, for every finitely supported \(f:\mathbb Z\to \mathbb C\) and every \(\lambda {\gt}0\), </p>
+<div class="displaymath" id="a0000000118">
+  \begin{align}  \bigl|\{ x\in \mathbb Z:A^*f(x){\gt}\lambda \} \bigr| \ll \sum _{\substack {x\in \mathbb Z\\ \begin{bgroup} |f(x)|{\gt}\lambda /C_0
+
+\end{bgroup}}} \Psi _C\left(\frac{|f(x)|}{\lambda }\right). \end{align}
+</div>
+<p> Consequently, </p>
+<div class="displaymath" id="a0000000119">
+  \begin{align}  \bigl|\{ x\in \mathbb Z:A^*f(x){\gt}\lambda \} \bigr| \ll \sum _{x\in \mathbb Z} \Psi _C\left(\frac{|f(x)|}{\lambda }\right). \end{align}
+</div>
+<p> In particular, for every finite \(F\subset \mathbb Z\) and \(t\geq 1\), </p>
+<div class="displaymath" id="a0000000120">
+  \begin{align}  \bigl|\{ x\in \mathbb Z:A^*\mathbf1_F(x){\gt}t^{-1}\} \bigr| \ll |F|\Psi _C(t). \end{align}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000117">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof architecture
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>   Optimize the quantitative low-high comparison to obtain the restricted distribution estimate. Assemble the von Mangoldt, ordinary-square and prime-square families using the proved full/annular and prime-power comparisons. Extend the restricted estimate to the convex gauge by level decomposition; remove the bounded part to obtain the truncated modular form. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="near_one_lp">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">6.5</span>
+    <span class="lemma_thmtitle">Near-one strong maximal estimates</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0007.html#near_one_lp">#</a>
+    
+    <a class="icon proof" href="sect0007.html#a0000000121"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0007.html#orlicz_maximal">Theorem 6.4</a></li>
+          
+          <li><a href="sect0002.html#input_iw_sampling">Lemma 1.5</a></li>
+          
+          <li><a href="sect0002.html#input_real_variable">Lemma 1.6</a></li>
+          
+          <li><a href="sect0002.html#input_prime_distribution">Lemma 1.1</a></li>
+          
+          <li><a href="sect0002.html#input_quadratic_sums">Lemma 1.2</a></li>
+          
+          <li><a href="sect0002.html#input_multifrequency">Lemma 1.4</a></li>
+          
+          <li><a href="sect0007.html#orlicz_maximal">Theorem 6.4</a></li>
+          
+          <li><a href="sect0002.html#input_iw_sampling">Lemma 1.5</a></li>
+          
+          <li><a href="sect0002.html#input_real_variable">Lemma 1.6</a></li>
+          
+          <li><a href="sect0002.html#input_prime_distribution">Lemma 1.1</a></li>
+          
+          <li><a href="sect0002.html#input_quadratic_sums">Lemma 1.2</a></li>
+          
+          <li><a href="sect0002.html#input_multifrequency">Lemma 1.4</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.corollary_7_6_closed_signed_maximal" class="lean_decl">PrimeSquares.corollary_7_6_closed_signed_maximal</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  
+<p><b class="bfseries">Paper Corollary 7.6.</b> <i class="itshape">complete conditional implication.</i></p>
+<p>For \(1{\lt}p\leq 2\) and \(f\in \ell ^p(\mathbb Z)\), </p>
+<div class="displaymath" id="a0000000122">
+  \begin{align}  \| A^*f\| _{\ell ^p} \leq \exp \left( \frac{C}{p-1}\log \frac{e}{p-1} \right)\| f\| _{\ell ^p}, \end{align}
+</div>
+<p> after enlarging the absolute constant \(C\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000121">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof architecture
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>   Integrate the distribution estimate against the layer-cake weight and estimate the gauge moment with the displayed dependence on \(p-1\). Extend from finite support using positive finite averages, norm convergence and monotone maxima. The resulting constant is retained for the ergodic theorem. </p>
+
+  </div>
+</div>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <a href="sect0006.html" title="Stopping: local estimates and sparse domination"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="index.html" title="On the Distribution of Prime Squares and Its Applications: compact blueprint"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="sect0008.html" title="Badness: arithmetic blocks and the persistent criterion"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+</body>
+</html>

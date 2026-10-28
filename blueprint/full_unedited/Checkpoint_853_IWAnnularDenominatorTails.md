@@ -1,0 +1,21 @@
+# Checkpoint 853: Actual Q-to-minus-one-quarter annular denominator-tail maximum
+
+The denominator tail with the original denominator-dependent cutoff now has an actual countable maximal L2 majorant of size K*Q^(-1/4). Lean proves the power split q^(-3/8)<=Q^(-1/4)*q^(-1/8), applies the previously checked power-decaying annular maximal theorem, and specializes the result to the actual principal and twisted quadratic coefficients using the project's proved Gauss decay. The result allows variable beta and variable upper denominator truncation, and its constant is uniform in Q, the input, and the character family. It uses only the already declared generic smooth multifrequency boundary. This proves the original-cutoff denominator-tail contribution; the common IW-cutoff tail, small-denominator difference, changing-character sum and low-term maximum remain necessary for the full comparison.
+
+## Checked declarations
+
+| Module | Named supporting theorems |
+| --- | ---: |
+| IWAnnularDenominatorTails.lean | 3 |
+
+- `iw_denominator_tail_power`
+- `iw_annular_denominator_tail`
+- `iw_gauss_annular_denominator_tails`
+
+<!-- checkpoint-verification -->
+
+## Verification
+
+All 920 project modules are covered by the authenticated compilation history, beginning with a fresh full build. This checkpoint passes a 4539-job dependency-aware build with remote project artifact reuse disabled. Unchanged earlier proof sources and compiled Lean artifacts are SHA256 checked before reuse; new/changed modules and the root are compiled. All 2519 named theorems pass a fresh complete transitive axiom audit, allowing only propext, Classical.choice and Quot.sound; all 922 Lean files pass the source scan. No placeholders, added mathematical axioms or unchecked evaluation are used. Build receipts record exactly which modules were compiled at every step.
+
+The ten completed source results under their paper hypotheses remain unchanged. Lemma 3.21, both conclusions of Theorems 1.1 and 1.3, all displayed clauses of Proposition 4.19 and both clauses of Proposition 6.21 are complete checked implications under their separately recorded independent deep inputs. The square-sign reflection is proved. Theorem 1.3 has actual finite sparse families, disjoint major subsets and the literal full all-cutoff maximum. The three general Section5 auxiliary statements remain partial, and the later Orlicz/ergodic/sieve applications remain unfinished. Proposition 4.19 consumes PrimeAsymptoticInputs, the refined PagePrimeSquareDistributionInputs c, RawPageUniquenessInput c and SmoothCircleBourgainInput C. These are independent raw analytic/data hypotheses, not own-paper operator conclusions or new Lean axioms. Theorem 1.1 retains its separately recorded older fixed-scale inputs and independent ordinary-square global decomposition; reflection is proved. Sparse applications additionally record OrdinarySquareStoppingInput CS and IndependentPrimeMaximalInput as explicit independent analytic boundaries. Their existence and the exact normalization/support/sign adaptations remain unproved; neither predicate contains this paper's endpoint or sparse conclusion. Section7 additionally records the independent RawTaoArcConstructionInput C, used only to obtain actual finite IW frequency geometry. Its existence is unproved; multiplier, sampling, low and high norm estimates are not fields and remain unfinished.

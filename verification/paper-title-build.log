@@ -1,0 +1,209 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-22>
+(./PrimeSquares.tex (/usr/share/texlive/texmf-dist/tex/latex/amscls/amsart.cls
+Document Class: amsart 2020/05/29 v2.20.6
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/mathtools/mathtools.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/mathtools/mhsetup.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx))
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.sty
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype-pdftex.def)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.cfg))
+(/workspace/scratch/56a3592766ad/tmp/publication1266/sysroot/usr/share/texlive/
+texmf-dist/tex/latex/amsrefs/amsrefs.sty
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty)
+(/workspace/scratch/56a3592766ad/tmp/publication1266/sysroot/usr/share/texlive/
+texmf-dist/tex/latex/amsrefs/pcatcode.sty)
+(/workspace/scratch/56a3592766ad/tmp/publication1266/sysroot/usr/share/texlive/
+texmf-dist/tex/latex/amsrefs/ifoption.sty)
+(/workspace/scratch/56a3592766ad/tmp/publication1266/sysroot/usr/share/texlive/
+texmf-dist/tex/latex/amsrefs/rkeyval.sty)
+(/workspace/scratch/56a3592766ad/tmp/publication1266/sysroot/usr/share/texlive/
+texmf-dist/tex/latex/amsrefs/textcmds.sty)
+(/workspace/scratch/56a3592766ad/tmp/publication1266/sysroot/usr/share/texlive/
+texmf-dist/tex/latex/amsrefs/mathscinet.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def)
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/base/atbegshi-ltx.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/atveryend-ltx.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)
+(./PrimeSquares.aux) (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)))
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-cmr.cfg)
+(./PrimeSquares.out) (./PrimeSquares.out) (./PrimeSquares.toc
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg)) [1{/var/lib/tex
+mf/fonts/map/pdftex/updmap/pdftex.map}]
+
+Package amsrefs Warning: Use of \cites is recommended instead of \cite 
+(amsrefs)                for multiple cites 'Vinogradov,Hua' on input line 135.
+
+
+[2] [3]
+
+Package amsrefs Warning: The form \cite{...}*{...} is recommended
+(amsrefs)                instead of \cite[...]{...} on input line 366.
+
+[4] [5] (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-euf.cfg) [6] [7] [8]
+[9] [10] [11] [12] [13] [14] [15]
+Overfull \hbox (23.65239pt too wide) in paragraph at lines 1487--1494
+\OT1/cmr/m/n/12 Indeed, re-strict to finitely many ker-nels sup-ported in $[\OM
+S/cmsy/m/n/12 ^^@\OML/cmm/m/it/12 R; R\OT1/cmr/m/n/12 ]$ and test on $\OML/cmm/
+m/it/12 k \OMS/cmsy/m/n/12 7! \OT1/cmr/bx/n/12 1[]\OT1/cmr/m/n/12 (\OML/cmm/m/i
+t/12 k\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 T[]x
+\OT1/cmr/m/n/12 )$.
+[16] [17] [18] [19] [20] [21] [22] [23] [24] [25] [26]
+Overfull \hbox (12.68864pt too wide) detected at line 2466
+[]
+[27] [28] [29] [30] [31] [32] [33] [34] [35] [36] [37] [38] [39] [40] [41]
+[42] [43] [44]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 4495.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 4495.
+
+[45] [46]
+Overfull \hbox (1.5936pt too wide) detected at line 4757
+[]
+[47] [48] [49] [50] [51]
+Overfull \hbox (8.88608pt too wide) detected at line 5313
+[]
+[52] [53] [54] [55] [56] [57] [58]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 6122.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 6122.
+
+[59] [60] [61] [62] [63]
+Overfull \hbox (26.21886pt too wide) detected at line 6733
+[]
+[64] [65] [66] [67] [68]
+Overfull \hbox (1.93405pt too wide) detected at line 7231
+[]
+[69] [70] [71] [72]
+Overfull \hbox (6.10185pt too wide) detected at line 7614
+[]
+[73] [74] [75] [76]
+Overfull \hbox (8.47256pt too wide) detected at line 8015
+[]
+[77] [78] [79] [80]
+Overfull \hbox (9.96106pt too wide) detected at line 8368
+\OML/cmm/m/it/12 V[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 R\OT1/cmr/m/n/12 ) = [](1
+ \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 g\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 p\OT1
+/cmr/m/n/12 ))\OML/cmm/m/it/12 ;  s[] \OT1/cmr/m/n/12 = []\OML/cmm/m/it/12 ;  \
+U/euf/m/n/12 P[] \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 p \OMS/cm
+sy/m/n/12 2 \U/euf/m/n/12 P \OT1/cmr/m/n/12 : \OML/cmm/m/it/12 p \OMS/cmsy/m/n/
+12 ^^T \OML/cmm/m/it/12 R\OMS/cmsy/m/n/12 g\OML/cmm/m/it/12 ;  \U/euf/m/n/12 P[
+] \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 p \OMS/cmsy/m/n/12 2 \U/
+euf/m/n/12 P \OT1/cmr/m/n/12 : \OML/cmm/m/it/12 R < p < z\OMS/cmsy/m/n/12 g\OML
+/cmm/m/it/12 :
+[81] [82] [83] [84] [85]
+Overfull \hbox (25.1806pt too wide) in paragraph at lines 8899--8904
+\OT1/cmr/m/n/12 Thus $\OML/cmm/m/it/12 C[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 n\O
+T1/cmr/m/n/12 )$ is pre-cisely the small-prime part of the lower-sieve main ter
+m, while $\OML/cmm/m/it/12 B[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 n\OT1/cmr/m/n/1
+2 ) [][] \OML/cmm/m/it/12 h[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 p\OT1/cmr/m/n/12
+ )$
+[86] [87] [88] [89]
+Overfull \hbox (19.65422pt too wide) in paragraph at lines 9242--9246
+\OT1/cmr/m/n/12 Together with [][], this shows that the con-tri-bu-tion of $\OM
+L/cmm/m/it/12 d > D[]$ \OT1/cmr/m/n/12 to [][] is $\OML/cmm/m/it/12 O[]\OT1/cmr
+/m/n/12 (\OML/cmm/m/it/12 y [] y \OT1/cmr/m/n/12 ([] \OML/cmm/m/it/12 N\OT1/cmr
+/m/n/12 )[])$.
+[90] [91] [92] [93] [94] [95] (./PrimeSquares.bbl [96]
+
+Package rkeyval Warning: Unknown key: \bib'how on input line 165.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active [97]
+
+Package rkeyval Warning: Unknown key: \bib'how on input line 513.
+
+) [98] (./PrimeSquares.aux) )
+(see the transcript file for additional information) </root/.texlive2023/texmf-
+var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600pk></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cmextra/cmex8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+msy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on PrimeSquares.pdf (98 pages, 856548 bytes).
+Transcript written on PrimeSquares.log.

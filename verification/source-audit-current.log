@@ -1,0 +1,1 @@
+PASS: 1384 Lean files scanned; no proof placeholders, extra axioms, native_decide or unsafe declarations.

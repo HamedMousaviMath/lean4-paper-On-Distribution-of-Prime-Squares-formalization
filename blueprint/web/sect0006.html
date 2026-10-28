@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Stopping: local estimates and sparse domination</title>
+<link rel="next" href="sect0007.html" title="Orlicz: quantitative IW and the three-family maximum" />
+<link rel="prev" href="sect0005.html" title="Prime operators: approximation, low and high terms" />
+<link rel="up" href="index.html" title="On the Distribution of Prime Squares and Its Applications: compact blueprint" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+<link rel="stylesheet" href="styles/blueprint.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">On the Distribution of Prime Squares and Its Applications: compact blueprint</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref"></span> <span class="toc_entry">Purpose and verification boundary</span></a>
+ </li>
+<li class="">
+  <a href="sect0002.html"><span class="toc_ref">1</span> <span class="toc_entry">Independent inputs and their exact scope</span></a>
+ </li>
+<li class="">
+  <a href="sect0003.html"><span class="toc_ref">2</span> <span class="toc_entry">Arithmetic: quadratic sums and conductors</span></a>
+ </li>
+<li class="">
+  <a href="sect0004.html"><span class="toc_ref">3</span> <span class="toc_entry">Improving: optimization and the main estimate</span></a>
+ </li>
+<li class="">
+  <a href="sect0005.html"><span class="toc_ref">4</span> <span class="toc_entry">Prime operators: approximation, low and high terms</span></a>
+ </li>
+<li class=" active current">
+  <a href="sect0006.html"><span class="toc_ref">5</span> <span class="toc_entry">Stopping: local estimates and sparse domination</span></a>
+ </li>
+<li class="">
+  <a href="sect0007.html"><span class="toc_ref">6</span> <span class="toc_entry">Orlicz: quantitative IW and the three-family maximum</span></a>
+ </li>
+<li class="">
+  <a href="sect0008.html"><span class="toc_ref">7</span> <span class="toc_entry">Badness: arithmetic blocks and the persistent criterion</span></a>
+ </li>
+<li class="">
+  <a href="sect0009.html"><span class="toc_ref">8</span> <span class="toc_entry">Ergodic: transference and the two endpoint conclusions</span></a>
+ </li>
+<li class="">
+  <a href="sect0010.html"><span class="toc_ref">9</span> <span class="toc_entry">Goldbach arithmetic: reductions and the exceptional set</span></a>
+ </li>
+<li class="">
+  <a href="sect0011.html"><span class="toc_ref">10</span> <span class="toc_entry">Goldbach circle method: minor arcs, major arcs and completion</span></a>
+ </li>
+<li class="">
+  <a href="sect0012.html"><span class="toc_ref">11</span> <span class="toc_entry">Goldbach sieve: local densities, presieving and comparison</span></a>
+ </li>
+<li ><a href="dep_graph_document.html">Dependency graph</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="a0000000007">5 Stopping: local estimates and sparse domination</h1>
+<div class="definition_thmwrapper theorem-style-definition" id="SparseData">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">5.1</span>
+    <span class="definition_thmtitle">Sparse families and admissible stopping maps</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0006.html#SparseData">#</a>
+    
+    <a class="icon proof" href="sect0006.html#a0000000084"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.IntegerSparseCollection" class="lean_decl">PrimeSquares.IntegerSparseCollection</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.SourceLinearAdmissible" class="lean_decl">PrimeSquares.SourceLinearAdmissible</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  
+<p><b class="bfseries">Paper Definition 2.8.</b> <i class="itshape">definition formalized.</i></p>
+<p>A collection \(\mathcal S\) of intervals is sparse if, for every \(I\in \mathcal S\), there is \(E_I\subset I\) such that \(|E_I|\geq |I|/4\) and the sets \(E_I\), \(I\in \mathcal S\), are pairwise disjoint. </p>
+<p><b class="bfseries">Paper Definition 2.9.</b> <i class="itshape">definition formalized.</i></p>
+<p>Let \(f=\mathbf1_F\) be supported in \(3I_0\). A map \(\tau :I_0\longrightarrow \{ 2^j:1\leq 2^j\leq |I_0|\} \) is admissible if, for every \(x\in I_0\), </p>
+<div class="displaymath" id="a0000000085">
+  \begin{align}  \sup _{M\geq \tau (x)}\frac1M \sum _{|y-x|\leq CM}f(y) \leq C_{\rm adm}\frac{|F|}{|I_0|}. \end{align}
+</div>
+<p> where \(C{\gt}1\) is a fixed radius constant and \(C_{\rm adm}{\gt}1\) is a sufficiently large fixed constant depending on \(C\). Changing the fixed radius changes only the required admissibility constant. One may also replace the symmetric local average by the maximum of the left and right one-sided local averages; these quantities are comparable with a factor of at most two. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000084">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof architecture
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>  Keep the sparsity parameter explicit: the preliminary convention is \(1/4\), whereas the introductory sparse theorem uses \(1/10\). Admissibility is a symmetric spatial density condition; a single one-sided bound does not suffice. The radius constant and the sufficiently large admissibility coefficient are distinct parameters. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="sparse_recursion">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">5.2</span>
+    <span class="lemma_thmtitle">Local stopping estimate and sparse recursion</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0006.html#sparse_recursion">#</a>
+    
+    <a class="icon proof" href="sect0006.html#a0000000086"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0006.html#SparseData">Definition 5.1</a></li>
+          
+          <li><a href="sect0006.html#SparseData">Definition 5.1</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.source_abstract_local_stopping_estimate" class="lean_decl">PrimeSquares.source_abstract_local_stopping_estimate</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.accepted_general_dyadic_sparse_recursion" class="lean_decl">PrimeSquares.accepted_general_dyadic_sparse_recursion</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  
+<p><b class="bfseries">Paper Lemma 5.1.</b> <i class="itshape">proved under source hypotheses.</i></p>
+<p>Fix constants \(C\geq 1\) and \(c{\gt}2C+1\). Let \((B_M)\) be a family of positive convolution operators satisfying </p>
+<div class="displaymath" id="a0000000087">
+  \begin{align}  |B_M f(x)| \ll M^{-v}\| f\mathbf1_{[x-CM,x+CM]}\| _1, \qquad 0\leq v{\lt}1. \end{align}
+</div>
+<p> Let \(s\geq 1-v\), \(r{\gt}0\), and \(\gamma \geq \beta \geq 0\), and suppose that, whenever \(M\) is dyadic and \(2\leq J\leq M^{(1-v)/s}/10\), </p>
+<div class="displaymath" id="a0000000088">
+  \begin{align}  B_M=Lo_{J,M}+Hi_{J,M}+Er_{J,M}. \end{align}
+</div>
+<p> Let \(I_0\) be an interval, and let \(f=\mathbf1_F\) and \(g=\mathbf1_G\), where \(F\subset cI_0\) and \(G\subset I_0\). Suppose that </p>
+<div class="displaymath" id="a0000000089">
+  \[  \tau :I_0\longrightarrow \{ 2^k:2^k\leq |I_0|\}   \]
+</div>
+<p> satisfies </p>
+<div class="displaymath" id="a0000000090">
+  \begin{align}  \sup _{M\geq \tau (x)}M^{-1} \sum _{|y-x|\leq C_0M}f(y) \ll \langle f\rangle _{cI_0,1}, \qquad x\in I_0. \end{align}
+</div>
+<p> Write \(B_\tau f(x)=B_{\tau (x)}f(x)\). Assume that, for every \(J\geq 2\) and every \(x\in I_0\) such that \(\tau (x)\geq (10J)^{s/(1-v)}\), </p>
+<div class="displaymath" id="a0000000091">
+  \begin{align}  |Lo_{J,\tau (x)}f(x)| & \ll J^s(\log J)^\gamma \sup _{M\geq \tau (x)}M^{-1} \sum _{|y-x|\leq CM}f(y), \end{align}
+</div>
+<p> and that, for every \(h\in \ell ^2(\mathbb Z)\), </p>
+<div class="displaymath" id="a0000000092">
+  \begin{align}  \left\|  \sup _{\substack {M\geq (10J)^{s/(1-v)}\\ \begin{bgroup} M\  {\rm dyadic}
+
+\end{bgroup}}} |Hi_{J,M}h| \right\| _2 & \ll J^{-r}(\log J)^\beta \| h\| _2. \end{align}
+</div>
+<p> Finally, suppose that, for some fixed \(A{\gt}1/2\), uniformly in dyadic \(M\), </p>
+<div class="displaymath" id="a0000000093">
+  \begin{align}  \| \widehat{Er}_{J,M}\| _{L^\infty (\mathbb T)} \ll _A J^{-r}(\log J)^\beta (1+\log M)^{-A}. \end{align}
+</div>
+<p> Then </p>
+<div class="displaymath" id="a0000000094">
+  \begin{align}  |I_0|^{-1}|\langle B_\tau f,g\rangle | \ll _c \left(\frac{|F||G|}{|I_0|^2}\right)^{ 1-\frac{s}{2(s+r)}} \left(\operatorname {Log}\frac{|F||G|}{|I_0|^2}\right)^{ \gamma +\frac{s(\beta -\gamma )}{s+r}}. \end{align}
+</div>
+<p><b class="bfseries">Paper Lemma 5.10.</b> <i class="itshape">proved under source hypotheses.</i></p>
+<p>Suppose that every admissible \(\tau \) satisfies </p>
+<div class="displaymath" id="a0000000095">
+  \begin{align}  |\langle T_\tau \mathbf1_F,\mathbf1_G\rangle | \ll |I_0|\, \Psi \left(\frac{|F|}{|I_0|}, \frac{|G|}{|I_0|}\right) \end{align}
+</div>
+<p> for \(F\subset cI_0\) and \(G\subset I_0\), where \((T_N)_{N\in 2^{\mathbb N}}\) is a family of positive convolution operators whose kernel is supported in \([-CN,CN]\) for some fixed \(C{\gt}0\). Then there is a sparse family \(\mathcal S\) such that </p>
+<div class="displaymath" id="a0000000096">
+  \begin{align}  \langle \sup _{N\in 2^{\mathbb N}}|T_N\mathbf1_F|,\mathbf1_G\rangle \ll \sum _{I\in \mathcal S}|I|\,  \Psi \left(\frac{|F\cap cI|}{|I|}, \frac{|G\cap I|}{|I|}\right). \end{align}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000086">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof architecture
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>   First establish the local estimate from the displayed Fourier and admissibility hypotheses. Stop on intervals where local densities exceed the chosen threshold, and construct disjoint major subsets with the required sparsity. Iterate a finite dyadic tree and pass to the source supremum through finite tests. Keep the actual stopping-map admissibility and the sufficiently large threshold in the recursion. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="prime_local_endpoint">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">5.3</span>
+    <span class="lemma_thmtitle">Prime-square localized endpoint</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0006.html#prime_local_endpoint">#</a>
+    
+    <a class="icon proof" href="sect0006.html#a0000000097"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0006.html#sparse_recursion">Lemma 5.2</a></li>
+          
+          <li><a href="sect0005.html#prime_decomposition">Lemma 4.5</a></li>
+          
+          <li><a href="sect0002.html#input_prime_distribution">Lemma 1.1</a></li>
+          
+          <li><a href="sect0002.html#input_quadratic_sums">Lemma 1.2</a></li>
+          
+          <li><a href="sect0002.html#input_multifrequency">Lemma 1.4</a></li>
+          
+          <li><a href="sect0002.html#input_ordinary_squares">Lemma 1.3</a></li>
+          
+          <li><a href="sect0006.html#sparse_recursion">Lemma 5.2</a></li>
+          
+          <li><a href="sect0005.html#prime_decomposition">Lemma 4.5</a></li>
+          
+          <li><a href="sect0002.html#input_prime_distribution">Lemma 1.1</a></li>
+          
+          <li><a href="sect0002.html#input_quadratic_sums">Lemma 1.2</a></li>
+          
+          <li><a href="sect0002.html#input_multifrequency">Lemma 1.4</a></li>
+          
+          <li><a href="sect0002.html#input_ordinary_squares">Lemma 1.3</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.source_prime_local_endpoint_from_independent_inputs" class="lean_decl">PrimeSquares.source_prime_local_endpoint_from_independent_inputs</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  
+<p><b class="bfseries">Paper Lemma 5.17.</b> <i class="itshape">complete conditional implication.</i></p>
+<p>Let \(f=\mathbf1_F\) and \(g=\mathbf1_G\), where \(F\subset cI_0\) and \(G\subset I_0\), and put \(\delta _0=\frac{|F||G|}{|I_0|^2}.\) Let \(\tau :I_0\to \{ 2^k:(2^k)^2\leq |I_0|\} \) be admissible at the spatial scale \(\tau (x)^2\), in the sense that </p>
+<div class="displaymath" id="a0000000098">
+  \begin{align}  \sup _{M\geq \tau (x)}M^{-2} \sum _{|y-x|\leq CM^2}f(y) \ll \langle f\rangle _{cI_0,1}. \end{align}
+</div>
+<p> Under the hypotheses of Proposition&#160;<span class="upshape">4.19</span>, </p>
+<div class="displaymath" id="a0000000099">
+  \begin{align}  |I_0|^{-1} \big|\langle \widetilde A_{\tau ,\Lambda }\mathbf1_F, \mathbf1_G\rangle \big| \ll \delta _0^{2/3} \Phi _{4\sqrt3/9+o(1)}(\delta _0). \end{align}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000097">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof architecture
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>   Insert the selected prime decomposition and the independent ordinary-square stopping estimates into the abstract local theorem. Convert square-scale spatial radii to the source stopping convention and retain dilation constants. The general fixed-scale ordinary-square decomposition alone does not supply this stronger stopping input. </p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="prime_sparse">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">5.4</span>
+    <span class="theorem_thmtitle">Sparse domination</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0006.html#prime_sparse">#</a>
+    
+    <a class="icon proof" href="sect0006.html#a0000000100"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0006.html#prime_local_endpoint">Lemma 5.3</a></li>
+          
+          <li><a href="sect0006.html#sparse_recursion">Lemma 5.2</a></li>
+          
+          <li><a href="sect0002.html#input_prime_distribution">Lemma 1.1</a></li>
+          
+          <li><a href="sect0002.html#input_quadratic_sums">Lemma 1.2</a></li>
+          
+          <li><a href="sect0002.html#input_multifrequency">Lemma 1.4</a></li>
+          
+          <li><a href="sect0002.html#input_ordinary_squares">Lemma 1.3</a></li>
+          
+          <li><a href="sect0002.html#input_real_variable">Lemma 1.6</a></li>
+          
+          <li><a href="sect0006.html#prime_local_endpoint">Lemma 5.3</a></li>
+          
+          <li><a href="sect0006.html#sparse_recursion">Lemma 5.2</a></li>
+          
+          <li><a href="sect0002.html#input_prime_distribution">Lemma 1.1</a></li>
+          
+          <li><a href="sect0002.html#input_quadratic_sums">Lemma 1.2</a></li>
+          
+          <li><a href="sect0002.html#input_multifrequency">Lemma 1.4</a></li>
+          
+          <li><a href="sect0002.html#input_ordinary_squares">Lemma 1.3</a></li>
+          
+          <li><a href="sect0002.html#input_real_variable">Lemma 1.6</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.theorem_1_3" class="lean_decl">PrimeSquares.theorem_1_3</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.theorem_1_3_open_pq" class="lean_decl">PrimeSquares.theorem_1_3_open_pq</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  
+<p><b class="bfseries">Paper Theorem 1.3.</b> <i class="itshape">complete conditional implication.</i></p>
+<p>Let \(F,G\subset \mathbb Z\) be finite. There is a sparse collection of intervals \(\mathcal S\) such that </p>
+<div class="displaymath" id="a0000000101">
+  \begin{align}  \bigl|\langle A_\Lambda ^*\mathbf1_F,\mathbf1_G\rangle \bigr| & \ll \sum _{I\in \mathcal S}|I| \left(\frac{|F\cap I||G\cap I|}{|I|^2}\right)^{2/3} \Phi _{4\sqrt3/9+o(1)} \left(\frac{|F\cap I||G\cap I|}{|I|^2}\right). \end{align}
+</div>
+<p> Moreover, if \((1/p,1/q)\) lies in the interior of the triangle with vertices \((2/3,2/3),\) \((1,0)\), and \((0,1)\), then there is a sparse collection \(\mathcal S_{p,q}\) such that </p>
+<div class="displaymath" id="a0000000102">
+  \begin{align}  \bigl|\langle A_\Lambda ^*\mathbf1_F,\mathbf1_G\rangle \bigr| & \ll _{p,q} \sum _{I\in \mathcal S_{p,q}}|I| \left(\frac{|F\cap I|}{|I|}\right)^{1/p} \left(\frac{|G\cap I|}{|I|}\right)^{1/q}. \end{align}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000100">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof architecture
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>   Linearize finite maxima, apply the local endpoint recursively, and pass to the actual maximal pairing. Interpolate the endpoint form with complementary-exponent information from the independent prime maximal theorem to reach the open triangle. Use the stated \(1/10\) sparsity convention in both conclusions. </p>
+
+  </div>
+</div>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <a href="sect0005.html" title="Prime operators: approximation, low and high terms"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="index.html" title="On the Distribution of Prime Squares and Its Applications: compact blueprint"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="sect0007.html" title="Orlicz: quantitative IW and the three-family maximum"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+</body>
+</html>

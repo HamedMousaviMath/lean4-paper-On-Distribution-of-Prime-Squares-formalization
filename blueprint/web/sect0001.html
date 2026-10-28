@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Purpose and verification boundary</title>
+<link rel="next" href="sect0002.html" title="Independent inputs and their exact scope" />
+<link rel="prev" href="index.html" title="On the Distribution of Prime Squares and Its Applications: compact blueprint" />
+<link rel="up" href="index.html" title="On the Distribution of Prime Squares and Its Applications: compact blueprint" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+<link rel="stylesheet" href="styles/blueprint.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">On the Distribution of Prime Squares and Its Applications: compact blueprint</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class=" active current">
+  <a href="sect0001.html"><span class="toc_ref"></span> <span class="toc_entry">Purpose and verification boundary</span></a>
+ </li>
+<li class="">
+  <a href="sect0002.html"><span class="toc_ref">1</span> <span class="toc_entry">Independent inputs and their exact scope</span></a>
+ </li>
+<li class="">
+  <a href="sect0003.html"><span class="toc_ref">2</span> <span class="toc_entry">Arithmetic: quadratic sums and conductors</span></a>
+ </li>
+<li class="">
+  <a href="sect0004.html"><span class="toc_ref">3</span> <span class="toc_entry">Improving: optimization and the main estimate</span></a>
+ </li>
+<li class="">
+  <a href="sect0005.html"><span class="toc_ref">4</span> <span class="toc_entry">Prime operators: approximation, low and high terms</span></a>
+ </li>
+<li class="">
+  <a href="sect0006.html"><span class="toc_ref">5</span> <span class="toc_entry">Stopping: local estimates and sparse domination</span></a>
+ </li>
+<li class="">
+  <a href="sect0007.html"><span class="toc_ref">6</span> <span class="toc_entry">Orlicz: quantitative IW and the three-family maximum</span></a>
+ </li>
+<li class="">
+  <a href="sect0008.html"><span class="toc_ref">7</span> <span class="toc_entry">Badness: arithmetic blocks and the persistent criterion</span></a>
+ </li>
+<li class="">
+  <a href="sect0009.html"><span class="toc_ref">8</span> <span class="toc_entry">Ergodic: transference and the two endpoint conclusions</span></a>
+ </li>
+<li class="">
+  <a href="sect0010.html"><span class="toc_ref">9</span> <span class="toc_entry">Goldbach arithmetic: reductions and the exceptional set</span></a>
+ </li>
+<li class="">
+  <a href="sect0011.html"><span class="toc_ref">10</span> <span class="toc_entry">Goldbach circle method: minor arcs, major arcs and completion</span></a>
+ </li>
+<li class="">
+  <a href="sect0012.html"><span class="toc_ref">11</span> <span class="toc_entry">Goldbach sieve: local densities, presieving and comparison</span></a>
+ </li>
+<li ><a href="dep_graph_document.html">Dependency graph</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="a0000000002">Purpose and verification boundary</h1>
+<p> This is the compact public blueprint for Hamed Mousavi’s <em>On the Distribution of Prime Squares and Its Applications</em>. It is a companion to the supplied manuscript, not a new statement of the independent analytic theorems. All 54 numbered claims and four definitions are accounted for in 52 graph nodes: 39 mathematical groups and 13 independent input groups. Closely related identities and immediate consequences share a node. No node is devoted only to simplification, linear arithmetic or routine algebra. </p>
+<p>The Lean implementation is unchanged from proof checkpoint 1265. Its recorded fresh build covered 1,382 project modules, 4,517 named theorem axiom audits and 973 evidence declaration signatures. Release 1266 is a source reconciliation and exposition release, not a new proof checkpoint. The numbered ledger has 22 proved results under their source hypotheses, 31 complete conditional implications and one quoted external theorem; all four definitions are formalized. </p>
+<p><b class="bfseries">Conditional means conditional.</b> The theorem statements below are read under the independent inputs linked in their dependency nodes. These inputs are explicit Lean hypotheses, not new mathematical axioms. Kernel axiom audits therefore do not establish their truth. The exact published-to-interface bridges, including some normalizations, globalization and full-domain formulations, remain external. The separate input catalogue gives the complete boundary; a group here is not a claim that it is one single published theorem. </p>
+<p><b class="bfseries">Reading the graph.</b> Milestones depend on technical nodes, which depend on essential definitions and external inputs. An edge is a curated mathematical dependency, not an exhaustive traversal of a Lean proof term. The web graph is a DAG with shared lemmas, rather than a tree with duplicate copies. Every node has an explicit <span class="ttfamily">uses</span> list and a following explanation carrying <span class="ttfamily">proves</span>. External nodes deliberately have no proof-completion marker. For conditional nodes, completion refers to the implication under those hypotheses. Full statement-to-declaration evidence is in <span class="ttfamily">docs/PAPER_MAP.json</span>. </p>
+<p><b class="bfseries">Notation and references.</b> Use the conventions and surrounding hypotheses of the supplied manuscript. In particular \(e(t)=e^{2\pi it}\), \(\mathbb A_q=(\mathbb Z/q\mathbb Z)^\times \), and \(\Lambda \) is the von Mangoldt function. Formula and section references inside the reproduced statements refer to the paper’s current numbering; blueprint node numbers have their own counter. Source statements are retained verbatim apart from labels, cross-reference rendering and enumeration style. Groups may contain several statements with different external requirements; the statement map retains their individual status. No source label or existing Lean declaration has been renamed. </p>
+<p><b class="bfseries">Main routes.</b> Theorem 1.1 follows from the arithmetic estimates, fixed-scale prime approximation and abstract improving theorem, together with the ordinary-square input. Theorem 1.3 additionally needs the high maximum and stopping recursion. The quantitative IW route yields Theorem 7.2, its corollaries and Theorem 1.5(ii). The arithmetic badness route yields Theorem 1.5(i), without the optional full Granville–Kurlberg spacing theorem. The Goldbach route combines the circle method, two-range sieve and strict positivity comparison. </p>
+<p><b class="bfseries">Implementation policy.</b> Retain the small Lean lemmas used by automation, but keep them out of the public graph. The existing namespace is <span class="ttfamily">PrimeSquares</span>; section titles are subject areas, not claims that new Lean subnamespaces have been created. The module index lists the actual source modules for every displayed target. </p>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <a href="index.html" title="On the Distribution of Prime Squares and Its Applications: compact blueprint"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="index.html" title="On the Distribution of Prime Squares and Its Applications: compact blueprint"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="sect0002.html" title="Independent inputs and their exact scope"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+</body>
+</html>

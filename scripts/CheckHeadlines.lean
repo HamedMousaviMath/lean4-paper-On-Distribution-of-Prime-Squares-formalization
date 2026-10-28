@@ -1,0 +1,21 @@
+import PrimeSquares
+set_option pp.fullNames true
+
+#check PrimeSquares.theorem_1_1
+#print axioms PrimeSquares.theorem_1_1
+#check PrimeSquares.theorem_1_1_strong_sum
+#print axioms PrimeSquares.theorem_1_1_strong_sum
+#check PrimeSquares.theorem_1_3
+#print axioms PrimeSquares.theorem_1_3
+#check PrimeSquares.theorem_1_5_i_literal
+#print axioms PrimeSquares.theorem_1_5_i_literal
+#check PrimeSquares.theorem_1_5_ii_closed_signed_maximal
+#print axioms PrimeSquares.theorem_1_5_ii_closed_signed_maximal
+#check PrimeSquares.theorem_7_2_closed_signed_maximal
+#print axioms PrimeSquares.theorem_7_2_closed_signed_maximal
+#check PrimeSquares.corollary_7_6_closed_signed_maximal
+#print axioms PrimeSquares.corollary_7_6_closed_signed_maximal
+#check PrimeSquares.corollary_7_46_closed_signed_maximal
+#print axioms PrimeSquares.corollary_7_46_closed_signed_maximal
+#check PrimeSquares.goldbach_section9_headline_complete
+#print axioms PrimeSquares.goldbach_section9_headline_complete

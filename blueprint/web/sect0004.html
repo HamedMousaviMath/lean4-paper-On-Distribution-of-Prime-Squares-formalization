@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Improving: optimization and the main estimate</title>
+<link rel="next" href="sect0005.html" title="Prime operators: approximation, low and high terms" />
+<link rel="prev" href="sect0003.html" title="Arithmetic: quadratic sums and conductors" />
+<link rel="up" href="index.html" title="On the Distribution of Prime Squares and Its Applications: compact blueprint" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+<link rel="stylesheet" href="styles/blueprint.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">On the Distribution of Prime Squares and Its Applications: compact blueprint</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref"></span> <span class="toc_entry">Purpose and verification boundary</span></a>
+ </li>
+<li class="">
+  <a href="sect0002.html"><span class="toc_ref">1</span> <span class="toc_entry">Independent inputs and their exact scope</span></a>
+ </li>
+<li class="">
+  <a href="sect0003.html"><span class="toc_ref">2</span> <span class="toc_entry">Arithmetic: quadratic sums and conductors</span></a>
+ </li>
+<li class=" active current">
+  <a href="sect0004.html"><span class="toc_ref">3</span> <span class="toc_entry">Improving: optimization and the main estimate</span></a>
+ </li>
+<li class="">
+  <a href="sect0005.html"><span class="toc_ref">4</span> <span class="toc_entry">Prime operators: approximation, low and high terms</span></a>
+ </li>
+<li class="">
+  <a href="sect0006.html"><span class="toc_ref">5</span> <span class="toc_entry">Stopping: local estimates and sparse domination</span></a>
+ </li>
+<li class="">
+  <a href="sect0007.html"><span class="toc_ref">6</span> <span class="toc_entry">Orlicz: quantitative IW and the three-family maximum</span></a>
+ </li>
+<li class="">
+  <a href="sect0008.html"><span class="toc_ref">7</span> <span class="toc_entry">Badness: arithmetic blocks and the persistent criterion</span></a>
+ </li>
+<li class="">
+  <a href="sect0009.html"><span class="toc_ref">8</span> <span class="toc_entry">Ergodic: transference and the two endpoint conclusions</span></a>
+ </li>
+<li class="">
+  <a href="sect0010.html"><span class="toc_ref">9</span> <span class="toc_entry">Goldbach arithmetic: reductions and the exceptional set</span></a>
+ </li>
+<li class="">
+  <a href="sect0011.html"><span class="toc_ref">10</span> <span class="toc_entry">Goldbach circle method: minor arcs, major arcs and completion</span></a>
+ </li>
+<li class="">
+  <a href="sect0012.html"><span class="toc_ref">11</span> <span class="toc_entry">Goldbach sieve: local densities, presieving and comparison</span></a>
+ </li>
+<li ><a href="dep_graph_document.html">Dependency graph</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="a0000000005">3 Improving: optimization and the main estimate</h1>
+<div class="theorem_thmwrapper theorem-style-plain" id="abstract_improving">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">3.1</span>
+    <span class="theorem_thmtitle">Abstract high-low optimization and strong improving</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0004.html#abstract_improving">#</a>
+    
+    <a class="icon proof" href="sect0004.html#a0000000053"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.highLow_AB_endpoint" class="lean_decl">PrimeSquares.highLow_AB_endpoint</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.highLow_AB_strong_improving" class="lean_decl">PrimeSquares.highLow_AB_strong_improving</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  
+<p><b class="bfseries">Paper Theorem 4.1.</b> <i class="itshape">proved under source hypotheses.</i></p>
+<p>Let \(A_N\) and \(B_N\) be positive convolution operators whose kernels are supported in an interval of length \(O(N)\). Suppose that </p>
+<div class="displaymath" id="a0000000054">
+  \begin{align}  |A_Nf(x)|& \leq (\log N)^aB_N|f|(x),\\ |B_Nf(x)|& \ll N^{-v}\| f\mathbf1_{[x-CN,x+CN]}\| _1, \qquad 0\leq v{\lt}1, \end{align}
+</div>
+<p> and that \(s\geq 1-v\), \(r{\gt}0\), and, whenever \(2\leq J\leq N^{(1-v)/s}/10\), </p>
+<div class="displaymath" id="a0000000055">
+  \begin{align}  B_N=Lo_{J,N}+Hi_{J,N},\qquad \| Lo_{J,N}f\| _\infty & \ll N^{-1}J^s(\log J)^\gamma \| f\| _1, \\ \| Hi_{J,N}f\| _2& \ll J^{-r}(\log J)^\beta \| f\| _2, \end{align}
+</div>
+<p> where \(\gamma \geq \beta \geq 0\). Suppose also that, for \(2\leq Q\) and \(\log Q\leq c_0(\log N)^c\), </p>
+<div class="displaymath" id="a0000000056">
+  \begin{align}  A_N& =\operatorname {Low}_{Q,N}+\operatorname {High}_{Q,N}+E_{Q,N}, \\ \| \operatorname {Low}_{Q,N}f\| _\infty & \ll N^{-1}Q^s(\log Q)^\alpha \| f\| _1,\\ \| \operatorname {High}_{Q,N}f\| _2 & \ll Q^{-r}\exp \left(c_1\frac{(\log Q)^\kappa }{\log \log Q}\right)\| f\| _2, \\ \| E_{Q,N}f\| _2& \ll _A Q^{-r}(\log Q)^{C_A} (1+\log N)^{-A}\| f\| _2 \qquad (A{\gt}0), \end{align}
+</div>
+<p> where \(0{\lt}\kappa {\lt}1\) and \(a,\alpha ,c_0,c_1,c{\gt}0\). In <span class="upshape">(4.8)</span>, the constant \(C_A\) may depend on \(A\). Then, for \(F,G\) contained in an interval of length \(N\), </p>
+<div class="displaymath" id="a0000000057">
+  \begin{align}  \frac{|\langle B_N\mathbf1_F,\mathbf1_G\rangle |}{N} & \ll (|F||G|/N^2)^{1-\frac{s}{2(s+r)}} (\operatorname {Log}(|F||G|/N^2))^{\gamma +\frac{s(\beta -\gamma )}{s+r}},\\ \frac{|\langle A_N\mathbf1_F,\mathbf1_G\rangle |}{N} & \ll (|F||G|/N^2)^{1-\frac{s}{2(s+r)}}\Phi _{c^*,\kappa }(|F||G|/N^2), \end{align}
+</div>
+<p> where </p>
+<div class="displaymath" id="a0000000058">
+  \begin{align}  c^*=\frac{c_1s}{2^\kappa (s+r)^{\kappa +1}}+o(1). \end{align}
+</div>
+<p> Here and below the \(o(1)\) in a subscript means that the estimate holds with \(c^*\) replaced by any fixed larger constant. </p>
+<p><b class="bfseries">Paper Corollary 4.15.</b> <i class="itshape">proved under source hypotheses.</i></p>
+<p>Assume in addition that \(A_N\) and \(B_N\) are uniformly bounded on \(\ell ^2\). If </p>
+<div class="displaymath" id="a0000000059">
+  \begin{align*}  \frac{2(r+s)}{2r+s}{\lt}p\leq 2, \end{align*}
+</div>
+<p> then, for \(f\in \ell ^p(\mathbb {Z})\), </p>
+<div class="displaymath" id="a0000000060">
+  \begin{align}  \| B_Nf\| _{p'}+\| A_Nf\| _{p'} \ll _p N^{1/p'-1/p}\| f\| _p. \end{align}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000053">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof architecture
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>  Balance the low \(\ell ^1\! \to \! \ell ^\infty \) cost against the high \(\ell ^2\) cost. Separate admissible large scales from the complementary range controlled by the ordinary operator. Choose a strictly larger loss coefficient before choosing cutoffs and error exponents. Pass from indicators to strong improving by dyadic level decomposition and summable geometric estimates, including \(p=2\). </p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="prime_improving">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">3.2</span>
+    <span class="theorem_thmtitle">Prime-square improving theorem</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0004.html#prime_improving">#</a>
+    
+    <a class="icon proof" href="sect0004.html#a0000000061"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0004.html#abstract_improving">Theorem 3.1</a></li>
+          
+          <li><a href="sect0005.html#prime_arc_approximation">Lemma 4.1</a></li>
+          
+          <li><a href="sect0005.html#prime_low">Lemma 4.2</a></li>
+          
+          <li><a href="sect0003.html#gauss_bounds">Lemma 2.5</a></li>
+          
+          <li><a href="sect0002.html#input_prime_distribution">Lemma 1.1</a></li>
+          
+          <li><a href="sect0002.html#input_quadratic_sums">Lemma 1.2</a></li>
+          
+          <li><a href="sect0002.html#input_ordinary_squares">Lemma 1.3</a></li>
+          
+          <li><a href="sect0004.html#abstract_improving">Theorem 3.1</a></li>
+          
+          <li><a href="sect0005.html#prime_arc_approximation">Lemma 4.1</a></li>
+          
+          <li><a href="sect0005.html#prime_low">Lemma 4.2</a></li>
+          
+          <li><a href="sect0003.html#gauss_bounds">Lemma 2.5</a></li>
+          
+          <li><a href="sect0002.html#input_prime_distribution">Lemma 1.1</a></li>
+          
+          <li><a href="sect0002.html#input_quadratic_sums">Lemma 1.2</a></li>
+          
+          <li><a href="sect0002.html#input_ordinary_squares">Lemma 1.3</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.theorem_1_1" class="lean_decl">PrimeSquares.theorem_1_1</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.theorem_1_1_strong_sum" class="lean_decl">PrimeSquares.theorem_1_1_strong_sum</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  
+<p><b class="bfseries">Paper Theorem 1.1.</b> <i class="itshape">complete conditional implication.</i></p>
+<p>Let \(I=[-N^2,2N^2]\cap \mathbb Z\). For all \(F,G\subseteq I\), </p>
+<div class="displaymath" id="a0000000062">
+  \begin{align}  \frac1{|I|} \bigl|\langle A_{N,\Lambda }\mathbf1_F,\mathbf1_G\rangle \bigr| & \ll \left(\frac{|F|}{|I|}\frac{|G|}{|I|}\right)^{2/3} \Phi _{4\sqrt3/9+o(1)} \left(\frac{|F|}{|I|}\frac{|G|}{|I|}\right). \end{align}
+</div>
+<p> Consequently, for every \(3/2{\lt}p\leq 2\) and every \(f\in \ell ^p(\mathbb Z)\) supported in \(I\), </p>
+<div class="displaymath" id="a0000000063">
+  \[  \left(\frac1{|I|}\sum _{x\in \mathbb Z} |A_{N,\Lambda }f(x)|^{p'}\right)^{1/p'} \lesssim _p \left(\frac1{|I|}\sum _{x\in \mathbb Z}|f(x)|^p\right)^{1/p}.  \]
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000061">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof architecture
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>   Apply the fixed-scale abstract theorem to the genuine von Mangoldt square average and the independent ordinary-square decomposition. The plus/minus square reflection is proved with unchanged constants. Keep the exact cardinality of \([-N^2,2N^2]\cap \mathbb Z\) in the normalization and handle small scales. This route does not require the smooth multifrequency maximal input. </p>
+
+  </div>
+</div>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <a href="sect0003.html" title="Arithmetic: quadratic sums and conductors"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="index.html" title="On the Distribution of Prime Squares and Its Applications: compact blueprint"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="sect0005.html" title="Prime operators: approximation, low and high terms"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+</body>
+</html>

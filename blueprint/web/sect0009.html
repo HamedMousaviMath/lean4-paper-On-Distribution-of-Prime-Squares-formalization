@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ergodic: transference and the two endpoint conclusions</title>
+<link rel="next" href="sect0010.html" title="Goldbach arithmetic: reductions and the exceptional set" />
+<link rel="prev" href="sect0008.html" title="Badness: arithmetic blocks and the persistent criterion" />
+<link rel="up" href="index.html" title="On the Distribution of Prime Squares and Its Applications: compact blueprint" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+<link rel="stylesheet" href="styles/blueprint.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">On the Distribution of Prime Squares and Its Applications: compact blueprint</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref"></span> <span class="toc_entry">Purpose and verification boundary</span></a>
+ </li>
+<li class="">
+  <a href="sect0002.html"><span class="toc_ref">1</span> <span class="toc_entry">Independent inputs and their exact scope</span></a>
+ </li>
+<li class="">
+  <a href="sect0003.html"><span class="toc_ref">2</span> <span class="toc_entry">Arithmetic: quadratic sums and conductors</span></a>
+ </li>
+<li class="">
+  <a href="sect0004.html"><span class="toc_ref">3</span> <span class="toc_entry">Improving: optimization and the main estimate</span></a>
+ </li>
+<li class="">
+  <a href="sect0005.html"><span class="toc_ref">4</span> <span class="toc_entry">Prime operators: approximation, low and high terms</span></a>
+ </li>
+<li class="">
+  <a href="sect0006.html"><span class="toc_ref">5</span> <span class="toc_entry">Stopping: local estimates and sparse domination</span></a>
+ </li>
+<li class="">
+  <a href="sect0007.html"><span class="toc_ref">6</span> <span class="toc_entry">Orlicz: quantitative IW and the three-family maximum</span></a>
+ </li>
+<li class="">
+  <a href="sect0008.html"><span class="toc_ref">7</span> <span class="toc_entry">Badness: arithmetic blocks and the persistent criterion</span></a>
+ </li>
+<li class=" active current">
+  <a href="sect0009.html"><span class="toc_ref">8</span> <span class="toc_entry">Ergodic: transference and the two endpoint conclusions</span></a>
+ </li>
+<li class="">
+  <a href="sect0010.html"><span class="toc_ref">9</span> <span class="toc_entry">Goldbach arithmetic: reductions and the exceptional set</span></a>
+ </li>
+<li class="">
+  <a href="sect0011.html"><span class="toc_ref">10</span> <span class="toc_entry">Goldbach circle method: minor arcs, major arcs and completion</span></a>
+ </li>
+<li class="">
+  <a href="sect0012.html"><span class="toc_ref">11</span> <span class="toc_entry">Goldbach sieve: local densities, presieving and comparison</span></a>
+ </li>
+<li ><a href="dep_graph_document.html">Dependency graph</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="a0000000010">8 Ergodic: transference and the two endpoint conclusions</h1>
+<div class="lemma_thmwrapper theorem-style-plain" id="ergodic_orlicz">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">8.1</span>
+    <span class="lemma_thmtitle">Ergodic transfer and Orlicz convergence</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0009.html#ergodic_orlicz">#</a>
+    
+    <a class="icon proof" href="sect0009.html#a0000000130"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0007.html#orlicz_maximal">Theorem 6.4</a></li>
+          
+          <li><a href="sect0007.html#near_one_lp">Lemma 6.5</a></li>
+          
+          <li><a href="sect0002.html#input_iw_sampling">Lemma 1.5</a></li>
+          
+          <li><a href="sect0002.html#input_real_variable">Lemma 1.6</a></li>
+          
+          <li><a href="sect0002.html#input_prime_distribution">Lemma 1.1</a></li>
+          
+          <li><a href="sect0002.html#input_quadratic_sums">Lemma 1.2</a></li>
+          
+          <li><a href="sect0002.html#input_multifrequency">Lemma 1.4</a></li>
+          
+          <li><a href="sect0002.html#input_ergodic">Lemma 1.7</a></li>
+          
+          <li><a href="sect0007.html#orlicz_maximal">Theorem 6.4</a></li>
+          
+          <li><a href="sect0007.html#near_one_lp">Lemma 6.5</a></li>
+          
+          <li><a href="sect0002.html#input_iw_sampling">Lemma 1.5</a></li>
+          
+          <li><a href="sect0002.html#input_real_variable">Lemma 1.6</a></li>
+          
+          <li><a href="sect0002.html#input_prime_distribution">Lemma 1.1</a></li>
+          
+          <li><a href="sect0002.html#input_quadratic_sums">Lemma 1.2</a></li>
+          
+          <li><a href="sect0002.html#input_multifrequency">Lemma 1.4</a></li>
+          
+          <li><a href="sect0002.html#input_ergodic">Lemma 1.7</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.corollary_7_46_closed_signed_maximal" class="lean_decl">PrimeSquares.corollary_7_46_closed_signed_maximal</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  
+<p><b class="bfseries">Paper Corollary 7.46.</b> <i class="itshape">complete conditional implication.</i></p>
+<p>For \(1{\lt}p\leq 2\), </p>
+<div class="displaymath" id="a0000000131">
+  \begin{align}  \| A_T^*f\| _{L^p(X)} \leq \exp \left( \frac{C}{p-1}\log \frac{e}{p-1} \right)\| f\| _{L^p(X)}. \end{align}
+</div>
+<p> Moreover, </p>
+<div class="displaymath" id="a0000000132">
+  \begin{align}  \mu \{ A_T^*f{\gt}\lambda \}  \ll \int _X\Psi _C\left(\frac{|f|}{\lambda }\right)\, d\mu , \qquad \lambda {\gt}0. \end{align}
+</div>
+<p> If \( \int _X\Psi _C(|f|/a)\, d\mu {\lt}\infty \) for some \(a{\gt}0\), then the corresponding averages converge almost everywhere and in \(L^1(X)\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000130">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof architecture
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>   Apply the explicit strong and modular transference interfaces on invertible probability systems. Approximate by bounded truncations and combine the modular maximal control with the independent bounded-class convergence theorem. Prove the Cauchy and density-extension steps for the unbounded Orlicz class; those conclusions are not supplied as external inputs. </p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="prime_square_ergodic_theorem">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">8.2</span>
+    <span class="theorem_thmtitle">Prime-square divergence and near-one maximal bound</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0009.html#prime_square_ergodic_theorem">#</a>
+    
+    <a class="icon proof" href="sect0009.html#a0000000133"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0008.html#persistent_criterion">Theorem 7.2</a></li>
+          
+          <li><a href="sect0009.html#ergodic_orlicz">Lemma 8.1</a></li>
+          
+          <li><a href="sect0007.html#near_one_lp">Lemma 6.5</a></li>
+          
+          <li><a href="sect0002.html#input_badness">Lemma 1.8</a></li>
+          
+          <li><a href="sect0002.html#input_weil">Lemma 1.9</a></li>
+          
+          <li><a href="sect0002.html#input_prime_distribution">Lemma 1.1</a></li>
+          
+          <li><a href="sect0002.html#input_ergodic">Lemma 1.7</a></li>
+          
+          <li><a href="sect0002.html#input_iw_sampling">Lemma 1.5</a></li>
+          
+          <li><a href="sect0002.html#input_real_variable">Lemma 1.6</a></li>
+          
+          <li><a href="sect0002.html#input_quadratic_sums">Lemma 1.2</a></li>
+          
+          <li><a href="sect0002.html#input_multifrequency">Lemma 1.4</a></li>
+          
+          <li><a href="sect0008.html#persistent_criterion">Theorem 7.2</a></li>
+          
+          <li><a href="sect0009.html#ergodic_orlicz">Lemma 8.1</a></li>
+          
+          <li><a href="sect0007.html#near_one_lp">Lemma 6.5</a></li>
+          
+          <li><a href="sect0002.html#input_badness">Lemma 1.8</a></li>
+          
+          <li><a href="sect0002.html#input_weil">Lemma 1.9</a></li>
+          
+          <li><a href="sect0002.html#input_prime_distribution">Lemma 1.1</a></li>
+          
+          <li><a href="sect0002.html#input_ergodic">Lemma 1.7</a></li>
+          
+          <li><a href="sect0002.html#input_iw_sampling">Lemma 1.5</a></li>
+          
+          <li><a href="sect0002.html#input_real_variable">Lemma 1.6</a></li>
+          
+          <li><a href="sect0002.html#input_quadratic_sums">Lemma 1.2</a></li>
+          
+          <li><a href="sect0002.html#input_multifrequency">Lemma 1.4</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.theorem_1_5_i_literal" class="lean_decl">PrimeSquares.theorem_1_5_i_literal</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.theorem_1_5_ii_closed_signed_maximal" class="lean_decl">PrimeSquares.theorem_1_5_ii_closed_signed_maximal</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  
+<p><b class="bfseries">Paper Theorem 1.5.</b> <i class="itshape">complete conditional implication.</i></p>
+<p>Let \(p_k\) denote the \(k\)-th prime, and put \(n_k=p_k^2\). </p>
+<ol class="enumerate">
+  <li><p>The sequence \((n_k)\) is persistently universally \(L^1\)-bad. More precisely, for every nonatomic ergodic measure-preserving probability system \((X,\mu ,T)\) and every infinite set \(\mathcal S\subset \mathbb N\), there is an \(f\in L^1(X)\) for which </p>
+<div class="displaymath" id="a0000000134">
+  \[  \frac1N\sum _{k\leq N}f(T^{n_k}x), \qquad N\in \mathcal S,  \]
+</div>
+<p> diverges on a set of positive measure. </p>
+</li>
+  <li><p>There is an absolute constant \(C{\gt}0\) such that, for every invertible measure-preserving probability system \((X,\mu ,T)\), every \(1{\lt}p\leq 2\), and every \(f\in L^p(X)\), </p>
+<div class="displaymath" id="a0000000135">
+  \[  \left\|  \sup _{N\geq 1} \left|\frac1N\sum _{k\leq N}f(T^{n_k}x)\right| \right\| _{L^p(X)} \leq \exp \left( \frac{C}{p-1}\log \frac{e}{p-1} \right) \| f\| _{L^p(X)}.  \]
+</div>
+</li>
+</ol>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000133">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof architecture
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>   For part (i), use the persistent arithmetic criterion on arbitrary nonatomic ergodic probability systems. For part (ii), use strong transference on invertible systems and identify enumerated-prime averages exactly with the appropriate prime cutoffs. Preserve the different system hypotheses of the two parts; a numerical prime-cutoff approximation would not suffice. </p>
+
+  </div>
+</div>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <a href="sect0008.html" title="Badness: arithmetic blocks and the persistent criterion"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="index.html" title="On the Distribution of Prime Squares and Its Applications: compact blueprint"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="sect0010.html" title="Goldbach arithmetic: reductions and the exceptional set"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+</body>
+</html>

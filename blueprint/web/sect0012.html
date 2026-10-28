@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Goldbach sieve: local densities, presieving and comparison</title>
+<link rel="prev" href="sect0011.html" title="Goldbach circle method: minor arcs, major arcs and completion" />
+<link rel="up" href="index.html" title="On the Distribution of Prime Squares and Its Applications: compact blueprint" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+<link rel="stylesheet" href="styles/blueprint.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">On the Distribution of Prime Squares and Its Applications: compact blueprint</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref"></span> <span class="toc_entry">Purpose and verification boundary</span></a>
+ </li>
+<li class="">
+  <a href="sect0002.html"><span class="toc_ref">1</span> <span class="toc_entry">Independent inputs and their exact scope</span></a>
+ </li>
+<li class="">
+  <a href="sect0003.html"><span class="toc_ref">2</span> <span class="toc_entry">Arithmetic: quadratic sums and conductors</span></a>
+ </li>
+<li class="">
+  <a href="sect0004.html"><span class="toc_ref">3</span> <span class="toc_entry">Improving: optimization and the main estimate</span></a>
+ </li>
+<li class="">
+  <a href="sect0005.html"><span class="toc_ref">4</span> <span class="toc_entry">Prime operators: approximation, low and high terms</span></a>
+ </li>
+<li class="">
+  <a href="sect0006.html"><span class="toc_ref">5</span> <span class="toc_entry">Stopping: local estimates and sparse domination</span></a>
+ </li>
+<li class="">
+  <a href="sect0007.html"><span class="toc_ref">6</span> <span class="toc_entry">Orlicz: quantitative IW and the three-family maximum</span></a>
+ </li>
+<li class="">
+  <a href="sect0008.html"><span class="toc_ref">7</span> <span class="toc_entry">Badness: arithmetic blocks and the persistent criterion</span></a>
+ </li>
+<li class="">
+  <a href="sect0009.html"><span class="toc_ref">8</span> <span class="toc_entry">Ergodic: transference and the two endpoint conclusions</span></a>
+ </li>
+<li class="">
+  <a href="sect0010.html"><span class="toc_ref">9</span> <span class="toc_entry">Goldbach arithmetic: reductions and the exceptional set</span></a>
+ </li>
+<li class="">
+  <a href="sect0011.html"><span class="toc_ref">10</span> <span class="toc_entry">Goldbach circle method: minor arcs, major arcs and completion</span></a>
+ </li>
+<li class=" active current">
+  <a href="sect0012.html"><span class="toc_ref">11</span> <span class="toc_entry">Goldbach sieve: local densities, presieving and comparison</span></a>
+ </li>
+<li ><a href="dep_graph_document.html">Dependency graph</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="a0000000013">11 Goldbach sieve: local densities, presieving and comparison</h1>
+<div class="lemma_thmwrapper theorem-style-plain" id="sieve_local_data">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">11.1</span>
+    <span class="lemma_thmtitle">Fixed prime sets and both local density formulas</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0012.html#sieve_local_data">#</a>
+    
+    <a class="icon proof" href="sect0012.html#a0000000166"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0011.html#goldbach_euler">Lemma 10.4</a></li>
+          
+          <li><a href="sect0011.html#goldbach_euler">Lemma 10.4</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.goldbach_fixed_sieve_sets" class="lean_decl">PrimeSquares.goldbach_fixed_sieve_sets</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.goldbach_lower_local_density_formula" class="lean_decl">PrimeSquares.goldbach_lower_local_density_formula</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.goldbach_upper_local_density" class="lean_decl">PrimeSquares.goldbach_upper_local_density</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  
+<p><b class="bfseries">Paper Lemma 11.2.</b> <i class="itshape">proved under source hypotheses.</i></p>
+<p>For every \(\varepsilon {\gt}0\), </p>
+<div class="displaymath" id="a0000000167">
+  \begin{align}  S(\mathcal A_n,\mathbb P_{3,n},z) & \geq S(\mathcal A_n,\mathbb P_3,z), \\ \sum _{\ell \in L_n}S(M_n(\ell ),W_{\ell ,n},z_\ell ) & \leq \sum _{\ell \in L}S(M_n(\ell ),W_\ell ,z_\ell ) +O_\varepsilon (N^\varepsilon ). \end{align}
+</div>
+<p><b class="bfseries">Paper Lemma 11.6.</b> <i class="itshape">proved under source hypotheses.</i></p>
+<p>For \(p{\gt}3\), \(p\equiv 3\pmod4\), </p>
+<div class="displaymath" id="a0000000168">
+  \begin{align}  \frac{\omega _n(p)}p = \begin{cases}  \displaystyle \frac{\rho _p(n-1)}{p-1-\rho _p(n)},& p\leq R,\\[7pt] \displaystyle \frac1{p-1},& p{\gt}R. \end{cases}\end{align}
+</div>
+<p> In particular, for \(p\geq 7\), \(0\leq \omega _n(p)/p\leq 2/(p-3){\lt}1\). </p>
+<p><b class="bfseries">Paper Lemma 11.8.</b> <i class="itshape">proved under source hypotheses.</i></p>
+<p>There is a multiplicative function \(\omega _n(\ell ,\cdot )\), defined on square-free integers supported on \(W_\ell \), such that </p>
+<div class="displaymath" id="a0000000169">
+  \begin{align}  \frac{G_R(\ell ,12d,n-1)}{\phi (12d)} = \frac{G_R(\ell ,12,n-1)}{\phi (12)} \frac{\omega _n(\ell ,d)}d . \end{align}
+</div>
+<p> For \(p\nmid 12\ell \), its factors are </p>
+<div class="displaymath" id="a0000000170">
+  \begin{align}  \frac{\omega _n(\ell ,p)}p = \begin{cases}  \displaystyle \frac{\rho _p(n)}{p-1-\rho _p(n-1)},& p\leq R,\\[7pt] \displaystyle \frac1{p-1},& p{\gt}R. \end{cases}\end{align}
+</div>
+<p> In particular, \(0\leq \omega _n(\ell ,p)/p{\lt}1\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000166">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof architecture
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>   Compare the variable sieve sets with fixed supported prime sets, keeping the exceptional divisor contribution. Count the lower and upper residue classes explicitly and prove multiplicativity, nonzero base factors and all congruence restrictions. This supplies concrete supported densities to the general sieve interfaces rather than postulating their local formulas. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="two_range_presieve">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">11.2</span>
+    <span class="lemma_thmtitle">Signed two-range presieving</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0012.html#two_range_presieve">#</a>
+    
+    <a class="icon proof" href="sect0012.html#a0000000171"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0012.html#sieve_local_data">Lemma 11.1</a></li>
+          
+          <li><a href="sect0002.html#input_sieve">Lemma 1.12</a></li>
+          
+          <li><a href="sect0012.html#sieve_local_data">Lemma 11.1</a></li>
+          
+          <li><a href="sect0002.html#input_sieve">Lemma 1.12</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.goldbach_presieving_from_classical_coefficients" class="lean_decl">PrimeSquares.goldbach_presieving_from_classical_coefficients</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.goldbach_presieve_uniform_assembly" class="lean_decl">PrimeSquares.goldbach_presieve_uniform_assembly</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  
+<p><b class="bfseries">Paper Lemma 11.13.</b> <i class="itshape">complete conditional implication.</i></p>
+<p>Suppose that </p>
+<div class="displaymath" id="a0000000172">
+  \begin{align}  |\mathcal F_d|=Xg(d)+r_d, \end{align}
+</div>
+<p> where \(X\geq 0\), and \(g\) is multiplicative on the square-free integers supported on a fixed set of primes \(\mathfrak P\), with \(g(1)=1\) and \(0\leq g(p){\lt}1\). Fix \(C,A{\gt}0\), set \(R=(\log N)^C\), \(D_0=\exp ((\log \log N)^3)\), and \(D_1=D/D_0\), and assume \(R+1\leq z\leq D_1\leq N^A\) for sufficiently large \(N\). Suppose that fixed constants \(\kappa _0,\kappa {\gt}0\) and \(K_0\geq 2\) satisfy, for every \(2\leq w{\lt}y\leq z\), </p>
+<div class="displaymath" id="a0000000173">
+  \begin{align}  \prod _{\substack {w\leq p{\lt}y\\ \begin{bgroup} p\in \mathfrak P,\  p\leq R
+
+\end{bgroup}}} (1-g(p))^{-1} & \leq \left(1+\frac{K_0}{\log w}\right) \left(\frac{\log y}{\log w}\right)^{\kappa _0},\notag \\ \prod _{\substack {w\leq p{\lt}y\\ \begin{bgroup} p\in \mathfrak P,\  p{\gt}R
+
+\end{bgroup}}} (1-g(p))^{-1} & \leq \left(1+\frac{K_0}{\log w}\right) \left(\frac{\log y}{\log w}\right)^\kappa . \end{align}
+</div>
+<p> All \(o(1)\) terms below are uniform for fixed \(C,A,\kappa _0,\kappa ,K_0\). Then </p>
+<div class="displaymath" id="a0000000174">
+  \begin{align}  S(\mathcal F,\mathfrak P,z) & \geq XV(z)\bigl(f_\kappa (s)+o(1)\bigr) +\sum _{m{\lt}D}c_m^-r_m,\notag \\ S(\mathcal F,\mathfrak P,z) & \leq XV(z)\bigl(F_\kappa (s)+o(1)\bigr) +\sum _{m{\lt}D}c_m^+r_m, \end{align}
+</div>
+<p> where </p>
+<div class="displaymath" id="a0000000175">
+  \[  V(z)=\prod _{\substack {p{\lt}z\\ p\in \mathfrak P}}(1-g(p)), \qquad s=\frac{\log D_1}{\log z}, \qquad |c_m^\pm |\leq 1.  \]
+</div>
+<p> The coefficients \(c_m^\pm \) depend only on the fixed prime sets and the sieve levels, and not on the values of \(g\). The dimension \(\kappa _0\) is used only in the preliminary sieve over \(p\leq R\); the sieve functions in <span class="upshape">(11.15)</span> are determined by the outer dimension \(\kappa \). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000171">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof architecture
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>   Choose the independent one-stage weights before the supported density. Combine lower and upper weights with the signed sandwich identity, using unique factorization across the disjoint prime ranges. Verify support below the full level and coefficient bound one. Prove the preliminary error tends to zero uniformly; the outer sieve functions retain dimension \(\kappa \). The revised source level condition implies the omitted strict inequality. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="lower_sieve">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">11.3</span>
+    <span class="lemma_thmtitle">Lower application and uniform main-term size</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0012.html#lower_sieve">#</a>
+    
+    <a class="icon proof" href="sect0012.html#a0000000176"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0012.html#two_range_presieve">Lemma 11.2</a></li>
+          
+          <li><a href="sect0011.html#goldbach_circle_method">Lemma 10.6</a></li>
+          
+          <li><a href="sect0011.html#goldbach_singular_integral">Lemma 10.1</a></li>
+          
+          <li><a href="sect0002.html#input_sieve">Lemma 1.12</a></li>
+          
+          <li><a href="sect0002.html#input_mertens_mean">Lemma 1.13</a></li>
+          
+          <li><a href="sect0002.html#input_sw_bv">Lemma 1.11</a></li>
+          
+          <li><a href="sect0002.html#input_quadratic_sums">Lemma 1.2</a></li>
+          
+          <li><a href="sect0012.html#two_range_presieve">Lemma 11.2</a></li>
+          
+          <li><a href="sect0011.html#goldbach_circle_method">Lemma 10.6</a></li>
+          
+          <li><a href="sect0011.html#goldbach_singular_integral">Lemma 10.1</a></li>
+          
+          <li><a href="sect0002.html#input_sieve">Lemma 1.12</a></li>
+          
+          <li><a href="sect0002.html#input_mertens_mean">Lemma 1.13</a></li>
+          
+          <li><a href="sect0002.html#input_sw_bv">Lemma 1.11</a></li>
+          
+          <li><a href="sect0002.html#input_quadratic_sums">Lemma 1.2</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.goldbach_lower_bounds_complete" class="lean_decl">PrimeSquares.goldbach_lower_bounds_complete</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  
+<p><b class="bfseries">Paper Proposition 9.17.</b> <i class="itshape">complete conditional implication.</i></p>
+<p>For \(N^2(\log N)^{-A_0}\leq n{\lt}N^2\), \(n\equiv 12\pmod{24}\), </p>
+<div class="displaymath" id="a0000000177">
+  \begin{align}  S(\mathcal A_n,\mathbb P_{3,n},z) \geq X_n\Theta _n(z)\bigl(f_{1/2}(9/8)+o(1)\bigr) +\mathcal E_1(n), \end{align}
+</div>
+<p> where </p>
+<div class="displaymath" id="a0000000178">
+  \begin{align}  \sum _{n{\lt}N^2}|\mathcal E_1(n)|^2 \ll _{A_0,K} N^4(\log N)^{-K}. \end{align}
+</div>
+<p><b class="bfseries">Paper Lemma 9.22.</b> <i class="itshape">complete conditional implication.</i></p>
+<p>Let \(A_0{\gt}0\). There is \(C_{A_0}{\gt}0\) such that, for every fixed sufficiently large \(C\), with \(R=(\log N)^C\), one has </p>
+<div class="displaymath" id="a0000000179">
+  \begin{align}  X_n\Theta _n(z)\gg _{A_0,C} N(\log N)^{-C_{A_0}} \end{align}
+</div>
+<p> whenever \(n\equiv 12\pmod{24}\) and \(N^2(\log N)^{-A_0}\leq n{\lt}N^2\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000176">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof architecture
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>   Check the refined interval dimension condition for the actual lower density. Apply presieving and use the circle-method mean square to bound the exceptional set. Prove the positive archimedean lower bound and uniform Euler-product size. Choose a common cutoff with all lower and upper requirements; the explicit exponent \(C_{A_0}=A_0/2+6\) is independent of \(C\). </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="upper_sieve">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">11.4</span>
+    <span class="lemma_thmtitle">Weighted upper application and main-term comparison</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0012.html#upper_sieve">#</a>
+    
+    <a class="icon proof" href="sect0012.html#a0000000180"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0012.html#two_range_presieve">Lemma 11.2</a></li>
+          
+          <li><a href="sect0011.html#goldbach_circle_method">Lemma 10.6</a></li>
+          
+          <li><a href="sect0002.html#input_sw_bv">Lemma 1.11</a></li>
+          
+          <li><a href="sect0002.html#input_prime_distribution">Lemma 1.1</a></li>
+          
+          <li><a href="sect0002.html#input_quadratic_sums">Lemma 1.2</a></li>
+          
+          <li><a href="sect0002.html#input_sieve">Lemma 1.12</a></li>
+          
+          <li><a href="sect0002.html#input_mertens_mean">Lemma 1.13</a></li>
+          
+          <li><a href="sect0012.html#two_range_presieve">Lemma 11.2</a></li>
+          
+          <li><a href="sect0011.html#goldbach_circle_method">Lemma 10.6</a></li>
+          
+          <li><a href="sect0002.html#input_sw_bv">Lemma 1.11</a></li>
+          
+          <li><a href="sect0002.html#input_prime_distribution">Lemma 1.1</a></li>
+          
+          <li><a href="sect0002.html#input_quadratic_sums">Lemma 1.2</a></li>
+          
+          <li><a href="sect0002.html#input_sieve">Lemma 1.12</a></li>
+          
+          <li><a href="sect0002.html#input_mertens_mean">Lemma 1.13</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.goldbach_upper_sieve_complete" class="lean_decl">PrimeSquares.goldbach_upper_sieve_complete</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.goldbach_weighted_upper_main_term_complete" class="lean_decl">PrimeSquares.goldbach_weighted_upper_main_term_complete</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  
+<p><b class="bfseries">Paper Proposition 9.20.</b> <i class="itshape">complete conditional implication.</i></p>
+<p>For \(N^2(\log N)^{-A_0}\leq n{\lt}N^2\), \(n\equiv 12\pmod{24}\), </p>
+<div class="displaymath" id="a0000000181">
+  \begin{align}  \sum _{\ell \in L_n}S(M_n(\ell ),W_{\ell ,n},z_\ell ) & \leq \bigl(c_{9/8}F_1(2)\mathcal W(9/8)+o(1)\bigr) X_n\Theta _n(z)+\mathcal E_2(n), \end{align}
+</div>
+<p> where </p>
+<div class="displaymath" id="a0000000182">
+  \begin{align}  c_\alpha =\frac{16e^{-\gamma /2}}{\sqrt{\pi \alpha }} \end{align}
+</div>
+<p> and </p>
+<div class="displaymath" id="a0000000183">
+  \begin{align}  \sum _{n{\lt}N^2}|\mathcal E_2(n)|^2 \ll _{A_0,K} N^4(\log N)^{-K}. \end{align}
+</div>
+<p><b class="bfseries">Paper Lemma 11.18.</b> <i class="itshape">complete conditional implication.</i></p>
+<p>Let \(\alpha =9/8\). Uniformly in the range <span class="upshape">(11.1)</span>, </p>
+<div class="displaymath" id="a0000000184">
+  \begin{align}  \sum _{\ell \in L}X_n(\ell )\Theta _{n,\ell }(z_\ell ) \leq \bigl(c_\alpha \mathcal W(\alpha )+o(1)\bigr) X_n\Theta _n(z), \qquad c_\alpha =\frac{16e^{-\gamma /2}}{\sqrt{\pi \alpha }}. \end{align}
+</div>
+<p> Here \(\mathcal W(\alpha )\) is the integral defined in <span class="upshape">(9.19)</span>. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000180">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof architecture
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>   Apply the upper sieve uniformly in the auxiliary index and sum only after controlling its level range. Cancel the small-prime factors, apply the independent effective mean and Mertens interfaces, and pass to the weighted integral. Retain the correct integration domain and the exact normalization cancellation. Bound the removed ranges and smoothing error relative to the lower main term. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="sieve_positivity">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">11.5</span>
+    <span class="lemma_thmtitle">Strict numerical comparison</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0012.html#sieve_positivity">#</a>
+    
+    <a class="icon proof" href="sect0012.html#a0000000185"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0012.html#upper_sieve">Lemma 11.4</a></li>
+          
+          <li><a href="sect0012.html#lower_sieve">Lemma 11.3</a></li>
+          
+          <li><a href="sect0002.html#input_sieve">Lemma 1.12</a></li>
+          
+          <li><a href="sect0012.html#upper_sieve">Lemma 11.4</a></li>
+          
+          <li><a href="sect0012.html#lower_sieve">Lemma 11.3</a></li>
+          
+          <li><a href="sect0002.html#input_sieve">Lemma 1.12</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.goldbach_sieve_numerical_comparison" class="lean_decl">PrimeSquares.goldbach_sieve_numerical_comparison</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  
+<p><b class="bfseries">Paper Lemma 9.24.</b> <i class="itshape">complete conditional implication.</i></p>
+<p>With the normalization of <span class="textnormal">[paper bibliography: I80; (1.8)–(1.10)]</span>, </p>
+<div class="displaymath" id="a0000000186">
+  \begin{align}  \Delta {\gt}0. \end{align}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000185">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof architecture
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>   Bound the weighted integral using exact rational inequalities and prove integrability in the needed range. Compare the resulting certified upper constant with the classical lower sieve value. Floating-point experiments are auxiliary only; the positivity used by the final proof is a Lean inequality under the recorded classical-function inputs. </p>
+
+  </div>
+</div>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <a href="sect0011.html" title="Goldbach circle method: minor arcs, major arcs and completion"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="index.html" title="On the Distribution of Prime Squares and Its Applications: compact blueprint"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+</body>
+</html>

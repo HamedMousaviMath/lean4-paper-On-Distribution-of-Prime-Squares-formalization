@@ -1,0 +1,15 @@
+{
+  "checkpoint": 1265,
+  "started_epoch": 1793154843.472574,
+  "completed_epoch": 1793157358.6212447,
+  "all_project_modules_recompiled": true,
+  "project_modules": 1382,
+  "theorems_audited": 4517,
+  "project_source_files": 1384,
+  "removed_project_traces": 1382,
+  "source_changed_during_build": false,
+  "remote_project_artifact_reuse": false,
+  "mathlib_pin_unchanged": true,
+  "baseline_checkpoint": 1264,
+  "build_receipt": "verification/checkpoint1265-build-receipt.json"
+}

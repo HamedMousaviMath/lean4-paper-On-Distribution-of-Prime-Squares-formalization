@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Goldbach arithmetic: reductions and the exceptional set</title>
+<link rel="next" href="sect0011.html" title="Goldbach circle method: minor arcs, major arcs and completion" />
+<link rel="prev" href="sect0009.html" title="Ergodic: transference and the two endpoint conclusions" />
+<link rel="up" href="index.html" title="On the Distribution of Prime Squares and Its Applications: compact blueprint" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+<link rel="stylesheet" href="styles/blueprint.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">On the Distribution of Prime Squares and Its Applications: compact blueprint</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref"></span> <span class="toc_entry">Purpose and verification boundary</span></a>
+ </li>
+<li class="">
+  <a href="sect0002.html"><span class="toc_ref">1</span> <span class="toc_entry">Independent inputs and their exact scope</span></a>
+ </li>
+<li class="">
+  <a href="sect0003.html"><span class="toc_ref">2</span> <span class="toc_entry">Arithmetic: quadratic sums and conductors</span></a>
+ </li>
+<li class="">
+  <a href="sect0004.html"><span class="toc_ref">3</span> <span class="toc_entry">Improving: optimization and the main estimate</span></a>
+ </li>
+<li class="">
+  <a href="sect0005.html"><span class="toc_ref">4</span> <span class="toc_entry">Prime operators: approximation, low and high terms</span></a>
+ </li>
+<li class="">
+  <a href="sect0006.html"><span class="toc_ref">5</span> <span class="toc_entry">Stopping: local estimates and sparse domination</span></a>
+ </li>
+<li class="">
+  <a href="sect0007.html"><span class="toc_ref">6</span> <span class="toc_entry">Orlicz: quantitative IW and the three-family maximum</span></a>
+ </li>
+<li class="">
+  <a href="sect0008.html"><span class="toc_ref">7</span> <span class="toc_entry">Badness: arithmetic blocks and the persistent criterion</span></a>
+ </li>
+<li class="">
+  <a href="sect0009.html"><span class="toc_ref">8</span> <span class="toc_entry">Ergodic: transference and the two endpoint conclusions</span></a>
+ </li>
+<li class=" active current">
+  <a href="sect0010.html"><span class="toc_ref">9</span> <span class="toc_entry">Goldbach arithmetic: reductions and the exceptional set</span></a>
+ </li>
+<li class="">
+  <a href="sect0011.html"><span class="toc_ref">10</span> <span class="toc_entry">Goldbach circle method: minor arcs, major arcs and completion</span></a>
+ </li>
+<li class="">
+  <a href="sect0012.html"><span class="toc_ref">11</span> <span class="toc_entry">Goldbach sieve: local densities, presieving and comparison</span></a>
+ </li>
+<li ><a href="dep_graph_document.html">Dependency graph</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="a0000000011">9 Goldbach arithmetic: reductions and the exceptional set</h1>
+<div class="lemma_thmwrapper theorem-style-plain" id="goldbach_reductions">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">9.1</span>
+    <span class="lemma_thmtitle">Arithmetic reductions and the master sieve inequality</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0010.html#goldbach_reductions">#</a>
+    
+    <a class="icon proof" href="sect0010.html#a0000000136"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.goldbach_primitive_two_squares_criterion" class="lean_decl">PrimeSquares.goldbach_primitive_two_squares_criterion</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.goldbach_from_sifted_to_primes_complete" class="lean_decl">PrimeSquares.goldbach_from_sifted_to_primes_complete</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.goldbach_truncation_complete" class="lean_decl">PrimeSquares.goldbach_truncation_complete</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.goldbach_master_sieve_complete" class="lean_decl">PrimeSquares.goldbach_master_sieve_complete</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  
+<p><b class="bfseries">Paper Lemma 9.2.</b> <i class="itshape">proved under source hypotheses.</i></p>
+<p>For every \(\varepsilon {\gt}0\), </p>
+<div class="displaymath" id="a0000000137">
+  \begin{align}  |\{ r\in \mathcal P:n-r\in \mathbb P^2\} | \geq S(\mathcal A_n,\mathbb P_{3,n},N^2)-O_\varepsilon (N^\varepsilon ). \end{align}
+</div>
+<p><b class="bfseries">Paper Lemma 9.3.</b> <i class="itshape">proved under source hypotheses.</i></p>
+<p>For every \(\varepsilon {\gt}0\), </p>
+<div class="displaymath" id="a0000000138">
+  \begin{align}  S(\mathcal A_n,\mathbb P_{3,n},z) - |\{ r\in \mathcal P:n-r\in \mathbb P^2\} | = |T_n|+O_\varepsilon (N^\varepsilon ), \end{align}
+</div>
+<p> where </p>
+<div class="displaymath" id="a0000000139">
+  \begin{align}  T_n= \left\{  r-1=2up_1p_2: \begin{array}{l} r\in \mathbb P,\quad n-r\in \mathbb P^2,\\ z\leq p_2\leq p_1,\quad p_i\in \mathbb P_{3,n},\\ p\mid u\Longrightarrow p\equiv 1\pmod4 \end{array} \right\} . \end{align}
+</div>
+<p><b class="bfseries">Paper Lemma 9.7.</b> <i class="itshape">proved under source hypotheses.</i></p>
+<p>For every \(\varepsilon {\gt}0\), </p>
+<div class="displaymath" id="a0000000140">
+  \begin{align}  |T_n| \leq \sum _{\ell \in L_n} S(M_n(\ell ),W_{\ell ,n},z_\ell )+O_\varepsilon (N^\varepsilon ). \end{align}
+</div>
+<p><b class="bfseries">Paper Corollary 9.9.</b> <i class="itshape">proved under source hypotheses.</i></p>
+<p>For every \(\varepsilon {\gt}0\), </p>
+<div class="displaymath" id="a0000000141">
+  \begin{align}  |\{ r\in \mathcal P:n-r\in \mathbb P^2\} | & \geq S(\mathcal A_n,\mathbb P_{3,n},z)-\sum _{\ell \in L_n} S(M_n(\ell ),W_{\ell ,n},z_\ell ) -O_\varepsilon (N^\varepsilon ). \end{align}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000136">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof architecture
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>  Prove the primitive two-square criterion using the pinned Mathlib sum-of-two-squares results, including parity and primitive multiplication. Separate shared-prime exceptions, identify the residual set exactly, and inject it into the upper sifted family. Combine these finite-set inequalities before any analytic approximation. The criterion and these reductions are internal theorems. </p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="goldbach_exceptional_set">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">9.2</span>
+    <span class="theorem_thmtitle">Quantitative Goldbach exceptional set</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0010.html#goldbach_exceptional_set">#</a>
+    
+    <a class="icon proof" href="sect0010.html#a0000000142"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0010.html#goldbach_reductions">Lemma 9.1</a></li>
+          
+          <li><a href="sect0011.html#goldbach_circle_method">Lemma 10.6</a></li>
+          
+          <li><a href="sect0012.html#sieve_positivity">Lemma 11.5</a></li>
+          
+          <li><a href="sect0002.html#input_sw_bv">Lemma 1.11</a></li>
+          
+          <li><a href="sect0002.html#input_quadratic_sums">Lemma 1.2</a></li>
+          
+          <li><a href="sect0002.html#input_sieve">Lemma 1.12</a></li>
+          
+          <li><a href="sect0002.html#input_mertens_mean">Lemma 1.13</a></li>
+          
+          <li><a href="sect0010.html#goldbach_reductions">Lemma 9.1</a></li>
+          
+          <li><a href="sect0011.html#goldbach_circle_method">Lemma 10.6</a></li>
+          
+          <li><a href="sect0012.html#sieve_positivity">Lemma 11.5</a></li>
+          
+          <li><a href="sect0002.html#input_sw_bv">Lemma 1.11</a></li>
+          
+          <li><a href="sect0002.html#input_quadratic_sums">Lemma 1.2</a></li>
+          
+          <li><a href="sect0002.html#input_sieve">Lemma 1.12</a></li>
+          
+          <li><a href="sect0002.html#input_mertens_mean">Lemma 1.13</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.goldbach_section9_headline_complete" class="lean_decl">PrimeSquares.goldbach_section9_headline_complete</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.goldbach_section9_exceptional_density_zero" class="lean_decl">PrimeSquares.goldbach_section9_exceptional_density_zero</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  
+<p><b class="bfseries">Paper Theorem 1.6.</b> <i class="itshape">complete conditional implication.</i></p>
+<p>Almost all integers congruent to \(12\) modulo \(24\) can be written as </p>
+<div class="displaymath" id="a0000000143">
+  \[  a^2+b^2+p^2+1, \qquad a^2+b^2+1\in \mathcal P,\quad p\in \mathbb P.  \]
+</div>
+<p> More precisely, if </p>
+<div class="displaymath" id="a0000000144">
+  \[  E_2(X)=\{ 1\leq n{\lt}X:n\equiv 12\pmod{24}, n\notin \mathcal P+\mathbb P^2\} ,  \]
+</div>
+<p> then, for every \(A{\gt}0\), </p>
+<div class="displaymath" id="a0000000145">
+  \[  |E_2(X)|\ll _A X(\log X)^{-A}.  \]
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000142">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof architecture
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>   Insert the lower and upper sieve estimates into the exact master inequality and use the strict positive margin. Absorb all mean-square error sets with the requested logarithmic saving. Pass from square cutoffs to arbitrary real \(X\) and identify the source exceptional set literally. The theorem uses \(n\equiv 12\pmod{24}\); subtracting one gives the explanatory version in the abstract. </p>
+
+  </div>
+</div>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <a href="sect0009.html" title="Ergodic: transference and the two endpoint conclusions"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="index.html" title="On the Distribution of Prime Squares and Its Applications: compact blueprint"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="sect0011.html" title="Goldbach circle method: minor arcs, major arcs and completion"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+</body>
+</html>

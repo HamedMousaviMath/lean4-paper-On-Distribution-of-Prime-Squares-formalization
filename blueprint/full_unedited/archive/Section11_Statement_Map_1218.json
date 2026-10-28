@@ -1,0 +1,137 @@
+{
+  "checkpoint_started": 1214,
+  "source_file": "sources/updates/PrimeSquares_Selected_2026_10_26_Approximation_Proof_Revision1.tex",
+  "source_sha256": "4b15f09a44e6a970ba02bc8e9960e2b7497cc25e2873cc3dfaa0feeb300853ed",
+  "source_level_claims_to_prove": [
+    {
+      "label": "l:fixedsievesets10",
+      "title": "Comparison with fixed sieve prime sets",
+      "section": 11,
+      "source_line": 7927,
+      "active_statement_sha256": "633956d5fc07ad6076a32d15e26d853228ac3e45b734017a7580c93d53785206",
+      "statement_latex": "\\label{l:fixedsievesets10}\nFor every \\(\\varepsilon>0\\),\n\\begin{align}\n S(\\mathcal A_n,\\mathbb P_{3,n},z)\n &\\geq S(\\mathcal A_n,\\mathbb P_3,z),\n \\label{e:fixedlower10}\\\\\n \\sum_{\\ell\\in L_n}S(M_n(\\ell),W_{\\ell,n},z_\\ell)\n &\\leq\n \\sum_{\\ell\\in L}S(M_n(\\ell),W_\\ell,z_\\ell)\n +O_\\varepsilon(N^\\varepsilon).\n \\label{e:fixedupper10}\n\\end{align}",
+      "status": "proved",
+      "remaining": "None within the source statement.",
+      "lean_anchor": "goldbach_fixed_sieve_sets"
+    },
+    {
+      "label": "l:lowerlocaldensity",
+      "title": "Lower-sieve local density formula",
+      "section": 11,
+      "source_line": 8012,
+      "active_statement_sha256": "a704a00d7508baee78bb0bd80230ee87d355237bedc219653ce6d7c52b73f94e",
+      "statement_latex": "\\label{l:lowerlocaldensity}\nFor \\(p>3\\), \\(p\\equiv3\\pmod4\\),\n\\begin{align}\\label{e:lowerlocaldensity10}\n \\frac{\\omega_n(p)}p\n =\n \\begin{cases}\n \\displaystyle\n \\frac{\\rho_p(n-1)}{p-1-\\rho_p(n)},&p\\leq R,\\\\[7pt]\n \\displaystyle\\frac1{p-1},&p>R.\n \\end{cases}\n\\end{align}\nIn particular, for \\(p\\geq7\\),\n\\(0\\leq\\omega_n(p)/p\\leq2/(p-3)<1\\).",
+      "status": "proved",
+      "remaining": "None within the source statement and retained admissible context.",
+      "lean_anchor": "goldbach_lower_local_density_formula",
+      "completed_checkpoint": 1221
+    },
+    {
+      "label": "l:upperlocaldensity",
+      "title": "Upper-sieve local density and multiplicativity",
+      "section": 11,
+      "source_line": 8073,
+      "active_statement_sha256": "6f29ddcaacdd521c4caa880908ea1298db4570e472a698f4245afaab8898693f",
+      "statement_latex": "\\label{l:upperlocaldensity}\nThere is a multiplicative function\n\\(\\omega_n(\\ell,\\cdot)\\), defined on square-free integers supported on\n\\(W_\\ell\\), such that\n\\begin{align}\\label{e:upperfactorization10}\n \\frac{G_R(\\ell,12d,n-1)}{\\phi(12d)}\n =\n \\frac{G_R(\\ell,12,n-1)}{\\phi(12)}\n \\frac{\\omega_n(\\ell,d)}d .\n\\end{align}\nFor \\(p\\nmid12\\ell\\), its  factors are\n\\begin{align}\\label{e:upperlocaldensity10}\n \\frac{\\omega_n(\\ell,p)}p\n =\n \\begin{cases}\n \\displaystyle\n \\frac{\\rho_p(n)}{p-1-\\rho_p(n-1)},&p\\leq R,\\\\[7pt]\n \\displaystyle\\frac1{p-1},&p>R.\n \\end{cases}\n\\end{align}\nIn particular, \\(0\\leq\\omega_n(\\ell,p)/p<1\\).",
+      "status": "proved",
+      "remaining": "None within the source statement and retained admissible context.",
+      "lean_anchor": "goldbach_upper_local_density",
+      "completed_checkpoint": 1221
+    },
+    {
+      "label": "l:presieving",
+      "title": "Two-range presieving deduction",
+      "section": 11,
+      "source_line": 8168,
+      "active_statement_sha256": "497d160f1590b6bcf20a4e811f91ca721850dc0d25b0e104cc88302fcad81a8f",
+      "statement_latex": "\\label{l:presieving}\nSuppose that\n\\begin{align}\\label{e:circestsieve}\n |\\mathcal F_d|=Xg(d)+r_d,\n\\end{align}\nwhere \\(g\\) is multiplicative on the square-free integers supported on\na fixed set of primes \\(\\mathfrak P\\), and \\(0\\leq g(p)<1\\).  Let\n\\(2\\leq R<z\\), and suppose that there are fixed constants\n\\(\\kappa_0,\\kappa,K_0>0\\) such that\n\\begin{align}\\label{e:tworangesievedimension}\n \\prod_{\\substack{w\\leq p<y\\\\p\\in\\mathfrak P}}\n \\left(1-g(p)\\right)^{-1}\n &\\leq\n K_0\\left(\\frac{\\log y}{\\log w}\\right)^{\\kappa_0},\n &&2\\leq w<y\\leq R,\\notag\\\\\n \\prod_{\\substack{w\\leq p<y\\\\p\\in\\mathfrak P}}\n \\left(1-g(p)\\right)^{-1}\n &\\leq\n K_0\\left(\\frac{\\log y}{\\log w}\\right)^\\kappa,\n &&R<w<y\\leq z.\n\\end{align}\nDefine \n\\[\n D_0=\\exp((\\log\\log N)^3),\\qquad D_1=D/D_0, \\qquad D_0<D , \\qquad \\frac{\\log D_0}{\\log R}\\longrightarrow\\infty.\n\\]\nThen\n\\begin{align}\\label{e:presievedbounds10}\n S(\\mathcal F,\\mathfrak P,z)\n &\\geq XV(z)\\bigl(f_\\kappa(s)+o(1)\\bigr)\n +\\sum_{m<D}c_m^-r_m,\\notag\\\\\n S(\\mathcal F,\\mathfrak P,z)\n &\\leq XV(z)\\bigl(F_\\kappa(s)+o(1)\\bigr)\n +\\sum_{m<D}c_m^+r_m,\n\\end{align}\nwhere\n\\[\n V(z)=\\prod_{\\substack{p<z\\\\p\\in\\mathfrak P}}(1-g(p)),\n \\qquad\n s=\\frac{\\log D_1}{\\log z},\n \\qquad\n |c_m^\\pm|\\leq1.\n\\]\nThe coefficients \\(c_m^\\pm\\) depend only on the fixed prime sets and\nthe sieve levels, and not on the values of \\(g\\).  \nThe dimension\n\\(\\kappa_0\\) is used only in the preliminary sieve over \\(p\\leq R\\);\nthe sieve functions in \\eqref{e:presievedbounds10} are determined by\nthe outer dimension \\(\\kappa\\).",
+      "status": "open",
+      "remaining": "Apply the saved source corrections to the refined dimension, X>=0 and g(1)=1, preliminary endpoint and scale bounds. The complete corrected variant is proved conditionally at1224 from independent general one-stage Rosser\u2013Iwaniec inputs; the literal weaker printed statement is not claimed.",
+      "corrected_variant": {
+        "status": "conditional",
+        "checkpoint": 1224,
+        "lean_anchor": "goldbach_corrected_presieving",
+        "proposed_source_passages": "blueprint/Section11_Presieving_Replacements.tex",
+        "original_source_synchronized": false,
+        "external_inputs": [
+          "ROSSER_IWANIEC_SINGLE_STAGE"
+        ]
+      }
+    },
+    {
+      "label": "l:wumatomakisum",
+      "title": "Weighted-prime sum in the upper sieve main term",
+      "section": 11,
+      "source_line": 8571,
+      "active_statement_sha256": "efb02e188d9c5ce5c0855e7a43156faf7239d644a4d0ab86973b381bc6539945",
+      "statement_latex": "\\label{l:wumatomakisum}\nLet \\(\\alpha=9/8\\).  Uniformly in the range \\eqref{e:nrange10},\n\\begin{align}\\label{e:wumatomakisum10}\n \\sum_{\\ell\\in L}X_n(\\ell)\\Theta_{n,\\ell}(z_\\ell)\n \\leq\n \\bigl(c_\\alpha\\mathcal W(\\alpha)+o(1)\\bigr)\n X_n\\Theta_n(z),\n \\qquad\n c_\\alpha=\\frac{16e^{-\\gamma/2}}{\\sqrt{\\pi\\alpha}}.\n\\end{align}\nHere \\(\\mathcal W(\\alpha)\\) is the integral defined in\n\\eqref{e:Wdef8}.",
+      "status": "open",
+      "remaining": "Prove the retained-range prime sum and its integration against the actual density with the printed constant."
+    },
+    {
+      "label": "p:sieveneedlower8",
+      "title": "Lower sieve application",
+      "section": 9,
+      "source_line": 6744,
+      "active_statement_sha256": "a275396d64d20d1ebf9cc847f544d24dc59b6d4139b78144d8369b10e26895ff",
+      "statement_latex": "[Lower sieve]\\label{p:sieveneedlower8}\nFor $N^2(\\log N)^{-A_0}\\leq n<N^2$, $n\\equiv12\\pmod{24}$,\n\\begin{align}\\label{e:sieveneedlower8}\n S(\\mathcal A_n,\\mathbb P_{3,n},z)\n \\geq X_n\\Theta_n(z)\\bigl(f_{1/2}(9/8)+o(1)\\bigr)\n +\\mathcal E_1(n),\n\\end{align}\nwhere\n\\begin{align}\\label{e:E1section8}\n\\sum_{n<N^2}|\\mathcal E_1(n)|^2\n\\ll_{A_0,K} N^4(\\log N)^{-K}.\n\\end{align}",
+      "status": "open",
+      "remaining": "Verify the actual local densities, presieve levels, outer dimension and remainder bounds, then apply the general sieve with the stated constants."
+    },
+    {
+      "label": "p:sieveneedupper8",
+      "title": "Upper sieve application and summed weights",
+      "section": 9,
+      "source_line": 6768,
+      "active_statement_sha256": "247bf33a5924247fe7c22732d456b5b4d74dc276ec5d5a2c45706ca0f3c7c5ca",
+      "statement_latex": "[Upper sieve]\\label{p:sieveneedupper8}\nFor $N^2(\\log N)^{-A_0}\\leq n<N^2$, $n\\equiv12\\pmod{24}$,\n\\begin{align}\\label{e:sieveneedupper8}\n \\sum_{\\ell\\in L_n}S(M_n(\\ell),W_{\\ell,n},z_\\ell)\n &\\leq\n \\bigl(c_{9/8}F_1(2)\\mathcal W(9/8)+o(1)\\bigr)\n X_n\\Theta_n(z)+\\mathcal E_2(n),\n\\end{align}\nwhere\n\\begin{align}\\label{e:calphadef8}\n c_\\alpha=\\frac{16e^{-\\gamma/2}}{\\sqrt{\\pi\\alpha}}\n\\end{align}\nand\n\\begin{align}\\label{e:E2section8}\n\\sum_{n<N^2}|\\mathcal E_2(n)|^2\n\\ll_{A_0,K} N^4(\\log N)^{-K}.\n\\end{align}",
+      "status": "open",
+      "remaining": "Prove the source upper sieve application and the sum over ell, retaining the dimension, uniformity and explicit coefficient."
+    },
+    {
+      "label": "l:maintermsize8",
+      "title": "Uniform lower bound for the sieve main term",
+      "section": 9,
+      "source_line": 6797,
+      "active_statement_sha256": "51bd2bb6d6448ded5e4c3ccd31a0fb3fb215c10682f374d1fb2c4802c4275158",
+      "statement_latex": "\\label{l:maintermsize8}\nLet \\(A_0>0\\).  There is \\(C_{A_0}>0\\) such that, for every fixed\nsufficiently large \\(C\\), with \\(R=(\\log N)^C\\), one has\n\\begin{align}\\label{e:maintermlower8}\n X_n\\Theta_n(z)\\gg_{A_0,C}\n N(\\log N)^{-C_{A_0}}\n\\end{align}\nwhenever $n\\equiv12\\pmod{24}$ and $N^2(\\log N)^{-A_0}\\leq n<N^2$.",
+      "status": "open",
+      "remaining": "Identify the actual singular factors and prove positivity and a uniform lower bound in the retained n range."
+    },
+    {
+      "label": "l:numericalcomparison",
+      "title": "Strict positivity of the sieve comparison",
+      "section": 9,
+      "source_line": 6809,
+      "active_statement_sha256": "f00144cc10f16f6c3e1fb11f0dea31de17044c8759302b963fe4ca9c308eaeb7",
+      "statement_latex": "\\label{l:numericalcomparison}\nWith the normalization of \\cite[(1.8)--(1.10)]{I80},\n\\begin{align}\\label{e:Deltanumerical}\n \\Delta>0.\n\\end{align}",
+      "status": "open",
+      "remaining": "Define the normalized sieve functions and comparison constant and prove a certified interval bound. An informal decimal calculation will not count as a Lean proof."
+    }
+  ],
+  "full_circle_method_already_complete": true,
+  "proposed_work_order": [
+    "Fixed-sieve comparison including uniform divisor error",
+    "Exact sieve-sequence/progression count identities and local density factors",
+    "Two-range coefficient construction with independent general sieve inputs verified before use",
+    "Lower and upper circle-method remainder transport",
+    "Uniform common main-term lower bound",
+    "Weighted-prime summation and upper application",
+    "Normalized integral/sieve-function comparison"
+  ],
+  "independent_input_policy": "Previously agreed raw SW, BV and Ren/Ghosh inputs remain explicit through the completed circle-method theorem. Any further general classical theorem must be stated independently and source-checked before use. No source sieve proposition or own-paper endpoint will be postulated.",
+  "new_source_statement_credit_at_mapping": 0,
+  "selected_source_unchanged": true,
+  "latest_review_checkpoint": 1218,
+  "checked_sequence_identities": {
+    "lower": [
+      "goldbach_lower_sieve_sequence_count",
+      "goldbach_lower_sequence_fixed_residue"
+    ],
+    "upper": [
+      "goldbach_upper_sieve_sequence_count",
+      "goldbach_upper_sequence_fixed_residue"
+    ],
+    "selected_remainders": "goldbach_sieve_remainders_selected"
+  }
+}

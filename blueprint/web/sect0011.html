@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Goldbach circle method: minor arcs, major arcs and completion</title>
+<link rel="next" href="sect0012.html" title="Goldbach sieve: local densities, presieving and comparison" />
+<link rel="prev" href="sect0010.html" title="Goldbach arithmetic: reductions and the exceptional set" />
+<link rel="up" href="index.html" title="On the Distribution of Prime Squares and Its Applications: compact blueprint" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+<link rel="stylesheet" href="styles/blueprint.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">On the Distribution of Prime Squares and Its Applications: compact blueprint</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref"></span> <span class="toc_entry">Purpose and verification boundary</span></a>
+ </li>
+<li class="">
+  <a href="sect0002.html"><span class="toc_ref">1</span> <span class="toc_entry">Independent inputs and their exact scope</span></a>
+ </li>
+<li class="">
+  <a href="sect0003.html"><span class="toc_ref">2</span> <span class="toc_entry">Arithmetic: quadratic sums and conductors</span></a>
+ </li>
+<li class="">
+  <a href="sect0004.html"><span class="toc_ref">3</span> <span class="toc_entry">Improving: optimization and the main estimate</span></a>
+ </li>
+<li class="">
+  <a href="sect0005.html"><span class="toc_ref">4</span> <span class="toc_entry">Prime operators: approximation, low and high terms</span></a>
+ </li>
+<li class="">
+  <a href="sect0006.html"><span class="toc_ref">5</span> <span class="toc_entry">Stopping: local estimates and sparse domination</span></a>
+ </li>
+<li class="">
+  <a href="sect0007.html"><span class="toc_ref">6</span> <span class="toc_entry">Orlicz: quantitative IW and the three-family maximum</span></a>
+ </li>
+<li class="">
+  <a href="sect0008.html"><span class="toc_ref">7</span> <span class="toc_entry">Badness: arithmetic blocks and the persistent criterion</span></a>
+ </li>
+<li class="">
+  <a href="sect0009.html"><span class="toc_ref">8</span> <span class="toc_entry">Ergodic: transference and the two endpoint conclusions</span></a>
+ </li>
+<li class="">
+  <a href="sect0010.html"><span class="toc_ref">9</span> <span class="toc_entry">Goldbach arithmetic: reductions and the exceptional set</span></a>
+ </li>
+<li class=" active current">
+  <a href="sect0011.html"><span class="toc_ref">10</span> <span class="toc_entry">Goldbach circle method: minor arcs, major arcs and completion</span></a>
+ </li>
+<li class="">
+  <a href="sect0012.html"><span class="toc_ref">11</span> <span class="toc_entry">Goldbach sieve: local densities, presieving and comparison</span></a>
+ </li>
+<li ><a href="dep_graph_document.html">Dependency graph</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="a0000000012">10 Goldbach circle method: minor arcs, major arcs and completion</h1>
+<div class="lemma_thmwrapper theorem-style-plain" id="goldbach_singular_integral">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">10.1</span>
+    <span class="lemma_thmtitle">Positive singular integral and smoothing</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0011.html#goldbach_singular_integral">#</a>
+    
+    <a class="icon proof" href="sect0011.html#a0000000146"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.goldbach_positive_singular_integral_complete" class="lean_decl">PrimeSquares.goldbach_positive_singular_integral_complete</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.goldbach_smooth_seed_exists" class="lean_decl">PrimeSquares.goldbach_smooth_seed_exists</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  
+<p><b class="bfseries">Paper Lemma 10.11.</b> <i class="itshape">proved under source hypotheses.</i></p>
+<p>Uniformly in \(\ell ,U,W\) and \(n{\lt}N^2\), </p>
+<div class="displaymath" id="a0000000147">
+  \[  H_{\ell ,R}(n;U,W)\geq 0, \qquad H_{\ell ,R}(n;U,W) = H_\ell (n;U,W)+O(NR^{-1/2}),  \]
+</div>
+<p> where </p>
+<div class="displaymath" id="a0000000148">
+  \[  H_\ell (n;U,W) = \int _{\substack {2\leq u\leq U\\ 2\leq (n-u^2)/\ell \leq W}} \frac{du}{\log u\log ((n-u^2)/\ell )}.  \]
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000146">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof architecture
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>  Construct the compactly supported smooth seed internally. Express the smoothing factor by autocorrelation, prove positivity of its mass, and compare the source singular integral with the positive model on the stated range. Quantify the discarded tail uniformly in the parameters needed by both sieve applications. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="goldbach_minor">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">10.2</span>
+    <span class="lemma_thmtitle">Hybrid minor-arc mean square</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0011.html#goldbach_minor">#</a>
+    
+    <a class="icon proof" href="sect0011.html#a0000000149"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0002.html#input_quadratic_sums">Lemma 1.2</a></li>
+          
+          <li><a href="sect0002.html#input_quadratic_sums">Lemma 1.2</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.goldbach_hybrid_minor_complete" class="lean_decl">PrimeSquares.goldbach_hybrid_minor_complete</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  
+<p><b class="bfseries">Paper Lemma 10.2.</b> <i class="itshape">complete conditional implication.</i></p>
+<p>Under the hypotheses of Lemma&#160;<span class="upshape">9.10</span>, uniformly for \(2\leq U\leq N\) and \(2\leq W\leq N^2\), </p>
+<div class="displaymath" id="a0000000150">
+  \begin{align}  \sum _{n{\lt}N^2}\left| \int _{\mathfrak m}P_U(\theta ) \sum _{\ell {\lt}L_0}\sum _{k{\lt}V_\ell } d_{k,\ell }F_{k,\ell ,W}(\theta )e(-n\theta )\, d\theta \right|^2 \ll _{A,\delta }N^4(\log N)^{-A}. \end{align}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000149">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof architecture
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>   Use Fourier inversion and Bessel to turn the weighted representation error into an integral. Prove congruence counting and progression energy with the required logarithmic losses. Insert the raw prime quadratic estimates on minor arcs and sum the coefficient families before choosing the final logarithmic cutoff. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="goldbach_major">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">10.3</span>
+    <span class="lemma_thmtitle">SW/BV major-arc replacement</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0011.html#goldbach_major">#</a>
+    
+    <a class="icon proof" href="sect0011.html#a0000000151"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0002.html#input_sw_bv">Lemma 1.11</a></li>
+          
+          <li><a href="sect0002.html#input_sw_bv">Lemma 1.11</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.goldbach_major_approximation_complete" class="lean_decl">PrimeSquares.goldbach_major_approximation_complete</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  
+<p><b class="bfseries">Paper Lemma 10.14.</b> <i class="itshape">complete conditional implication.</i></p>
+<p>Uniformly for \(2\leq U\leq N\) and \(2\leq W\leq N^2\), </p>
+<div class="displaymath" id="a0000000152">
+  \begin{align}  \sum _{n{\lt}N^2}\left| \sum _{\ell {\lt}L_0}\sum _{k{\lt}V_\ell }d_{k,\ell } \int _{\mathfrak M} \bigl(P_UF_{k,\ell ,W} -P_U^{(0)}F_{k,\ell ,W}^{(0)}\bigr)(\theta ) e(-n\theta )\, d\theta \right|^2 \ll _{A,\delta }N^4(\log N)^{-A}. \end{align}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000151">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof architecture
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>   Apply partial summation to ordinary prime counts, including strict endpoints and primes dividing the modulus. For each fixed rational denominator, control the multiplicity of the least-common-multiple reindexing; this reduces to the ordinary unweighted Bombieri–Vinogradov input. Combine it with Siegel–Walfisz for the square sum and preserve the explicit endpoint errors before the mean-square sum. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="goldbach_euler">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">10.4</span>
+    <span class="lemma_thmtitle">Absolute Euler series and arithmetic coefficients</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0011.html#goldbach_euler">#</a>
+    
+    <a class="icon proof" href="sect0011.html#a0000000153"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0003.html#progression_euler_products">Lemma 2.3</a></li>
+          
+          <li><a href="sect0003.html#progression_euler_products">Lemma 2.3</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.goldbach_arithmetic_euler_complete" class="lean_decl">PrimeSquares.goldbach_arithmetic_euler_complete</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  
+<p><b class="bfseries">Paper Lemma 10.19.</b> <i class="itshape">proved under source hypotheses.</i></p>
+<p>The series </p>
+<div class="displaymath" id="a0000000154">
+  \[  \sum _{\substack {q\geq 1\\ P^+(q)\leq R}} \mathfrak G_q(\ell ,k,n)  \]
+</div>
+<p> converges absolutely and satisfies </p>
+<div class="displaymath" id="a0000000155">
+  \begin{align}  \sum _{\substack {q\geq 1\\ \begin{bgroup} P^+(q)\leq R
+
+\end{bgroup}}} \mathfrak G_q(\ell ,k,n) & = \prod _{p\leq R} \left(1+\sum _{\nu \geq 1} \mathfrak G_{p^\nu }(\ell ,k,n)\right) =G_R(\ell ,k,n), \end{align}
+</div>
+<p> where \(G_R\) is defined in <span class="upshape">(9.11)</span>. Moreover, for some absolute \(C_1{\gt}0\), </p>
+<div class="displaymath" id="a0000000156">
+  \begin{align}  |\mathfrak s(a,q)| & \ll q^{-1/2}\tau (q)^{C_1},\notag \\ |\Upsilon (a\ell ,q,a_{k,\ell },k)| & \ll q^{-1}(q,k\ell )\tau (q)^{C_1},\\ |\mathfrak G_q(\ell ,k,n)| & \ll q^{-1}(q,k\ell )\tau (q)^{C_1},\notag \end{align}
+</div>
+<p> and </p>
+<div class="displaymath" id="a0000000157">
+  \begin{align}  \sum _{\ell {\lt}L_0}\sum _{k{\lt}V_\ell } \frac{(q,k\ell )}{\ell \phi (k)} \ll \tau (q)^{C_1}(\log N)^2. \end{align}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000153">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof architecture
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>   Group by reduced rational points and prove the prime-power evaluations, treating the dyadic factor separately. Establish absolute convergence before exchanging the smooth-denominator sum with the product. Bound the remaining gcd and divisor sums uniformly in the two coefficient indices; the local product is the one used by the actual representation problem. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="goldbach_major_completion">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">10.5</span>
+    <span class="lemma_thmtitle">Completion of the major contribution</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0011.html#goldbach_major_completion">#</a>
+    
+    <a class="icon proof" href="sect0011.html#a0000000158"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0011.html#goldbach_euler">Lemma 10.4</a></li>
+          
+          <li><a href="sect0011.html#goldbach_singular_integral">Lemma 10.1</a></li>
+          
+          <li><a href="sect0011.html#goldbach_euler">Lemma 10.4</a></li>
+          
+          <li><a href="sect0011.html#goldbach_singular_integral">Lemma 10.1</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.goldbach_major_completion_complete" class="lean_decl">PrimeSquares.goldbach_major_completion_complete</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  
+<p><b class="bfseries">Paper Lemma 10.23.</b> <i class="itshape">proved under source hypotheses.</i></p>
+<p>Under the hypotheses of Lemma&#160;<span class="upshape">9.10</span>, uniformly for \(2\leq U\leq N\) and \(2\leq W\leq N^2\), </p>
+<div class="displaymath" id="a0000000159">
+  \begin{align} &  \sum _{n{\lt}N^2}\left| \sum _{\ell {\lt}L_0}\sum _{k{\lt}V_\ell }d_{k,\ell } \left( \int _{\mathfrak M} P_U^{(0)}(\theta )F_{k,\ell ,W}^{(0)}(\theta )e(-n\theta )\, d\theta - \frac{G_R(\ell ,k,n)}{\ell \phi (k)} H_{\ell ,R}(n;U,W) \right)\right|^2\\ & \hspace{7cm} \ll _{A,\delta }N^4(\log N)^{-A}. \end{align}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000158">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof architecture
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>   Extend the finite arithmetic and analytic ranges in the model, using absolute summability and the smoothing-tail bounds. Identify the completed expression exactly with the local product times the source singular integral. Track the coefficient weights before summing the completion error. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="goldbach_circle_method">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">10.6</span>
+    <span class="lemma_thmtitle">Full weighted circle-method lemma</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0011.html#goldbach_circle_method">#</a>
+    
+    <a class="icon proof" href="sect0011.html#a0000000160"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0011.html#goldbach_minor">Lemma 10.2</a></li>
+          
+          <li><a href="sect0011.html#goldbach_major">Lemma 10.3</a></li>
+          
+          <li><a href="sect0011.html#goldbach_major_completion">Lemma 10.5</a></li>
+          
+          <li><a href="sect0002.html#input_quadratic_sums">Lemma 1.2</a></li>
+          
+          <li><a href="sect0002.html#input_sw_bv">Lemma 1.11</a></li>
+          
+          <li><a href="sect0011.html#goldbach_minor">Lemma 10.2</a></li>
+          
+          <li><a href="sect0011.html#goldbach_major">Lemma 10.3</a></li>
+          
+          <li><a href="sect0011.html#goldbach_major_completion">Lemma 10.5</a></li>
+          
+          <li><a href="sect0002.html#input_quadratic_sums">Lemma 1.2</a></li>
+          
+          <li><a href="sect0002.html#input_sw_bv">Lemma 1.11</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/PrimeSquares.goldbach_circle_method_source_complete" class="lean_decl">PrimeSquares.goldbach_circle_method_source_complete</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  
+<p><b class="bfseries">Paper Lemma 9.10.</b> <i class="itshape">complete conditional implication.</i></p>
+<p>Let \(A,\delta {\gt}0\) and \(L_0{\lt}N^{2-\delta }\). There are sufficiently large constants \(B=B(A,\delta )\) and \(C=C(A,\delta )\) such that the following holds. Put </p>
+<div class="displaymath" id="a0000000161">
+  \[  R=(\log N)^C,\qquad \eta _N(\theta )=\eta \left(\frac{N^2\theta }{R}\right),  \]
+</div>
+<p> and suppose that \(V_\ell \leq (N^2/\ell )^{1/2}(\log N)^{-B}\) for \(\ell {\lt}L_0.\) Let \(|d_{k,\ell }|\leq 1\) and \((a_{k,\ell },k)=1\). Define </p>
+<div class="displaymath" id="a0000000162">
+  \begin{align} \quad \quad G_R(\ell ,k,n) & := \mathcal T_2(\ell ,k,n;a_{k,\ell }) \prod _{2{\lt}p\leq R} \frac{p\phi ((p,k))}{(p-1)^2} \left|\left\{ (u,v)\in \mathbb A_p^2: \begin{array}{l} u^2+\ell v\equiv n\pmod p,\\ v\equiv a_{k,\ell }\pmod{(p,k)} \end{array}\right\} \right|, \end{align}
+</div>
+<p> where \( \mathcal T_2(\ell ,k,n;a_{k,\ell }) \) is defined in <span class="upshape">(3.18)</span> and the second congruence is understood to be trivial when \(p\nmid k\). Also define </p>
+<div class="displaymath" id="a0000000163">
+  \begin{align}  H_{\ell ,R}(n) := \ell \int _{\mathbb R}\eta _N(\theta )^2 \left(\int _2^N\frac{e(\theta u^2)}{\log u}\, du\right) \left(\int _{\substack {2\leq v\leq N^2\\ \begin{bgroup} \ell v{\lt}N^2
+
+\end{bgroup}}} \frac{e(\ell \theta v)}{\log v}\, dv\right) e(-n\theta )\, d\theta . \end{align}
+</div>
+<p> Then </p>
+<div class="displaymath" id="a0000000164">
+  \begin{align}  \sum _{n{\lt}N^2}\left| \sum _{\ell {\lt}L_0}\sum _{k{\lt}V_\ell } d_{k,\ell }r_{k,\ell }(n)\right|^2 \ll _{A,\delta }N^4(\log N)^{-A}, \end{align}
+</div>
+<p> where </p>
+<div class="displaymath" id="a0000000165">
+  \begin{align}  r_{k,\ell }(n) & = \sum _{\substack {m^2+\ell t=n\\ \begin{bgroup} t\equiv a_{k,\ell }\pmod k
+
+\end{bgroup}}} \mathbf{1}_{\mathbb P}(m)\mathbf{1}_{\mathbb P}(t) - \frac{G_R(\ell ,k,n)}{\ell \phi (k)}H_{\ell ,R}(n). \end{align}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000160">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof architecture
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>   Combine the hybrid minor bound, actual major replacement, arithmetic completion and analytic smoothing. Choose the logarithmic exponents in an order compatible with the requested saving and the uniform range of the outer index. The final theorem concerns the full original representation sums, with the actual source remainder and singular integral. </p>
+
+  </div>
+</div>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <a href="sect0010.html" title="Goldbach arithmetic: reductions and the exceptional set"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="index.html" title="On the Distribution of Prime Squares and Its Applications: compact blueprint"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="sect0012.html" title="Goldbach sieve: local densities, presieving and comparison"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+</body>
+</html>
