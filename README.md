@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Prime Squares: a conditional Lean formalization
 
 A formalization of Hamed Mousavi's **On the Distribution of Prime Squares and Its Applications**.
@@ -77,3 +78,7 @@ No repository has been published and no new license is assigned by this package.
 ## Title and full-archive update
 
 The title is **On the Distribution of Prime Squares and Its Applications**. Only the title is changed in the current manuscript source; all 58 numbered result/definition bodies and all Lean proof files are unchanged. The compact PDF is the analogue of the current-paper part of the supplied 866-page Hua blueprint. That reference also contains an earlier draft and about 771 pages of Lean listings. Here the full Lean implementation is supplied as source files, and all unedited blueprint notes are included alongside the compact exposition. See [the comparison note](docs/HUA_BLUEPRINT_COMPARISON.md).
+=======
+# lean4-paper-On-Distribution-of-Prime-Squares-formalization
+Lean 4 formalization of results on the distribution of prime squares, with applications to Goldbach-type problems, ergodic theory, and discrete harmonic analysis.
+>>>>>>> 1d85c2d4eb0505381d1a915f82d8e57560216492
