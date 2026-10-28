@@ -135,7 +135,7 @@ Unproved passage: the precise quantitative Fourier-realization/full-domain formu
 We assume strong transference with the same norm constant, and modular transference of the form
 
 $$
-#{A^*g>\lambda}\le K\sum_m\Phi(|g(m)|/\lambda)
+|{A^*g>\lambda}|\le K\sum_m\Phi(|g(m)|/\lambda)
 \quad\Longrightarrow\quad
 \mu{A_T^*f>\lambda}\le K\int\Phi(|f|/\lambda),d\mu.
 $$
